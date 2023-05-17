@@ -9,9 +9,13 @@ using UnityEngine.Serialization;
 
 public class ItemsManager : SingletonManager<ItemsManager>
 {
+    public bool _isCanRotate = false;
+    public float pauseTime = 5f;
     public Transform initPosition;
     public Transform destroyPosition;
+    
     private GameObject _go;
+    private bool _isPause=false;
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
@@ -25,8 +29,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         if (_go == null)
         {
+            
             _go = GameObject.Instantiate(Resources.Load(type)) as GameObject;
             _go.transform.localScale *= 3;
+            
             switch (type)
             {
                 case "carrot":
@@ -86,10 +92,26 @@ public class ItemsManager : SingletonManager<ItemsManager>
         AddItemsDictionary();
     }
 
+    private void Pause()
+    {
+        _isCanRotate = false;
+        PauseTriggle.Instance.isPause=false;
+    }
     private void Update()
     {
-        InitializeItem(RandomSelectItem());
-        MoveItems();
-        DestroyItem();
+        Debug.Log(_isPause);
+        _isPause = PauseTriggle.Instance.isPause;
+        if(!_isPause)
+        {
+            InitializeItem(RandomSelectItem());
+            MoveItems();
+            DestroyItem();
+        }
+        if(_isPause)
+        {
+            _isCanRotate = true;
+            Invoke("Pause",pauseTime);
+        }
     }
+    
 }

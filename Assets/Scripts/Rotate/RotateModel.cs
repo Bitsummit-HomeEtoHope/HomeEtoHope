@@ -16,6 +16,7 @@ public class RotateModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(_isRotate);
         if (Input.GetMouseButtonDown(0) && !_isRotate)
         {
             _isRotate = true;
@@ -34,7 +35,7 @@ public class RotateModel : MonoBehaviour
             var x = _startPoint.x - currentPoint.x;
             var y = currentPoint.y - _startPoint.y ;
 
-            modelTransform.eulerAngles = _startAngle + new Vector3(y, x * rotateScale, 0);
+            modelTransform.eulerAngles = _startAngle + new Vector3(y* rotateScale, x * rotateScale, 0);
         }
     }
 }
