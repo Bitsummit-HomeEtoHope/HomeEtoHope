@@ -11,6 +11,7 @@ public class Rotate : MonoBehaviour
     public float rotateScale = 1f;
     private float xRotate;
     private float yRotate;
+    private Vector3 initiaMousePosition;
     
     // Start is called before the first frame update
     void Start()
@@ -23,25 +24,25 @@ public class Rotate : MonoBehaviour
     {
         if(ItemsManager.Instance._isCanRotate)
         {
+            if(Input.GetMouseButtonDown(0))
+            {
+                initiaMousePosition=Input.mousePosition;
+            }
             if(Input.GetMouseButton(0))
             {
-                xRotate+=Input.GetAxis("Mouse X")*xSpeed;
-                yRotate-=Input.GetAxis("Mouse Y")*ySpeed;
-                yRotate=ClampAngle(yRotate, -20, 80);
-                Quaternion rotation=Quaternion.Euler(yRotate*rotateScale,-xRotate*rotateScale,0);
-                transform.rotation=rotation;
+                Vector3 delta=Input.mousePosition-initiaMousePosition;
+                xRotate=-delta.y*ySpeed*rotateScale;
+                yRotate=-delta.x*xSpeed*rotateScale;
+                
+                transform.Rotate(Vector3.right,-xRotate,Space.World);
+                transform.Rotate(Vector3.up,yRotate,Space.World);
+                initiaMousePosition=Input.mousePosition;
+                
                 
                 
             }
         }
     }
-    static float ClampAngle(float angle, float min, float max)
-    {
-        if (angle < -360)
-            angle += 360;
-        if (angle > 360)
-            angle -= 360;
-        return Mathf.Clamp(angle, min, max);
-    }
+    
 
 }
