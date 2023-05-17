@@ -14,6 +14,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
     public Transform initPosition;
     public Transform destroyPosition;
     
+    private float defaultHeight;
+    private float pauseHeight;
+    private Quaternion defaultRotation;
     private GameObject _go;
     private bool _isPause=false;
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
@@ -44,6 +47,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 
                 case "banana":
                 {
+                    
                     _go.transform.position = initPosition.position + new Vector3(0,0.2f,0);
                 }
                     break;
@@ -54,6 +58,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 }
                     break;
             }
+            defaultRotation = _go.transform.rotation;
+            defaultHeight = _go.transform.position.y;
+            pauseHeight = defaultHeight + 0.5f;
         }
     }
 
@@ -95,6 +102,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private void Pause()
     {
         _isCanRotate = false;
+        _go.transform.position=new Vector3(_go.transform.position.x,defaultHeight,_go.transform.position.z);
+        _go.transform.rotation = defaultRotation;
         PauseTriggle.Instance.isPause=false;
     }
     private void Update()
@@ -109,6 +118,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
         if(_isPause)
         {
+            _go.transform.position=new Vector3(_go.transform.position.x,pauseHeight,_go.transform.position.z);
             _isCanRotate = true;
             Invoke("Pause",pauseTime);
         }

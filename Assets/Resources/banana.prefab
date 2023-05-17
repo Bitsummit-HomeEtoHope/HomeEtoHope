@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4652719131505646}
   - component: {fileID: 33859380252223502}
   - component: {fileID: 23845812731255510}
-  - component: {fileID: 64570622328545086}
   - component: {fileID: 9006558105952167212}
   - component: {fileID: 1788628861925020224}
+  - component: {fileID: 531376345647836696}
   m_Layer: 0
   m_Name: banana
   m_TagString: Fruit
@@ -87,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64570622328545086
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872412180362304}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2837c680c6d784896a77b9f9aa945698, type: 3}
 --- !u!54 &9006558105952167212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,3 +118,16 @@ MonoBehaviour:
   xSpeed: 2
   ySpeed: 2
   rotateScale: 1
+--- !u!65 &531376345647836696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872412180362304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28066528, y: 0.15644814, z: 0.45109475}
+  m_Center: {x: 0.00033928454, y: 0.041200146, z: -0.027936608}

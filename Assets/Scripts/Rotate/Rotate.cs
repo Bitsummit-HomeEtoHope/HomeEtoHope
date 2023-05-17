@@ -27,11 +27,21 @@ public class Rotate : MonoBehaviour
             {
                 xRotate+=Input.GetAxis("Mouse X")*xSpeed;
                 yRotate-=Input.GetAxis("Mouse Y")*ySpeed;
-            
-                transform.rotation=Quaternion.Euler(yRotate*rotateScale,-xRotate*rotateScale,0);
+                yRotate=ClampAngle(yRotate, -20, 80);
+                Quaternion rotation=Quaternion.Euler(yRotate*rotateScale,-xRotate*rotateScale,0);
+                transform.rotation=rotation;
                 
                 
             }
         }
     }
+    static float ClampAngle(float angle, float min, float max)
+    {
+        if (angle < -360)
+            angle += 360;
+        if (angle > 360)
+            angle -= 360;
+        return Mathf.Clamp(angle, min, max);
+    }
+
 }

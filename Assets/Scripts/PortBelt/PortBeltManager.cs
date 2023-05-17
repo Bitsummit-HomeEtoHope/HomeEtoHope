@@ -22,8 +22,13 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
 
     private void Update()
     {
-        MovePortBelts(portBeltsList);
-        TransportPortBelts(portBeltsList);
+        if(!PauseTriggle.Instance.isPause)
+        {
+            MovePortBelts(portBeltsList);
+            TransportPortBelts(portBeltsList);
+        }
+            
+       
     }
 
     private void TransportPortBelts(List<Transform> portBelts)
