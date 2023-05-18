@@ -11,6 +11,7 @@ public class RotateModel : MonoBehaviour
     private Vector3 _startPoint;
 
     private Vector3 _startAngle;
+    
     [Range(0.1f,1f)]
     public float rotateScale = 1f;
     // Update is called once per frame

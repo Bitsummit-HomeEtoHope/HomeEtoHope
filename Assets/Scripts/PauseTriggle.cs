@@ -10,6 +10,7 @@ public class PauseTriggle : MonoBehaviour
     }  
     public bool isPause=false;
     private void OnTriggerEnter(Collider other) {
+        Debug.Log("OnTriggerEnter");
         if (other.gameObject.tag == "Fruit")
         {
             isPause = true;

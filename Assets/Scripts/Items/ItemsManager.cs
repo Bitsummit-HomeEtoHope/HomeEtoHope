@@ -15,10 +15,33 @@ public class ItemsManager : SingletonManager<ItemsManager>
     public Transform destroyPosition;
     
     private float defaultHeight;
+    private GameObject pauseTriggle;
     private float pauseHeight;
     private Quaternion defaultRotation;
     private GameObject _go;
     private bool _isPause=false;
+    private bool _currentIsPause=false;
+    public bool IsPause
+    {
+        get => _isPause;
+        set 
+        {
+            _isPause = value;
+            Debug.Log("IsPause:"+IsPause);
+            Debug.Log("_currentIsPause:"+_currentIsPause);
+            if(_isPause&&_currentIsPause!=IsPause)
+            {
+                _currentIsPause=IsPause;
+                pauseTriggle.SetActive(false);
+                _go.transform.position=new Vector3(_go.transform.position.x,pauseHeight,_go.transform.position.z);
+                
+                
+                Invoke("Pause",pauseTime);
+            }
+
+            
+        }
+    }
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
@@ -83,7 +106,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         if (_go.transform.position.x < destroyPosition.position.x)
         {
             Destroy(_go.gameObject);
+            pauseTriggle.SetActive(true);
         }
+        
     }
 
     private void AddItemsDictionary()
@@ -96,6 +121,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
     
     private void Start()
     {
+        pauseTriggle=GameObject.FindObjectOfType<PauseTriggle>().gameObject;
+        Application.targetFrameRate = 120;
         AddItemsDictionary();
     }
 
@@ -105,23 +132,24 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _go.transform.position=new Vector3(_go.transform.position.x,defaultHeight,_go.transform.position.z);
         _go.transform.rotation = defaultRotation;
         PauseTriggle.Instance.isPause=false;
+         _currentIsPause=false;
     }
+
+    
     private void Update()
     {
-        Debug.Log(_isPause);
-        _isPause = PauseTriggle.Instance.isPause;
-        if(!_isPause)
+        IsPause = PauseTriggle.Instance.isPause;
+        if(!IsPause)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
             DestroyItem();
         }
-        if(_isPause)
+        if(IsPause)
         {
-            _go.transform.position=new Vector3(_go.transform.position.x,pauseHeight,_go.transform.position.z);
             _isCanRotate = true;
-            Invoke("Pause",pauseTime);
         }
+        
     }
     
 }
