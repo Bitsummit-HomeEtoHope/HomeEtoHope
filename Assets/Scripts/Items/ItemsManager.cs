@@ -121,6 +121,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
         
     }
+
     private void AddItemsDictionary()
     {
         _itemsDictionary.Add(ItemsType.Apple,"apple");
