@@ -9,10 +9,10 @@ public class DualScreenDisplay : MonoBehaviour
 
     void Start()
     {
-        int width1 = Display.displays[1].systemWidth;
-        int height1 = Display.displays[1].systemHeight;
-        int width2 = Display.displays[2].systemWidth;
-        int height2 = Display.displays[2].systemHeight;
+        int width1 = Display.displays[0].systemWidth;
+        int height1 = Display.displays[0].systemHeight;
+        int width2 = Display.displays[1].systemWidth;
+        int height2 = Display.displays[1].systemHeight;
         // 将Unity游戏窗口的分辨率设置为第一个外部屏幕的分辨率
         Screen.SetResolution(width1, height1, true);
         Screen.SetResolution(width2, height2, true);
@@ -30,11 +30,11 @@ public class DualScreenDisplay : MonoBehaviour
         }
 
         // 启用第一个外部屏幕
-        Display.displays[1].Activate();
+        Display.displays[0].Activate();
 
         // 将第一个相机渲染到第一个外部屏幕
         camera1.targetDisplay = 1;
-        Display.displays[2].Activate();
+        Display.displays[1].Activate();
         camera2.targetDisplay = 2;
         
     }
