@@ -2255,9 +2255,9 @@ MonoBehaviour:
   m_ItemCameraObject: {fileID: 0}
   itemDataBases:
   - m_Name: apple(Clone)
-    m_Items: {fileID: 1846160755511594, guid: 4c4eef1508f7ec94b922114a41673877, type: 3}
-  - m_Name: apple-core(Clone)
-    m_Items: {fileID: 1846160755511594, guid: 4c4eef1508f7ec94b922114a41673877, type: 3}
+    m_Items: {fileID: 4834610102513269239, guid: 372c25d39ecb2aa499e701ed91be9cc6, type: 3}
+  - m_Name: bad-apple(Clone)
+    m_Items: {fileID: 814638698754225099, guid: 6f4ae11576a0f1148b4bbf9833ee4bd1, type: 3}
   - m_Name: banana(Clone)
     m_Items: {fileID: 1872412180362304, guid: e00c7ec89dbcffb47839f9973c8053ba, type: 3}
   - m_Name: carrot(Clone)
