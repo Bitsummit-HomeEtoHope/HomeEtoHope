@@ -5,7 +5,8 @@ using UnityEngine;
 public class DualScreenDisplay : MonoBehaviour
 {
     public Camera camera1;
-    public Camera camera2;
+    public Camera camera2;    
+    public Camera camera3;
 
     void Start()
     {
@@ -30,14 +31,25 @@ public class DualScreenDisplay : MonoBehaviour
             return;
         }
 
+        //// 启用第一个外部屏幕
+        //Display.displays[0].Activate();
+
+        //// 将第一个相机渲染到第一个外部屏幕
+        //camera1.targetDisplay = 1;
+        //Display.displays[1].Activate();
+        //camera2.targetDisplay = 2;
+
         // 启用第一个外部屏幕
-        Display.displays[0].Activate();
+        Display.displays[1].Activate();
+        Display.displays[2].Activate();
 
         // 将第一个相机渲染到第一个外部屏幕
         camera1.targetDisplay = 1;
-        Display.displays[1].Activate();
-        camera2.targetDisplay = 2;
-        
+        camera2.targetDisplay = 1;
+
+        // 将第三个相机渲染到第二个外部屏幕
+        camera3.targetDisplay = 2;
+
     }
 }
     
