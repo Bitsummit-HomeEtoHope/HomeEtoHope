@@ -34,12 +34,9 @@ public class DualScreenDisplay : MonoBehaviour
 
         // 将第一个相机渲染到第一个外部屏幕
         camera1.targetDisplay = 1;
-
-        // 如果有第二个外部屏幕，则启用它并将第二个相机渲染到它上面
-        if (displayCount > 2)
-        {
-            Display.displays[2].Activate();
-            camera2.targetDisplay = 2;
-        }
+        Display.displays[2].Activate();
+        camera2.targetDisplay = 2;
+        
     }
 }
+    
