@@ -50,6 +50,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         AppleCore,
         Banana,
         Carrot,
+        BadApple,
     }
 
     private void InitializeItem(string type)
@@ -128,6 +129,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
         _itemsDictionary.Add(ItemsType.Banana,"banana");
         _itemsDictionary.Add(ItemsType.Carrot,"carrot");
+        _itemsDictionary.Add(ItemsType.BadApple,"bad-apple");
     }
     
     private void Start()
