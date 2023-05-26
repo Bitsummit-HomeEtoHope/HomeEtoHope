@@ -47,7 +47,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private enum ItemsType
     {
         Apple,
-        AppleCore,
+       // AppleCore,
         Banana,
         Carrot,
         BadApple,
@@ -126,7 +126,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private void AddItemsDictionary()
     {
         _itemsDictionary.Add(ItemsType.Apple,"apple");
-        _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
+    //    _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
         _itemsDictionary.Add(ItemsType.Banana,"banana");
         _itemsDictionary.Add(ItemsType.Carrot,"carrot");
         _itemsDictionary.Add(ItemsType.BadApple,"bad-apple");
