@@ -6,6 +6,7 @@ public class HideUIOnCameraSwitch : MonoBehaviour
     public Camera mainCamera;
     private Canvas uiCanvas;
 
+    [SerializeField]
     private bool isUIVisible = true;
 
     void Start()

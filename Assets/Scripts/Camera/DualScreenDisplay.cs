@@ -11,6 +11,7 @@ public class DualScreenDisplay : MonoBehaviour
     {
         int width1 = Display.displays[0].systemWidth;
         int height1 = Display.displays[0].systemHeight;
+        Debug.Log(Display.displays[1]);
         int width2 = Display.displays[1].systemWidth;
         int height2 = Display.displays[1].systemHeight;
         // 将Unity游戏窗口的分辨率设置为第一个外部屏幕的分辨率
