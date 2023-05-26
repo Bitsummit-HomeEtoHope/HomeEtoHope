@@ -13,6 +13,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     public float pauseTime = 5f;
     public Transform initPosition;
     public Transform destroyPosition;
+    public Transform sendPosition;
     
     private float defaultHeight;
     private GameObject pauseTriggle;
@@ -111,6 +112,16 @@ public class ItemsManager : SingletonManager<ItemsManager>
         
     }
 
+    private void SendItem()
+    {
+        if (_go.transform.position.z < sendPosition.position.z)
+        {
+            Destroy(_go.gameObject);
+            pauseTriggle.SetActive(true);
+        }
+        
+    }
+
     private void AddItemsDictionary()
     {
         _itemsDictionary.Add(ItemsType.Apple,"apple");
@@ -124,6 +135,16 @@ public class ItemsManager : SingletonManager<ItemsManager>
         pauseTriggle=GameObject.FindObjectOfType<PauseTriggle>().gameObject;
         Application.targetFrameRate = 120;
         AddItemsDictionary();
+    }
+
+    public GameObject GetGo()
+    {
+        return _go;
+    }
+
+    public bool GetIsPause()
+    {
+        return _isPause;    
     }
 
     private void Pause()
