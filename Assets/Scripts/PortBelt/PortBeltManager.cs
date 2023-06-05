@@ -9,26 +9,28 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     public Transform startPoint;
     public Transform endPoint;
 
+    /** 
+     * Direction and speed of belt flow
+     * 
+     * @auther Yuichi Kawasaki
+     * @date   2023/06/04
+     **/
     private void MovePortBelts(List<Transform> portBelts)
     {
         foreach (var portBelt in portBelts)
         {
             if (Vector3.Distance(portBelt.position,endPoint.position) > 0)
             {
-                portBelt.position += new Vector3(-Time.deltaTime, 0, 0);
+                portBelt.position -= new Vector3((float)(0.7*-Time.deltaTime), 0, 0);
             }
         }
     }
 
     private void Update()
     {
-        if(!PauseTriggle.Instance.isPause)
-        {
-            MovePortBelts(portBeltsList);
-            TransportPortBelts(portBeltsList);
-        }
+        MovePortBelts(portBeltsList);
+        TransportPortBelts(portBeltsList);
             
-       
     }
 
     private void TransportPortBelts(List<Transform> portBelts)
