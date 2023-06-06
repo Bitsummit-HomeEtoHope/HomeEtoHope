@@ -21,7 +21,7 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
         {
             if (Vector3.Distance(portBelt.position,endPoint.position) > 0)
             {
-                portBelt.position -= new Vector3((float)(0.7*-Time.deltaTime), 0, 0);
+                portBelt.position -= new Vector3((float)(0.73*-Time.deltaTime), 0, 0);
             }
         }
     }

@@ -17,10 +17,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private string selectedItem;
     public string konoItem;
 
+    private float spendTime;
+
     private float defaultHeight;
     private float pauseHeight;
     private Quaternion defaultRotation;
     private GameObject _go;
+    private GameObject[] itemsArray;
+    private int itemsArrayIndex;
     // private bool _isPause=false;
     // private bool _currentIsPause=false;
     // public bool IsPause
@@ -38,8 +42,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 
     //             Invoke("Pause",pauseTime);
     //         }
-
-            
     //     }
     // }
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
@@ -54,38 +56,47 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void InitializeItem(string type)
     {
-        if (_go == null)
+        if (itemsArray[itemsArrayIndex] == null)
         {
             
-            _go = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-            _go.transform.localScale *= 3;
-            Debug.Log(_go);
+            itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+            itemsArray[itemsArrayIndex].transform.localScale *= 3;
+            Debug.Log(itemsArray[itemsArrayIndex]);
             
             switch (type)
             {
                 case "carrot":
                 {
-                    _go.transform.rotation = Quaternion.Euler(90,0,0);
-                    _go.transform.position = initPosition.position + new Vector3(0,0.2f,0);
+                    itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(90,0,0);
+                    itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0,0.2f,0);
                 }
                     break;
                 
                 case "banana":
                 {
                     
-                    _go.transform.position = initPosition.position + new Vector3(0,0.2f,0);
+                    itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0,0.2f,0);
                 }
                     break;
                 
                 default:
                 {
-                    _go.transform.position = initPosition.position;
+                    itemsArray[itemsArrayIndex].transform.position = initPosition.position;
                 }
                     break;
             }
-            defaultRotation = _go.transform.rotation;
-            defaultHeight = _go.transform.position.y;
+            defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
+            defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
+
+            // change itemsArrayIndex
+            if(itemsArrayIndex == 0)
+            {
+                itemsArrayIndex = 1;
+            }else
+            {
+                itemsArrayIndex = 0;
+            }
 
             Debug.Log(selectedItem);
             konoItem = selectedItem;
@@ -101,28 +112,47 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void MoveItems()
     {
-        if (_go.transform.position.x < sendPosition.position.x && !DisposeButtonScript.Instance.GetIsDispose())
+        for(int i = 0; i < 2; i++)
         {
-            _go.transform.position -= new Vector3((float)(0.7*-Time.deltaTime), 0, 0);
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x < sendPosition.position.x && !DisposeButtonScript.Instance.GetIsDispose())
+            {
+                itemsArray[i].transform.position -= new Vector3((float)(0.73*-Time.deltaTime), 0, 0);
+            }
         }
     }
 
     private void SendItem()
     {
-        if (_go.transform.position.x > sendPosition.position.x)
+        for(int i = 0; i < 2; i++)
         {
-            Debug.Log("SendPosition"+sendPosition.position.x);
-            Debug.Log("SendItem"+_go.transform.position.x);
-            Destroy(_go.gameObject);
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x > sendPosition.position.x)
+            {
+                Debug.Log("SendItem"+itemsArray[i].transform.position.x);
+
+                // Process to send item name
+
+                Destroy(itemsArray[i].gameObject);
+                itemsArray[i] = null;
+            }
         }
     }
 
+    /** 
+     * If there is an item in the array and the condition is met, dispose the item.
+     * 
+     * @auther Yuichi Kawasaki
+     * @date   2023/06/06
+     **/
     private void DisposeItem()
     {
-        if (_go.transform.position.z > disposePosition.position.z)
+        for(int i = 0; i < 2; i++)
         {
-            Destroy(_go.gameObject);
-            DisposeButtonScript.Instance.SetIsDispose(false);
+            if (itemsArray[i] != null && itemsArray[i].transform.position.z > disposePosition.position.z)
+            {
+                Destroy(itemsArray[i].gameObject);
+                itemsArray[i] = null;
+                DisposeButtonScript.Instance.SetIsDispose(false);
+            }
         }
     }
 
@@ -139,9 +169,21 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         Application.targetFrameRate = 120;
         AddItemsDictionary();
+        itemsArray = new GameObject[2];
+        itemsArrayIndex = 0;
+        for(int i = 0; i < 2; i++)
+        {
+            itemsArray[i] = null;
+        }
     }
 
-    public GameObject GetGo()
+    /** 
+     * can get currently selected item
+     * 
+     * @auther Yuichi Kawasaki
+     * @date   2023/06/06
+     **/
+    public GameObject GetSelectItem()
     {
         return _go;
     }
@@ -156,10 +198,26 @@ public class ItemsManager : SingletonManager<ItemsManager>
     
     private void Update()
     {
-        InitializeItem(RandomSelectItem());
-        MoveItems();
-        SendItem();
-        DisposeItem();
+        if(itemsArray[0] == null && itemsArray[1] == null)
+        {
+            InitializeItem(RandomSelectItem());
+            MoveItems();
+            SendItem();
+            DisposeItem();
+        }else if(spendTime >= 5f)
+        {
+            InitializeItem(RandomSelectItem());
+            MoveItems();
+            SendItem();
+            DisposeItem();
+            spendTime = 0;
+        }else 
+        {
+            spendTime += Time.deltaTime;
+            MoveItems();
+            SendItem();
+            DisposeItem();
+        }
     }
     
 }

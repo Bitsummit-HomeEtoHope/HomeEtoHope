@@ -76,8 +76,8 @@ public class DisposeButtonScript : MonoBehaviour
     {
 
         if(!items){
-            Debug.Log("No items");
-            items = ItemsManager.Instance.GetGo();
+            //Debug.Log("No items");
+            items = ItemsManager.Instance.GetSelectItem();
         }else{
             // move object
             if (_isDispose)
