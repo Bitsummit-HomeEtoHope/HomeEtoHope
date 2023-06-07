@@ -26,16 +26,16 @@ public class SendButtonScript : MonoBehaviour
     void Update()
     {
         _isPause = ItemsManager.Instance.GetIsPause();
-        if(!items){
-            Debug.Log("No items");
-            items = ItemsManager.Instance.GetGo();
-        }else{
+        //if(!items){
+        //    Debug.Log("No items");
+        //    items = ItemsManager.Instance.GetGo();
+        //}else{
             // move object
             if (_sendItems && _isPause)
             {
                 items.transform.position += transform.forward * 1.0f * Time.deltaTime;
             }
-        }
+        
         if(!_isPause){
             _sendItems = false;
         }

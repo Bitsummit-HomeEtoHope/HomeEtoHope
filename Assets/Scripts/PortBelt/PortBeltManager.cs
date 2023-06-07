@@ -9,13 +9,14 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     public Transform startPoint;
     public Transform endPoint;
 
+
     private void MovePortBelts(List<Transform> portBelts)
     {
         foreach (var portBelt in portBelts)
         {
-            if (Vector3.Distance(portBelt.position,endPoint.position) > 0)
+            if (Vector3.Distance(portBelt.position,startPoint.position) > 0)
             {
-                portBelt.position += new Vector3(-Time.deltaTime, 0, 0);
+                portBelt.position += new Vector3(Time.deltaTime, 0, 0);
             }
         }
     }
@@ -35,9 +36,9 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     {
         foreach (var portBelt in portBelts)
         {
-            if (Vector3.Distance(portBelt.position,endPoint.position) < 0.1f)
+            if (Vector3.Distance(portBelt.position,startPoint.position) < 0.1f)
             {
-                portBelt.position = startPoint.position;
+                portBelt.position = endPoint.position;
             }
         }
     }
