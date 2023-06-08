@@ -10,44 +10,29 @@ using UnityEngine.Serialization;
 public class ItemsManager : SingletonManager<ItemsManager>
 {
     public bool _isCanRotate = false;
-    public float pauseTime = 5f;
     public Transform initPosition;
-    public Transform destroyPosition;
-    public Transform sendPosition;
-    
+    public Transform disposePosition;
+
+    private string selectedItem;
+
+    private float spendTime;
+
+
     private float defaultHeight;
-    private GameObject pauseTriggle;
     private float pauseHeight;
     private Quaternion defaultRotation;
     private GameObject _go;
-    private bool _isPause=false;
-    private bool _currentIsPause=false;
-    public bool IsPause
-    {
-        get => _isPause;
-        set 
-        {
-            _isPause = value;
-            Debug.Log("IsPause:"+IsPause);
-            Debug.Log("_currentIsPause:"+_currentIsPause);
-            if(_isPause&&_currentIsPause!=IsPause)
-            {
-                _currentIsPause=IsPause;
-                pauseTriggle.SetActive(false);
-                _go.transform.position=new Vector3(_go.transform.position.x,pauseHeight,_go.transform.position.z);
-                
-                
-                Invoke("Pause",pauseTime);
-            }
+    private GameObject[] itemsArray;
+    private int itemsArrayIndex;
 
-            
-        }
-    }
+    private const string DisposeTag = "Dispose";
+
+
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
         Apple,
-       // AppleCore,
+        // AppleCore,
         Banana,
         Carrot,
         BadApple,
@@ -55,124 +40,147 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void InitializeItem(string type)
     {
-        if (_go == null)
+        if (itemsArray[itemsArrayIndex] == null)
         {
-            
-            _go = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-            _go.transform.localScale *= 3;
-            
+
+            itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+            itemsArray[itemsArrayIndex].transform.localScale *= 3;
+            Debug.Log(itemsArray[itemsArrayIndex]);
+
             switch (type)
             {
                 case "carrot":
-                {
-                    _go.transform.rotation = Quaternion.Euler(90,0,0);
-                    _go.transform.position = initPosition.position + new Vector3(0,0.2f,0);
-                }
+                    {
+                        itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(90, 0, 0);
+                        itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0, 0.2f, 0);
+                    }
                     break;
-                
+
                 case "banana":
-                {
-                    
-                    _go.transform.position = initPosition.position + new Vector3(0,0.2f,0);
-                }
+                    {
+
+                        itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0, 0.2f, 0);
+                    }
                     break;
-                
+
                 default:
-                {
-                    _go.transform.position = initPosition.position;
-                }
+                    {
+                        itemsArray[itemsArrayIndex].transform.position = initPosition.position;
+                    }
                     break;
             }
-            defaultRotation = _go.transform.rotation;
-            defaultHeight = _go.transform.position.y;
+            defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
+            defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
+
+            // change itemsArrayIndex
+            if (itemsArrayIndex == 0)
+            {
+                itemsArrayIndex = 1;
+            }
+            else
+            {
+                itemsArrayIndex = 0;
+            }
         }
     }
 
     private string RandomSelectItem()
     {
         var index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
-        return _itemsDictionary[(ItemsType)index];
+        selectedItem = _itemsDictionary[(ItemsType)index];
+        return selectedItem;
     }
-    
+
     private void MoveItems()
     {
-        if (_go.transform.position.x > destroyPosition.position.x)
+        for (int i = 0; i < 2; i++)
         {
-            _go.transform.position += new Vector3(-Time.deltaTime, 0, 0);
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
+            {
+                itemsArray[i].transform.position -= new Vector3((float)(0.73 * -Time.deltaTime), 0, 0);
+            }
+
+            // 检测物体标签是否为 "Dispose"
+            if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
+            {
+                // 执行物体进入 "Dispose" 状态的逻辑
+                Disposed(itemsArray[i]);
+            }
         }
     }
 
-    private void DestroyItem()
-    {
-        if (_go.transform.position.x < destroyPosition.position.x)
-        {
-            Destroy(_go.gameObject);
-            pauseTriggle.SetActive(true);
-        }
-        
-    }
 
-    private void SendItem()
+    private void Disposed(GameObject item)
     {
-        if (_go.transform.position.z < sendPosition.position.z)
-        {
-            Destroy(_go.gameObject);
-            pauseTriggle.SetActive(true);
-        }
-        
+        _isCanRotate = false; 
+       
+        float distance = 1.0f; // 移动距离
+
+        Vector3 backDirection = -Vector3.forward;
+
+        Vector3 targetPosition = item.transform.position + backDirection * distance;
+
+        item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
+
     }
 
     private void AddItemsDictionary()
     {
-        _itemsDictionary.Add(ItemsType.Apple,"apple");
-    //    _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
-        _itemsDictionary.Add(ItemsType.Banana,"banana");
-        _itemsDictionary.Add(ItemsType.Carrot,"carrot");
-        _itemsDictionary.Add(ItemsType.BadApple,"bad-apple");
-    }
-    
-    private void Start()
-    {
-        pauseTriggle=GameObject.FindObjectOfType<PauseTriggle>().gameObject;
-        Application.targetFrameRate = 120;
-        AddItemsDictionary();
+        _itemsDictionary.Add(ItemsType.Apple, "apple");
+        //    _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
+        _itemsDictionary.Add(ItemsType.Banana, "banana");
+        _itemsDictionary.Add(ItemsType.Carrot, "carrot");
+        _itemsDictionary.Add(ItemsType.BadApple, "bad-apple");
     }
 
-    public GameObject GetGo()
+    private void Start()
+    {
+        Application.targetFrameRate = 120;
+        AddItemsDictionary();
+        itemsArray = new GameObject[2];
+        itemsArrayIndex = 0;
+        for (int i = 0; i < 2; i++)
+        {
+            itemsArray[i] = null;
+        }
+    }
+
+    /** 
+     * can get currently selected item
+     * 
+     * @auther Yuichi Kawasaki
+     * @date   2023/06/06
+     **/
+    public GameObject GetSelectItem()
     {
         return _go;
     }
 
-    public bool GetIsPause()
-    {
-        return _isPause;    
-    }
 
-    private void Pause()
-    {
-        _isCanRotate = false;
-        _go.transform.position=new Vector3(_go.transform.position.x,defaultHeight,_go.transform.position.z);
-        _go.transform.rotation = defaultRotation;
-        PauseTriggle.Instance.isPause=false;
-         _currentIsPause=false;
-    }
 
-    
     private void Update()
     {
-        IsPause = PauseTriggle.Instance.isPause;
-        if(!IsPause)
+        if (itemsArray[0] == null && itemsArray[1] == null)
         {
+            _isCanRotate = false;
             InitializeItem(RandomSelectItem());
             MoveItems();
-            DestroyItem();
+            spendTime = 0; // 将时间重置为0
         }
-        if(IsPause)
+        else if (spendTime >= 5f)
+        {          
+            InitializeItem(RandomSelectItem());
+            MoveItems();
+            _isCanRotate = false;
+            spendTime = 0; // 将时间重置为0
+        }
+        else
         {
-            _isCanRotate = true;
+            spendTime += Time.deltaTime;
+            MoveItems();
         }
-        
     }
-    
+
+
 }

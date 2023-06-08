@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 1685791998241137}
   - component: {fileID: 4011060943927076564}
   - component: {fileID: 1175107332743860766}
+  - component: {fileID: 4895258516976508846}
   - component: {fileID: 2239514296337592283}
   - component: {fileID: -8808458877503493837}
   - component: {fileID: 628982612610213530}
   m_Layer: 0
   m_Name: bad-apple
-  m_TagString: Fruit
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +87,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4895258516976508846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814638698754225099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ab746f5a5f1154b89f8171267ae209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: 2
 --- !u!114 &2239514296337592283
 MonoBehaviour:
   m_ObjectHideFlags: 0
