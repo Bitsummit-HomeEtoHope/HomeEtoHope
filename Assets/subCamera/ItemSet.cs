@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class ItemSet : MonoBehaviour
 {
+    public criminal m_Criminal;
     //アイテムの設置位置
     //Location of items
     public Transform m_ItemSetPos;
@@ -24,16 +27,18 @@ public class ItemSet : MonoBehaviour
         public GameObject m_Items;
     };
     public List<ItemDataBase> itemDataBases = new List<ItemDataBase>();//アイテムのデータベース
-
+  
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+   
+      
         if (!m_Item)
         {
             //現在のアイテムが存在しない場合
@@ -43,6 +48,7 @@ public class ItemSet : MonoBehaviour
                 //アイテムのカメラオブジェクトを破棄する
                 //Destroy the item's camera object
                 Destroy(m_ItemCameraObject);
+                m_Criminal.ResetTextPosition();
             }
             //”Fruit”タグの付いたアイテムを探す
             //Search for items tagged "Fruit"
@@ -73,9 +79,13 @@ public class ItemSet : MonoBehaviour
                 }
             }
             else
+            {
+                m_Criminal.MoveTextLeft();
                 //アイテムのカメラオブジェクトの回転を更新する
                 //Update the rotation of the item's camera object
                 m_ItemCameraObject.transform.rotation = m_Item.transform.rotation;
+            }
         }
     }
+   
 }
