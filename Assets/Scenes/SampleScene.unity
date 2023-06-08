@@ -2269,6 +2269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0708318412cff4eb40d3df28e13be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 276201891}
 --- !u!1 &1280060721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cf2992ca9dc85408df6c420c96ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Criminal: {fileID: 1259879382}
   m_ItemSetPos: {fileID: 1613905499}
   m_Item: {fileID: 0}
   m_ItemCameraObject: {fileID: 0}
