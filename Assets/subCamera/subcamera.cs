@@ -13,10 +13,12 @@ public class subcamera : MonoBehaviour
     //k¬‚ÌƒJƒƒ‰
     //Camera at reduced size
     public Vector3 zoomOutScale;
+   
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
