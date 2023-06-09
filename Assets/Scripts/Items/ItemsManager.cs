@@ -43,30 +43,45 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Pumpkin,
         //---human---
         //   People
+
+        //---tool---good---
+        Burner,
+        Chainsaw,
+        Hammer,
+        Hoe,
+        Ice,
+        Kettle,
+        Knife,
+        Shovel,
+        Wrench
     }
 
     private void AddItemsDictionary()
     {
-        ////---test---
-        //_itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
-        //_itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
-        //_itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
-
-        //----------------food----good-----------------------
-        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/bad/apple");
-        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
-        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
-
-        //----------------food----bad------------------------
-        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        //---food---good---
         _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
         _itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
         _itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
         _itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
         _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
 
-        //----------------human----good---------------------
+        //---food---bad---
+        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
+
+        //---human---good---
         //_itemsDictionary.Add(ItemsType.People, "3D/human/people");
+
+        //---tool---good---
+        _itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
+        _itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
+        _itemsDictionary.Add(ItemsType.Hammer, "3D/tool/good/hammer");
+        _itemsDictionary.Add(ItemsType.Hoe, "3D/tool/good/hoe");
+        _itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceaxe");
+        _itemsDictionary.Add(ItemsType.Kettle, "3D/tool/good/kettle");
+        _itemsDictionary.Add(ItemsType.Knife, "3D/tool/good/nife");
+        _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
+        _itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
     }
 
     private string RandomSelectItem()
@@ -82,14 +97,19 @@ public class ItemsManager : SingletonManager<ItemsManager>
         if (itemsArray[itemsArrayIndex] == null)
         {
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-            itemsArray[itemsArrayIndex].transform.localScale = itemScale;
 
-            itemsArray[itemsArrayIndex].transform.localScale *= 3;
+            // 获取物体当前的缩放值
+            Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
+
+            // 根据物体当前的缩放值调整缩放倍率
+            itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+
             Debug.Log(itemsArray[itemsArrayIndex]);
 
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
+
 
             // 调整道具在Z轴上的位置
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
