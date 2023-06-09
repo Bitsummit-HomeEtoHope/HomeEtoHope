@@ -7,6 +7,9 @@ public class DisposeButtonScript : MonoBehaviour
 
     private GameObject clickedObject; // 被点击的物体
 
+    [SerializeField]
+    private float moveSpeed = 5f; // 直线移动的速度
+
     void Awake()
     {
         _instance = this;
@@ -26,6 +29,10 @@ public class DisposeButtonScript : MonoBehaviour
 
             // 将物体的标签更改为 "Dispose"
             clickedObject.tag = "Dispose";
+
+            // 在指定速度下进行直线移动
+            Vector3 newPosition = clickedObject.transform.position + (Vector3.up * moveSpeed * Time.deltaTime);
+            clickedObject.transform.position = newPosition;
         }
     }
 }
