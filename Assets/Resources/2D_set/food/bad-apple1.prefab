@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4864197043384060450}
   - component: {fileID: 4789161244925183140}
   - component: {fileID: 4805167199624943712}
+  - component: {fileID: 6873913442803759377}
   m_Layer: 0
-  m_Name: bad_apple
+  m_Name: bad-apple1
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,6 +98,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyPoint: {fileID: 4864197043384060450}
-  offset: {x: 0, y: 1, z: 0}
+  yOffset: 1
   moveDuration: 1
+--- !u!65 &6873913442803759377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306763078347753011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.92, y: 2.03, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

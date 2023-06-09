@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5218058357519102098}
   - component: {fileID: 5705417649540422238}
   - component: {fileID: -5265808032933526579}
+  - component: {fileID: 5549696761040119129}
   m_Layer: 0
   m_Name: apple
   m_TagString: Food
@@ -97,6 +98,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyPoint: {fileID: 4864197043384060450, guid: 1b87acde3954a914aaa6f2eb4c59bf49, type: 3}
-  offset: {x: 0, y: 1, z: 0}
+  yOffset: 1
   moveDuration: 1
+--- !u!65 &5549696761040119129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131200077594832659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.92, y: 2.03, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

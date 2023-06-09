@@ -27,51 +27,71 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private const string DisposeTag = "Dispose";
 
+    public Vector3 itemScale = new Vector3(3f, 3f, 3f);
 
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
+        //---bad---
+        BadApple1,
+        BadApple2,
+        //---good---
         Apple,
-        // AppleCore,
-        Banana,
-        Carrot,
-        BadApple,
+        Eggplant,
+        GreenPepper,
+        Orange,
+        Pumpkin
     }
+
+    private void AddItemsDictionary()
+    {
+        ////---test---
+        //_itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
+        //_itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
+        //_itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+
+        //----------------food----good-----------------------
+        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/bad/apple");
+        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
+        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
+
+        //----------------food----bad------------------------
+        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        _itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
+        _itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
+        _itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
+        _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
+
+    }
+
+    private string RandomSelectItem()
+    {
+        var index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
+        selectedItem = _itemsDictionary[(ItemsType)index];
+        return selectedItem;
+    }
+
 
     private void InitializeItem(string type)
     {
         if (itemsArray[itemsArrayIndex] == null)
         {
-
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+            itemsArray[itemsArrayIndex].transform.localScale = itemScale;
+
             itemsArray[itemsArrayIndex].transform.localScale *= 3;
             Debug.Log(itemsArray[itemsArrayIndex]);
 
-            switch (type)
-            {
-                case "carrot":
-                    {
-                        itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(90, 0, 0);
-                        itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0, 0.2f, 0);
-                    }
-                    break;
-
-                case "banana":
-                    {
-
-                        itemsArray[itemsArrayIndex].transform.position = initPosition.position + new Vector3(0, 0.2f, 0);
-                    }
-                    break;
-
-                default:
-                    {
-                        itemsArray[itemsArrayIndex].transform.position = initPosition.position;
-                    }
-                    break;
-            }
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
+
+            // 调整道具在Z轴上的位置
+            itemsArray[itemsArrayIndex].transform.position = initPosition.position;
+
+            // 设置随机的旋转角度
+            itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 
             // change itemsArrayIndex
             if (itemsArrayIndex == 0)
@@ -85,12 +105,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-    private string RandomSelectItem()
-    {
-        var index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
-        selectedItem = _itemsDictionary[(ItemsType)index];
-        return selectedItem;
-    }
+
+
 
     private void MoveItems()
     {
@@ -113,8 +129,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Disposed(GameObject item)
     {
-        _isCanRotate = false; 
-       
+        _isCanRotate = false;
+
         float distance = 1.0f; // 移动距离
 
         Vector3 backDirection = -Vector3.forward;
@@ -125,14 +141,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     }
 
-    private void AddItemsDictionary()
-    {
-        _itemsDictionary.Add(ItemsType.Apple, "apple");
-        //    _itemsDictionary.Add(ItemsType.AppleCore,"apple-core");
-        _itemsDictionary.Add(ItemsType.Banana, "banana");
-        _itemsDictionary.Add(ItemsType.Carrot, "carrot");
-        _itemsDictionary.Add(ItemsType.BadApple, "bad-apple");
-    }
 
     private void Start()
     {
@@ -146,9 +154,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-    /** 
+    /**
      * can get currently selected item
-     * 
+     *
      * @auther Yuichi Kawasaki
      * @date   2023/06/06
      **/
@@ -169,7 +177,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
             spendTime = 0; // 将时间重置为0
         }
         else if (spendTime >= 5f)
-        {          
+        {
             InitializeItem(RandomSelectItem());
             MoveItems();
             _isCanRotate = false;
@@ -181,6 +189,4 @@ public class ItemsManager : SingletonManager<ItemsManager>
             MoveItems();
         }
     }
-
-
 }

@@ -30,4 +30,7 @@ public class CodeReader : MonoBehaviour
 
         Destroy(other.gameObject); // 删除碰撞到的物体
     }
+
+
+
 }

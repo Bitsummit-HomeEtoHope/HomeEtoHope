@@ -4,6 +4,13 @@ public class CodeHolder : MonoBehaviour
 {
     public string code; // 存储物体的代码
 
+    private void Start()
+    {
+        // 在物体生成时将其名称添加到 code 变量中，并删除 (Clone)
+        code = gameObject.name.Replace("(Clone)", "");
+    //    Debug.Log("Object Name: " + code);
+    }
+
     public string GetCode()
     {
         return code;
