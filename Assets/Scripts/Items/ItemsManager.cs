@@ -42,7 +42,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Orange,
         Pumpkin,
         //---human---
-        People
+        //   People
     }
 
     private void AddItemsDictionary()
@@ -66,7 +66,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
 
         //----------------human----good---------------------
-        _itemsDictionary.Add(ItemsType.People, "3D/human/people");
+        //_itemsDictionary.Add(ItemsType.People, "3D/human/people");
     }
 
     private string RandomSelectItem()
