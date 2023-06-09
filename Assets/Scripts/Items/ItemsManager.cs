@@ -1,14 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ItemsManager : SingletonManager<ItemsManager>
 {
+    [SerializeField]
+    private float spawnInterval = 5f;
+    [SerializeField]
+    private float moveTime = 6f;
+
     public bool _isCanRotate = false;
     public Transform initPosition;
     public Transform disposePosition;
@@ -16,7 +16,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private string selectedItem;
 
     private float spendTime;
-
 
     private float defaultHeight;
     private float pauseHeight;
@@ -91,7 +90,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         return selectedItem;
     }
 
-
     private void InitializeItem(string type)
     {
         if (itemsArray[itemsArrayIndex] == null)
@@ -109,7 +107,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
-
 
             // 调整道具在Z轴上的位置
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
@@ -129,22 +126,24 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-
-
-
     private void MoveItems()
     {
         for (int i = 0; i < 2; i++)
         {
             if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
             {
-                itemsArray[i].transform.position -= new Vector3((float)(0.73 * -Time.deltaTime), 0, 0);
+                float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
+                itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
             }
 
-            // 检测物体标签是否为 "Dispose"
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != 6)
+            {
+                itemsArray[i].layer = 7; // 将物体的层级更改为 User Layer 7（索引为 6）
+                Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
+            }
+
             if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
             {
-                // 执行物体进入 "Dispose" 状态的逻辑
                 Disposed(itemsArray[i]);
             }
         }
@@ -156,15 +155,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _isCanRotate = false;
 
         float distance = 1.0f; // 移动距离
-
         Vector3 backDirection = -Vector3.forward;
-
         Vector3 targetPosition = item.transform.position + backDirection * distance;
 
         item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
-
     }
-
 
     private void Start()
     {
@@ -189,8 +184,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         return _go;
     }
 
-
-
     private void Update()
     {
         if (itemsArray[0] == null && itemsArray[1] == null)
@@ -200,7 +193,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
             MoveItems();
             spendTime = 0; // 将时间重置为0
         }
-        else if (spendTime >= 5f)
+        else if (spendTime >= spawnInterval)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
