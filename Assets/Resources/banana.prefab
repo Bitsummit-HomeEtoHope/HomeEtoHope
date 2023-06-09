@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4652719131505646}
   - component: {fileID: 33859380252223502}
   - component: {fileID: 23845812731255510}
+  - component: {fileID: -5271070439787570388}
   - component: {fileID: 9006558105952167212}
   - component: {fileID: 1788628861925020224}
   - component: {fileID: 3896956516758137412}
   m_Layer: 0
   m_Name: banana
-  m_TagString: Fruit
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5271070439787570388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872412180362304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ab746f5a5f1154b89f8171267ae209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: 3
 --- !u!54 &9006558105952167212
 Rigidbody:
   m_ObjectHideFlags: 0

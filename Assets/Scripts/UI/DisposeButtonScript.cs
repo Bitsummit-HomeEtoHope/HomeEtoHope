@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,16 @@ using UnityEngine;
  * @auther Yuichi Kawasaki
  * @date   2023/06/04
  **/
+=======
+using UnityEngine;
+
+>>>>>>> dev
 public class DisposeButtonScript : MonoBehaviour
 {
     private static DisposeButtonScript _instance;
     public static DisposeButtonScript Instance => _instance;
 
+<<<<<<< HEAD
     private GameObject itemsManager;
     private GameObject items = null;
     private bool _isDispose = false;
@@ -23,11 +29,16 @@ public class DisposeButtonScript : MonoBehaviour
      * @auther Yuichi Kawasaki
      * @date   2023/06/04
      **/
+=======
+    private GameObject clickedObject; // 被点击的物体
+
+>>>>>>> dev
     void Awake()
     {
         _instance = this;
     }
 
+<<<<<<< HEAD
     /** 
      * The Dispose button is clicked
      * Make it possible to change the direction of movement of items
@@ -87,4 +98,22 @@ public class DisposeButtonScript : MonoBehaviour
         }
 
     }
+=======
+    public void ReceiveClickedObject(GameObject clickedObject)
+    {
+        this.clickedObject = clickedObject;
+    }
+
+    public void OnClick()
+    {
+        if (clickedObject != null)
+        {
+            Debug.Log("Clicked Object: " + clickedObject.name);
+            // 在这里执行按钮作用于指定物体的逻辑
+
+            // 将物体的标签更改为 "Dispose"
+            clickedObject.tag = "Dispose";
+        }
+    }
+>>>>>>> dev
 }
