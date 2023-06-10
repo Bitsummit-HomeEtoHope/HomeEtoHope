@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5841197571132783046}
   - component: {fileID: -8179147438833636082}
   - component: {fileID: 48190575684879769}
+  - component: {fileID: -3816622403144949690}
   m_Layer: 8
   m_Name: human
   m_TagString: Human
@@ -99,7 +100,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5841197571132783046
 Rigidbody:
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: 
+  tag: 
 --- !u!114 &48190575684879769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,20 @@ MonoBehaviour:
   xSpeed: 1.5
   ySpeed: 1.5
   rotateScale: 1
+--- !u!64 &-3816622403144949690
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521196282182590093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8839368762345780380, guid: ca497fd02ea0f224e81afa4cd6a9a828, type: 3}
 --- !u!1001 &5457737202991045801
 PrefabInstance:
   m_ObjectHideFlags: 0
