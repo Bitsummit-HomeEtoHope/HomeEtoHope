@@ -21,7 +21,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private float defaultHeight;
     private float pauseHeight;
     private Quaternion defaultRotation;
-    private GameObject _go;
     private GameObject[] itemsArray;
     private int itemsArrayIndex;
 
@@ -91,10 +90,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
 
-            // µ÷ÕûµÀ¾ßÔÚZÖáÉÏµÄÎ»ÖÃ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½Ïµï¿½Î»ï¿½ï¿½
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
 
-            // ÉèÖÃËæ»úµÄÐý×ª½Ç¶È
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½Ç¶ï¿½
             itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 
             // change itemsArrayIndex
@@ -119,10 +118,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 itemsArray[i].transform.position -= new Vector3((float)(0.52 * -Time.deltaTime), 0, 0);
             }
 
-            // ¼ì²âÎïÌå±êÇ©ÊÇ·ñÎª "Dispose"
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç©ï¿½Ç·ï¿½Îª "Dispose"
             if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
             {
-                // Ö´ÐÐÎïÌå½øÈë "Dispose" ×´Ì¬µÄÂß¼­
+                // Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "Dispose" ×´Ì¬ï¿½ï¿½ï¿½ß¼ï¿½
                 Disposed(itemsArray[i]);
             }
         }
@@ -133,7 +132,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         _isCanRotate = false;
 
-        float distance = 1.0f; // ÒÆ¶¯¾àÀë
+        float distance = 1.0f; // ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
 
         Vector3 backDirection = -Vector3.forward;
 
@@ -156,19 +155,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-    /**
-     * can get currently selected item
-     *
-     * @auther Yuichi Kawasaki
-     * @date   2023/06/06
-     **/
-    public GameObject GetSelectItem()
-    {
-        return _go;
-    }
-
-
-
     private void Update()
     {
         if (itemsArray[0] == null && itemsArray[1] == null)
@@ -176,14 +162,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
             _isCanRotate = false;
             InitializeItem(RandomSelectItem());
             MoveItems();
-            spendTime = 0; // ½«Ê±¼äÖØÖÃÎª0
+            spendTime = 0; // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
         }
         else if (spendTime >= 5f)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
             _isCanRotate = false;
-            spendTime = 0; // ½«Ê±¼äÖØÖÃÎª0
+            spendTime = 0; // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
         }
         else
         {
