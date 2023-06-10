@@ -12,10 +12,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
     public bool _isCanRotate = false;
     public Transform initPosition;
     public Transform disposePosition;
+    public LevelDataCurrent levelDataCurrent;
 
     private string selectedItem;
 
-    private float spendTime;
+    private float spendTime;//The time spent on the current item
 
 
     private float defaultHeight;
@@ -148,6 +149,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Start()
     {
+        levelDataCurrent=FindObjectOfType<LevelDataCurrent>();
         Application.targetFrameRate = 120;
         AddItemsDictionary();
         itemsArray = new GameObject[2];
@@ -180,7 +182,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
             MoveItems();
             spendTime = 0; // 将时间重置为0
         }
-        else if (spendTime >= 5f)
+        else if (spendTime >= levelDataCurrent._levelTime)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
