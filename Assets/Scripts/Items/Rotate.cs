@@ -56,7 +56,7 @@ public class Rotate : MonoBehaviour
     {
         canRotate = false;
         string objectTag = GetTag();
-        if (objectTag == "Food")
+        if (objectTag == "Human")
         {
             ShowList showList = FindObjectOfType<ShowList>();
             if (showList != null)
