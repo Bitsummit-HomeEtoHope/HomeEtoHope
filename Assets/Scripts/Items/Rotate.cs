@@ -11,14 +11,8 @@ public class Rotate : MonoBehaviour
     private float xRotate;
     private float yRotate;
     private Vector3 initialMousePosition;
-    private Quaternion previousRotation;
-    
-    private bool canRotate = false;
 
-    private void Start()
-    {
-        previousRotation = transform.rotation;
-    }
+    private bool canRotate = false;
 
     private void Update()
     {
@@ -38,47 +32,24 @@ public class Rotate : MonoBehaviour
                 transform.Rotate(Vector3.right, -xRotate, Space.World);
                 transform.Rotate(Vector3.up, yRotate, Space.World);
                 initialMousePosition = Input.mousePosition;
-            }
-            if (transform.rotation != previousRotation)
-            {
-                // play sound
-                GetComponent<AudioSource>().Play();
-            }
 
-            previousRotation = transform.rotation;
+               
+            }
         }
     }
 
     private void OnMouseDown()
     {
         canRotate = true;
-        string objectTag = GetTag();
-        if (objectTag == "Food")
-        {
-            ShowList showList = FindObjectOfType<ShowList>();
-          
-                showList.OpenList();
-            
-        }
+
     }
 
     private void OnMouseUp()
     {
         canRotate = false;
-        string objectTag = GetTag();
-        if (objectTag == "Human")
-        {
-            ShowList showList = FindObjectOfType<ShowList>();
-           
-                showList.OffList();
-            
-        }
         ItemsManager.Instance._isCanRotate = false;
     }
 
 
-    private string GetTag()
-    {
-        return gameObject.tag;
-    }
+  
 }

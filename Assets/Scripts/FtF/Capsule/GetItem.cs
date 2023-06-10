@@ -109,7 +109,6 @@ public class GetItem : MonoBehaviour
 
             // 保存预制件的Z轴旋转值
             instance.transform.localRotation = Quaternion.Euler(instance.transform.localRotation.eulerAngles.x, instance.transform.localRotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
-            GetComponent<AudioSource>().Play();
         }
     }
 }

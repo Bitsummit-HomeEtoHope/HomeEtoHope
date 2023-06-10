@@ -64,6 +64,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
 
 
+
     }
 
     private void AddItemsDictionary()
@@ -98,6 +99,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
         _itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
         _itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
+
 
 
 
@@ -150,33 +152,34 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-    private void MoveItems()
+   private void MoveItems()
+{
+    for (int i = 0; i < 2; i++)
     {
-        for (int i = 0; i < 2; i++)
+        if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
         {
-            if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
-            {
-                float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
-                itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
-            }
+            float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
+            itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        }
 
-            if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != 6)
-            {
-                itemsArray[i].layer = 7; // 将物体的层级更改为 User Layer 7（索引为 6）
-                Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
-            }
+        if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != LayerMask.NameToLayer("Send"))
+        {
+            itemsArray[i].layer = LayerMask.NameToLayer("Send"); // 更改物体的图层为"Send"
+            //itemsArray[i].tag = DisposeTag; // 将物体的标签更改为"DisposeTag"
+            Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
+        }
 
-            if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
-            {
-                Disposed(itemsArray[i]);
-            }
+        if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
+        {
+            Disposed(itemsArray[i]);
         }
     }
+}
+
 
 
     private void Disposed(GameObject item)
     {
-        _isCanRotate = false;
 
         float distance = 1.0f; // 移动距离
         Vector3 backDirection = -Vector3.forward;

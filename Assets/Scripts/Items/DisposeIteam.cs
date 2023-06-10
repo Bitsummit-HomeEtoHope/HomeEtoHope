@@ -6,8 +6,6 @@ public class DisposeIteam : MonoBehaviour
 {
 private void OnTriggerEnter(Collider other)
     {     
-            // play sound
-            GetComponent<AudioSource>().Play();
             Destroy(other.gameObject); // 删除碰撞到的物体
     
           //  Debug.Log("goodby");

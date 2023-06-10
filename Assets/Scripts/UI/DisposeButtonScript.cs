@@ -22,8 +22,6 @@ public class DisposeButtonScript : MonoBehaviour
 
     public void OnClick()
     {
-        // play sound
-        GetComponent<AudioSource>().Play();
         if (clickedObject != null)
         {
             Debug.Log("Clicked Object: " + clickedObject.name);
