@@ -1125,7 +1125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &375047245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1205,12 +1205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1bf9c4585740e408541bd18d8824ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  maxDistance: 2
-  maxMoveX: 1
-  maxMoveY: 0.5
-  moveFrequency: 1
-  targetObject: {fileID: 819382932}
 --- !u!1 &404642963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c48d41e9e2f94424a74c20c5e42047a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
 --- !u!114 &614488884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1859,8 +1853,8 @@ MonoBehaviour:
   humanPoint: {fileID: 1038502386}
   orderInLayer: 2
   foodScale: {x: 0.5, y: 0.5, z: 0.5}
-  foodOffset: {x: 0, y: -0.9753, z: 0}
-  toolScale: {x: 0.15, y: 0.15, z: 0.15}
+  foodOffset: {x: 0, y: 0, z: 0}
+  toolScale: {x: 1, y: 1, z: 1}
   toolOffset: {x: 0, y: 0, z: 0}
   humanScale: {x: 0.8, y: 0.8, z: 0.8}
   humanOffset: {x: 0, y: 0, z: 0}
@@ -3435,7 +3429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2058921967
 Transform:
   m_ObjectHideFlags: 0
