@@ -599,7 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 161257194}
   m_Layer: 0
-  m_Name: End Point
+  m_Name: Start Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2874,7 +2874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835154003}
   m_Layer: 0
-  m_Name: Start Point
+  m_Name: End Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
