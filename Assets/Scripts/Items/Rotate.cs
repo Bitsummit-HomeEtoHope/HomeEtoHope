@@ -29,10 +29,12 @@ public class Rotate : MonoBehaviour
                 xRotate = -delta.y * ySpeed * rotateScale;
                 yRotate = -delta.x * xSpeed * rotateScale;
 
+                // play sound
+                GetComponent<AudioSource>().Play();
+
                 transform.Rotate(Vector3.right, -xRotate, Space.World);
                 transform.Rotate(Vector3.up, yRotate, Space.World);
                 initialMousePosition = Input.mousePosition;
-
                
             }
         }
