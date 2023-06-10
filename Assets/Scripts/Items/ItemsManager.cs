@@ -176,7 +176,5 @@ public class ItemsManager : SingletonManager<ItemsManager>
             spendTime += Time.deltaTime;
             MoveItems();
         }
-        Debug.Log("Tiem : "+Time.time);
-        Debug.Log("X position : "+itemsArray[0].transform.position.x);
     }
 }
