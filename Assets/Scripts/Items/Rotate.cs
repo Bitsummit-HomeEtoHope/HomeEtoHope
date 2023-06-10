@@ -11,8 +11,14 @@ public class Rotate : MonoBehaviour
     private float xRotate;
     private float yRotate;
     private Vector3 initialMousePosition;
-
+    private Quaternion previousRotation;
+    
     private bool canRotate = false;
+
+    private void Start()
+    {
+        previousRotation = transform.rotation;
+    }
 
     private void Update()
     {
@@ -29,14 +35,17 @@ public class Rotate : MonoBehaviour
                 xRotate = -delta.y * ySpeed * rotateScale;
                 yRotate = -delta.x * xSpeed * rotateScale;
 
-                // play sound
-                GetComponent<AudioSource>().Play();
-
                 transform.Rotate(Vector3.right, -xRotate, Space.World);
                 transform.Rotate(Vector3.up, yRotate, Space.World);
                 initialMousePosition = Input.mousePosition;
-               
             }
+            if (transform.rotation != previousRotation)
+            {
+                // オブジェクトが回転した瞬間に効果音を再生
+                GetComponent<AudioSource>().Play();
+            }
+
+            previousRotation = transform.rotation;
         }
     }
 
