@@ -34,6 +34,12 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //---bad---
         BadApple1,
         BadApple2,
+        BadAppleHi,
+        BadAppleQaq,
+        EggplantQaq,
+        GreenPepperQaq,
+        OrangeQaq,
+        PumpkinQaq,
         //---good---
         Apple,
         Eggplant,
@@ -61,10 +67,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Human3,
         Human4,
         Human5
-
-
-
-
     }
 
     private void AddItemsDictionary()
@@ -72,7 +74,12 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //---food---bad---
         _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
         _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
-
+        _itemsDictionary.Add(ItemsType.BadAppleHi, "3D/food/bad/applehi");
+        _itemsDictionary.Add(ItemsType.BadAppleQaq, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.EggplantQaq, "3D/food/bad/eggplantqaq");
+        _itemsDictionary.Add(ItemsType.GreenPepperQaq, "3D/food/bad/greenpepperqaq");
+        _itemsDictionary.Add(ItemsType.OrangeQaq, "3D/food/bad/orangeqaq");
+        _itemsDictionary.Add(ItemsType.PumpkinQaq, "3D/food/bad/pumpkinqaq");
 
         //---food---good---
         _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
@@ -92,22 +99,15 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
         _itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
 
-        //---human-- - good-- -
+        //---human---good---
         _itemsDictionary.Add(ItemsType.Human, "3D/human/human");
         _itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
         _itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
         _itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
         _itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
         _itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
-
-
-
-
-
-
-
-
     }
+
 
     private string RandomSelectItem()
     {

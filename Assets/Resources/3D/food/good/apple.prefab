@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: 
+  tag: 
 --- !u!54 &-726737050232334770
 Rigidbody:
   m_ObjectHideFlags: 0

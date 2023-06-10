@@ -1959,7 +1959,6 @@ GameObject:
   m_Component:
   - component: {fileID: 826202910}
   - component: {fileID: 826202911}
-  - component: {fileID: 826202912}
   m_Layer: 0
   m_Name: ListManager
   m_TagString: Untagged
@@ -1975,7 +1974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826202909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: 0}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
   m_LocalScale: {x: 3.0146377, y: 1.4841771, z: 0.15107399}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1997,19 +1996,6 @@ MonoBehaviour:
   listTransform: {fileID: 1387144475}
   moveDuration: 0.3
   moveFirst: 120
---- !u!65 &826202912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826202909}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &826804961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6114363762573554963, guid: 6a13ebdc3479ea54892194db61d2044d, type: 3}
@@ -2841,7 +2827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -5.74, y: 0, z: -60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -283, y: -400.28}
+  m_AnchoredPosition: {x: -259.69, y: -436.2}
   m_SizeDelta: {x: 242.8752, y: 343.7495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387144476
@@ -2895,8 +2881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listTransform: {fileID: 1387144475}
-  moveDuration: 0.5
-  moveAmount: 230
+  moveDuration: 0.3
+  moveAmount: 450
   rotationAmount: 0
 --- !u!4 &1619142376 stripped
 Transform:
