@@ -41,7 +41,7 @@ public class Rotate : MonoBehaviour
             }
             if (transform.rotation != previousRotation)
             {
-                // オブジェクトが回転した瞬間に効果音を再生
+                // play sound
                 GetComponent<AudioSource>().Play();
             }
 

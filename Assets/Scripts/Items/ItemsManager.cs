@@ -31,28 +31,28 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
-        ////---bad---
-        //BadApple1,
-        //BadApple2,
-        ////---good---
-        //Apple,
-        //Eggplant,
-        //GreenPepper,
-        //Orange,
-        //Pumpkin,
-        ////---human---
-        ////   People
+        //---bad---
+        BadApple1,
+        BadApple2,
+        //---good---
+        Apple,
+        Eggplant,
+        GreenPepper,
+        Orange,
+        Pumpkin,
+        //---human---
+        //   People
 
-        ////---tool---good---
-        //Burner,
-        //Chainsaw,
-        //Hammer,
-        //Hoe,
-        //Ice,
-        //Kettle,
-        //Knife,
-        //Shovel,
-        //Wrench,
+        //---tool---good---
+        Burner,
+        Chainsaw,
+        Hammer,
+        Hoe,
+        Ice,
+        Kettle,
+        Knife,
+        Shovel,
+        Wrench,
 
         //---human---
         Human,
@@ -68,30 +68,30 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void AddItemsDictionary()
     {
-        ////---food---bad---
-        //_itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
-        //_itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
+        //---food---bad---
+        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
 
 
-        ////---food---good---
-        //_itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
-        //_itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
-        //_itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
-        //_itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
-        //_itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
+        //---food---good---
+        _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        _itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
+        _itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
+        _itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
+        _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
 
-        ////---tool---good---
-        //_itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
-        //_itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
-        //_itemsDictionary.Add(ItemsType.Hammer, "3D/tool/good/hammer");
-        //_itemsDictionary.Add(ItemsType.Hoe, "3D/tool/good/hoe");
-        //_itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceaxe");
-        //_itemsDictionary.Add(ItemsType.Kettle, "3D/tool/good/kettle");
-        //_itemsDictionary.Add(ItemsType.Knife, "3D/tool/good/nife");
-        //_itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
-        //_itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
+        //---tool---good---
+        _itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
+        _itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
+        _itemsDictionary.Add(ItemsType.Hammer, "3D/tool/good/hammer");
+        _itemsDictionary.Add(ItemsType.Hoe, "3D/tool/good/hoe");
+        _itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceaxe");
+        _itemsDictionary.Add(ItemsType.Kettle, "3D/tool/good/kettle");
+        _itemsDictionary.Add(ItemsType.Knife, "3D/tool/good/nife");
+        _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
+        _itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
 
-        ////---human-- - good-- -
+        //---human-- - good-- -
         _itemsDictionary.Add(ItemsType.Human, "3D/human/human");
         _itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
         _itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
