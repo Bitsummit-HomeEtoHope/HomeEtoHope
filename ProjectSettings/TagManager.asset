@@ -4,21 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fruit
   - Food
   - Dispose
   - Human
   - Tool
+  - Send
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - 
   - Water
   - UI
   - Food
-  - Environment
-  - Player
+  - Send
+  - Human
   - 
   - 
   - 
@@ -45,13 +45,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 246044257
-    locked: 0
-  - name: Environment
-    uniqueID: 2691729771
-    locked: 0
-  - name: Player
-    uniqueID: 2003285747
     locked: 0

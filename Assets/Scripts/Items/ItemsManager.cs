@@ -1,23 +1,21 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ItemsManager : SingletonManager<ItemsManager>
 {
+    [SerializeField]
+    private float spawnInterval = 5f;
+    [SerializeField]
+    private float moveTime = 6f;
+
     public bool _isCanRotate = false;
     public Transform initPosition;
     public Transform disposePosition;
-    public LevelDataCurrent levelDataCurrent;
 
     private string selectedItem;
 
-    private float spendTime;//The time spent on the current item
-
+    private float spendTime;
 
     private float defaultHeight;
     private float pauseHeight;
@@ -36,6 +34,12 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //---bad---
         BadApple1,
         BadApple2,
+        BadAppleHi,
+        BadAppleQaq,
+        EggplantQaq,
+        GreenPepperQaq,
+        OrangeQaq,
+        PumpkinQaq,
         //---good---
         Apple,
         Eggplant,
@@ -43,32 +47,67 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Orange,
         Pumpkin,
         //---human---
-   //     People
+        //   People
+
+        //---tool---good---
+        Burner,
+        Chainsaw,
+        Hammer,
+        Hoe,
+        Ice,
+        Kettle,
+        Knife,
+        Shovel,
+        Wrench,
+
+        //---human---
+        Human,
+        Human1,
+        Human2,
+        Human3,
+        Human4,
+        Human5
     }
 
     private void AddItemsDictionary()
     {
-        ////---test---
-        //_itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
-        //_itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
-        //_itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        //---food---bad---
+        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
+        _itemsDictionary.Add(ItemsType.BadAppleHi, "3D/food/bad/applehi");
+        _itemsDictionary.Add(ItemsType.BadAppleQaq, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.EggplantQaq, "3D/food/bad/eggplantqaq");
+        _itemsDictionary.Add(ItemsType.GreenPepperQaq, "3D/food/bad/greenpepperqaq");
+        _itemsDictionary.Add(ItemsType.OrangeQaq, "3D/food/bad/orangeqaq");
+        _itemsDictionary.Add(ItemsType.PumpkinQaq, "3D/food/bad/pumpkinqaq");
 
-        //----------------food----good-----------------------
-        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/bad/apple");
-        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/bad-apple1");
-        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/bad-apple2");
-
-        //----------------food----bad------------------------
-        // _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
+        //---food---good---
         _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
         _itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
         _itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
         _itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
         _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
 
-        //----------------human----good---------------------
-     //   _itemsDictionary.Add(ItemsType.People, "3D/human/people");
+        //---tool---good---
+        _itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
+        _itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
+        _itemsDictionary.Add(ItemsType.Hammer, "3D/tool/good/hammer");
+        _itemsDictionary.Add(ItemsType.Hoe, "3D/tool/good/hoe");
+        _itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceaxe");
+        _itemsDictionary.Add(ItemsType.Kettle, "3D/tool/good/kettle");
+        _itemsDictionary.Add(ItemsType.Knife, "3D/tool/good/nife");
+        _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
+        _itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
+
+        //---human---good---
+        _itemsDictionary.Add(ItemsType.Human, "3D/human/human");
+        _itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
+        _itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
+        _itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
+        _itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
+        _itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
     }
+
 
     private string RandomSelectItem()
     {
@@ -77,15 +116,18 @@ public class ItemsManager : SingletonManager<ItemsManager>
         return selectedItem;
     }
 
-
     private void InitializeItem(string type)
     {
         if (itemsArray[itemsArrayIndex] == null)
         {
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-            itemsArray[itemsArrayIndex].transform.localScale = itemScale;
 
-            itemsArray[itemsArrayIndex].transform.localScale *= 3;
+            // 获取物体当前的缩放值
+            Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
+
+            // 根据物体当前的缩放值调整缩放倍率
+            itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+
             Debug.Log(itemsArray[itemsArrayIndex]);
 
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
@@ -110,46 +152,44 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-
-
-
-    private void MoveItems()
+   private void MoveItems()
+{
+    for (int i = 0; i < 2; i++)
     {
-        for (int i = 0; i < 2; i++)
+        if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
         {
-            if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
-            {
-                itemsArray[i].transform.position -= new Vector3((float)(0.73 * -Time.deltaTime), 0, 0);
-            }
+            float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
+            itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        }
 
-            // 检测物体标签是否为 "Dispose"
-            if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
-            {
-                // 执行物体进入 "Dispose" 状态的逻辑
-                Disposed(itemsArray[i]);
-            }
+        if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != LayerMask.NameToLayer("Send"))
+        {
+            itemsArray[i].layer = LayerMask.NameToLayer("Send"); // 更改物体的图层为"Send"
+            //itemsArray[i].tag = DisposeTag; // 将物体的标签更改为"DisposeTag"
+            Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
+        }
+
+        if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
+        {
+            Disposed(itemsArray[i]);
         }
     }
+}
+
 
 
     private void Disposed(GameObject item)
     {
-        _isCanRotate = false;
 
         float distance = 1.0f; // 移动距离
-
         Vector3 backDirection = -Vector3.forward;
-
         Vector3 targetPosition = item.transform.position + backDirection * distance;
 
         item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
-
     }
-
 
     private void Start()
     {
-        levelDataCurrent=FindObjectOfType<LevelDataCurrent>();
         Application.targetFrameRate = 120;
         AddItemsDictionary();
         itemsArray = new GameObject[2];
@@ -171,8 +211,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         return _go;
     }
 
-
-
     private void Update()
     {
         if (itemsArray[0] == null && itemsArray[1] == null)
@@ -182,7 +220,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
             MoveItems();
             spendTime = 0; // 将时间重置为0
         }
-        else if (spendTime >= levelDataCurrent._levelTime)
+        else if (spendTime >= spawnInterval)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
