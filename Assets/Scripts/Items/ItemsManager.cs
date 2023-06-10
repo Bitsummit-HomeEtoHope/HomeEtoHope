@@ -116,7 +116,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         {
             if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
             {
-                itemsArray[i].transform.position -= new Vector3((float)(0.48 * -Time.deltaTime), 0, 0);
+                itemsArray[i].transform.position -= new Vector3((float)(0.52 * -Time.deltaTime), 0, 0);
             }
 
             // 检测物体标签是否为 "Dispose"
