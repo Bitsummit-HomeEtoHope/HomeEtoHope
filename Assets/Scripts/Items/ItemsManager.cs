@@ -90,10 +90,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
 
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½Ïµï¿½Î»ï¿½ï¿½
+            // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7Z„1¤7„1¤7„1¤70Ð3„1¤7¦Ë„1¤7„1¤7
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
 
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½Ç¶ï¿½
+            // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70û8„1¤70¢8„1¤7
             itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 
             // change itemsArrayIndex
@@ -118,10 +118,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 itemsArray[i].transform.position -= new Vector3((float)(0.52 * -Time.deltaTime), 0, 0);
             }
 
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç©ï¿½Ç·ï¿½Îª "Dispose"
+            // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70¡5„1¤70¢9„1¤70Ë2 "Dispose"
             if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
             {
-                // Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "Dispose" ×´Ì¬ï¿½ï¿½ï¿½ß¼ï¿½
+                // 0ö4„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7 "Dispose" 0ü80Á0„1¤7„1¤7„1¤71²8„1¤7
                 Disposed(itemsArray[i]);
             }
         }
@@ -132,7 +132,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         _isCanRotate = false;
 
-        float distance = 1.0f; // ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+        float distance = 1.0f; // „1¤702„1¤7„1¤7„1¤7„1¤7„1¤7
 
         Vector3 backDirection = -Vector3.forward;
 
@@ -162,14 +162,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
             _isCanRotate = false;
             InitializeItem(RandomSelectItem());
             MoveItems();
-            spendTime = 0; // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+            spendTime = 0; // „1¤7„1¤70µ2„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70Ë20
         }
         else if (spendTime >= 5f)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
             _isCanRotate = false;
-            spendTime = 0; // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0
+            spendTime = 0; // „1¤7„1¤70µ2„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70Ë20
         }
         else
         {
