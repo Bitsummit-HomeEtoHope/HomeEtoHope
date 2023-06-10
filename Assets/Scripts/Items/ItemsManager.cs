@@ -31,9 +31,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
-        //---bad---
-        BadApple1,
-        BadApple2
+        ////---bad---
+        //BadApple1,
+        //BadApple2,
         ////---good---
         //Apple,
         //Eggplant,
@@ -55,21 +55,22 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //Wrench,
 
         //---human---
-        //Human,
-        //Human1,
-        //Human2,
-        //Human3,
-        //Human4,
-        //Human5,
+        Human,
+        Human1,
+        Human2,
+        Human3,
+        Human4,
+        Human5
+
 
 
     }
 
     private void AddItemsDictionary()
     {
-        //---food---bad---
-        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
-        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
+        ////---food---bad---
+        //_itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
+        //_itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
 
 
         ////---food---good---
@@ -90,14 +91,19 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //_itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
         //_itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
 
-        //---human---good---
-        //_itemsDictionary.Add(ItemsType.Human, "3D/human/human");
-        //_itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
-        //_itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
-        //_itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
-        //_itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
-        //_itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
-      
+        ////---human-- - good-- -
+        _itemsDictionary.Add(ItemsType.Human, "3D/human/human");
+        _itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
+        _itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
+        _itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
+        _itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
+        _itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
+
+
+
+
+
+
 
     }
 

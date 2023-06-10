@@ -45,10 +45,9 @@ public class Rotate : MonoBehaviour
         if (objectTag == "Food")
         {
             ShowList showList = FindObjectOfType<ShowList>();
-            if (showList != null)
-            {
+          
                 showList.OpenList();
-            }
+            
         }
     }
 
@@ -59,10 +58,9 @@ public class Rotate : MonoBehaviour
         if (objectTag == "Human")
         {
             ShowList showList = FindObjectOfType<ShowList>();
-            if (showList != null)
-            {
+           
                 showList.OffList();
-            }
+            
         }
         ItemsManager.Instance._isCanRotate = false;
     }
