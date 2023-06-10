@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1832374200500171846}
   - component: {fileID: -5863558696249713280}
   - component: {fileID: -1027760205769479933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: human1
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -152,9 +152,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9068031584121190747}
     m_Modifications:
+    - target: {fileID: 2691422815960660446, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137379994338015024, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6991683505605909087, guid: e23498221d1764912bd42b66836a8a52, type: 3}
       propertyPath: m_Name
       value: human_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991683505605909087, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284556942177944422, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7659677069657850085, guid: e23498221d1764912bd42b66836a8a52, type: 3}
       propertyPath: m_RootOrder
@@ -211,6 +227,14 @@ PrefabInstance:
     - target: {fileID: 7659677069657850085, guid: e23498221d1764912bd42b66836a8a52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836036692816890851, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250754419594781490, guid: e23498221d1764912bd42b66836a8a52, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23498221d1764912bd42b66836a8a52, type: 3}

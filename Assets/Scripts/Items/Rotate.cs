@@ -41,33 +41,15 @@ public class Rotate : MonoBehaviour
     private void OnMouseDown()
     {
         canRotate = true;
-        string objectTag = GetTag();
-        if (objectTag == "Food")
-        {
-            ShowList showList = FindObjectOfType<ShowList>();
-          
-                showList.OpenList();
-            
-        }
+
     }
 
     private void OnMouseUp()
     {
         canRotate = false;
-        string objectTag = GetTag();
-        if (objectTag == "Human")
-        {
-            ShowList showList = FindObjectOfType<ShowList>();
-           
-                showList.OffList();
-            
-        }
         ItemsManager.Instance._isCanRotate = false;
     }
 
 
-    private string GetTag()
-    {
-        return gameObject.tag;
-    }
+  
 }

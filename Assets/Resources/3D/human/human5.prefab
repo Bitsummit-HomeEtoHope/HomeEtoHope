@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7221247363028414325}
   - component: {fileID: -4035687615217681364}
   - component: {fileID: 2270139009786445352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: human5
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -152,9 +152,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4600141382750737780}
     m_Modifications:
+    - target: {fileID: 4615187494661075568, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6020066843558824733, guid: 781108d9338764793918b680d6ac28ce, type: 3}
       propertyPath: m_Name
       value: human_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6020066843558824733, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312656951908504100, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6395184359092916647, guid: 781108d9338764793918b680d6ac28ce, type: 3}
       propertyPath: m_RootOrder
@@ -211,6 +223,18 @@ PrefabInstance:
     - target: {fileID: 6395184359092916647, guid: 781108d9338764793918b680d6ac28ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787997925838445217, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467174249307596402, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097988831636350088, guid: 781108d9338764793918b680d6ac28ce, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781108d9338764793918b680d6ac28ce, type: 3}

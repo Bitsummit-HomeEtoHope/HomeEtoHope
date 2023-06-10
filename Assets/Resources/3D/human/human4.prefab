@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5775900947394543550}
   - component: {fileID: 550354198704138382}
   - component: {fileID: 4766242078064211679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: human4
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -152,9 +152,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4869595529751802033}
     m_Modifications:
+    - target: {fileID: 90171793478324525, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1353253280284567616, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
       propertyPath: m_Name
       value: human_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353253280284567616, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645848351468958073, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1840960820860564218, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
       propertyPath: m_RootOrder
@@ -215,6 +227,18 @@ PrefabInstance:
     - target: {fileID: 1840960820860564218, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269808098067642876, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549121058328550707, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804776359090210095, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1049a7c9a1918403c8a71bcd89d60ac3, type: 3}

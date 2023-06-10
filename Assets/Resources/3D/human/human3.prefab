@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7912239638807757349}
   - component: {fileID: -7425104643232608094}
   - component: {fileID: -6424330875205118612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: human3
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -152,6 +152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8918346972279834600}
     m_Modifications:
+    - target: {fileID: 816517321877983695, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1412134626184049176, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -208,9 +212,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1543462096427350302, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1788835433678563490, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
       propertyPath: m_Name
       value: human_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788835433678563490, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072705527909757339, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240359541934179789, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7837426697095910883, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb36c3bc5d90449eb63c4b0249a5ae4, type: 3}

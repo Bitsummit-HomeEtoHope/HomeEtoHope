@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7476750053846809166}
   - component: {fileID: -3034504347928353906}
   - component: {fileID: 5589543354374288109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: human2
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -152,9 +152,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6114286577910751612}
     m_Modifications:
+    - target: {fileID: 2694583210472221379, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4661912857500149472, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5995860655610535821, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
       propertyPath: m_Name
       value: human_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995860655610535821, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279444586908501684, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6376608696706286903, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
       propertyPath: m_RootOrder
@@ -211,6 +227,14 @@ PrefabInstance:
     - target: {fileID: 6376608696706286903, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813332431760133681, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430581988314723042, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb47cf187455e47c3b2361cb800f6bee, type: 3}
