@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4385432211998938088}
   - component: {fileID: 1861318767485237846}
   m_Layer: 9
-  m_Name: set
+  m_Name: buind_set
   m_TagString: Build_set
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
