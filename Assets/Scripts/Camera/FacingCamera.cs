@@ -6,6 +6,7 @@ using UnityEngine;
 public class FacingCamera : MonoBehaviour
 {
     private Transform[] _children;
+    public Camera cameraSub;
 
     private void Start()
     {
@@ -16,8 +17,8 @@ public class FacingCamera : MonoBehaviour
     {
         foreach (var t in _children)
         {
-            if (Camera.main != null)
-                t.rotation = Camera.main.transform.rotation;
+            if (cameraSub != null)
+                t.rotation = cameraSub.transform.rotation;
         }
     }
 
