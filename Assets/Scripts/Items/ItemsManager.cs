@@ -10,10 +10,12 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private float moveTime = 6f;
 
     public bool _isCanRotate = false;
+
     public Transform initPosition;
     public Transform disposePosition;
 
     private string selectedItem;
+    private LevelDataCurrent _levelDataCurrent;
 
     private float spendTime;
 
@@ -190,6 +192,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Start()
     {
+        _levelDataCurrent=FindObjectOfType<LevelDataCurrent>();
+        moveTime = _levelDataCurrent._interval;
         Application.targetFrameRate = 120;
         AddItemsDictionary();
         itemsArray = new GameObject[2];
