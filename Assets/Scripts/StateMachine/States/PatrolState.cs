@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using StateMachine.General;
 using UnityEngine;
 
 #region Tutorial of FSM (Check it in wiki)
@@ -37,47 +36,49 @@ using UnityEngine;
 //  Everyone who cannot understand just @me to ask questions!! :) 
 #endregion
 
-public class PatrolState : IState
+namespace StateMachine.States
 {
-    private Parameter parameter;
-    private FSM manager;
-
-    public PatrolState(FSM manager)
+    public class PatrolState : IState
     {
-        this.manager = manager;
-        parameter = manager.parameter;
-    }
+        private readonly Parameter parameter;
+        private readonly FSM manager;
+
+        public PatrolState(FSM manager)
+        {
+            this.manager = manager;
+            parameter = manager.parameter;
+        }
     
-    public void Onenter()
-    {
-        GetTarget();
-    }
+        public void Onenter()
+        {
+            GetTarget();
+        }
 
-    public void OnUpdate()
-    {
-        //Move To Target
-        if (parameter.currentTarget != null)
+        public void OnUpdate()
+        {
+            //Move To Target
             manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
                 parameter.currentTarget, parameter.moveSpeed*Time.deltaTime);
-        
-        //Switch Target
-        if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f)
-            manager.TransitState(StateType.Idle);
-    }
 
-    public void OnExit()
-    {
-        
-    }
+            //Switch Target
+            if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f)
+                manager.TransitState(StateType.Idle);
+        }
 
-    private void GetTarget()
-    {
-        var a = Random.Range(0, parameter.patrolPoints.Length);
+        public void OnExit()
+        {
         
-        //Get Random Move Direction
-        var randomDir = new Vector3(Random.Range(-parameter.patrolRadius, parameter.patrolRadius),
-            Random.Range(-parameter.patrolRadius, parameter.patrolRadius)).normalized;
-        //Set currentTarget
-        parameter.currentTarget = parameter.patrolPoints[a].position + randomDir*parameter.patrolRadius;
+        }
+
+        private void GetTarget()
+        {
+            var a = Random.Range(0, parameter.patrolPoints.Length);
+        
+            //Get Random Move Direction
+            var randomOuterDir = new Vector3(Random.Range(-parameter.patrolOuterRadius, parameter.patrolOuterRadius),
+                Random.Range(-parameter.patrolOuterRadius, parameter.patrolOuterRadius)).normalized;
+            //Set currentTarget
+            parameter.currentTarget = parameter.patrolPoints[a].position + randomOuterDir*Random.Range(parameter.patrolInnerRadius,parameter.patrolOuterRadius);
+        }
     }
 }
