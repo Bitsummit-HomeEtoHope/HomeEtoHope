@@ -71,38 +71,14 @@ public class PatrolState : IState
         
     }
 
-    //private void GetTarget()
-    //{
-    //    var a = Random.Range(0, parameter.patrolPoints.Length);
-
-    //    //Get Random Move Direction
-    //    var randomDir = new Vector3(Random.Range(-parameter.patrolRadius, parameter.patrolRadius),
-    //        Random.Range(-parameter.patrolRadius, parameter.patrolRadius)).normalized;
-    //    //Set currentTarget
-    //    parameter.currentTarget = parameter.patrolPoints[a].position + randomDir*parameter.patrolRadius;
-    //}
     private void GetTarget()
     {
-        if (parameter.patrolPoints == null || parameter.patrolPoints.Length == 0)
-        {
-            Debug.LogError("Patrol points array is empty or not initialized!");
-            return;
-        }
-
         var a = Random.Range(0, parameter.patrolPoints.Length);
-
-        if (a >= parameter.patrolPoints.Length)
-        {
-            Debug.LogError("Invalid index for patrol points array!");
-            return;
-        }
-
-        // Get Random Move Direction
+        
+        //Get Random Move Direction
         var randomDir = new Vector3(Random.Range(-parameter.patrolRadius, parameter.patrolRadius),
             Random.Range(-parameter.patrolRadius, parameter.patrolRadius)).normalized;
-
-        // Set currentTarget
-        parameter.currentTarget = parameter.patrolPoints[a].position + randomDir * parameter.patrolRadius;
+        //Set currentTarget
+        parameter.currentTarget = parameter.patrolPoints[a].position + randomDir*parameter.patrolRadius;
     }
-
 }

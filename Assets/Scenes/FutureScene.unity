@@ -465,11 +465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8132458336934361724, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -148.6
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8132458336934361724, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.6
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8132458336934361724, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -523,10 +523,6 @@ PrefabInstance:
     - target: {fileID: 3177532683434347984, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
       propertyPath: m_Name
       value: yuki
-      objectReference: {fileID: 0}
-    - target: {fileID: 3177532683434347984, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7165930651285477626, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
       propertyPath: m_RootOrder
@@ -613,15 +609,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
-    patrolPoints:
-    - {fileID: 1900030908}
-    - {fileID: 1375676506}
-    - {fileID: 19544714}
+    patrolPoints: []
     currentTarget: {x: 0, y: 0, z: 0}
-    idleTime: 1
+    idleTime: 0
     idleTimer: 0
-    patrolRadius: 4
-    moveSpeed: 20
+    patrolRadius: 0
+    moveSpeed: 0
 --- !u!1 &297739294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -1585,7 +1578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712642960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 41.6, z: -221.37}
+  m_LocalPosition: {x: 0, y: 41.6, z: -150.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3234,7 +3227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083448787970740965, guid: a48ae019f31af5046aae5b1f2c8e0887, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4083448787970740965, guid: a48ae019f31af5046aae5b1f2c8e0887, type: 3}
       propertyPath: m_TagString
