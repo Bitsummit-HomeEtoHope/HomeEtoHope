@@ -4,22 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Fruit
   - Food
   - Dispose
   - Human
   - Tool
-  - Send
+  - Build_39
+  - Build_set
+  - Human_39
+  - Other
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background_39
   - Water
   - UI
-  - Food
-  - Send
-  - Human
-  - 
+  - Food_39
+  - Environment_39
+  - Human_39
+  - Build_39
   - 
   - 
   - 
@@ -45,4 +49,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background_39
+    uniqueID: 3446375625
+    locked: 0
+  - name: Evironment_39
+    uniqueID: 3208389519
+    locked: 0
+  - name: Human_39
+    uniqueID: 2147871951
     locked: 0
