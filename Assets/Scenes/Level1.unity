@@ -4377,7 +4377,7 @@ MonoBehaviour:
   _isCanRotate: 0
   initPosition: {fileID: 1028213129}
   disposePosition: {fileID: 898929774}
-  itemScale: {x: 6, y: 6, z: 6}
+  itemScale: {x: 0.3, y: 0.3, z: 0.3}
 --- !u!1 &1304082297
 GameObject:
   m_ObjectHideFlags: 0
