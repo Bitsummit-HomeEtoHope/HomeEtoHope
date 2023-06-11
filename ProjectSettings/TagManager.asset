@@ -9,17 +9,21 @@ TagManager:
   - Dispose
   - Human
   - Tool
+  - Build_39
+  - Build_set
+  - Human_39
+  - Other
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Background_39
   - Water
   - UI
-  - Food
-  - Environment
-  - Player
-  - 
+  - Food_39
+  - Environment_39
+  - Human_39
+  - Build_39
   - 
   - 
   - 
@@ -46,12 +50,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 246044257
+  - name: Background_39
+    uniqueID: 3446375625
     locked: 0
-  - name: Environment
-    uniqueID: 2691729771
+  - name: Evironment_39
+    uniqueID: 3208389519
     locked: 0
-  - name: Player
-    uniqueID: 2003285747
+  - name: Player_39
+    uniqueID: 2147871951
+    locked: 0
+  - name: 
+    uniqueID: 3731503635
     locked: 0
