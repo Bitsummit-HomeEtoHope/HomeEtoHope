@@ -3,26 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Parameter
-{
-	//It is a class that lists the parameter you need, I recommend you declare variables here!
-	public Transform[] patrolPoints;
-	public Vector3 currentTarget;
-	public float idleTime;
-	public float idleTimer;
-	public float patrolRadius;
-	public float moveSpeed;
-}
-
 public enum StateType
 {
 	//I wrote a few state in advance，if you need create a new state don't forget to write it here!
-	Idle,
-	Eating,
-	Working,
-	GettingSick,
-	Patrolling,
+	Idle, Eating, Working, GettingSick, Patrolling,Hungry
 }
 
 public class FSM : MonoBehaviour
@@ -42,6 +26,7 @@ public class FSM : MonoBehaviour
 		//	states.Add(StateType.XX, new XXState(this));
 		states.Add(StateType.Idle, new IdleState(this));
 		states.Add(StateType.Patrolling, new PatrolState(this));
+		states.Add(StateType.Hungry,new HungryState(this));
 		
 		//	Default State is set to be "Idle"
 		TransitState(StateType.Idle);
@@ -64,5 +49,11 @@ public class FSM : MonoBehaviour
 	private void Update()
 	{
 		currentState.OnUpdate();
+	}
+
+	private void OnCollisionEnter(Collision other)
+	{
+		TransitState(StateType.Idle);
+		Debug.Log("Collision!");
 	}
 }
