@@ -8,7 +8,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private float spawnInterval = 5f;
     [SerializeField]
     private float moveTime = 6f;
-
+    private LevelDataCurrent _levelDataCurrent;
     public bool _isCanRotate = false;
     public Transform initPosition;
     public Transform disposePosition;
@@ -190,6 +190,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Start()
     {
+        _levelDataCurrent=FindObjectOfType<LevelDataCurrent>();
+        moveTime = _levelDataCurrent._interval;
         Application.targetFrameRate = 120;
         AddItemsDictionary();
         itemsArray = new GameObject[2];
