@@ -44,6 +44,8 @@ public class CodeHolder : MonoBehaviour
         DisposeButtonScript.Instance.ReceiveClickedObject(gameObject); // 将被点击的物体信息发送给 DisposeButtonScript
         ItemsManager.Instance._isCanRotate = true; // 将 _isCanRotate 更改为 true
 
+        // play sound
+        GetComponent<AudioSource>().Play();
     }
 
     private void Update()

@@ -34,5 +34,7 @@ public class DisposeButtonScript : MonoBehaviour
             Vector3 newPosition = clickedObject.transform.position + (Vector3.up * moveSpeed * Time.deltaTime);
             clickedObject.transform.position = newPosition;
         }
+        // play sound
+        GetComponent<AudioSource>().Play();
     }
 }
