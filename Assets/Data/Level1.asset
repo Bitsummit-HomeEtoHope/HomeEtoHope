@@ -15,5 +15,5 @@ MonoBehaviour:
   levelID: 1
   levelName: level01
   levelTime: 90
-  Interval: 6
+  Interval: 5
   levelBGM: {fileID: 0}
