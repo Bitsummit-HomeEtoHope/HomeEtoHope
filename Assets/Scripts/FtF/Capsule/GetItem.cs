@@ -1,32 +1,39 @@
+using System.Collections;
 using UnityEngine;
-using System.IO;
-using System;
-using System.Collections.Generic;
-using UnityEditor;
 
 public class GetItem : MonoBehaviour
 {
-    [SerializeField] private Transform foodPoint; // Food位置的Transform
-    [SerializeField] private Transform toolPoint; // Tool位置的Transform
-    [SerializeField] private Transform humanPoint; // Human位置的Transform
+    [SerializeField] private Transform foodPoint;
+    [SerializeField] private Transform toolPoint;
+    [SerializeField] private Transform humanPoint;
 
     [Header("Placement Settings")]
-    [SerializeField] private int orderInLayer = 2; // Order in Layer
+    [SerializeField] private int orderInLayer = 2;
+    private int currentSortingOrder = 0;
 
     [Header("Food")]
-    [SerializeField] private Vector3 foodScale = new Vector3(0.5f, 0.5f, 0.5f); // 食物尺寸Scale
-    [SerializeField] private Vector3 foodOffset = new Vector3(0f, 0f, 0f); // 食物相对偏移量
+    [SerializeField] private Vector3 foodScale = new Vector3(0.5f, 0.5f, 0.5f);
+    [SerializeField] private Vector3 foodOffset = new Vector3(0f, 0f, 0f);
+    [SerializeField] private Vector3 foodInitialRotation = Vector3.zero;
+    [SerializeField] private float foodMoveSpeed = 1f;
+    [SerializeField] private Transform foodDestinationPoint;
 
     [Header("Tool")]
-    [SerializeField] private Vector3 toolScale = new Vector3(1f, 1f, 1f); // 工具尺寸Scale
-    [SerializeField] private Vector3 toolOffset = new Vector3(0f, 0f, 0f); // 工具相对偏移量
+    [SerializeField] private Vector3 toolScale = new Vector3(1f, 1f, 1f);
+    [SerializeField] private Vector3 toolOffset = new Vector3(0f, 0f, 0f);
+    [SerializeField] private Vector3 toolInitialRotation = Vector3.zero;
+    [SerializeField] private float toolMoveSpeed = 1f;
+    [SerializeField] private Transform toolDestinationPoint;
 
     [Header("Human")]
-    [SerializeField] private Vector3 humanScale = new Vector3(0.8f, 0.8f, 0.8f); // 人物尺寸Scale
-    [SerializeField] private Vector3 humanOffset = new Vector3(0f, 0f, 0f); // 人物相对偏移量
+    [SerializeField] private Vector3 humanScale = new Vector3(0.8f, 0.8f, 0.8f);
+    [SerializeField] private Vector3 humanOffset = new Vector3(0f, 0f, 0f);
+    [SerializeField] private Vector3 humanInitialRotation = Vector3.zero;
+    [SerializeField] private float humanMoveSpeed = 1f;
+    [SerializeField] private Transform humanDestinationPoint;
 
-    public string readytag;
-    public string readycode;
+    private string readytag;
+    private string readycode;
 
     private void Start()
     {
@@ -52,18 +59,17 @@ public class GetItem : MonoBehaviour
 
         GameObject prefab = null;
 
-        // 在指定文件夹内查找与 readycode 名称相同的预制件
         if (readytag == "Food")
         {
-            prefab = Resources.Load<GameObject>("2d_set/food/" + readycode);
+            prefab = Resources.Load<GameObject>("2D_set/food/" + readycode);
         }
         else if (readytag == "Tool")
         {
-            prefab = Resources.Load<GameObject>("2d_set/tool/" + readycode);
+            prefab = Resources.Load<GameObject>("2D_set/tool/" + readycode);
         }
         else if (readytag == "Human")
         {
-            prefab = Resources.Load<GameObject>("2d_set/human/" + readycode);
+            prefab = Resources.Load<GameObject>("2D_set/human/" + readycode);
         }
 
         if (prefab != null)
@@ -71,13 +77,16 @@ public class GetItem : MonoBehaviour
             switch (readytag)
             {
                 case "Food":
-                    AdjustAndPlacePrefab(prefab, foodPoint, foodScale, foodOffset);
+                    TakeMeOut(prefab, foodPoint, foodScale, foodOffset, foodInitialRotation, foodMoveSpeed, foodDestinationPoint, "Food_39");
+                    Debug.Log("-----Food coming-----");
                     break;
                 case "Tool":
-                    AdjustAndPlacePrefab(prefab, toolPoint, toolScale, toolOffset);
+                    TakeMeOut(prefab, toolPoint, toolScale, toolOffset, toolInitialRotation, toolMoveSpeed, toolDestinationPoint, "Tool_39");
+                    Debug.Log("-----Tool coming-----");
                     break;
                 case "Human":
-                    AdjustAndPlacePrefab(prefab, humanPoint, humanScale, humanOffset);
+                    TakeMeOut(prefab, humanPoint, humanScale, humanOffset, humanInitialRotation, humanMoveSpeed, humanDestinationPoint, "Human_39");
+                    Debug.Log("-----Human coming-----");
                     break;
                 default:
                     Debug.Log("Invalid tag: " + readytag);
@@ -90,25 +99,48 @@ public class GetItem : MonoBehaviour
         }
     }
 
-    private void AdjustAndPlacePrefab(GameObject prefab, Transform point, Vector3 scale, Vector3 offset)
-    {
+    private void TakeMeOut(GameObject prefab, Transform point, Vector3 scale, Vector3 offset, Vector3 initialRotation, float moveSpeed, Transform destinationPoint, string newTag)
+{
+
         if (point != null)
-        {
-            GameObject instance = Instantiate(prefab, point.position, point.rotation);
-            instance.transform.parent = point;
-            instance.GetComponent<Renderer>().sortingOrder = orderInLayer;
+    {
+            GameObject instance = Instantiate(prefab, point.position, Quaternion.Euler(initialRotation));
 
-            // 获取道具的初始比例
+            currentSortingOrder += 1;
+            instance.GetComponent<Renderer>().sortingOrder = currentSortingOrder;
+
             Vector3 initialScale = instance.transform.localScale;
+        Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
+        instance.transform.localScale = adjustedScale;
 
-            // 根据调整比例进行乘法运算
-            Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
+        instance.transform.rotation = Quaternion.Euler(instance.transform.rotation.eulerAngles.x, instance.transform.rotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
 
-            instance.transform.localScale = adjustedScale;
-            instance.transform.localPosition += offset;
-
-            // 保存预制件的Z轴旋转值
-            instance.transform.localRotation = Quaternion.Euler(instance.transform.localRotation.eulerAngles.x, instance.transform.localRotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
-        }
+        StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
     }
+}
+
+    private IEnumerator MoveItem(Transform itemTransform, float moveDuration, Transform destinationPoint, string newTag)
+    {
+
+        Vector3 startPosition = itemTransform.localPosition;
+        Vector3 targetPosition = destinationPoint.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < moveDuration)
+        {
+            float t = elapsedTime / moveDuration;
+            itemTransform.localPosition = Vector3.Lerp(startPosition, targetPosition, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final position is exact
+        itemTransform.localPosition = targetPosition;
+
+        // Change tag after moving
+        itemTransform.gameObject.tag = newTag;
+    }
+
+
 }
