@@ -23,8 +23,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private float pauseHeight;
     private Quaternion defaultRotation;
     private GameObject _go;
-    private GameObject[] itemsArray;
-    private int itemsArrayIndex;
+    public GameObject[] itemsArray;
+    public int itemsArrayIndex;
 
     private const string DisposeTag = "Dispose";
 
@@ -124,10 +124,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
         {
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
 
-            // »ñÈ¡ÎïÌåµ±Ç°µÄËõ·ÅÖµ
+            // »ñÈ¡ÎEåµ±Ç°µÄËõ·ÅÖµ
             Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
 
-            // ¸ù¾İÎïÌåµ±Ç°µÄËõ·ÅÖµµ÷ÕûËõ·Å±¶ÂÊ
+            // ¸ù¾İÎEåµ±Ç°µÄËõ·ÅÖµµ÷ÕûËõ·Å±¶ÂÊ
             itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
 
             Debug.Log(itemsArray[itemsArrayIndex]);
@@ -166,8 +166,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
         if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != LayerMask.NameToLayer("Send"))
         {
-            itemsArray[i].layer = LayerMask.NameToLayer("Send"); // ¸ü¸ÄÎïÌåµÄÍ¼²ãÎª"Send"
-            //itemsArray[i].tag = DisposeTag; // ½«ÎïÌåµÄ±êÇ©¸ü¸ÄÎª"DisposeTag"
+            itemsArray[i].layer = LayerMask.NameToLayer("Send"); // ¸EÄÎEåµÄÍ¼²ãÎª"Send"
+            //itemsArray[i].tag = DisposeTag; // ½«ÎEåµÄ±E©¸EÄÎª"DisposeTag"
             Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
         }
 
@@ -183,7 +183,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private void Disposed(GameObject item)
     {
 
-        float distance = 1.0f; // ÒÆ¶¯¾àÀë
+        float distance = 1.0f; // ÒÆ¶¯¾àÀE
         Vector3 backDirection = -Vector3.forward;
         Vector3 targetPosition = item.transform.position + backDirection * distance;
 

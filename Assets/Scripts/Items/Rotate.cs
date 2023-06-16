@@ -14,6 +14,7 @@ public class Rotate : MonoBehaviour
 
     private bool canRotate = false;
 
+
     private void Update()
     {
         if (ItemsManager.Instance._isCanRotate && canRotate)
