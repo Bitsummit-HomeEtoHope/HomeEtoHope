@@ -4,35 +4,40 @@ using UnityEngine;
 
 public class ShowList_MRYM : MonoBehaviour
 {
-    public RectTransform listTransform; // 引用 UI Image 的 RectTransform 组件
-    public float moveDuration = 0.5f; // 移动时间
-    public float moveFirst = 130f; // 移动量
-    private Coroutine currentMoveCoroutine; // 用于存储当前移动的协程引用
-    private Vector2 originalPosition; // 原始位置
-    private Quaternion originalRotation; // 原始旋转角度
+    public RectTransform listTransform; // Reference to the UI Image's RectTransform component
+    public float moveDuration = 0.5f; // Duration of the movement
+    public float moveFirst = 130f; // Amount of movement
+    private Coroutine currentMoveCoroutine; // Stores the reference to the current move coroutine
+    private Vector2 originalPosition; // Original position
+    private Quaternion originalRotation; // Original rotation angle
+
+    public List_Show listShow; // Reference to the List_Show script
+
 
     private void Start()
     {
-        originalPosition = listTransform.anchoredPosition; // 保存原始位置
-        originalRotation = listTransform.rotation; // 保存原始旋转角度
+        originalPosition = listTransform.anchoredPosition; // Save the original position
+        originalRotation = listTransform.rotation; // Save the original rotation angle
     }
 
     public void OpenList()
     {
-        // 如果已经在进行移动，则先停止之前的移动协程
+        // If there is a previous move coroutine, stop it first
         if (currentMoveCoroutine != null)
             StopCoroutine(currentMoveCoroutine);
 
         currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveFirst, Quaternion.Euler(0f, 0f, -60f)));
+        listShow.isCanClick = true;
     }
 
     public void OffList()
     {
-        // 如果已经在进行移动，则先停止之前的移动协程
+        // If there is a previous move coroutine, stop it first
         if (currentMoveCoroutine != null)
             StopCoroutine(currentMoveCoroutine);
 
         currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y, originalRotation));
+        listShow.isCanClick = false;
     }
 
     private IEnumerator MoveList(float targetY, Quaternion targetRotation)

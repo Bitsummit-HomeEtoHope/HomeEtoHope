@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class CodeHolder : MonoBehaviour
 {
-    public string code; // 存储物体的代码
-    public string tag; // 存储物体的标签
+    public string code; // Stores the code of the object
+    public string tag; // Stores the tag of the object
 
-    private ShowList_MRYM showList; // 引用 ShowList_MRYM 脚本
+    private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
 
     private void Start()
     {
-        // 在物体生成时将其名称添加到 code 变量中，并删除 (Clone)
+        // Add the object's name to the code variable when the object is instantiated and remove "(Clone)"
         code = gameObject.name.Replace("(Clone)", "");
 
-        // 获取物体的标签
+        // Get the object's tag
         tag = gameObject.tag;
         Debug.Log("Object Tag: " + tag);
 
@@ -31,18 +31,18 @@ public class CodeHolder : MonoBehaviour
         return code;
     }
 
-    private bool isClicked = false; // 物体是否被点击的状态
+    private bool isClicked = false; // State of whether the object has been clicked
 
     private void OnMouseDown()
     {
         isClicked = true;
-        // 在这里编写处理物体被点击的代码逻辑
+        // Write code logic here to handle object click
 
         Debug.Log("Object Clicked");
 
-        ItemsReading.Instance.ReceiveClickedObject(gameObject); // 将被点击的物体信息发送给 ItemsReading
-        DisposeButtonScript.Instance.ReceiveClickedObject(gameObject); // 将被点击的物体信息发送给 DisposeButtonScript
-        ItemsManager.Instance._isCanRotate = true; // 将 _isCanRotate 更改为 true
+        ItemsReading.Instance.ReceiveClickedObject(gameObject); // Send clicked object information to ItemsReading
+        DisposeButtonScript.Instance.ReceiveClickedObject(gameObject); // Send clicked object information to DisposeButtonScript
+        ItemsManager.Instance._isCanRotate = true; // Change _isCanRotate to true
 
     }
 
@@ -50,12 +50,11 @@ public class CodeHolder : MonoBehaviour
     {
         if (isClicked)
         {
-            // 物体被点击后的逻辑
+            // Logic after the object has been clicked
             isClicked = false;
         }
-
-        
     }
+
     private void OnDestroy()
     {
         if (showList != null)
@@ -63,5 +62,4 @@ public class CodeHolder : MonoBehaviour
             showList.OffList();
         }
     }
-
 }

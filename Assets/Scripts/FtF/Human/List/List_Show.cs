@@ -5,24 +5,28 @@ using UnityEngine.EventSystems;
 
 public class List_Show : MonoBehaviour, IPointerClickHandler
 {
-    public RectTransform listTransform; // 引用 UI Image 的 RectTransform 组件
-    public float moveDuration = 0.5f; // 移动时间
-    public float moveAmount = 300f; // 移动量
-    public float rotationAmount = 0f; // 旋转角度
+    public RectTransform listTransform; // Reference to the RectTransform component of the UI Image
+    public float moveDuration = 0.5f; // Movement duration
+    public float moveAmount = 300f; // Amount of movement
+    public float rotationAmount = 0f; // Rotation angle
 
-    private Coroutine currentMoveCoroutine; // 用于存储当前移动的协程引用
-    private Vector2 originalPosition; // 原始位置
-    private Quaternion originalRotation; // 原始旋转角度
-    private bool isShowing = false; // 是否正在显示列表
+    private Coroutine currentMoveCoroutine; // Stores the reference to the current move coroutine
+    private Vector2 originalPosition; // Original position
+    private Quaternion originalRotation; // Original rotation angle
+    public bool isShowing = false; // Whether the list is currently being shown
+    public bool isCanClick = false; // Clicking control switch
 
     private void Start()
     {
-        originalPosition = listTransform.anchoredPosition; // 保存原始位置
-        originalRotation = listTransform.rotation; // 保存原始旋转角度
+        originalPosition = listTransform.anchoredPosition; // Save the original position
+        originalRotation = listTransform.rotation; // Save the original rotation angle
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!isCanClick) // If the click switch is disabled, don't execute the following logic
+            return;
+
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             if (isShowing == false)
