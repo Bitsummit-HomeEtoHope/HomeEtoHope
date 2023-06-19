@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2530706952552157149}
   - component: {fileID: 2530980233502119350}
   - component: {fileID: 91672951504860470}
+  - component: {fileID: -7730235873770262377}
   m_Layer: 0
   m_Name: kettlered
   m_TagString: Tool
@@ -97,5 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  moveDuration: 1
+--- !u!114 &-7730235873770262377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846735845627045591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: d1a02128994b61c489d1feae964ec67d, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0

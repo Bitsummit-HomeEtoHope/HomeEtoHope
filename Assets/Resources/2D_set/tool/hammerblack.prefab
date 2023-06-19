@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4625672498051923513}
   - component: {fileID: 4409318179251002104}
   - component: {fileID: 5693578695403404924}
+  - component: {fileID: -6112105030212417753}
   m_Layer: 0
   m_Name: hammerblack
   m_TagString: Tool
@@ -97,5 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  moveDuration: 1
+--- !u!114 &-6112105030212417753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117756546795585667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: 9642ba8525065f5469cc837c68f1beca, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0

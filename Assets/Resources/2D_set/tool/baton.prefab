@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6071750365497840192}
   - component: {fileID: 4668588245942023274}
   - component: {fileID: 8858433949223728126}
+  - component: {fileID: 3267892808697090200}
   m_Layer: 0
   m_Name: baton
   m_TagString: Tool
@@ -97,5 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  moveDuration: 1
+--- !u!114 &3267892808697090200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309960703778484106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 0}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0

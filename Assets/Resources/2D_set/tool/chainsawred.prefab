@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8999467651287952870}
   - component: {fileID: 8227007399607280648}
   - component: {fileID: 7082271911611405557}
+  - component: {fileID: -922089366323635610}
   m_Layer: 0
   m_Name: chainsawred
   m_TagString: Tool
@@ -97,5 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  moveDuration: 1
+--- !u!114 &-922089366323635610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220778136971923222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: 7792fa19a65246f479b2a3c078290044, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0

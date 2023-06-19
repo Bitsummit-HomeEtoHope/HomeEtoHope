@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5464265429472575467}
   - component: {fileID: 3854078905519325071}
   - component: {fileID: -5864903050894070402}
+  - component: {fileID: 8807744701121820342}
   m_Layer: 0
   m_Name: appleqaq
   m_TagString: Food
@@ -97,5 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e4e021c25a6334986d8886166b7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 1
-  moveDuration: 1
+--- !u!114 &8807744701121820342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249135053813093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: ae88c7aff353e7c4985ba7d9a3ba3666, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
