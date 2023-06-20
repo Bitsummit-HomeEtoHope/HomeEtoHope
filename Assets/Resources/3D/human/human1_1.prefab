@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8630536728760392426}
   - component: {fileID: 474515779024841767}
   m_Layer: 0
-  m_Name: Body.003
+  m_Name: Face01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4084600675290051814}
   - component: {fileID: 1948979665288900190}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Meterial.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1884643803802858857}
   - component: {fileID: 1564534064049697264}
   m_Layer: 0
-  m_Name: Body.002
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 5637477524695809624}
   - component: {fileID: 2400104202630365757}
   m_Layer: 0
-  m_Name: Body
+  m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,6 +402,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   code: 
   tag: 
+  defaultMaterial: {fileID: 0}
+  highlightMaterial: {fileID: 0}
+  ihaveChild: 1
+  childRenderers:
+  - childRenderer: {fileID: 2400104202630365757}
+    childDefaultMaterial: {fileID: 2100000, guid: df72bdc439def47a1a215a818b861281, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: 5b54380d5f2cd437da90805df8a40fb2, type: 2}
+  - childRenderer: {fileID: 3338442533135982929}
+    childDefaultMaterial: {fileID: 2100000, guid: 3d7f625c0d49547b5925c65694d3dc18, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: 64c975c3f57294dc29d616a17e5b6f91, type: 2}
+  - childRenderer: {fileID: 1564534064049697264}
+    childDefaultMaterial: {fileID: 2100000, guid: 91e374bf393e3448097cd43863c88205, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: df1494e87c6384d7ca560fc19540037b, type: 2}
 --- !u!114 &-8686544060748763120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +455,7 @@ GameObject:
   - component: {fileID: 4474039096694608667}
   - component: {fileID: 3338442533135982929}
   m_Layer: 0
-  m_Name: Body.001
+  m_Name: Hair1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

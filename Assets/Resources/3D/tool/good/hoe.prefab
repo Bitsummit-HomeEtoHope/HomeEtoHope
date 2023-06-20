@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   code: 
   tag: 
+  defaultMaterial: {fileID: 2100000, guid: 6d9667bc247fb464a8ed2e0ac9ee13e3, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: bb5d5ac6770344b49811cbb98d5d7454, type: 2}
 --- !u!114 &4191405595205717060
 MonoBehaviour:
   m_ObjectHideFlags: 0
