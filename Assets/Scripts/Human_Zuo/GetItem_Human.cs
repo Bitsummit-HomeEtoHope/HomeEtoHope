@@ -10,9 +10,10 @@ namespace StateMachine.General
         public GameObject GetItemManger;
         public List<GameObject> foodList_human = new List<GameObject>();
         public List<GameObject> toolList_human = new List<GameObject>();
+        
         public bool isFood = false;
         public bool isTool = false;
-        private FSM manager;
+        public FSM manager;
 
         private void Awake() 
         {
@@ -26,11 +27,12 @@ namespace StateMachine.General
         {
             //计算当前位置与食物的距离
             float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[2].position);
-            if(isFood==false && distance<1)
+            if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
                 isFood = true;
-                foodList_human.Add(GetItemManger.GetComponent<GetItem>().foodList[0]);
-                GetComponent<GetItem>().foodList[0].gameObject.SetActive(false);//食物消失
+                GameObject foodToGet=GetItemManger.GetComponent<GetItem>().foodList[0];
+                foodList_human.Add(foodToGet);
+                foodToGet.SetActive(false);
                 GetItemManger.GetComponent<GetItem>().foodList.RemoveAt(0);//移除食物
                 
             }
