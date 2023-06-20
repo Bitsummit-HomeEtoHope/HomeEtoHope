@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3137961185841157367}
   - component: {fileID: -253438906257547667}
   m_Layer: 0
-  m_Name: Shovelred
+  m_Name: shovelred
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -33,23 +33,20 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
     {
-        //---bad---
-        BadApple1,
-        BadApple2,
+        //---food---good---
+        Apple,
+        Eggplant,
+        GreenPepper,
+        Orange,
+        Pumpkin,
+
+        //---food---bad---
         BadAppleHi,
         BadAppleQaq,
         EggplantQaq,
         GreenPepperQaq,
         OrangeQaq,
         PumpkinQaq,
-        //---good---
-        Apple,
-        Eggplant,
-        GreenPepper,
-        Orange,
-        Pumpkin,
-        //---human---
-        //   People
 
         //---tool---good---
         Burner,
@@ -62,33 +59,45 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Shovel,
         Wrench,
 
+        //---tool---bad---
+        BurnerQAQ,
+        ChainsawQAQ,
+        HammerLOL,
+        HoeQAQ,
+        IceQAQ,
+        KettleQAQ,
+        KnifeQAQ,
+        ShovelQAQ,
+        WrenchQAQ,
+
+
         //---human---
-        Human,
-        Human1,
+        Human1_0,
+        Human1_1,
+        Human1_2,
+        Human1_3,
+        Human1_4,
+        Human1_5,
         Human2,
-        Human3,
-        Human4,
-        Human5
+        Human3
     }
 
     private void AddItemsDictionary()
     {
-        //---food---bad---
-        _itemsDictionary.Add(ItemsType.BadApple1, "3D/food/bad/appleqaq");
-        _itemsDictionary.Add(ItemsType.BadApple2, "3D/food/bad/applehi");
-        _itemsDictionary.Add(ItemsType.BadAppleHi, "3D/food/bad/applehi");
-        _itemsDictionary.Add(ItemsType.BadAppleQaq, "3D/food/bad/appleqaq");
-        _itemsDictionary.Add(ItemsType.EggplantQaq, "3D/food/bad/eggplantqaq");
-        _itemsDictionary.Add(ItemsType.GreenPepperQaq, "3D/food/bad/greenpepperqaq");
-        _itemsDictionary.Add(ItemsType.OrangeQaq, "3D/food/bad/orangeqaq");
-        _itemsDictionary.Add(ItemsType.PumpkinQaq, "3D/food/bad/pumpkinqaq");
-
         //---food---good---
         _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
         _itemsDictionary.Add(ItemsType.Eggplant, "3D/food/good/eggplant");
         _itemsDictionary.Add(ItemsType.GreenPepper, "3D/food/good/greenpepper");
         _itemsDictionary.Add(ItemsType.Orange, "3D/food/good/orange");
         _itemsDictionary.Add(ItemsType.Pumpkin, "3D/food/good/pumpkin");
+
+        //---food---bad---
+        _itemsDictionary.Add(ItemsType.BadAppleHi, "3D/food/bad/applehi");
+        _itemsDictionary.Add(ItemsType.BadAppleQaq, "3D/food/bad/appleqaq");
+        _itemsDictionary.Add(ItemsType.EggplantQaq, "3D/food/bad/eggplantqaq");
+        _itemsDictionary.Add(ItemsType.GreenPepperQaq, "3D/food/bad/greenpepperqaq");
+        _itemsDictionary.Add(ItemsType.OrangeQaq, "3D/food/bad/orangeqaq");
+        _itemsDictionary.Add(ItemsType.PumpkinQaq, "3D/food/bad/pumpkinqaq");
 
         //---tool---good---
         _itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
@@ -101,15 +110,27 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
         _itemsDictionary.Add(ItemsType.Wrench, "3D/tool/good/wrench");
 
-        //---human---good---
-        _itemsDictionary.Add(ItemsType.Human, "3D/human/human");
-        _itemsDictionary.Add(ItemsType.Human1, "3D/human/human1");
+        //---tool---bad---
+        _itemsDictionary.Add(ItemsType.BurnerQAQ, "3D/tool/bad/burnerbroken");
+        _itemsDictionary.Add(ItemsType.ChainsawQAQ, "3D/tool/bad/chainsawbroken");
+        _itemsDictionary.Add(ItemsType.HammerLOL, "3D/tool/bad/hammerbroken");
+        _itemsDictionary.Add(ItemsType.HoeQAQ, "3D/tool/bad/hoebroken");
+        _itemsDictionary.Add(ItemsType.IceQAQ, "3D/tool/bad/iceaxebroken");
+        _itemsDictionary.Add(ItemsType.KettleQAQ, "3D/tool/bad/kettlebroken");
+        _itemsDictionary.Add(ItemsType.KnifeQAQ, "3D/tool/bad/nifebroken");
+        _itemsDictionary.Add(ItemsType.ShovelQAQ, "3D/tool/bad/shovelbroken");
+        _itemsDictionary.Add(ItemsType.WrenchQAQ, "3D/tool/bad/wrenchbroken");
+
+        //---human---
+        _itemsDictionary.Add(ItemsType.Human1_0, "3D/human/human1_0");
+        _itemsDictionary.Add(ItemsType.Human1_1, "3D/human/human1_1");
+        _itemsDictionary.Add(ItemsType.Human1_2, "3D/human/human1_2");
+        _itemsDictionary.Add(ItemsType.Human1_3, "3D/human/human1_3");
+        _itemsDictionary.Add(ItemsType.Human1_4, "3D/human/human1_4");
+        _itemsDictionary.Add(ItemsType.Human1_5, "3D/human/human1_5");
         _itemsDictionary.Add(ItemsType.Human2, "3D/human/human2");
         _itemsDictionary.Add(ItemsType.Human3, "3D/human/human3");
-        _itemsDictionary.Add(ItemsType.Human4, "3D/human/human4");
-        _itemsDictionary.Add(ItemsType.Human5, "3D/human/human5");
     }
-
 
     private string RandomSelectItem()
     {
@@ -123,26 +144,13 @@ public class ItemsManager : SingletonManager<ItemsManager>
         if (itemsArray[itemsArrayIndex] == null)
         {
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-
-            // ªÒ»°ŒÅEÂµ±«∞µƒÀı∑≈÷µ
             Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
-
-            // ∏˘æ›ŒÅEÂµ±«∞µƒÀı∑≈÷µµ˜’˚Àı∑≈±∂¬ 
             itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
-
-            Debug.Log(itemsArray[itemsArrayIndex]);
-
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
-
-            // µ˜’˚µ¿æﬂ‘⁄Z÷·…œµƒŒª÷√
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
-
-            // …Ë÷√ÀÊª˙µƒ–˝◊™Ω«∂»
             itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
-
-            // change itemsArrayIndex
             if (itemsArrayIndex == 0)
             {
                 itemsArrayIndex = 1;
@@ -154,45 +162,40 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-   private void MoveItems()
-{
-    for (int i = 0; i < 2; i++)
+    private void MoveItems()
     {
-        if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
+        for (int i = 0; i < 2; i++)
         {
-            float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
-            itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
-        }
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
+            {
+                float moveSpeed = (disposePosition.position.x - initPosition.position.x) / moveTime;
+                itemsArray[i].transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+            }
 
-        if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != LayerMask.NameToLayer("Send"))
-        {
-            itemsArray[i].layer = LayerMask.NameToLayer("Send"); // ∏ÅEƒŒÅEÂµƒÕº≤„Œ™"Send"
-            //itemsArray[i].tag = DisposeTag; // Ω´ŒÅEÂµƒ±ÅE©∏ÅEƒŒ™"DisposeTag"
-            Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
-        }
+            if (itemsArray[i] != null && itemsArray[i].transform.position.x >= disposePosition.position.x && itemsArray[i].layer != LayerMask.NameToLayer("Send"))
+            {
+                itemsArray[i].layer = LayerMask.NameToLayer("Send");
+                Debug.Log("Object layer changed to Send: " + itemsArray[i].name);
+            }
 
-        if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
-        {
-            Disposed(itemsArray[i]);
+            if (itemsArray[i] != null && itemsArray[i].CompareTag(DisposeTag))
+            {
+                Disposed(itemsArray[i]);
+            }
         }
     }
-}
-
-
 
     private void Disposed(GameObject item)
     {
-
-        float distance = 1.0f; // “∆∂Øæ‡¿ÅE
+        float distance = 1.0f;
         Vector3 backDirection = -Vector3.forward;
         Vector3 targetPosition = item.transform.position + backDirection * distance;
-
         item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
     }
 
     private void Start()
     {
-        _levelDataCurrent=FindObjectOfType<LevelDataCurrent>();
+        _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         moveTime = _levelDataCurrent._interval;
         Application.targetFrameRate = 120;
         AddItemsDictionary();
@@ -204,12 +207,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
         }
     }
 
-    /**
-     * can get currently selected item
-     *
-     * @auther Yuichi Kawasaki
-     * @date   2023/06/06
-     **/
     public GameObject GetSelectItem()
     {
         return _go;
@@ -222,14 +219,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
             _isCanRotate = false;
             InitializeItem(RandomSelectItem());
             MoveItems();
-            spendTime = 0; // Ω´ ±º‰÷ÿ÷√Œ™0
+            spendTime = 0;
         }
         else if (spendTime >= spawnInterval)
         {
             InitializeItem(RandomSelectItem());
             MoveItems();
             _isCanRotate = false;
-            spendTime = 0; // Ω´ ±º‰÷ÿ÷√Œ™0
+            spendTime = 0;
         }
         else
         {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -472663821175571892}
   - component: {fileID: -1876867063167492908}
   m_Layer: 0
-  m_Name: Shovelbroken
+  m_Name: shovelbroken
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
