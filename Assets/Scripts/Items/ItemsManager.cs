@@ -104,7 +104,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
         _itemsDictionary.Add(ItemsType.Hammer, "3D/tool/good/hammer");
         _itemsDictionary.Add(ItemsType.Hoe, "3D/tool/good/hoe");
-        _itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceaxe");
+        _itemsDictionary.Add(ItemsType.Ice, "3D/tool/good/iceax");
         _itemsDictionary.Add(ItemsType.Kettle, "3D/tool/good/kettle");
         _itemsDictionary.Add(ItemsType.Knife, "3D/tool/good/nife");
         _itemsDictionary.Add(ItemsType.Shovel, "3D/tool/good/shovel");
@@ -115,7 +115,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.ChainsawQAQ, "3D/tool/bad/chainsawbroken");
         _itemsDictionary.Add(ItemsType.HammerLOL, "3D/tool/bad/hammerbroken");
         _itemsDictionary.Add(ItemsType.HoeQAQ, "3D/tool/bad/hoebroken");
-        _itemsDictionary.Add(ItemsType.IceQAQ, "3D/tool/bad/iceaxebroken");
+        _itemsDictionary.Add(ItemsType.IceQAQ, "3D/tool/bad/iceaxbroken");
         _itemsDictionary.Add(ItemsType.KettleQAQ, "3D/tool/bad/kettlebroken");
         _itemsDictionary.Add(ItemsType.KnifeQAQ, "3D/tool/bad/nifebroken");
         _itemsDictionary.Add(ItemsType.ShovelQAQ, "3D/tool/bad/shovelbroken");
