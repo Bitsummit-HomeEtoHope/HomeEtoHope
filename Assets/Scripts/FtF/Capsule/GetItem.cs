@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
@@ -34,6 +35,9 @@ public class GetItem : MonoBehaviour
 
     private string readytag;
     private string readycode;
+    public List<GameObject> foodList = new List<GameObject>();
+    public List<GameObject> toolList = new List<GameObject>();
+    public List<GameObject> humanList = new List<GameObject>();
 
     private void Start()
     {
@@ -78,14 +82,17 @@ public class GetItem : MonoBehaviour
             {
                 case "Food":
                     TakeMeOut(prefab, foodPoint, foodScale, foodOffset, foodInitialRotation, foodMoveSpeed, foodDestinationPoint, "Food_39");
+                    foodList.Add(prefab);
                     Debug.Log("-----Food coming-----");
                     break;
                 case "Tool":
                     TakeMeOut(prefab, toolPoint, toolScale, toolOffset, toolInitialRotation, toolMoveSpeed, toolDestinationPoint, "Tool_39");
+                    toolList.Add(prefab);
                     Debug.Log("-----Tool coming-----");
                     break;
                 case "Human":
                     TakeMeOut(prefab, humanPoint, humanScale, humanOffset, humanInitialRotation, humanMoveSpeed, humanDestinationPoint, "Human_39");
+                    humanList.Add(prefab);
                     Debug.Log("-----Human coming-----");
                     break;
                 default:

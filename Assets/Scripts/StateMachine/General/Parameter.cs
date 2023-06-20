@@ -15,6 +15,8 @@ namespace StateMachine.General
         public float patrolOuterRadius;
         public float patrolInnerRadius;
         public float moveSpeed;
+        public float hungrySpeed;
         public bool isHungry;
+        public bool isTool;
     }
 }

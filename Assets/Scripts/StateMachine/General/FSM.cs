@@ -28,6 +28,7 @@ namespace StateMachine.General
 			states.Add(StateType.Idle, new IdleState(this));
 			states.Add(StateType.Patrolling, new PatrolState(this));
 			states.Add(StateType.Hungry, new HungryState(this));
+			states.Add(StateType.Working, new WorkState(this));
 		
 			//	Default State is set to be "Idle"
 			TransitState(StateType.Idle);

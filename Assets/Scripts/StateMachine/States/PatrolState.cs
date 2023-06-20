@@ -63,6 +63,7 @@ namespace StateMachine.States
             //Switch Target
             if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f)
                 manager.TransitState(StateType.Idle);
+            
         }
 
         public void OnExit()

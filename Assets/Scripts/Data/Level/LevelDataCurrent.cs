@@ -7,7 +7,7 @@ public class LevelDataCurrent : MonoBehaviour
     public int _levelID;
     public string _levelName;
     [Tooltip("The time limit for the level")]
-    public float _levelTime;
+    public int _levelTime;
     [Range(3,6)]
     [Tooltip("The interval between the appearance of props in the level")]
     public float _interval;
