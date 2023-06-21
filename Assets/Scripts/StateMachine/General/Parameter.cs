@@ -9,6 +9,7 @@ namespace StateMachine.General
     {
         //It is a class that lists the parameter you need, I recommend you declare variables here!
         public Transform[] patrolPoints;
+        public Transform[] workPoints;
         public Vector3 currentTarget;
         public float idleTime;
         public float idleTimer;
@@ -18,5 +19,6 @@ namespace StateMachine.General
         public float hungrySpeed;
         public bool isHungry;
         public bool isTool;
+        public bool isWork;
     }
 }

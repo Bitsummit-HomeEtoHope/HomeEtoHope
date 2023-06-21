@@ -22,6 +22,7 @@ namespace StateMachine.General
         private void Update()
         {
             GetFood();
+            GetTool();
         }
         public void GetFood()
         {
@@ -34,6 +35,25 @@ namespace StateMachine.General
                 foodList_human.Add(foodToGet);
                 foodToGet.SetActive(false);
                 GetItemManger.GetComponent<GetItem>().foodList.RemoveAt(0);//移除食物
+                manager.parameter.isHungry = false;
+            }
+        }
+
+        public void GetTool()
+        {
+            float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[0].position);
+            if(isTool==false && distance<manager.parameter.patrolOuterRadius && GetItemManger.GetComponent<GetItem>().toolList.Count!=0)
+            {
+                isTool = true;
+                GameObject toolToGet=GetItemManger.GetComponent<GetItem>().toolList[0];
+                toolList_human.Add(toolToGet);
+                toolToGet.SetActive(false);
+                GetItemManger.GetComponent<GetItem>().toolList.RemoveAt(0);//移除工具
+                if(toolToGet.gameObject.GetComponent<GetItem2dData>()._itemUserNum!=0)
+                {
+                    //TODO:还需要判断工具的种类，之后再做
+                    manager.parameter.isTool =true;
+                }
                 
             }
         }

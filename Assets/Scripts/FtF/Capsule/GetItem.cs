@@ -82,17 +82,17 @@ public class GetItem : MonoBehaviour
             {
                 case "Food":
                     TakeMeOut(prefab, foodPoint, foodScale, foodOffset, foodInitialRotation, foodMoveSpeed, foodDestinationPoint, "Food_39");
-                    foodList.Add(prefab);
+                    //foodList.Add(prefab);
                     Debug.Log("-----Food coming-----");
                     break;
                 case "Tool":
                     TakeMeOut(prefab, toolPoint, toolScale, toolOffset, toolInitialRotation, toolMoveSpeed, toolDestinationPoint, "Tool_39");
-                    toolList.Add(prefab);
+                    //toolList.Add(prefab);
                     Debug.Log("-----Tool coming-----");
                     break;
                 case "Human":
                     TakeMeOut(prefab, humanPoint, humanScale, humanOffset, humanInitialRotation, humanMoveSpeed, humanDestinationPoint, "Human_39");
-                    humanList.Add(prefab);
+                    //humanList.Add(prefab);
                     Debug.Log("-----Human coming-----");
                     break;
                 default:
@@ -112,6 +112,18 @@ public class GetItem : MonoBehaviour
         if (point != null)
     {
             GameObject instance = Instantiate(prefab, point.position, Quaternion.Euler(initialRotation));
+            if(instance.gameObject.tag=="Food")
+            {
+                foodList.Add(instance);
+            }
+            else if(instance.gameObject.tag=="Tool")
+            {
+                toolList.Add(instance);
+            }
+            else if(instance.gameObject.tag=="Human")
+            {
+                humanList.Add(instance);
+            }
 
             currentSortingOrder += 1;
             instance.GetComponent<Renderer>().sortingOrder = currentSortingOrder;

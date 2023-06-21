@@ -16,6 +16,7 @@ namespace StateMachine.States
 		public void Onenter()
 		{
 			parameter.currentTarget = parameter.patrolPoints[2].position;
+			parameter.isWork = false;
 			parameter.isHungry = true;
 			Debug.Log("I'm hungry!!!");
 		}
@@ -24,6 +25,10 @@ namespace StateMachine.States
 		{
 			manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
+			if(manager.parameter.isHungry==false)
+			{
+				manager.TransitState(StateType.Patrolling);
+			}
 		}
 
 		public void OnExit()

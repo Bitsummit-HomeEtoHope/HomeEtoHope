@@ -2443,6 +2443,13 @@ MonoBehaviour:
     - {fileID: 777196177}
     - {fileID: 561597580}
     - {fileID: 622051239}
+    workPoints:
+    - {fileID: 1620661235}
+    - {fileID: 315821033}
+    - {fileID: 460050931}
+    - {fileID: 774226109}
+    - {fileID: 489550499}
+    - {fileID: 624263312}
     currentTarget: {x: 0, y: 0, z: 0}
     idleTime: 1
     idleTimer: 0
@@ -2452,6 +2459,7 @@ MonoBehaviour:
     hungrySpeed: 25
     isHungry: 0
     isTool: 0
+    isWork: 0
 --- !u!4 &693255775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165930651285477626, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
@@ -4295,7 +4303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8132458336934361724, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -203.296
+      value: -211.4
       objectReference: {fileID: 0}
     - target: {fileID: 8132458336934361724, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
       propertyPath: m_LocalRotation.w

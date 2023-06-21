@@ -63,6 +63,15 @@ namespace StateMachine.States
             //Switch Target
             if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f)
                 manager.TransitState(StateType.Idle);
+            if(manager.parameter.isHungry==false&& manager.parameter.isTool==true)
+            {
+                manager.TransitState(StateType.Working);
+            }
+            if(manager.parameter.isWork==true)
+            {
+                manager.TransitState(StateType.Working);
+            }
+                
             
         }
 

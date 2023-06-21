@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Society
   itemType: Tool
   isBad: 0
+  itemUserNum: 99
