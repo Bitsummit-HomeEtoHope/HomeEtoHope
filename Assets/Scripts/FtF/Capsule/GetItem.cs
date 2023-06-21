@@ -35,6 +35,7 @@ public class GetItem : MonoBehaviour
 
     private string readytag;
     private string readycode;
+    [Header("The List")]
     public List<GameObject> foodList = new List<GameObject>();
     public List<GameObject> toolList = new List<GameObject>();
     public List<GameObject> humanList = new List<GameObject>();
