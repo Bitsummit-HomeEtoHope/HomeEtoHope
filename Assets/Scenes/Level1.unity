@@ -1787,10 +1787,28 @@ MonoBehaviour:
     m_Items: {fileID: 8194751803702818197, guid: d58f4ae73b4f210499b190598345c3ee, type: 3}
   - m_Name: orange(Clone)
     m_Items: {fileID: 7128723905836028965, guid: 49f0e915451c66b43a6224e6adb93741, type: 3}
-  - m_Name: orange(Clone)
-    m_Items: {fileID: 7128723905836028965, guid: 49f0e915451c66b43a6224e6adb93741, type: 3}
-  - m_Name: kettle(Clone)
+  - m_Name: chainsawbroken(Clone)
+    m_Items: {fileID: 3780820489551549235, guid: a51f863dd6e27e244ad4dd676d8bc69f, type: 3}
+  - m_Name: kettlebroken(Clone)
     m_Items: {fileID: 4643666986099773971, guid: 471e293dca8bb854282fb03172f9f6f3, type: 3}
+  - m_Name: nifebroken(Clone)
+    m_Items: {fileID: 3899336006567251450, guid: 3572bfbca2ffcae499bb4a6a9d8868cc, type: 3}
+  - m_Name: hammer(Clone)
+    m_Items: {fileID: 6802402261495630559, guid: 5a49ddfd5f1b5344789db7cb04402000, type: 3}
+  - m_Name: wrenchbroken(Clone)
+    m_Items: {fileID: 3827924249975033189, guid: 25a7aded40ca8384e9147f173c34dc0d, type: 3}
+  - m_Name: iceax(Clone)
+    m_Items: {fileID: 2650555765871544205, guid: 7bf5718443c759248841534c25a8eeca, type: 3}
+  - m_Name: burnerbroken(Clone)
+    m_Items: {fileID: 965573103158797876, guid: fe1f41b365fe6ab41aaf6aed7ebbbf3f, type: 3}
+  - m_Name: shovelbroken(Clone)
+    m_Items: {fileID: 2744529648184979352, guid: 777a4dd9e67fe61409da21cd62b22ea5, type: 3}
+  - m_Name: iceaxbroken(Clone)
+    m_Items: {fileID: 2650555765871544205, guid: 7bf5718443c759248841534c25a8eeca, type: 3}
+  - m_Name: hammerbrokenn(Clone)
+    m_Items: {fileID: 6802402261495630559, guid: 5a49ddfd5f1b5344789db7cb04402000, type: 3}
+  - m_Name: hoebroken(Clone)
+    m_Items: {fileID: 2385820244937738796, guid: 16268fb1fb3fb9e439debbe87c3aea66, type: 3}
 --- !u!20 &421335644
 Camera:
   m_ObjectHideFlags: 0
