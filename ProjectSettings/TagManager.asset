@@ -13,13 +13,8 @@ TagManager:
   - Build_set
   - Human_39
   - Other
-  - Build_set_a
-  - Build_set_b
   - Food_39
   - Tool_39
-  - Food_set
-  - Tool_set
-  - Human_set
   layers:
   - Default
   - TransparentFX
