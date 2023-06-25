@@ -6202,6 +6202,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6169569322897050034, guid: de0f104c5551849e99509280dceb7636, type: 3}
   m_PrefabInstance: {fileID: 1595007264}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1045513178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045513174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050f26409b0876c438166474d3f1be01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 693255773}
 --- !u!1001 &1047515321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8985,6 +8998,7 @@ MonoBehaviour:
   levelDataCurrent: {fileID: 0}
   shady: {fileID: 2043082434}
   isCheck: 0
+  fillImage: {fileID: 0}
 --- !u!4 &1520000595
 Transform:
   m_ObjectHideFlags: 0

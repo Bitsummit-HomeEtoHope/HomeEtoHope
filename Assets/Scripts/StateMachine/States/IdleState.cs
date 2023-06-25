@@ -8,6 +8,7 @@ public class IdleState : IState
 {
     private FSM manager;
     private Parameter parameter;
+    private bool isAnim=false;
 
     public IdleState(FSM manager)
     {
@@ -16,6 +17,9 @@ public class IdleState : IState
     }
     public void Onenter()
     {
+        
+        parameter.Build_FinsihAnim.gameObject.SetActive(false);
+        isAnim=false;
         Debug.Log("进入idle");
     }
 
@@ -29,17 +33,20 @@ public class IdleState : IState
         if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true)
         {
             
-            //manager.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=false;
             manager.TransitState(StateType.Working);
         }
-        if(parameter.idleTimer < parameter.workTimer&&parameter.isWork==true)
+        if(parameter.idleTimer < parameter.workTimer&&parameter.isWork==true&&isAnim==false)
         {
+            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=true;
             parameter.BuildAnim.gameObject.SetActive(true);
+            isAnim=true;
         }
     }
 
     public void OnExit()
     {
+        
         parameter.idleTimer = 0;
     }
 }
