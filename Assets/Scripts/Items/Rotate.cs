@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    public float xSpeed = 0.1f;
-    public float ySpeed = 0.1f;
+    public float xSpeed = 1.5f;
+    public float zSpeed = 1.5f;
     [Range(0.1f, 1f)]
     public float rotateScale = 1f;
     private float xRotate;
-    private float yRotate;
+    private float zRotate;
     private Vector3 initialMousePosition;
 
     private bool canRotate = false;
-
 
     private void Update()
     {
@@ -27,14 +26,12 @@ public class Rotate : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Vector3 delta = Input.mousePosition - initialMousePosition;
-                xRotate = -delta.y * ySpeed * rotateScale;
-                yRotate = -delta.x * xSpeed * rotateScale;
+                xRotate = -delta.y * xSpeed * rotateScale;
+                zRotate = -delta.x * zSpeed * rotateScale;
 
                 transform.Rotate(Vector3.right, -xRotate, Space.World);
-                transform.Rotate(Vector3.up, yRotate, Space.World);
+                transform.Rotate(Vector3.forward, zRotate, Space.World);
                 initialMousePosition = Input.mousePosition;
-
-               
             }
         }
     }
@@ -42,7 +39,6 @@ public class Rotate : MonoBehaviour
     private void OnMouseDown()
     {
         canRotate = true;
-
     }
 
     private void OnMouseUp()
@@ -50,7 +46,4 @@ public class Rotate : MonoBehaviour
         canRotate = false;
         ItemsManager.Instance._isCanRotate = false;
     }
-
-
-  
 }

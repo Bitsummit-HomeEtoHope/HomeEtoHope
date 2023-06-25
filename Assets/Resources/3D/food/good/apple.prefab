@@ -133,6 +133,8 @@ MonoBehaviour:
   tag: 
   defaultMaterial: {fileID: 2100000, guid: ec26f56df6cd046d19eda3a201e6bfde, type: 2}
   highlightMaterial: {fileID: 2100000, guid: cda7f5b71ede9442faa9e93e27e2f0cf, type: 2}
+  ihaveChild: 0
+  childRenderers: []
 --- !u!114 &8518498252580554669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,5 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 1.5
-  ySpeed: 1.5
+  zSpeed: 1.5
   rotateScale: 1
