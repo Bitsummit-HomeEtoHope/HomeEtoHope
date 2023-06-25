@@ -10,6 +10,8 @@ namespace StateMachine.General
         public GameObject GetItemManger;
         public List<GameObject> foodList_human = new List<GameObject>();
         public List<GameObject> toolList_human = new List<GameObject>();
+
+        public List<GameObject> TreeList = new List<GameObject>();
         
         public bool isFood = false;
         public bool isTool = false;
@@ -18,11 +20,13 @@ namespace StateMachine.General
         private void Awake() 
         {
             manager = GetComponent<FSM>();
+            GetTree();
         }
         private void Update()
         {
             GetFood();
             GetTool();
+            
         }
         public void GetFood()
         {
@@ -56,6 +60,19 @@ namespace StateMachine.General
                 }
                 
             }
+        }
+        public void GetTree()
+        {
+            //获得场景内所有名称为Tree的物体并加入到TreeList中
+            {
+                GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
+                foreach (GameObject tree in trees)
+                {
+                    
+                    TreeList.Add(tree);
+                }
+            }
+
         }
 
 

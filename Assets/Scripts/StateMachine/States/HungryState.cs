@@ -34,6 +34,34 @@ namespace StateMachine.States
 		public void OnExit()
 		{
 			parameter.isHungry = false;
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Apple")
+			{
+				GameObject apple=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				//Remove掉TreeList[0]
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Eggplant")
+			{
+				GameObject eggplant=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Greenpepper")
+			{
+				GameObject greenpepper=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Orange")
+			{
+				GameObject orange=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Pumpkin")
+			{
+				GameObject pumpkin=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+
+
 		}
 	}
 }

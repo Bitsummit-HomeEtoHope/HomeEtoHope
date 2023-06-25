@@ -32,6 +32,7 @@ namespace StateMachine.States
         {
             //清空parameter.workPoints
             parameter.workPoints.Clear();
+            manager.StartWaitForSeconds(2f);
         }
 
         public void OnUpdate()

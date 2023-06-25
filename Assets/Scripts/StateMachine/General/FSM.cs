@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using StateMachine.States;
 using UnityEngine;
@@ -52,5 +53,18 @@ namespace StateMachine.General
 		{
 			currentState.OnUpdate();
 		}
+
+		public void StartWaitForSeconds(float time)
+		{
+			StartCoroutine(WaitForSecondsCoroutine(time));
+		}
+
+		private IEnumerator WaitForSecondsCoroutine(float time)
+		{
+			yield return new WaitForSeconds(time);
+			// 执行暂停后的逻辑
+			//Time.timeScale = 1;
+		}
+		
 	}
 }

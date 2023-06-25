@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item2dData: {fileID: 11400000, guid: 38e38c0c6a94e3f4ea3788da3c2f31dd, type: 2}
+  item2dData: {fileID: 11400000, guid: 1148e1bc45018cd4d9f4024994edf12f, type: 2}
   _isSelected: 0
   _itemName: 
   _itemType: 
   _isBad: 0
+  _itemUserNum: 0
+  _itemTreeSprite: {fileID: 0}
