@@ -27,7 +27,7 @@ namespace StateMachine.States
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
 			if(manager.parameter.isHungry==false)
 			{
-				manager.TransitState(StateType.Patrolling);
+				manager.TransitState(StateType.Idle);
 			}
 		}
 

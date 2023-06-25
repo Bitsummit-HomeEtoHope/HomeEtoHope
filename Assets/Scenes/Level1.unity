@@ -215,6 +215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &72940
 Rigidbody:
@@ -714,6 +718,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &56796115
 Rigidbody:
@@ -1576,6 +1584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &163323053
 Rigidbody:
@@ -1780,6 +1792,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &191202833
 Rigidbody:
@@ -1889,6 +1905,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &195712592
 Rigidbody:
@@ -2230,6 +2250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &279034219
 Rigidbody:
@@ -2427,6 +2451,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!1 &321513356
 GameObject:
@@ -3323,6 +3351,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!1 &471633126
 GameObject:
@@ -3577,6 +3609,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!1 &518775515
 GameObject:
@@ -3973,6 +4009,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &585999239
 Rigidbody:
@@ -4353,6 +4393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!4 &644442733 stripped
 Transform:
@@ -4443,6 +4487,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &689071082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339777084869552304, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+  m_PrefabInstance: {fileID: 1716487985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693255773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3177532683434347984, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
@@ -4475,6 +4524,7 @@ MonoBehaviour:
     currentTarget: {x: 0, y: 0, z: 0}
     idleTime: 1
     idleTimer: 0
+    workTimer: 5
     patrolOuterRadius: 40
     patrolInnerRadius: 20
     moveSpeed: 50
@@ -4482,6 +4532,8 @@ MonoBehaviour:
     isHungry: 0
     isTool: 0
     isWork: 0
+    BuildAnim: {fileID: 1045513174}
+    Build_FinsihAnim: {fileID: 689071082}
 --- !u!4 &693255775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165930651285477626, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
@@ -4920,6 +4972,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!4 &777196177 stripped
 Transform:
@@ -5086,6 +5142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &806818585
 Rigidbody:
@@ -5195,6 +5255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &819515838
 Rigidbody:
@@ -5465,6 +5529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &886624626
 Rigidbody:
@@ -5637,6 +5705,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &914451681
 Rigidbody:
@@ -5746,6 +5818,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &935129430
 Rigidbody:
@@ -6121,6 +6197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
+--- !u!1 &1045513174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6169569322897050034, guid: de0f104c5551849e99509280dceb7636, type: 3}
+  m_PrefabInstance: {fileID: 1595007264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1047515321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6213,6 +6294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1047515325
 Rigidbody:
@@ -6322,6 +6407,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1075786975
 Rigidbody:
@@ -6431,6 +6520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1103257150
 Rigidbody:
@@ -6585,6 +6678,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1115241278
 Rigidbody:
@@ -6826,6 +6923,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1128796634
 Rigidbody:
@@ -7186,6 +7287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1174558634
 Rigidbody:
@@ -7549,6 +7654,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1214919230
 Rigidbody:
@@ -7727,6 +7836,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1247385681
 Rigidbody:
@@ -8193,6 +8306,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1350704667
 Rigidbody:
@@ -8282,6 +8399,7 @@ MonoBehaviour:
     currentTarget: {x: 0, y: 0, z: 0}
     idleTime: 1
     idleTimer: 0
+    workTimer: 0
     patrolOuterRadius: 40
     patrolInnerRadius: 20
     moveSpeed: 50
@@ -8289,6 +8407,8 @@ MonoBehaviour:
     isHungry: 0
     isTool: 0
     isWork: 0
+    BuildAnim: {fileID: 0}
+    Build_FinsihAnim: {fileID: 0}
 --- !u!1 &1365442182
 GameObject:
   m_ObjectHideFlags: 0
@@ -8444,6 +8564,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1405576052
 Rigidbody:
@@ -8695,6 +8819,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1504925193
 Rigidbody:
@@ -8804,6 +8932,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1517021179
 Rigidbody:
@@ -9029,6 +9161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1567147842
 Rigidbody:
@@ -9091,6 +9227,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTree: 0
+--- !u!1001 &1595007264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 693255775}
+    m_Modifications:
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050031, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050032, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050032, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050032, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2147095345
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050034, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_Name
+      value: smoke_front 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169569322897050034, guid: de0f104c5551849e99509280dceb7636, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de0f104c5551849e99509280dceb7636, type: 3}
 --- !u!1 &1611377920
 GameObject:
   m_ObjectHideFlags: 0
@@ -9214,6 +9423,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1613958968
 Rigidbody:
@@ -9270,6 +9483,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 1.2
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!1 &1626757741
 GameObject:
@@ -9485,6 +9702,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1650420605
 Rigidbody:
@@ -9724,6 +9945,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691503345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1716487985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 693255775}
+    m_Modifications:
+    - target: {fileID: 1339777084869552304, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_Name
+      value: finish-building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339777084869552304, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579854303342043906, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579854303342043906, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2147095345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821678652664875902, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821678652664875902, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821678652664875902, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2147095345
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8287106
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.683533
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
 --- !u!1 &1754839291
 GameObject:
   m_ObjectHideFlags: 0
@@ -10346,6 +10648,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1874874211
 Rigidbody:
@@ -10672,6 +10978,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1949684463
 Rigidbody:
@@ -10907,6 +11217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check_Distance: 1
+  check_Timer: 0.75
+  check_Time: 0
+  isBuildTimer: 0.15
+  isBuildTime: 0
   isBuild: 0
 --- !u!54 &1990346839
 Rigidbody:

@@ -14,6 +14,7 @@ namespace StateMachine.General
         public Vector3 currentTarget;
         public float idleTime;
         public float idleTimer;
+        public float workTimer;
         public float patrolOuterRadius;
         public float patrolInnerRadius;
         public float moveSpeed;
@@ -21,5 +22,7 @@ namespace StateMachine.General
         public bool isHungry;
         public bool isTool;
         public bool isWork;
+        public GameObject BuildAnim;
+        public GameObject Build_FinsihAnim;
     }
 }

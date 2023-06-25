@@ -16,15 +16,25 @@ public class IdleState : IState
     }
     public void Onenter()
     {
-        
+        Debug.Log("进入idle");
     }
 
     public void OnUpdate()
     {
         parameter.idleTimer += Time.deltaTime;
-        if (parameter.idleTimer >= parameter.idleTime)
+        if (parameter.idleTimer >= parameter.idleTime&&parameter.isWork==false)
         {
             manager.TransitState(StateType.Patrolling);
+        }
+        if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true)
+        {
+            
+            //manager.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+            manager.TransitState(StateType.Working);
+        }
+        if(parameter.idleTimer < parameter.workTimer&&parameter.isWork==true)
+        {
+            parameter.BuildAnim.gameObject.SetActive(true);
         }
     }
 

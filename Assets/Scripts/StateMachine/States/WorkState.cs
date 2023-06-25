@@ -5,7 +5,7 @@ using StateMachine.General;
 
 namespace StateMachine.States
 {
-    public class WorkState : IState
+    public class WorkState :IState
     {
         private readonly Parameter parameter;
         private readonly FSM manager;
@@ -23,6 +23,7 @@ namespace StateMachine.States
     
         public void Onenter()
         {
+            
             isArriveWorkPoint = false;
             GetWorkTarget();
             manager.parameter.isWork = true;
@@ -32,7 +33,7 @@ namespace StateMachine.States
         {
             //清空parameter.workPoints
             parameter.workPoints.Clear();
-            manager.StartWaitForSeconds(2f);
+            
         }
 
         public void OnUpdate()
@@ -70,6 +71,8 @@ namespace StateMachine.States
                 //Debug.Log("tool:"+tool);
                 
                 isArriveWorkPoint = true;
+                manager.TransitState(StateType.Idle);
+                
                 
             }
             
@@ -84,9 +87,7 @@ namespace StateMachine.States
             }
             if(isArriveWorkPoint&&(Vector2.Distance(manager.transform.position, parameter.currentTarget) < 1f))
             {
-                
-                
-                manager.TransitState(StateType.Working);
+                //manager.TransitState(StateType.Working);
                 
             }
             if(manager.parameter.isHungry==true)
@@ -118,6 +119,8 @@ namespace StateMachine.States
             
 
         }
+
+        
         
     
     }
