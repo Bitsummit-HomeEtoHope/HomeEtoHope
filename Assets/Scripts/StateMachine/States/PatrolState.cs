@@ -51,6 +51,7 @@ namespace StateMachine.States
     
         public void Onenter()
         {
+            parameter.Food_Tran.gameObject.SetActive(false);
             GetTarget();
         }
 

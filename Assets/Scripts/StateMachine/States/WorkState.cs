@@ -23,7 +23,7 @@ namespace StateMachine.States
     
         public void Onenter()
         {
-            
+            parameter.Food_Tran.gameObject.SetActive(false);
             isArriveWorkPoint = false;
             GetWorkTarget();
             manager.parameter.isWork = true;

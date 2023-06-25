@@ -24,5 +24,6 @@ namespace StateMachine.General
         public bool isWork;
         public GameObject BuildAnim;
         public GameObject Build_FinsihAnim;
+        public GameObject Food_Tran;
     }
 }

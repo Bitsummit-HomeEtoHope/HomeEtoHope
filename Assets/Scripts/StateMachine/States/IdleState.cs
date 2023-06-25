@@ -41,7 +41,10 @@ public class IdleState : IState
             parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=true;
             parameter.BuildAnim.gameObject.SetActive(true);
             isAnim=true;
+            
         }
+        
+        
     }
 
     public void OnExit()

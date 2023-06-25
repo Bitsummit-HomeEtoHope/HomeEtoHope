@@ -7,6 +7,7 @@ namespace StateMachine.States
 	{
 		private readonly Parameter parameter;
 		private readonly FSM manager;
+		
 
 		public HungryState(FSM manager)
 		{
@@ -27,6 +28,7 @@ namespace StateMachine.States
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
 			if(manager.parameter.isHungry==false)
 			{
+				parameter.Food_Tran.gameObject.SetActive(true);
 				manager.TransitState(StateType.Idle);
 			}
 		}
@@ -34,6 +36,9 @@ namespace StateMachine.States
 		public void OnExit()
 		{
 			parameter.isHungry = false;
+			//GameObject food=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0],parameter.Food_Tran.position,Quaternion.identity);
+			
+			
 			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Apple")
 			{
 				GameObject apple=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
