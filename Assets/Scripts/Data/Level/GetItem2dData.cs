@@ -15,6 +15,8 @@ public class GetItem2dData : MonoBehaviour
     public bool _isBad;
     [HideInInspector]
     public int _itemUserNum;
+    [HideInInspector]
+    public GameObject _itemTreeSprite;
 
 
    private void Awake() 
@@ -24,5 +26,6 @@ public class GetItem2dData : MonoBehaviour
      _itemType = item2dData.itemType;
      _isBad = item2dData.isBad;
      _itemUserNum = item2dData.itemUserNum;
+     _itemTreeSprite = item2dData.itemTreeSprite;
    }
 }

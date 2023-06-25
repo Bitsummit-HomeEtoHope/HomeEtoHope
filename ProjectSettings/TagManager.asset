@@ -15,6 +15,7 @@ TagManager:
   - Other
   - Food_39
   - Tool_39
+  - Tree
   layers:
   - Default
   - TransparentFX
