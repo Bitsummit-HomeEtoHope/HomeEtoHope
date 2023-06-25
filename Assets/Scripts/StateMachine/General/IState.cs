@@ -9,4 +9,5 @@ public interface IState
 	void Onenter();
 	void OnUpdate();
 	void OnExit();
+//	void OnTriggerEnter();
 }
