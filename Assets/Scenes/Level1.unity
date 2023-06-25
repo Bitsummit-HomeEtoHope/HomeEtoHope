@@ -4806,17 +4806,17 @@ MonoBehaviour:
   orderInLayer: 2
   foodScale: {x: 13, y: 13, z: 13}
   foodOffset: {x: 0, y: 0, z: 0}
-  foodInitialRotation: {x: -45, y: 0, z: 0}
+  foodInitialRotation: {x: 0, y: 0, z: 0}
   foodMoveSpeed: 1.5
   foodDestinationPoint: {fileID: 1249233542}
   toolScale: {x: 4.5, y: 4.5, z: 4.5}
   toolOffset: {x: 0, y: 0, z: 0}
-  toolInitialRotation: {x: -45, y: 0, z: 0}
+  toolInitialRotation: {x: 0, y: 0, z: 0}
   toolMoveSpeed: 1.5
   toolDestinationPoint: {fileID: 269318552}
   humanScale: {x: 4.5, y: 4.5, z: 4.5}
   humanOffset: {x: 0, y: 0, z: 0}
-  humanInitialRotation: {x: -45, y: 0, z: 0}
+  humanInitialRotation: {x: 0, y: 0, z: 0}
   humanMoveSpeed: 1.5
   humanDestinationPoint: {fileID: 644442733}
   foodList: []
