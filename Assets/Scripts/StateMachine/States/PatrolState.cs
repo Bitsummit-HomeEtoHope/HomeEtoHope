@@ -56,24 +56,38 @@ namespace StateMachine.States
 
         public void OnUpdate()
         {
-            //Move To Target
-            manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
-                parameter.currentTarget, parameter.moveSpeed*Time.deltaTime);
+            // Move To Target
+            manager.transform.position = Vector3.MoveTowards(manager.transform.position,
+                parameter.currentTarget, parameter.moveSpeed * Time.deltaTime);
 
-            //Switch Target
+            // Switch Target
             if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f)
                 manager.TransitState(StateType.Idle);
-            if(manager.parameter.isHungry==false&& manager.parameter.isTool==true)
+
+            if (manager.gameObject.tag == "Player")
             {
-                manager.TransitState(StateType.Working);
+                if (manager.parameter.isWork)
+                {
+                    manager.TransitState(StateType.Working);
+                }
+                if (!manager.parameter.isHungry && manager.parameter.isTool)
+                {
+                    manager.TransitState(StateType.Working);
+                }
             }
-            if(manager.parameter.isWork==true)
+            else if (manager.gameObject.tag == "Cleaner")
             {
-                manager.TransitState(StateType.Working);
+                if (manager.parameter.isWork)
+                {
+                    manager.TransitState(StateType.Cleaning);
+                }
+                if (!manager.parameter.isHungry && manager.parameter.isTool)
+                {
+                    manager.TransitState(StateType.Cleaning);
+                }
             }
-                
-            
         }
+
 
         public void OnExit()
         {
