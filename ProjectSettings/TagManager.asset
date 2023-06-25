@@ -66,3 +66,9 @@ TagManager:
   - name: Human_39
     uniqueID: 2147871951
     locked: 0
+  - name: UI
+    uniqueID: 396238583
+    locked: 0
+  - name: effect
+    uniqueID: 331639363
+    locked: 0

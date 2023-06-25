@@ -26,7 +26,7 @@ using UnityEngine;
                 
                 
             }
-            Debug.Log(buildTime);
+       //     Debug.Log(buildTime);
             
         }
     }

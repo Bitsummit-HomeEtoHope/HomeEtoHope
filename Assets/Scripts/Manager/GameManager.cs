@@ -16,7 +16,6 @@ public class GameManager : SingletonManager<GameManager>
     private int isChangeAfter = 0;
     public int isCheck = 0;
 
-    [SerializeField] private Image fillImage;
 
     // Start is called before the first frame update
     void Start()
@@ -28,30 +27,20 @@ public class GameManager : SingletonManager<GameManager>
     // Update is called once per frame
     void Update()
     {
-        CountDown();
+  //      CountDown();
     }
 
-    void CountDown()
-    {
-        float fillSpeed = 1f / levelDataCurrent._levelTime; // 每秒填充的速度
-
-        float fillAmount = fillImage.fillAmount - fillSpeed * Time.deltaTime;
-        fillImage.fillAmount = Mathf.Clamp01(fillAmount); // 将填充量限制在0到1之间
-
-        if (Time.time - currentTime >= 1)
-        {
-            currentTime = (int)(Time.time % levelDataCurrent._levelTime);
-            isChangeAfter = (int)(Time.time / levelDataCurrent._levelTime);
-        }
-
-        if (isChangeAfter != isChangeBefore && !isPause)
-        {
-            isChangeBefore = isChangeAfter;
-            isPause = true;
-            Time.timeScale = 0;
-            ShadyOpen();
-        }
-    }
+    //void CountDown()
+    //{
+       
+    //    if (isChangeAfter != isChangeBefore && !isPause)
+    //    {
+    //        isChangeBefore = isChangeAfter;
+    //        isPause = true;
+    //        Time.timeScale = 0;
+    //        ShadyOpen();
+    //    }
+    //}
 
 
     public void ShadyOpen()

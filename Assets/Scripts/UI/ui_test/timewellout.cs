@@ -1,42 +1,111 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class timewellout : MonoBehaviour
 {
-    public Transform targetPosition; // 指定的目标位置
-    public float movementTime = 90f; // 移动时间（秒）
+    private RectTransform rectTransform;
+    private float elapsedTime;
+    private float targetPosX;
+    private float startPosX;
 
-    private float timer = 0f;
-    private Vector3 startingPosition;
-    private bool isMoving = false;
+    public float duration = 90f;
+    public float increaseAmount = 150f;
+    public float recoveryDuration = 0.5f; // 恢复时间
+
+    public LevelDataCurrent levelDataCurrent;
+    public DaysManager daysManager;
+
+    private int currentTime = 0;
+    private int isChangeBefore = 0;
+    private int isChangeAfter = 0;
+
+    [SerializeField] private Image fillImage;
+
+    private bool isRecovering; // 是否在恢复中
+    private float recoveryElapsedTime; // 恢复流逝的时间
+    private Vector2 originalPosition; // 原始位置
 
     private void Start()
     {
-        startingPosition = transform.position;
+        levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
+        daysManager = FindObjectOfType<DaysManager>();
+
+        rectTransform = GetComponent<RectTransform>();
+        startPosX = rectTransform.anchoredPosition.x;
+        targetPosX = startPosX + increaseAmount;
+        elapsedTime = 0f;
+
+        originalPosition = rectTransform.anchoredPosition;
     }
 
     private void Update()
     {
-        if (isMoving)
+        if (isRecovering)
         {
-            timer += Time.deltaTime;
-            float t = Mathf.Clamp01(timer / movementTime);
-
-            // 在指定时间内将预制件移动到目标位置
-            transform.position = Vector3.Lerp(startingPosition, targetPosition.position, t);
-
-            if (t >= 1f)
-            {
-                // 移动完成后执行相关操作
-                // 例如：播放动画、触发事件等
-                Debug.Log("移动完成！");
-                isMoving = false;
-            }
+            SunReset();
+        }
+        else
+        {
+            SunDown();
         }
     }
 
-    public void StartMovement()
+    private void SunDown()
     {
-        timer = 0f;
-        isMoving = true;
+        float fillSpeed = 1f / duration; // 每秒填充的速度
+
+        float fillAmount = fillImage.fillAmount - fillSpeed * Time.deltaTime;
+        fillImage.fillAmount = Mathf.Clamp01(fillAmount); // 将填充量限制在0到1之间
+
+        if (Time.time - currentTime >= 1)
+        {
+            currentTime = (int)(Time.time % duration);
+            isChangeAfter = (int)(Time.time / duration);
+        }
+
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime <= duration)
+        {
+            float t = elapsedTime / duration;
+            float currentPosX = Mathf.Lerp(startPosX, targetPosX, t);
+            rectTransform.anchoredPosition = new Vector2(currentPosX, rectTransform.anchoredPosition.y);
+        }
+        else
+        {
+            // 计时结束后启用 DaysManager 的 daysChange 方法
+            daysManager.daysChange();
+
+            isRecovering = true;
+            recoveryElapsedTime = 0f;
+        }
+    }
+
+    private void SunReset()
+    {
+        float fillSpeed = 1f / recoveryDuration; // 每秒填充的速度
+
+        float fillAmount = fillImage.fillAmount + fillSpeed * Time.deltaTime;
+        fillImage.fillAmount = Mathf.Clamp01(fillAmount); // 将填充量限制在0到1之间
+
+        if (Time.time - currentTime >= 1)
+        {
+            currentTime = (int)(Time.time % recoveryDuration);
+            isChangeAfter = (int)(Time.time / recoveryDuration);
+        }
+
+        recoveryElapsedTime += Time.deltaTime;
+
+        if (recoveryElapsedTime <= recoveryDuration)
+        {
+            float t = recoveryElapsedTime / recoveryDuration;
+            float currentPosX = Mathf.Lerp(targetPosX, startPosX, t);
+            rectTransform.anchoredPosition = new Vector2(currentPosX, rectTransform.anchoredPosition.y);
+        }
+        else
+        {
+            isRecovering = false;
+            elapsedTime = 0f;
+        }
     }
 }
