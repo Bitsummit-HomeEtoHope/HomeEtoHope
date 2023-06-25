@@ -21,7 +21,7 @@ namespace StateMachine.General
             //manager.parameter.isDie = false;
 
             StartCoroutine(GetHungry());
-            StartCoroutine(StartClearingTimer());
+            //StartCoroutine(StartClearingTimer());
         }
 
         private void Update()
@@ -43,10 +43,10 @@ namespace StateMachine.General
             a++;
         }
 
-        private IEnumerator StartClearingTimer()
+        /*private IEnumerator StartClearingTimer()
         {
             yield return new WaitForSeconds(20f);
             manager.TransitState(StateType.Cleaning);
-        }
+        }*/
     }
 }

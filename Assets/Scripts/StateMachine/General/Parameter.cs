@@ -25,5 +25,13 @@ namespace StateMachine.General
         public GameObject BuildAnim;
         public GameObject Build_FinsihAnim;
         public GameObject Food_Tran;
+        public Texture2D did;
+        public Texture2D flower;
+        [Header("if Clear")]
+        public GameObject CleanWanter;
+        public Transform[] cleanTargetList;
+
+        public bool isClean;
+        public bool isDie;
     }
 }

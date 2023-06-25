@@ -17,7 +17,7 @@ public class IdleState : IState
     }
     public void Onenter()
     {
-        
+        //parameter.Food_Tran.gameObject.SetActive(false);
         parameter.Build_FinsihAnim.gameObject.SetActive(false);
         isAnim=false;
         Debug.Log("进入idle");
