@@ -2180,7 +2180,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2045684447}
   m_RootOrder: 4
@@ -2201,38 +2201,25 @@ MonoBehaviour:
   Days_Image: {fileID: 653982136}
   Day2Image: {fileID: 21300000, guid: ddb6ad4ec1c88344a883fcca81eebbe9, type: 3}
   Day3Image: {fileID: 21300000, guid: c91407467d4bd0c43b1c178dea92965e, type: 3}
+  humanlist:
+  - {fileID: 21300000, guid: 257a2bacbe604704199598b0bb8d7e74, type: 3}
+  - {fileID: 21300000, guid: 609e579b99da1694a8dc57707124dda5, type: 3}
+  - {fileID: 21300000, guid: a7d441b9a533db647bb2c7ceadcfb2fb, type: 3}
+  - {fileID: 21300000, guid: 2bdc5bcd923b9ed4b9a20557d11e84ed, type: 3}
+  - {fileID: 21300000, guid: 85f6053076fc8b64abf8671148a5cebc, type: 3}
+  - {fileID: 21300000, guid: e74deea83f5154049a8523ae55de7bda, type: 3}
+  - {fileID: 21300000, guid: 217bfb1e0b205a94ea4673b058a0918b, type: 3}
   List_Day1: {fileID: 989988229}
+  megane_1: {fileID: 1802767360}
   humanday_1: {fileID: 1429796187}
-  humanlist_1:
-  - {fileID: 21300000, guid: 9ae54bf6dac514a2e945905c377a7b53, type: 3}
-  - {fileID: 21300000, guid: f139a6fc00ca44bed900e533e4b00aa4, type: 3}
-  - {fileID: 21300000, guid: 244d00b81a2e64cea917e7f9ef81c26a, type: 3}
-  - {fileID: 21300000, guid: f37a6320d78fb4efca1b4c876307ed17, type: 3}
-  - {fileID: 21300000, guid: 4ecdcc7d5687a467fa677cc76f759b03, type: 3}
-  - {fileID: 21300000, guid: 83d4d549379f144e1a1e627c4c31b32e, type: 3}
-  - {fileID: 21300000, guid: 1f854d22a486f4dc2a27e47ed022e2e4, type: 3}
   List_Day2: {fileID: 204290376}
   day2_Day2: {fileID: 21300000, guid: 5a76a9a0779504167b7c24f9990297c4, type: 3}
+  megane_2: {fileID: 1223066064}
   humanday_2: {fileID: 1156994240}
-  humanlist_2:
-  - {fileID: 21300000, guid: 717d86011a7494ab5b6e042aa95cf18c, type: 3}
-  - {fileID: 21300000, guid: 48ae6a0314c07480cad0973e4021ef5f, type: 3}
-  - {fileID: 21300000, guid: bdcf434e80523406ea03bc8414c385fa, type: 3}
-  - {fileID: 21300000, guid: 40ef68ed89bf04778911ec3192ba7f78, type: 3}
-  - {fileID: 21300000, guid: f2be4142585ce4511ad4ad47a5517767, type: 3}
-  - {fileID: 21300000, guid: 25ed4e90a5a1f4394975dde2f46f1a26, type: 3}
-  - {fileID: 21300000, guid: 6fe90d137c28942cfaf4abe5a536c09d, type: 3}
   List_Day3: {fileID: 1608918597}
   day3_Day3: {fileID: 21300000, guid: 32069c794a3dc461eb169428829fdbd8, type: 3}
+  megane_3: {fileID: 1682143779}
   humanday_3: {fileID: 1593891229}
-  humanlist_3:
-  - {fileID: 21300000, guid: 22cb9681790594e0496217127469c7c0, type: 3}
-  - {fileID: 21300000, guid: 72697fc1fa2064ff8bd6ee123b1e48e0, type: 3}
-  - {fileID: 21300000, guid: 7ad4eb6f9983049e59acdd396cd9fad9, type: 3}
-  - {fileID: 21300000, guid: 0b0edefdb88ab44f990d89b1775bb38f, type: 3}
-  - {fileID: 21300000, guid: dc38d63aa804047f399bb42d1a4e1416, type: 3}
-  - {fileID: 21300000, guid: fc9b3e31ec5d8417c87307cdd134f484, type: 3}
-  - {fileID: 21300000, guid: 5ac4234a750274d20b7c9152bb6bdd3c, type: 3}
 --- !u!4 &269318552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9083470669300948224, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
@@ -12371,7 +12358,7 @@ GameObject:
   - component: {fileID: 1156994241}
   - component: {fileID: 1156994240}
   m_Layer: 5
-  m_Name: day3_set
+  m_Name: day2_set
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13047,7 +13034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 9, y: -0}
   m_SizeDelta: {x: 261, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223066064
@@ -15655,7 +15642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 9.000076, y: 0.000022888184}
   m_SizeDelta: {x: 261, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682143779
@@ -16239,7 +16226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 9.000076, y: 0.000022888184}
   m_SizeDelta: {x: 261, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802767360
