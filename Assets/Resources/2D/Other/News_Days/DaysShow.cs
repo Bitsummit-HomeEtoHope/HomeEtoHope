@@ -2,36 +2,39 @@ using UnityEngine;
 
 public class DaysShow : MonoBehaviour
 {
-    private bool isClosed = false; // 标记游戏物体是否被关闭
-    private float timer = 0f; // 计时器
-    private float delayTime = 1f; // 延迟关闭的时间
-
-    private void OnMouseDown()
-    {
-        if (!isClosed)
-        {
-            Time.timeScale = 0f; // 暂停游戏
-            timer = 0f;
-            isClosed = true;
-        }
-    }
+    private bool isPaused = false;
 
     private void Update()
     {
-        if (isClosed)
+        if (Input.GetKeyDown(KeyCode.P)) // 当按下P键时切换暂停状态
         {
-            timer += Time.unscaledDeltaTime; // 使用unscaledDeltaTime计时，不受Time.timeScale影响
-
-            if (timer >= delayTime)
-            {
-                Time.timeScale = 1f; // 恢复游戏时间流逝
-                gameObject.SetActive(false); // 关闭游戏物体
-            }
-            else
-            {
-                float scale = Mathf.Lerp(1f, 0f, timer / delayTime); // 计算比例数值
-                transform.localScale = new Vector3(scale, scale, 1f); // 设置比例数值
-            }
+            TogglePause();
         }
+    }
+
+    private void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0f; // 将时间缩放设置为0，实现暂停效果
+        // 在此处可以执行其他暂停相关的逻辑，如显示暂停菜单等
+    }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1f; // 将时间缩放设置为1，恢复正常时间流逝
+        // 在此处可以执行其他恢复游戏相关的逻辑，如关闭暂停菜单等
     }
 }
