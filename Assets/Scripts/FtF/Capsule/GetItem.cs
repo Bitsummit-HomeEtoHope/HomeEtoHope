@@ -40,11 +40,22 @@ public class GetItem : MonoBehaviour
     public List<GameObject> toolList = new List<GameObject>();
     public List<GameObject> humanList = new List<GameObject>();
 
+    [Header("HumanTell")]
+    private string selectedHumanNames;
+
     private void Start()
     {
         ReceiveCode(readycode);
         ReceiveTag(readytag);
+  
     }
+
+    private void HandleHumanSelected(string selectedHumanName)
+    {
+        Debug.Log("------Selected Human Name-----: " + selectedHumanName);
+        // 执行其他操作...
+    }
+
 
     public void ReceiveTag(string tag)
     {
@@ -59,6 +70,7 @@ public class GetItem : MonoBehaviour
 
     private void CallItem()
     {
+
         Debug.Log("Ready Tag: " + readytag);
         Debug.Log("Ready Code: " + readycode);
 
@@ -74,8 +86,10 @@ public class GetItem : MonoBehaviour
         }
         else if (readytag == "Human")
         {
+            HandleHumanSelected(DaysManager.SelectedHumanName);
             prefab = Resources.Load<GameObject>("2D_set/human/" + readycode);
         }
+
 
         if (prefab != null)
         {
