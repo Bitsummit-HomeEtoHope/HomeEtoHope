@@ -25,10 +25,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private GameObject _go;
     public GameObject[] itemsArray;
     public int itemsArrayIndex;
+    public Vector3 itemScale = new Vector3(3f, 3f, 3f);
 
     private const string DisposeTag = "Dispose";
 
-    public Vector3 itemScale = new Vector3(3f, 3f, 3f);
+    [Header ("Send Item")]
+    [SerializeField] private bool sendFood = true;
+    [SerializeField] private bool sendTool = true;
+    [SerializeField] private bool sendHuman = true;
 
     private readonly Dictionary<ItemsType, string> _itemsDictionary = new Dictionary<ItemsType, string>();
     private enum ItemsType
@@ -80,8 +84,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Human1_5, Human2_5, Human3_5,
         Human1_6, Human2_6, Human3_6,
     }
-
-    private void AddItemsDictionary()
+    private void addFood() 
     {
         //---food---good---
         _itemsDictionary.Add(ItemsType.Apple, "3D/food/good/apple");
@@ -97,7 +100,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.GreenPepperQaq, "3D/food/bad/greenpepperqaq");
         _itemsDictionary.Add(ItemsType.OrangeQaq, "3D/food/bad/orangeqaq");
         _itemsDictionary.Add(ItemsType.PumpkinQaq, "3D/food/bad/pumpkinqaq");
-
+    }
+    private void addTool()
+    {
         //---tool---good---
         _itemsDictionary.Add(ItemsType.Burner, "3D/tool/good/burner");
         _itemsDictionary.Add(ItemsType.Chainsaw, "3D/tool/good/chainsaw");
@@ -120,6 +125,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.ShovelQAQ, "3D/tool/bad/shovelbroken");
         _itemsDictionary.Add(ItemsType.WrenchQAQ, "3D/tool/bad/wrenchbroken");
 
+    }
+    private void addHuman()
+    {
         //---human-1---
         _itemsDictionary.Add(ItemsType.Human1_0, "3D/human/human1/human1_0");
         _itemsDictionary.Add(ItemsType.Human1_1, "3D/human/human1/human1_1");
@@ -146,12 +154,20 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Human3_6, "3D/human/human3/human3_6");
     }
 
+
+
     private string RandomSelectItem()
     {
-        var index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
-        selectedItem = _itemsDictionary[(ItemsType)index];
+        int index;
+        do
+        {
+            index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
+            selectedItem = _itemsDictionary[(ItemsType)index];
+        } while (string.IsNullOrEmpty(selectedItem));
+
         return selectedItem;
     }
+
 
     private void InitializeItem(string type)
     {
@@ -212,7 +228,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         moveTime = _levelDataCurrent._interval;
         Application.targetFrameRate = 120;
-        AddItemsDictionary();
+
+        if (sendFood) addFood();
+        if (sendTool) addTool();
+        if (sendHuman) addHuman();
+
         itemsArray = new GameObject[2];
         itemsArrayIndex = 0;
         for (int i = 0; i < 2; i++)
