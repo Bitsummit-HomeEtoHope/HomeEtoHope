@@ -13400,8 +13400,8 @@ MonoBehaviour:
   itemsArray: []
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
-  sendFood: 0
-  sendTool: 0
+  sendFood: 1
+  sendTool: 1
   sendHuman: 1
 --- !u!1 &1302853113
 GameObject:
