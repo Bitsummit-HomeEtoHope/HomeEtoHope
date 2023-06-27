@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -155,18 +156,22 @@ public class ItemsManager : SingletonManager<ItemsManager>
     }
 
 
-
     private string RandomSelectItem()
     {
-        int index;
-        do
-        {
-            index = UnityEngine.Random.Range(0, _itemsDictionary.Count);
-            selectedItem = _itemsDictionary[(ItemsType)index];
-        } while (string.IsNullOrEmpty(selectedItem));
+        var enumValues = Enum.GetValues(typeof(ItemsType));
+        var index = UnityEngine.Random.Range(0, enumValues.Length);
+        var selectedItemEnum = (ItemsType)enumValues.GetValue(index);
 
+        while (!_itemsDictionary.ContainsKey(selectedItemEnum))
+        {
+            index = UnityEngine.Random.Range(0, enumValues.Length);
+            selectedItemEnum = (ItemsType)enumValues.GetValue(index);
+        }
+
+        selectedItem = _itemsDictionary[selectedItemEnum];
         return selectedItem;
     }
+
 
 
     private void InitializeItem(string type)
