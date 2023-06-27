@@ -27,26 +27,12 @@ public class Rotate : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Vector3 delta = Input.mousePosition - initialMousePosition;
-                string objectTag = transform.tag;
-               if (objectTag == "Human")
-                {
-                    xRotate = -delta.y * xSpeed * rotateScale;
-                    yRotate = -delta.x * ySpeed * rotateScale;
-                    // Restrict rotation to a maximum of 70 degrees
-                    transform.Rotate(Vector3.right, -xRotate, Space.World);
-                    transform.localRotation *= Quaternion.Euler(0f, yRotate, 0f); // Limit y-axis rotation to object's local space
-                    initialMousePosition = Input.mousePosition;
+                xRotate = -delta.y * xSpeed * rotateScale;
+                yRotate = -delta.x * ySpeed * rotateScale;
 
-
-                }
-                else
-                {
-                    xRotate = -delta.y * xSpeed * rotateScale;
-                    yRotate = delta.x * ySpeed * rotateScale;
-                    transform.Rotate(Vector3.right, -xRotate, Space.World);
-                    transform.Rotate(Vector3.forward, -yRotate, Space.World); // 使用世界坐标的z轴旋转
-                    initialMousePosition = Input.mousePosition;
-                }
+                transform.Rotate(Vector3.right, -xRotate, Space.World);
+                transform.localRotation *= Quaternion.Euler(0f, yRotate, 0f); // 限制 y 轴旋转在物体自身上
+                initialMousePosition = Input.mousePosition;
             }
         }
     }
