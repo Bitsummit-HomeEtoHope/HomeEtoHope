@@ -1112,6 +1112,37 @@ MonoBehaviour:
   manager: {fileID: 693255774}
   isDie: 0
   isClear: 0
+--- !u!1 &134489422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134489423}
+  m_Layer: 8
+  m_Name: -----HereClone-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134489423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134489422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1, y: -85.6, z: 0}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1808123589}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146973391
 GameObject:
   m_ObjectHideFlags: 0
@@ -11862,6 +11893,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2392197682481119162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706524506467161178, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -11883,12 +11918,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -74.7
+      value: -90.5
       objectReference: {fileID: 0}
     - target: {fileID: 5998175475754976052, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13352,6 +13399,9 @@ MonoBehaviour:
   itemsArray: []
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
+  sendFood: 0
+  sendTool: 0
+  sendHuman: 1
 --- !u!1 &1302853113
 GameObject:
   m_ObjectHideFlags: 0
@@ -16304,6 +16354,7 @@ Transform:
   - {fileID: 1611377921}
   - {fileID: 693255775}
   - {fileID: 1357185541}
+  - {fileID: 134489423}
   m_Father: {fileID: 70604962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

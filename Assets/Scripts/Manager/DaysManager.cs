@@ -35,6 +35,7 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public string selectedHumanName;
     public event Action<string> OnHumanSelected; // 定义事件
     public static string SelectedHumanName { get; private set; }
+    public static string thisDay { get; private set; }
 
 
     private void Start()
@@ -62,7 +63,9 @@ public class DaysManager : MonoBehaviour
                     SelectedHumanName = humanlist[randomIndex].name;
 
                     // 触发事件并传递选定人物的名称
+                    thisDay = "Day1";
                     OnHumanSelected?.Invoke(SelectedHumanName);
+                    OnHumanSelected?.Invoke(thisDay);
 
                     // 删除已选择的人物
                     humanlist.RemoveAt(randomIndex);

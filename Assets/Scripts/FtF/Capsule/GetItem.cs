@@ -87,6 +87,8 @@ public class GetItem : MonoBehaviour
         else if (readytag == "Human")
         {
             HandleHumanSelected(DaysManager.SelectedHumanName);
+
+            string childPrefabName = null;
             switch (readycode)
             {
                 case "human1_0":
@@ -96,7 +98,7 @@ public class GetItem : MonoBehaviour
                 case "human1_4":
                 case "human1_5":
                 case "human1_6":
-                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human1");
+                    childPrefabName = "human1";
                     break;
                 case "human2_0":
                 case "human2_1":
@@ -105,7 +107,7 @@ public class GetItem : MonoBehaviour
                 case "human2_4":
                 case "human2_5":
                 case "human2_6":
-                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human2");
+                    childPrefabName = "human2";
                     break;
                 case "human3_0":
                 case "human3_1":
@@ -114,9 +116,34 @@ public class GetItem : MonoBehaviour
                 case "human3_4":
                 case "human3_5":
                 case "human3_6":
-                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human3");
+                    childPrefabName = "human3";
                     break;
-            }                
+            }
+            if (childPrefabName != null)
+            {
+                GameObject parentGameObject = GameObject.Find("Environment");
+                GameObject referenceGameObject = GameObject.Find("-----HereClone-----"); // 指定初始位置的参考点游戏物体
+
+                // 加载子类预制件
+                GameObject childPrefab = Resources.Load<GameObject>("2D_set/human/" + childPrefabName);
+                if (childPrefab != null)
+                {
+                    // 实例化子类预制件
+                    prefab = Instantiate(childPrefab, parentGameObject.transform);
+
+                    if (referenceGameObject != null)
+                    {
+                        // 将参考点游戏物体的位置和旋转应用到子类预制件上
+                        prefab.transform.position = referenceGameObject.transform.position;
+                        prefab.transform.rotation = referenceGameObject.transform.rotation;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("ReferencePoint not found!");
+                    }
+                }
+            }
+
 
         }
 
@@ -136,7 +163,7 @@ public class GetItem : MonoBehaviour
                     Debug.Log("-----Tool coming-----");
                     break;
                 case "Human":
-                    TakeMeOut(prefab, humanPoint, humanScale, humanOffset, humanInitialRotation, humanMoveSpeed, humanDestinationPoint, "Human_39");
+                    //TakeMeOut(prefab, humanPoint, humanScale, humanOffset, humanInitialRotation, humanMoveSpeed, humanDestinationPoint, "Human_39");
                     //humanList.Add(prefab);
                     Debug.Log("-----Human coming-----");
                     break;
