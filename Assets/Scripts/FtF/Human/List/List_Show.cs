@@ -32,6 +32,8 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
             if (isShowing == false)
             {
                 Show();
+                // play sound
+                GetComponent<AudioSource>().Play();
             }
             else
             {
