@@ -87,7 +87,37 @@ public class GetItem : MonoBehaviour
         else if (readytag == "Human")
         {
             HandleHumanSelected(DaysManager.SelectedHumanName);
-            prefab = Resources.Load<GameObject>("2D_set/human/" + readycode);
+            switch (readycode)
+            {
+                case "human1_0":
+                case "human1_1":
+                case "human1_2":
+                case "human1_3":
+                case "human1_4":
+                case "human1_5":
+                case "human1_6":
+                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human1");
+                    break;
+                case "human2_0":
+                case "human2_1":
+                case "human2_2":
+                case "human2_3":
+                case "human2_4":
+                case "human2_5":
+                case "human2_6":
+                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human2");
+                    break;
+                case "human3_0":
+                case "human3_1":
+                case "human3_2":
+                case "human3_3":
+                case "human3_4":
+                case "human3_5":
+                case "human3_6":
+                    prefab = Resources.Load<GameObject>("2D_set/human/" + "human3");
+                    break;
+            }                
+
         }
 
 
