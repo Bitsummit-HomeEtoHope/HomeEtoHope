@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using static DaysManager;
 
 public class GetItem : MonoBehaviour
 {
@@ -43,12 +44,21 @@ public class GetItem : MonoBehaviour
     [Header("HumanTell")]
     private string selectedHumanNames;
 
+    private DaysManager daysManager; // 声明一个非静态字段来引用DaysManager组件
+
     private void Start()
     {
+        daysManager = GetComponent<DaysManager>(); // 在Start方法中获取DaysManager组件
         ReceiveCode(readycode);
         ReceiveTag(readytag);
-  
     }
+
+    private void SomeMethod()
+    {
+            Days thisDay = daysManager.GetCurrentDay();
+    }
+
+
 
     private void HandleHumanSelected(string selectedHumanName)
     {
