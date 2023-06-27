@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-using static DaysManager;
+using System.IO;
+using Unity.VisualScripting;
 
 public class GetItem : MonoBehaviour
 {
@@ -42,29 +43,32 @@ public class GetItem : MonoBehaviour
     public List<GameObject> humanList = new List<GameObject>();
 
     [Header("HumanTell")]
-    private string selectedHumanNames;
+    [SerializeField]DaysManager daysManager = FindObjectOfType<DaysManager>();
+    [SerializeField]private string selectedHumanNames;
+    [SerializeField]private string path;
+    [SerializeField]private List<string> theirList = new List<string>();
 
-    private DaysManager daysManager; // 声明一个非静态字段来引用DaysManager组件
 
     private void Start()
     {
-        daysManager = GetComponent<DaysManager>(); // 在Start方法中获取DaysManager组件
         ReceiveCode(readycode);
         ReceiveTag(readytag);
     }
 
-    private void SomeMethod()
-    {
-            Days thisDay = daysManager.GetCurrentDay();
-    }
-
-
-
     private void HandleHumanSelected(string selectedHumanName)
     {
-        Debug.Log("------Selected Human Name-----: " + selectedHumanName);
-        // 执行其他操作...
+        if (!theirList.Contains(selectedHumanName))
+        {
+            theirList.Add(selectedHumanName);
+            Debug.Log("Added selected human name: " + selectedHumanName);
+        }
+        else
+        {
+            Debug.Log("Selected human name already exists: " + selectedHumanName);
+        }
+
     }
+
 
 
     public void ReceiveTag(string tag)
@@ -96,54 +100,124 @@ public class GetItem : MonoBehaviour
         }
         else if (readytag == "Human")
         {
+            string childPrefabName = readycode;
+            DaysManager.Days currentDay = daysManager.GetCurrentDay();
             HandleHumanSelected(DaysManager.SelectedHumanName);
 
-            string childPrefabName = null;
-            switch (readycode)
+            Debug.Log(currentDay);
+            Debug.Log(childPrefabName);
+             switch (currentDay.ToString())
             {
-                case "human1_0":
-                case "human1_1":
-                case "human1_2":
-                case "human1_3":
-                case "human1_4":
-                case "human1_5":
-                case "human1_6":
-                    childPrefabName = "human1";
+                case "Day1":
+                    path = "2D_set/human/Day1/";
                     break;
-                case "human2_0":
-                case "human2_1":
-                case "human2_2":
-                case "human2_3":
-                case "human2_4":
-                case "human2_5":
-                case "human2_6":
-                    childPrefabName = "human2";
+                case "Day2":
+                    path = "2D_set/human/Day2/";
                     break;
-                case "human3_0":
-                case "human3_1":
-                case "human3_2":
-                case "human3_3":
-                case "human3_4":
-                case "human3_5":
-                case "human3_6":
-                    childPrefabName = "human3";
+                case "Day3":
+                    path = "2D_set/human/Day3/";
                     break;
             }
+
+            string human1 = "human1";
+            string human2 = "human2";
+            string human3 = "human3";
+
+            foreach (string selectedHumanName in theirList)
+            {
+                if (childPrefabName.Contains(selectedHumanName))
+                {
+                    if (selectedHumanName == theirList[0])
+                    {
+                        human1 = "thief1";
+                        human2 = "thief2";
+                        human3 = "thief3";
+                        Debug.Log("this guy!!!");
+                    }
+                    else if (selectedHumanName == theirList[1])
+                    {
+                        human1 = human2 = human3 = "itembreaker";
+                        Debug.Log("wow-------");
+                    }
+                    else if (selectedHumanName == theirList[2])
+                    {
+                        human1 = "murderer1";
+                        human2 = "murderer2";
+                        human3 = "murderer3";
+                        Debug.Log("let me go............................");
+                    }
+                    break;
+                }
+
+                Debug.Log(human1 + " " + human2 + " " + human3);
+
+                if (childPrefabName != null)
+                {
+                    GameObject parentGameObject = GameObject.Find("Environment");
+                    GameObject referenceGameObject = GameObject.Find("-----HereClone-----");
+
+                    GameObject childPrefab = Resources.Load<GameObject>(path + childPrefabName);
+
+                    if (childPrefabName.Contains("human1"))
+                    {
+                        childPrefab = Resources.Load<GameObject>(path + human1);
+                    }
+                    else if (childPrefabName.Contains("human2"))
+                    {
+                        childPrefab = Resources.Load<GameObject>(path + human2);
+                    }
+                    else if (childPrefabName.Contains("human3"))
+                    {
+                        childPrefab = Resources.Load<GameObject>(path + human3);
+                    }
+
+                    if (childPrefab != null)
+                    {
+                        prefab = Instantiate(childPrefab, parentGameObject.transform);
+
+                        if (referenceGameObject != null)
+                        {
+                            prefab.transform.position = referenceGameObject.transform.position;
+                            prefab.transform.rotation = referenceGameObject.transform.rotation;
+                        }
+                        else
+                        {
+                            Debug.LogWarning("ReferencePoint not found!");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Prefab not found for: " + childPrefabName);
+                    }
+                }
+            }
+
             if (childPrefabName != null)
             {
                 GameObject parentGameObject = GameObject.Find("Environment");
-                GameObject referenceGameObject = GameObject.Find("-----HereClone-----"); // 指定初始位置的参考点游戏物体
+                GameObject referenceGameObject = GameObject.Find("-----HereClone-----");
 
-                // 加载子类预制件
-                GameObject childPrefab = Resources.Load<GameObject>("2D_set/human/" + childPrefabName);
+                GameObject childPrefab = Resources.Load<GameObject>(path + childPrefabName);
+
+                if (childPrefabName.Contains("human1"))
+                {
+                    childPrefab = Resources.Load<GameObject>(path + human1);
+                }
+                else if (childPrefabName.Contains("human2"))
+                {
+                    childPrefab = Resources.Load<GameObject>(path + human2);
+                }
+                else if (childPrefabName.Contains("human3"))
+                {
+                    childPrefab = Resources.Load<GameObject>(path + human3);
+                }
+
                 if (childPrefab != null)
                 {
-                    // 实例化子类预制件
                     prefab = Instantiate(childPrefab, parentGameObject.transform);
 
                     if (referenceGameObject != null)
                     {
-                        // 将参考点游戏物体的位置和旋转应用到子类预制件上
                         prefab.transform.position = referenceGameObject.transform.position;
                         prefab.transform.rotation = referenceGameObject.transform.rotation;
                     }
@@ -152,8 +226,11 @@ public class GetItem : MonoBehaviour
                         Debug.LogWarning("ReferencePoint not found!");
                     }
                 }
+                else
+                {
+                    Debug.LogWarning("Prefab not found for: " + childPrefabName);
+                }
             }
-
 
         }
 

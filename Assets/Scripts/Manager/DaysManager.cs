@@ -8,10 +8,13 @@ public class DaysManager : MonoBehaviour
     public enum Days { Day0,Day1, Day2, Day3 }
 
     [SerializeField] private Days currentDay = Days.Day0;
+
+    public Days GetCurrentDay()
+    {
+        return currentDay;
+    }
+
     [Header("DayImage")]
-    [SerializeField] private Image Days_Image; // 参考目标 UI 图像的 Image 组件
-    [SerializeField] private Sprite Day2Image; // day1替换对象
-    [SerializeField] private Sprite Day3Image; // day2替换对象
     [SerializeField] public List<Sprite> humanlist;
 
     [Header("List_Day1")]
@@ -46,6 +49,7 @@ public class DaysManager : MonoBehaviour
         daysChange();
     }
 
+
     public void daysChange()
     {
         switch (currentDay)
@@ -72,12 +76,6 @@ public class DaysManager : MonoBehaviour
                 break;
 
             case Days.Day1:
-                // 更改目标 UI 图像的图片
-                if (Days_Image != null)
-                {
-                    Days_Image.sprite = Day2Image;
-                }
-
                 List_Day2.sprite = day2_Day2;
 
                 if (megane_2 != null && humanlist.Count > 0)
@@ -87,6 +85,8 @@ public class DaysManager : MonoBehaviour
                     megane_2.sprite = randomSprite;
                     humanday_2.transform.localScale = Vector3.one;
 
+                    SelectedHumanName = humanlist[randomIndex].name;
+                    OnHumanSelected?.Invoke(SelectedHumanName);
                     humanlist.RemoveAt(randomIndex);
                 }
 
@@ -94,12 +94,7 @@ public class DaysManager : MonoBehaviour
                 break;
 
             case Days.Day2:
-                if (Days_Image != null)
-                {
-                    Days_Image.sprite = Day3Image;
-                }
 
-                // 将 humanday_1 的比例设置为 1
                 if (humanday_3 != null)
                 {
                     humanday_3.transform.localScale = Vector3.one;
@@ -112,6 +107,8 @@ public class DaysManager : MonoBehaviour
                     megane_3.sprite = randomSprite;
                     humanday_3.transform.localScale = Vector3.one;
 
+                    SelectedHumanName = humanlist[randomIndex].name;
+                    OnHumanSelected?.Invoke(SelectedHumanName);
                     humanlist.RemoveAt(randomIndex);
                 }
                 List_Day3.sprite = day3_Day3;

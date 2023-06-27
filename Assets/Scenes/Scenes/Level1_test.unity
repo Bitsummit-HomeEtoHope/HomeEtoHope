@@ -1607,7 +1607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &181922832
 Transform:
   m_ObjectHideFlags: 0
@@ -2229,9 +2229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDay: 0
-  Days_Image: {fileID: 653982136}
-  Day2Image: {fileID: 21300000, guid: ddb6ad4ec1c88344a883fcca81eebbe9, type: 3}
-  Day3Image: {fileID: 21300000, guid: c91407467d4bd0c43b1c178dea92965e, type: 3}
   humanlist:
   - {fileID: 21300000, guid: f3d5d051c42830d43912e3d1841e95bb, type: 3}
   - {fileID: 21300000, guid: f41c3eac04f265c4da25ff6cbb1f914d, type: 3}
@@ -9891,6 +9888,10 @@ MonoBehaviour:
   foodList: []
   toolList: []
   humanList: []
+  daysManager: {fileID: 250342055}
+  selectedHumanNames: 
+  path: 
+  theirList: []
 --- !u!1 &722204534
 GameObject:
   m_ObjectHideFlags: 0
@@ -16658,7 +16659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3177532683434347984, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3177532683434347984, guid: 1a297182295f23c4eb07d6b664accf48, type: 3}
       propertyPath: m_TagString
