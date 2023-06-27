@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,6 +31,11 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public Image megane_3;
     [SerializeField] public Image humanday_3;
 
+    [Header("HumanTell")]
+    [SerializeField] public string selectedHumanName;
+    public event Action<string> OnHumanSelected; // 定义事件
+    public static string SelectedHumanName { get; private set; }
+
 
     private void Start()
     {
@@ -45,16 +51,23 @@ public class DaysManager : MonoBehaviour
         switch (currentDay)
         {
             case Days.Day0:
-                if ( megane_1 != null && humanlist.Count > 0)
+                if (megane_1 != null && humanlist.Count > 0)
                 {
-                    int randomIndex = Random.Range(0, humanlist.Count);
+                    int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite randomSprite = humanlist[randomIndex];
                     megane_1.sprite = randomSprite;
                     humanday_1.transform.localScale = Vector3.one;
 
-                    //删掉
+                    // 获取选定人物的名称
+                    SelectedHumanName = humanlist[randomIndex].name;
+
+                    // 触发事件并传递选定人物的名称
+                    OnHumanSelected?.Invoke(SelectedHumanName);
+
+                    // 删除已选择的人物
                     humanlist.RemoveAt(randomIndex);
                 }
+
                 currentDay = Days.Day1;
                 break;
 
@@ -69,7 +82,7 @@ public class DaysManager : MonoBehaviour
 
                 if (megane_2 != null && humanlist.Count > 0)
                 {
-                    int randomIndex = Random.Range(0, humanlist.Count);
+                    int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite randomSprite = humanlist[randomIndex];
                     megane_2.sprite = randomSprite;
                     humanday_2.transform.localScale = Vector3.one;
@@ -94,7 +107,7 @@ public class DaysManager : MonoBehaviour
 
                 if (megane_3 != null && humanlist.Count > 0)
                 {
-                    int randomIndex = Random.Range(0, humanlist.Count);
+                    int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite randomSprite = humanlist[randomIndex];
                     megane_3.sprite = randomSprite;
                     humanday_3.transform.localScale = Vector3.one;
