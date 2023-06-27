@@ -30,6 +30,8 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public Image megane_3;
     [SerializeField] public Image humanday_3;
 
+    [Header("HumanTell")]
+    [SerializeField] public string selectedHumanName;
 
     private void Start()
     {
@@ -45,16 +47,21 @@ public class DaysManager : MonoBehaviour
         switch (currentDay)
         {
             case Days.Day0:
-                if ( megane_1 != null && humanlist.Count > 0)
+                if (megane_1 != null && humanlist.Count > 0)
                 {
                     int randomIndex = Random.Range(0, humanlist.Count);
                     Sprite randomSprite = humanlist[randomIndex];
                     megane_1.sprite = randomSprite;
                     humanday_1.transform.localScale = Vector3.one;
 
-                    //删掉
+                    // 获取选定人物的名称
+                    selectedHumanName = humanlist[randomIndex].name;
+                    Debug.Log("Selected Human Name: " + selectedHumanName);
+
+                    // 删除已选择的人物
                     humanlist.RemoveAt(randomIndex);
                 }
+
                 currentDay = Days.Day1;
                 break;
 
