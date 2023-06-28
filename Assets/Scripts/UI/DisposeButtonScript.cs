@@ -24,13 +24,10 @@ public class DisposeButtonScript : MonoBehaviour
     {
         if (clickedObject != null)
         {
-            Debug.Log("Clicked Object: " + clickedObject.name);
-            // 在这里执行按钮作用于指定物体的逻辑
+            GetComponent<AudioSource>().Play();
 
-            // 将物体的标签更改为 "Dispose"
             clickedObject.tag = "Dispose";
 
-            // 在指定速度下进行直线移动
             Vector3 newPosition = clickedObject.transform.position + (Vector3.up * moveSpeed * Time.deltaTime);
             clickedObject.transform.position = newPosition;
         }

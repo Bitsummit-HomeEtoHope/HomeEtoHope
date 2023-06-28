@@ -30,8 +30,16 @@ public class Rotate : MonoBehaviour
                 xRotate = -delta.y * xSpeed * rotateScale;
                 yRotate = -delta.x * ySpeed * rotateScale;
 
-                transform.Rotate(Vector3.right, -xRotate, Space.World);
-                transform.localRotation *= Quaternion.Euler(0f, yRotate, 0f); // 限制 y 轴旋转在物体自身上
+                if (gameObject.CompareTag("Human"))
+                {
+                    transform.Rotate(Vector3.right, -xRotate, Space.World);
+                    transform.localRotation *= Quaternion.Euler(0f, yRotate, 0f);
+                }
+                else
+                {
+                    transform.Rotate(Vector3.right, -xRotate, Space.World);
+                    transform.Rotate(Vector3.forward, yRotate, Space.World);
+                }
                 initialMousePosition = Input.mousePosition;
             }
         }

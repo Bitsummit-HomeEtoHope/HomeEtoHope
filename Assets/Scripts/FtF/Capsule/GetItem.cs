@@ -148,56 +148,16 @@ public class GetItem : MonoBehaviour
                     }
                     break;
                 }
-
-                Debug.Log(human1 + " " + human2 + " " + human3);
-
-                if (childPrefabName != null)
-                {
-                    GameObject parentGameObject = GameObject.Find("Environment");
-                    GameObject referenceGameObject = GameObject.Find("-----HereClone-----");
-
-                    GameObject childPrefab = Resources.Load<GameObject>(path + childPrefabName);
-
-                    if (childPrefabName.Contains("human1"))
-                    {
-                        childPrefab = Resources.Load<GameObject>(path + human1);
-                    }
-                    else if (childPrefabName.Contains("human2"))
-                    {
-                        childPrefab = Resources.Load<GameObject>(path + human2);
-                    }
-                    else if (childPrefabName.Contains("human3"))
-                    {
-                        childPrefab = Resources.Load<GameObject>(path + human3);
-                    }
-
-                    if (childPrefab != null)
-                    {
-                        prefab = Instantiate(childPrefab, parentGameObject.transform);
-
-                        if (referenceGameObject != null)
-                        {
-                            prefab.transform.position = referenceGameObject.transform.position;
-                            prefab.transform.rotation = referenceGameObject.transform.rotation;
-                        }
-                        else
-                        {
-                            Debug.LogWarning("ReferencePoint not found!");
-                        }
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Prefab not found for: " + childPrefabName);
-                    }
-                }
             }
+
+            Debug.Log(human1 + " " + human2 + " " + human3);
 
             if (childPrefabName != null)
             {
                 GameObject parentGameObject = GameObject.Find("Environment");
                 GameObject referenceGameObject = GameObject.Find("-----HereClone-----");
 
-                GameObject childPrefab = Resources.Load<GameObject>(path + childPrefabName);
+                GameObject childPrefab = null;
 
                 if (childPrefabName.Contains("human1"))
                 {

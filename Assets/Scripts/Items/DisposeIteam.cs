@@ -6,10 +6,10 @@ public class DisposeIteam : MonoBehaviour
 {
 private void OnTriggerEnter(Collider other)
     {     
-            Destroy(other.gameObject); // ɾ����ײ��������
+            Destroy(other.gameObject); 
     
           //  Debug.Log("goodby");
             // play sound
-            GetComponent<AudioSource>().Play();
+           // GetComponent<AudioSource>().Play();
     }
 }
