@@ -72,6 +72,10 @@ public class CodeHolder : MonoBehaviour
             }
         }
 
+        if(selectedObject != this){
+            // play sound
+            GetComponent<AudioSource>().Play();
+        }
         selectedObject = this;
         isClicked = true;
 

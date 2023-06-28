@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class timewellout : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class timewellout : MonoBehaviour
     private int isChangeAfter = 0;
 
     [SerializeField] private Image fillImage;
+
+    [SerializeField] private AudioSource a;
+
+    [SerializeField] private AudioClip b1;
+    [SerializeField] private AudioClip b2;
+
+    private bool isPlaySound = true;
 
     private bool isRecovering; // 是否在恢复中
     private float recoveryElapsedTime; // 恢复流逝的时间
@@ -70,14 +78,22 @@ public class timewellout : MonoBehaviour
             float t = elapsedTime / duration;
             float currentPosX = Mathf.Lerp(startPosX, targetPosX, t);
             rectTransform.anchoredPosition = new Vector2(currentPosX, rectTransform.anchoredPosition.y);
+            if(elapsedTime >= duration - 3 && isPlaySound){
+                a.GetComponent<AudioSource>().PlayOneShot(b2);
+                isPlaySound = false;
+            }
         }
         else
         {
+            // play sound
+            a.GetComponent<AudioSource>().PlayOneShot(b1);
+
             // 计时结束后启用 DaysManager 的 daysChange 方法
             daysManager.daysChange();
 
             isRecovering = true;
             recoveryElapsedTime = 0f;
+            isPlaySound = true;
         }
     }
 
