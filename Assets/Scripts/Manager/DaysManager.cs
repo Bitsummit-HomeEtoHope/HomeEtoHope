@@ -19,20 +19,20 @@ public class DaysManager : MonoBehaviour
 
     [Header("List_Day1")]
     [SerializeField] private Image List_Day1;
-    [SerializeField] public Image megane_1;
     [SerializeField] public Image humanday_1;
+    [SerializeField] public Image megane_1;
 
     [Header("List_Day2")]
     [SerializeField] private Image List_Day2; 
-    [SerializeField] private Sprite day2_Day2; 
-    [SerializeField] public Image megane_2;
+    [SerializeField] private Sprite day2_Day2;
     [SerializeField] public Image humanday_2;
+    [SerializeField] public Image megane_2;
 
     [Header("List_Day3")]
     [SerializeField] private Image List_Day3; 
-    [SerializeField] private Sprite day3_Day3; 
-    [SerializeField] public Image megane_3;
+    [SerializeField] private Sprite day3_Day3;
     [SerializeField] public Image humanday_3;
+    [SerializeField] public Image megane_3;
 
     [Header("HumanTell")]
     [SerializeField] public string selectedHumanName;
