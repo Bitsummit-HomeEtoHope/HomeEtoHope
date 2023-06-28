@@ -13581,6 +13581,11 @@ MonoBehaviour:
   sendFood: 1
   sendTool: 1
   sendHuman: 1
+  food_goodWeight: 0
+  food_badWeight: 0
+  tool_goodWeight: 0
+  tool_badWeight: 100
+  humanWeight: 0
 --- !u!1 &1296280605
 GameObject:
   m_ObjectHideFlags: 0

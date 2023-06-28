@@ -36,8 +36,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
     [SerializeField] private bool sendHuman = true;
 
     [Header("Send ")]
-    [SerializeField, Range(0, 100)] private int foodWeight = 100; 
-    [SerializeField, Range(0, 100)] private int toolWeight = 100; 
+    [SerializeField, Range(0, 100)] private int food_goodWeight = 100; 
+    [SerializeField, Range(0, 100)] private int food_badWeight = 100; 
+    [SerializeField, Range(0, 100)] private int tool_goodWeight = 100; 
+    [SerializeField, Range(0, 100)] private int tool_badWeight = 100; 
     [SerializeField, Range(0, 100)] private int humanWeight = 100; 
 
     // 定义带有权重的项的泛型类
@@ -107,44 +109,44 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private void addFood()
     {
         //---food---good---
-        _itemsDictionary.Add(ItemsType.Apple, new WeightedItem<string>("3D/food/good/apple", foodWeight));
-        _itemsDictionary.Add(ItemsType.Eggplant, new WeightedItem<string>("3D/food/good/eggplant", foodWeight));
-        _itemsDictionary.Add(ItemsType.GreenPepper, new WeightedItem<string>("3D/food/good/greenpepper", foodWeight));
-        _itemsDictionary.Add(ItemsType.Orange, new WeightedItem<string>("3D/food/good/orange", foodWeight));
-        _itemsDictionary.Add(ItemsType.Pumpkin, new WeightedItem<string>("3D/food/good/pumpkin", foodWeight));
+        _itemsDictionary.Add(ItemsType.Apple, new WeightedItem<string>("3D/food/good/apple", food_goodWeight));
+        _itemsDictionary.Add(ItemsType.Eggplant, new WeightedItem<string>("3D/food/good/eggplant", food_goodWeight));
+        _itemsDictionary.Add(ItemsType.GreenPepper, new WeightedItem<string>("3D/food/good/greenpepper", food_goodWeight));
+        _itemsDictionary.Add(ItemsType.Orange, new WeightedItem<string>("3D/food/good/orange", food_goodWeight));
+        _itemsDictionary.Add(ItemsType.Pumpkin, new WeightedItem<string>("3D/food/good/pumpkin", food_goodWeight));
 
         //---food---bad---
-        _itemsDictionary.Add(ItemsType.BadAppleHi, new WeightedItem<string>("3D/food/bad/applehi", foodWeight));
-        _itemsDictionary.Add(ItemsType.BadAppleQaq, new WeightedItem<string>("3D/food/bad/appleqaq", foodWeight));
-        _itemsDictionary.Add(ItemsType.EggplantQaq, new WeightedItem<string>("3D/food/bad/eggplantqaq", foodWeight));
-        _itemsDictionary.Add(ItemsType.GreenPepperQaq, new WeightedItem<string>("3D/food/bad/greenpepperqaq", foodWeight));
-        _itemsDictionary.Add(ItemsType.OrangeQaq, new WeightedItem<string>("3D/food/bad/orangeqaq", foodWeight));
-        _itemsDictionary.Add(ItemsType.PumpkinQaq, new WeightedItem<string>("3D/food/bad/pumpkinqaq", foodWeight));
+        _itemsDictionary.Add(ItemsType.BadAppleHi, new WeightedItem<string>("3D/food/bad/applehi", food_badWeight));
+        _itemsDictionary.Add(ItemsType.BadAppleQaq, new WeightedItem<string>("3D/food/bad/appleqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.EggplantQaq, new WeightedItem<string>("3D/food/bad/eggplantqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.GreenPepperQaq, new WeightedItem<string>("3D/food/bad/greenpepperqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.OrangeQaq, new WeightedItem<string>("3D/food/bad/orangeqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.PumpkinQaq, new WeightedItem<string>("3D/food/bad/pumpkinqaq", food_badWeight));
     }
 
     private void addTool()
     {
         //---tool---good---
-        _itemsDictionary.Add(ItemsType.Burner, new WeightedItem<string>("3D/tool/good/burner", toolWeight));
-        _itemsDictionary.Add(ItemsType.Chainsaw, new WeightedItem<string>("3D/tool/good/chainsaw", toolWeight));
-        _itemsDictionary.Add(ItemsType.Hammer, new WeightedItem<string>("3D/tool/good/hammer", toolWeight));
-        _itemsDictionary.Add(ItemsType.Hoe, new WeightedItem<string>("3D/tool/good/hoe", toolWeight));
-        _itemsDictionary.Add(ItemsType.Ice, new WeightedItem<string>("3D/tool/good/iceax", toolWeight));
-        _itemsDictionary.Add(ItemsType.Kettle, new WeightedItem<string>("3D/tool/good/kettle", toolWeight));
-        _itemsDictionary.Add(ItemsType.Knife, new WeightedItem<string>("3D/tool/good/nife", toolWeight));
-        _itemsDictionary.Add(ItemsType.Shovel, new WeightedItem<string>("3D/tool/good/shovel", toolWeight));
-        _itemsDictionary.Add(ItemsType.Wrench, new WeightedItem<string>("3D/tool/good/wrench", toolWeight));
+        _itemsDictionary.Add(ItemsType.Burner, new WeightedItem<string>("3D/tool/good/burner", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Chainsaw, new WeightedItem<string>("3D/tool/good/chainsaw", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Hammer, new WeightedItem<string>("3D/tool/good/hammer", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Hoe, new WeightedItem<string>("3D/tool/good/hoe", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Ice, new WeightedItem<string>("3D/tool/good/iceax", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Kettle, new WeightedItem<string>("3D/tool/good/kettle", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Knife, new WeightedItem<string>("3D/tool/good/nife", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Shovel, new WeightedItem<string>("3D/tool/good/shovel", tool_goodWeight));
+        _itemsDictionary.Add(ItemsType.Wrench, new WeightedItem<string>("3D/tool/good/wrench", tool_goodWeight));
 
         //---tool---bad---
-        _itemsDictionary.Add(ItemsType.BurnerQAQ, new WeightedItem<string>("3D/tool/bad/burnerbroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.ChainsawQAQ, new WeightedItem<string>("3D/tool/bad/chainsawbroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.HammerLOL, new WeightedItem<string>("3D/tool/bad/hammerbroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.HoeQAQ, new WeightedItem<string>("3D/tool/bad/hoebroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.IceQAQ, new WeightedItem<string>("3D/tool/bad/iceaxbroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.KettleQAQ, new WeightedItem<string>("3D/tool/bad/kettlebroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.KnifeQAQ, new WeightedItem<string>("3D/tool/bad/nifebroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.ShovelQAQ, new WeightedItem<string>("3D/tool/bad/shovelbroken", toolWeight));
-        _itemsDictionary.Add(ItemsType.WrenchQAQ, new WeightedItem<string>("3D/tool/bad/wrenchbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.BurnerQAQ, new WeightedItem<string>("3D/tool/bad/burnerbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.ChainsawQAQ, new WeightedItem<string>("3D/tool/bad/chainsawbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.HammerLOL, new WeightedItem<string>("3D/tool/bad/hammerbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.HoeQAQ, new WeightedItem<string>("3D/tool/bad/hoebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.IceQAQ, new WeightedItem<string>("3D/tool/bad/iceaxbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.KettleQAQ, new WeightedItem<string>("3D/tool/bad/kettlebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.KnifeQAQ, new WeightedItem<string>("3D/tool/bad/nifebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.ShovelQAQ, new WeightedItem<string>("3D/tool/bad/shovelbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.WrenchQAQ, new WeightedItem<string>("3D/tool/bad/wrenchbroken", tool_badWeight));
     }
 
     // 添加人物物品及其权重
