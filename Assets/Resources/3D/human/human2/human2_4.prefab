@@ -527,3 +527,6 @@ MonoBehaviour:
   - childRenderer: {fileID: 4094810425227686412}
     childDefaultMaterial: {fileID: 2100000, guid: 91e374bf393e3448097cd43863c88205, type: 2}
     childHighlightMaterial: {fileID: 2100000, guid: df1494e87c6384d7ca560fc19540037b, type: 2}
+  - childRenderer: {fileID: 2233343707028015231}
+    childDefaultMaterial: {fileID: 2100000, guid: bdc291fb225b74cfaa5563db442cf09b, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: 243cc3d53f69243e89127851a654a769, type: 2}
