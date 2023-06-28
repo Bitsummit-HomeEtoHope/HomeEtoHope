@@ -20,6 +20,7 @@ namespace StateMachine.General
         private void Awake() 
         {
             manager = GetComponent<FSM>();
+            GetItemManger=GameObject.Find("GetItemManager");
             GetTree();
         }
         private void Update()
@@ -32,8 +33,11 @@ namespace StateMachine.General
         {
             //计算当前位置与食物的距离
             float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[2].position);
+            
+            Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
             if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
+                Debug.Log("是执行了");
                 isFood = true;
                 GameObject foodToGet=GetItemManger.GetComponent<GetItem>().foodList[0];
                 foodList_human.Add(foodToGet);
@@ -45,7 +49,7 @@ namespace StateMachine.General
 
         public void GetTool()
         {
-            float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[0].position);
+            float distance = Vector2.Distance(transform.position, manager.parameter.patrolPoints[0].position);
             if(isTool==false && distance<manager.parameter.patrolOuterRadius && GetItemManger.GetComponent<GetItem>().toolList.Count!=0)
             {
                 isTool = true;

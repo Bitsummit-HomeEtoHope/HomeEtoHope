@@ -17,6 +17,7 @@ TagManager:
   - Tool_39
   - Tree
   - Cleaner
+  - Partol
   layers:
   - Default
   - TransparentFX
