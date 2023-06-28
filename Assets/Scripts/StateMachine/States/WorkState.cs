@@ -71,6 +71,7 @@ namespace StateMachine.States
                 //Debug.Log("tool:"+tool);
                 
                 isArriveWorkPoint = true;
+                manager.parameter.isHungry = true;
                 manager.TransitState(StateType.Idle);
                 
                 
@@ -90,10 +91,11 @@ namespace StateMachine.States
                 //manager.TransitState(StateType.Working);
                 
             }
-            if(manager.parameter.isHungry==true)
+            /*if(manager.parameter.isHungry==true)
             {
                 manager.TransitState(StateType.Hungry);
-            }
+            }*/
+            
 
           
         }

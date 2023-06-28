@@ -37,7 +37,6 @@ namespace StateMachine.General
             Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
             if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
-                Debug.Log("是执行了");
                 isFood = true;
                 GameObject foodToGet=GetItemManger.GetComponent<GetItem>().foodList[0];
                 foodList_human.Add(foodToGet);
@@ -45,6 +44,7 @@ namespace StateMachine.General
                 GetItemManger.GetComponent<GetItem>().foodList.RemoveAt(0);//移除食物
                 manager.parameter.isHungry = false;
             }
+            
         }
 
         public void GetTool()

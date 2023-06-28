@@ -12,13 +12,18 @@ public class Build_Manager : MonoBehaviour
        isAllBuild=IsAllBuild();
        if(isAllBuild)
        {
-           camera2d.fieldOfView=75;
-           camera2d.gameObject.transform.position=new Vector3(camera2d.gameObject.transform.position.x,275,camera2d.gameObject.transform.position.z);
-           //bulidList所有物体SetActive(true)
-            foreach (var item in buildList)
-            {
-                item.SetActive(true);
-            }
+        //camera2d的fieldOfView平滑过渡到75
+        //camera2d的position平滑过渡到(0,275,0)
+        camera2d.fieldOfView=Mathf.Lerp(camera2d.fieldOfView,75,Time.deltaTime*2);
+        camera2d.gameObject.transform.position=Vector3.Lerp(camera2d.gameObject.transform.position,new Vector3(camera2d.gameObject.transform.position.x,275,camera2d.gameObject.transform.position.z),Time.deltaTime*2);
+        
+        //camera2d.fieldOfView=75;
+        //camera2d.gameObject.transform.position=new Vector3(camera2d.gameObject.transform.position.x,275,camera2d.gameObject.transform.position.z);
+        //bulidList所有物体SetActive(true)
+        foreach (var item in buildList)
+        {
+            item.SetActive(true);
+        }
            
            
        }

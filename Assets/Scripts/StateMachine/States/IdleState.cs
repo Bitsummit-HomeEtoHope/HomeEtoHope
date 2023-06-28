@@ -30,7 +30,7 @@ public class IdleState : IState
         {
             manager.TransitState(StateType.Patrolling);
         }
-        if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true)
+        if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==false)
         {
             
             parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=false;
@@ -42,6 +42,12 @@ public class IdleState : IState
             parameter.BuildAnim.gameObject.SetActive(true);
             isAnim=true;
             
+        }
+        if(parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==true)
+        {
+            manager.gameObject.GetComponent<GetItem_Human>().isFood=false;
+            manager.gameObject.GetComponent<GetItem_Human>().foodList_human.RemoveAt(0);
+            manager.TransitState(StateType.Hungry);
         }
         
         
