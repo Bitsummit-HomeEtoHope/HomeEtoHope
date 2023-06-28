@@ -34,6 +34,12 @@ public class ItemsManager : SingletonManager<ItemsManager>
     [SerializeField] private bool sendFood = true;
     [SerializeField] private bool sendTool = true;
     [SerializeField] private bool sendHuman = true;
+
+    [Header("Send ")]
+    [SerializeField, Range(0, 100)] private int foodWeight = 100; 
+    [SerializeField, Range(0, 100)] private int toolWeight = 100; 
+    [SerializeField, Range(0, 100)] private int humanWeight = 100; 
+
     // 定义带有权重的项的泛型类
     public class WeightedItem<T>
     {
@@ -127,49 +133,49 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Kettle, new WeightedItem<string>("3D/tool/good/kettle", toolWeight));
         _itemsDictionary.Add(ItemsType.Knife, new WeightedItem<string>("3D/tool/good/nife", toolWeight));
         _itemsDictionary.Add(ItemsType.Shovel, new WeightedItem<string>("3D/tool/good/shovel", toolWeight));
-        _itemsDictionary.Add(ItemsType.Wrench, new WeightedItem<string>("3D/tool/good/wrench", 5));
+        _itemsDictionary.Add(ItemsType.Wrench, new WeightedItem<string>("3D/tool/good/wrench", toolWeight));
 
         //---tool---bad---
-        _itemsDictionary.Add(ItemsType.BurnerQAQ, new WeightedItem<string>("3D/tool/bad/burnerbroken", 2));
-        _itemsDictionary.Add(ItemsType.ChainsawQAQ, new WeightedItem<string>("3D/tool/bad/chainsawbroken", 3));
-        _itemsDictionary.Add(ItemsType.HammerLOL, new WeightedItem<string>("3D/tool/bad/hammerbroken", 1));
-        _itemsDictionary.Add(ItemsType.HoeQAQ, new WeightedItem<string>("3D/tool/bad/hoebroken", 2));
-        _itemsDictionary.Add(ItemsType.IceQAQ, new WeightedItem<string>("3D/tool/bad/iceaxbroken", 4));
-        _itemsDictionary.Add(ItemsType.KettleQAQ, new WeightedItem<string>("3D/tool/bad/kettlebroken", 3));
-        _itemsDictionary.Add(ItemsType.KnifeQAQ, new WeightedItem<string>("3D/tool/bad/nifebroken", 2));
-        _itemsDictionary.Add(ItemsType.ShovelQAQ, new WeightedItem<string>("3D/tool/bad/shovelbroken", 3));
-        _itemsDictionary.Add(ItemsType.WrenchQAQ, new WeightedItem<string>("3D/tool/bad/wrenchbroken", 4));
+        _itemsDictionary.Add(ItemsType.BurnerQAQ, new WeightedItem<string>("3D/tool/bad/burnerbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.ChainsawQAQ, new WeightedItem<string>("3D/tool/bad/chainsawbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.HammerLOL, new WeightedItem<string>("3D/tool/bad/hammerbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.HoeQAQ, new WeightedItem<string>("3D/tool/bad/hoebroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.IceQAQ, new WeightedItem<string>("3D/tool/bad/iceaxbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.KettleQAQ, new WeightedItem<string>("3D/tool/bad/kettlebroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.KnifeQAQ, new WeightedItem<string>("3D/tool/bad/nifebroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.ShovelQAQ, new WeightedItem<string>("3D/tool/bad/shovelbroken", toolWeight));
+        _itemsDictionary.Add(ItemsType.WrenchQAQ, new WeightedItem<string>("3D/tool/bad/wrenchbroken", toolWeight));
     }
 
     // 添加人物物品及其权重
     private void addHuman()
     {
         //---human-1---
-        _itemsDictionary.Add(ItemsType.Human1_0, new WeightedItem<string>("3D/human/human1/human1_0", 3));
-        _itemsDictionary.Add(ItemsType.Human1_1, new WeightedItem<string>("3D/human/human1/human1_1", 2));
-        _itemsDictionary.Add(ItemsType.Human1_2, new WeightedItem<string>("3D/human/human1/human1_2", 4));
-        _itemsDictionary.Add(ItemsType.Human1_3, new WeightedItem<string>("3D/human/human1/human1_3", 2));
-        _itemsDictionary.Add(ItemsType.Human1_4, new WeightedItem<string>("3D/human/human1/human1_4", 1));
-        _itemsDictionary.Add(ItemsType.Human1_5, new WeightedItem<string>("3D/human/human1/human1_5", 3));
-        _itemsDictionary.Add(ItemsType.Human1_6, new WeightedItem<string>("3D/human/human1/human1_6", 4));
+        _itemsDictionary.Add(ItemsType.Human1_0, new WeightedItem<string>("3D/human/human1/human1_0", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_1, new WeightedItem<string>("3D/human/human1/human1_1", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_2, new WeightedItem<string>("3D/human/human1/human1_2", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_3, new WeightedItem<string>("3D/human/human1/human1_3", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_4, new WeightedItem<string>("3D/human/human1/human1_4", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_5, new WeightedItem<string>("3D/human/human1/human1_5", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human1_6, new WeightedItem<string>("3D/human/human1/human1_6", humanWeight));
 
         //---human-2---
-        _itemsDictionary.Add(ItemsType.Human2_0, new WeightedItem<string>("3D/human/human2/human2_0", 4));
-        _itemsDictionary.Add(ItemsType.Human2_1, new WeightedItem<string>("3D/human/human2/human2_1", 3));
-        _itemsDictionary.Add(ItemsType.Human2_2, new WeightedItem<string>("3D/human/human2/human2_2", 2));
-        _itemsDictionary.Add(ItemsType.Human2_3, new WeightedItem<string>("3D/human/human2/human2_3", 1));
-        _itemsDictionary.Add(ItemsType.Human2_4, new WeightedItem<string>("3D/human/human2/human2_4", 3));
-        _itemsDictionary.Add(ItemsType.Human2_5, new WeightedItem<string>("3D/human/human2/human2_5", 4));
-        _itemsDictionary.Add(ItemsType.Human2_6, new WeightedItem<string>("3D/human/human2/human2_6", 2));
+        _itemsDictionary.Add(ItemsType.Human2_0, new WeightedItem<string>("3D/human/human2/human2_0", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_1, new WeightedItem<string>("3D/human/human2/human2_1", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_2, new WeightedItem<string>("3D/human/human2/human2_2", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_3, new WeightedItem<string>("3D/human/human2/human2_3", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_4, new WeightedItem<string>("3D/human/human2/human2_4", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_5, new WeightedItem<string>("3D/human/human2/human2_5", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human2_6, new WeightedItem<string>("3D/human/human2/human2_6", humanWeight));
 
         //---human-3---
-        _itemsDictionary.Add(ItemsType.Human3_0, new WeightedItem<string>("3D/human/human3/human3_0", 2));
-        _itemsDictionary.Add(ItemsType.Human3_1, new WeightedItem<string>("3D/human/human3/human3_1", 4));
-        _itemsDictionary.Add(ItemsType.Human3_2, new WeightedItem<string>("3D/human/human3/human3_2", 3));
-        _itemsDictionary.Add(ItemsType.Human3_3, new WeightedItem<string>("3D/human/human3/human3_3", 2));
-        _itemsDictionary.Add(ItemsType.Human3_4, new WeightedItem<string>("3D/human/human3/human3_4", 4));
-        _itemsDictionary.Add(ItemsType.Human3_5, new WeightedItem<string>("3D/human/human3/human3_5", 3));
-        _itemsDictionary.Add(ItemsType.Human3_6, new WeightedItem<string>("3D/human/human3/human3_6", 1));
+        _itemsDictionary.Add(ItemsType.Human3_0, new WeightedItem<string>("3D/human/human3/human3_0", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_1, new WeightedItem<string>("3D/human/human3/human3_1", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_2, new WeightedItem<string>("3D/human/human3/human3_2", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_3, new WeightedItem<string>("3D/human/human3/human3_3", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_4, new WeightedItem<string>("3D/human/human3/human3_4", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_5, new WeightedItem<string>("3D/human/human3/human3_5", humanWeight));
+        _itemsDictionary.Add(ItemsType.Human3_6, new WeightedItem<string>("3D/human/human3/human3_6", humanWeight));
     }
 
     //---------
