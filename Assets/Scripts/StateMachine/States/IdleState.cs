@@ -8,6 +8,7 @@ public class IdleState : IState
 {
     private FSM manager;
     private Parameter parameter;
+    private Sprite defaultSprite;
     private bool isAnim=false;
 
     public IdleState(FSM manager)
@@ -17,6 +18,7 @@ public class IdleState : IState
     }
     public void Onenter()
     {
+        defaultSprite=manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
         //parameter.Food_Tran.gameObject.SetActive(false);
         parameter.Build_FinsihAnim.gameObject.SetActive(false);
         isAnim=false;
@@ -30,11 +32,17 @@ public class IdleState : IState
         {
             manager.TransitState(StateType.Patrolling);
         }
-        if (parameter.idleTimer >= parameter.idleTime*5&&parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==true)
+       
+        if(parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==true)
         {
-            manager.TransitState(StateType.Patrolling);
+            if (parameter.idleTimer >= parameter.idleTime*5)
+            {
+                
+                manager.TransitState(StateType.Patrolling);
+            }
+            Transform child=manager.gameObject.transform.GetChild(1);
+            child.gameObject.GetComponent<SpriteRenderer>().sprite=parameter.HungryFace;
         }
-        
         
         if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==false)
         {
@@ -62,7 +70,7 @@ public class IdleState : IState
 
     public void OnExit()
     {
-        
+        manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
         parameter.idleTimer = 0;
     }
 }
