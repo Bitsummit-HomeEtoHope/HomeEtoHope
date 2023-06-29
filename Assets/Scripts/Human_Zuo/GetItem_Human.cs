@@ -34,7 +34,7 @@ namespace StateMachine.General
             //计算当前位置与食物的距离
             float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[2].position);
             
-            Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
+            //Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
             if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
                 isFood = true;
@@ -63,6 +63,16 @@ namespace StateMachine.General
                     manager.parameter.isTool =true;
                 }
                 
+                
+                
+            }
+            if(toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum==0)
+            {
+                Debug.Log("工具已经用完");
+                isTool = false;
+                manager.parameter.isTool =false;
+                manager.parameter.isWork = false;
+                toolList_human.RemoveAt(0);
             }
         }
         public void GetTree()
