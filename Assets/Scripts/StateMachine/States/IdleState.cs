@@ -26,10 +26,16 @@ public class IdleState : IState
     public void OnUpdate()
     {
         parameter.idleTimer += Time.deltaTime;
-        if (parameter.idleTimer >= parameter.idleTime&&parameter.isWork==false)
+        if (parameter.idleTimer >= parameter.idleTime&&parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==false)
         {
             manager.TransitState(StateType.Patrolling);
         }
+        if (parameter.idleTimer >= parameter.idleTime*5&&parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==true)
+        {
+            manager.TransitState(StateType.Patrolling);
+        }
+        
+        
         if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==false)
         {
             
@@ -47,6 +53,7 @@ public class IdleState : IState
         {
             manager.gameObject.GetComponent<GetItem_Human>().isFood=false;
             manager.gameObject.GetComponent<GetItem_Human>().foodList_human.RemoveAt(0);
+            manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
             manager.TransitState(StateType.Hungry);
         }
         

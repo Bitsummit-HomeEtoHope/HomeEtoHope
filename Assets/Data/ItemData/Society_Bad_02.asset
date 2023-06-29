@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: Society
   itemType: Tool
   isBad: 1
-  itemUserNum: 2
+  itemUserNum: 1
+  itemTreeSprite: {fileID: 0}
