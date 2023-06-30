@@ -83,12 +83,12 @@ public class DaysManager : MonoBehaviour
                     Sprite listSprite = humanlist[randomIndex];
 
                     //天数
-                    Day1_ngoru.sprite = nogoru1;
+                    //Day1_ngoru.sprite = nogoru1;
 
-                    //新闻
-                    Day1_news.sprite = newsSprite;
-                    //名字
-                    Day1_name.sprite = nameSprite;
+                    ////新闻
+                    //Day1_news.sprite = newsSprite;
+                    ////名字
+                    //Day1_name.sprite = nameSprite;
                     //名单
                     megane_1.sprite = listSprite;
 
@@ -119,13 +119,13 @@ public class DaysManager : MonoBehaviour
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
 
-                    //天数
-                    Day2_ngoru.sprite = nogoru2;
+                    ////天数
+                    //Day2_ngoru.sprite = nogoru2;
 
-                    //新闻
-                    Day2_news.sprite = newsSprite;
-                    //名字
-                    Day2_name.sprite = nameSprite;
+                    ////新闻
+                    //Day2_news.sprite = newsSprite;
+                    ////名字
+                    //Day2_name.sprite = nameSprite;
                     //名单
                     megane_2.sprite = listSprite;
 
@@ -154,13 +154,13 @@ public class DaysManager : MonoBehaviour
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
 
-                    //天数
-                    Day3_ngoru.sprite = nogoru3;
+                    ////天数
+                    //Day3_ngoru.sprite = nogoru3;
 
-                    //新闻
-                    Day3_news.sprite = newsSprite;
-                    //名字                                                                                                                                                                                
-                    Day3_name.sprite = nameSprite;
+                    ////新闻
+                    //Day3_news.sprite = newsSprite;
+                    ////名字                                                                                                                                                                                
+                    //Day3_name.sprite = nameSprite;
                     //名单
                     megane_3.sprite = listSprite;
 

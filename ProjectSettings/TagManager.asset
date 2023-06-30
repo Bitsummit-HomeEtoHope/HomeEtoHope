@@ -31,7 +31,7 @@ TagManager:
   - Build_39
   - Send
   - Dispose
-  - 
+  - Capsule_39
   - 
   - 
   - 
@@ -61,8 +61,11 @@ TagManager:
   - name: Evironment_39
     uniqueID: 3208389519
     locked: 0
-  - name: Food_39
+  - name: Get_39
     uniqueID: 3449356641
+    locked: 0
+  - name: Capsule_39
+    uniqueID: 3152898297
     locked: 0
   - name: Human_39
     uniqueID: 2147871951

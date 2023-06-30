@@ -12,7 +12,7 @@ public class CodeHolder : MonoBehaviour
     private MeshRenderer meshRenderer; // 物体的 MeshRenderer 组件
 
     public bool ihaveChild = false;
-
+    
     [System.Serializable]
     public struct ChildRenderers
     {
@@ -40,10 +40,7 @@ public class CodeHolder : MonoBehaviour
                 showList.OpenList();
             }
         }
-
-        
-        
-            meshRenderer = GetComponent<MeshRenderer>();
+         meshRenderer = GetComponent<MeshRenderer>();
         
     }
 
@@ -71,11 +68,8 @@ public class CodeHolder : MonoBehaviour
                 selectedObject.meshRenderer.material = selectedObject.defaultMaterial;
             }
         }
-
-        if(selectedObject != this){
-            // play sound
-            GetComponent<AudioSource>().Play();
-        }
+        if(selectedObject != this )
+        GetComponent<AudioSource>().Play();
         selectedObject = this;
         isClicked = true;
 
