@@ -33,68 +33,40 @@ namespace StateMachine.States
 			}
 		}
 
-        public void OnExit()
-        {
-            parameter.isHungry = false;
+		public void OnExit()
+		{
+			parameter.isHungry = false;
+			//GameObject food=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0],parameter.Food_Tran.position,Quaternion.identity);
+			
+			
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Apple")
+			{
+				GameObject apple=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				//Remove掉TreeList[0]
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Eggplant")
+			{
+				GameObject eggplant=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Greenpepper")
+			{
+				GameObject greenpepper=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Orange")
+			{
+				GameObject orange=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
+			if(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Pumpkin")
+			{
+				GameObject pumpkin=GameObject.Instantiate(manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._itemTreeSprite,manager.gameObject.GetComponent<GetItem_Human>().TreeList[0].transform.position,Quaternion.identity);
+				manager.gameObject.GetComponent<GetItem_Human>().TreeList.RemoveAt(0);
+			}
 
-            GameObject foodObject = manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject;
-            GetItem2dData foodData = foodObject.GetComponent<GetItem2dData>();
-            GameObject itemTreeSprite = foodData._itemTreeSprite;
-            string itemName = foodData._itemName;
 
-            GameObject treeObject = manager.gameObject.GetComponent<GetItem_Human>().TreeList[0];
-
-            if (itemName == "Apple")
-            {
-                GameObject apple = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                apple.transform.SetParent(treeObject.transform);
-                apple.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = apple.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                apple.transform.localScale = scale; // 更新缩放值
-            }
-            else if (itemName == "Eggplant")
-            {
-                GameObject eggplant = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                eggplant.transform.SetParent(treeObject.transform);
-                eggplant.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = eggplant.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                eggplant.transform.localScale = scale; // 更新缩放值
-            }
-            else if (itemName == "Greenpepper")
-            {
-                GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                greenpepper.transform.SetParent(treeObject.transform);
-                greenpepper.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = greenpepper.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                greenpepper.transform.localScale = scale; // 更新缩放值
-            }
-            else if (itemName == "Orange")
-            {
-                GameObject orange = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                orange.transform.SetParent(treeObject.transform);
-                orange.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = orange.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                orange.transform.localScale = scale; // 更新缩放值
-            }
-            else if (itemName == "Pumpkin")
-            {
-                GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                pumpkin.transform.SetParent(treeObject.transform);
-                pumpkin.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = pumpkin.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                pumpkin.transform.localScale = scale; // 更新缩放值
-            }
-        }
-
-        private void SetObjectScaleX(GameObject obj, float scaleX)
-        {
-            Vector3 originalScale = obj.transform.localScale;
-            obj.transform.localScale = new Vector3(scaleX, originalScale.y, originalScale.z);
-        }
-    }
+		}
+	}
 }

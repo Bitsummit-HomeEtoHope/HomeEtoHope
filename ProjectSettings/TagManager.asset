@@ -18,7 +18,6 @@ TagManager:
   - Tree
   - Cleaner
   - Partol
-  - Tree_still
   layers:
   - Default
   - TransparentFX
