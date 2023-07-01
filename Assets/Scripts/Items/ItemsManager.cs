@@ -37,19 +37,19 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     [Header("Send ")]
     [SerializeField, Range(0, 100)]
-    private int food_goodWeight = 100 / 5; // 将最大值分配给每个项
+    private int food_goodWeight = 100 / 5; 
 
     [SerializeField, Range(0, 100)]
-    private int food_badWeight = 100 / 5; // 将最大值分配给每个项
+    private int food_badWeight = 100 / 5;
 
     [SerializeField, Range(0, 100)]
-    private int tool_goodWeight = 100 / 9; // 将最大值分配给每个项
+    private int tool_goodWeight = 100 / 9; 
 
     [SerializeField, Range(0, 100)]
-    private int tool_badWeight = 100 / 9; // 将最大值分配给每个项
+    private int tool_badWeight = 100 / 9; 
 
     [SerializeField, Range(0, 100)]
-    private int humanWeight = 100 / 21; // 将最大值分配给每个项
+    private int humanWeight = 100 / 21;
 
 
     // 定义带有权重的项的泛型类
