@@ -7,6 +7,10 @@ namespace StateMachine.States
 {
     public class WorkState :IState
     {
+
+        private float rotateBuild = -60f;
+        private float scaleBuild = 15f;
+
         private readonly Parameter parameter;
         private readonly FSM manager;
         private bool isArriveWorkPoint;
@@ -56,20 +60,25 @@ namespace StateMachine.States
                 GameObject randomIndustryResource=IndustryResources[Random.Range(0,IndustryResources.Length)];
                 GameObject randomSocietyResource=SocietyResources[Random.Range(0,SocietyResources.Length)];
                 Debug.Log("tool:"+manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
-                if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Agriculture")
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
                 {
-                    GameObject tool1=GameObject.Instantiate(randomAgricultureResource,manager.transform.position,Quaternion.identity);
+                    GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
-                if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Industry")
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
                 {
-                    GameObject tool1=GameObject.Instantiate(randomIndustryResource,manager.transform.position,Quaternion.identity);
+                    GameObject tool1 = GameObject.Instantiate(randomIndustryResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
-                if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName=="Society")
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
                 {
-                    GameObject tool1=GameObject.Instantiate(randomSocietyResource,manager.transform.position,Quaternion.identity);
+                    GameObject tool1 = GameObject.Instantiate(randomSocietyResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
+
+
                 //Debug.Log("tool:"+tool);
-                
+
                 isArriveWorkPoint = true;
                 manager.parameter.isHungry = true;
                 manager.TransitState(StateType.Idle);

@@ -10,14 +10,14 @@ public class HumanLayer_RE : MonoBehaviour
     public bool updateSortingLayer = true;    // Switch to enable/disable sorting layer update
     public bool updateRotationAngle = true;    // Switch to enable/disable rotation angle update
 
+    public float fixedRotationX = 0f;    // Fixed rotation angle for X
+
     private SortingGroup sortingGroup;
-    private Quaternion initialRotation;
     private Vector3 lastPosition;
 
     private void Awake()
     {
         sortingGroup = GetComponent<SortingGroup>();
-        initialRotation = transform.rotation;
         lastPosition = transform.position;
     }
 
@@ -39,12 +39,18 @@ public class HumanLayer_RE : MonoBehaviour
             Vector3 currentPosition = transform.position;
             Vector3 direction = currentPosition - lastPosition;
 
-            // Determine the rotation angle based on the movement direction
-            float rotationAngle = (direction.x < 0) ? rotationAngleLeft : rotationAngleRight;
-
-            // Set the Y rotation angle while preserving the X and Z rotation values
-            Quaternion newRotation = Quaternion.Euler(initialRotation.eulerAngles.x, rotationAngle, initialRotation.eulerAngles.z);
-            transform.rotation = newRotation;
+            if (direction.x < 0)
+            {
+                // Moving left
+                Quaternion newRotation = Quaternion.Euler(fixedRotationX, rotationAngleLeft, transform.rotation.eulerAngles.z);
+                transform.rotation = newRotation;
+            }
+            else if (direction.x > 0)
+            {
+                // Moving right
+                Quaternion newRotation = Quaternion.Euler(-fixedRotationX, rotationAngleRight, transform.rotation.eulerAngles.z);
+                transform.rotation = newRotation;
+            }
 
             // Update the last frame's position
             lastPosition = currentPosition;
