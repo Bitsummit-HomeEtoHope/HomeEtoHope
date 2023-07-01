@@ -36,11 +36,21 @@ public class ItemsManager : SingletonManager<ItemsManager>
     [SerializeField] private bool sendHuman = true;
 
     [Header("Send ")]
-    [SerializeField, Range(0, 100)] private int food_goodWeight = 100; 
-    [SerializeField, Range(0, 100)] private int food_badWeight = 100; 
-    [SerializeField, Range(0, 100)] private int tool_goodWeight = 100; 
-    [SerializeField, Range(0, 100)] private int tool_badWeight = 100; 
-    [SerializeField, Range(0, 100)] private int humanWeight = 100; 
+    [SerializeField, Range(0, 100)]
+    private int food_goodWeight = 100 / 5; // 将最大值分配给每个项
+
+    [SerializeField, Range(0, 100)]
+    private int food_badWeight = 100 / 5; // 将最大值分配给每个项
+
+    [SerializeField, Range(0, 100)]
+    private int tool_goodWeight = 100 / 9; // 将最大值分配给每个项
+
+    [SerializeField, Range(0, 100)]
+    private int tool_badWeight = 100 / 9; // 将最大值分配给每个项
+
+    [SerializeField, Range(0, 100)]
+    private int humanWeight = 100 / 21; // 将最大值分配给每个项
+
 
     // 定义带有权重的项的泛型类
     public class WeightedItem<T>
