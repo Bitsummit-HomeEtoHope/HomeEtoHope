@@ -1,4 +1,5 @@
 using StateMachine.General;
+using System.Linq;
 using UnityEngine;
 
 namespace StateMachine.States
@@ -16,7 +17,9 @@ namespace StateMachine.States
 		}
 		public void Onenter()
 		{
-			parameter.currentTarget = parameter.patrolPoints[2].position;
+            OffEnergyActive(manager.transform);
+
+            parameter.currentTarget = parameter.patrolPoints[2].position;
 			parameter.isWork = false;
 			parameter.isHungry = true;
 			Debug.Log("I'm hungry!!!");
@@ -33,8 +36,50 @@ namespace StateMachine.States
 			}
 		}
 
+        public void OffEnergyActive(Transform selfTransform)
+        {
+            string[] componentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+
+            foreach (string componentName in componentNames)
+            {
+                Transform componentTransform = selfTransform.Find(componentName);
+                if (componentTransform != null)
+                {
+                    componentTransform.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        public void SetEnergyActive(Transform selfTransform, string componentName)
+        {
+            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+
+            // 关闭所有组件
+            foreach (Transform child in selfTransform)
+            {
+                if (allowedComponentNames.Contains(child.name))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+
+            // 开启指定的组件
+            if (allowedComponentNames.Contains(componentName))
+            {
+                Transform componentTransform = selfTransform.Find(componentName);
+                if (componentTransform != null)
+                {
+                    componentTransform.gameObject.SetActive(true);
+                }
+            }
+        }
+
+
         public void OnExit()
         {
+            //--- "energy", "energy_build", "energy_factory", "energy_farm" };
+            SetEnergyActive(manager.transform, "energy");
+            //---
             parameter.isHungry = false;
 
             GameObject foodObject = manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StateMachine.General;
+using System.Linq;
 
 namespace StateMachine.States
 {
@@ -24,9 +25,53 @@ namespace StateMachine.States
             this.manager = manager;
             parameter = manager.parameter;
         }
-    
-        public void Onenter()
+
+        public void SetEnergyActive(Transform selfTransform, string componentName)
         {
+            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+
+            // 关闭所有组件
+            foreach (Transform child in selfTransform)
+            {
+                if (allowedComponentNames.Contains(child.name))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+
+            // 开启指定的组件
+            if (allowedComponentNames.Contains(componentName))
+            {
+                Transform componentTransform = selfTransform.Find(componentName);
+                if (componentTransform != null)
+                {
+                    componentTransform.gameObject.SetActive(true);
+                }
+            }
+        }
+
+            public void Onenter()
+        {
+
+            if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
+            {
+                //--- "energy", "energy_build", "energy_factory", "energy_farm" };
+                SetEnergyActive(manager.transform, "energy_farm");
+                //---      
+            }
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
+            {
+                //--- "energy", "energy_build", "energy_factory", "energy_farm" };
+                SetEnergyActive(manager.transform, "energy_factory");
+                //---
+            }
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
+            {
+                //--- "energy", "energy_build", "energy_factory", "energy_farm" };
+                SetEnergyActive(manager.transform, "energy_build");
+                //---
+            }
+
             parameter.Food_Tran.gameObject.SetActive(false);
             isArriveWorkPoint = false;
             GetWorkTarget();
@@ -62,16 +107,19 @@ namespace StateMachine.States
                 Debug.Log("tool:"+manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
                 {
+
                     GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
                 {
+
                     GameObject tool1 = GameObject.Instantiate(randomIndustryResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
                 {
+
                     GameObject tool1 = GameObject.Instantiate(randomSocietyResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
