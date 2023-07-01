@@ -54,27 +54,25 @@ namespace StateMachine.General
         public void GetTool()
         {
             float distance = Vector2.Distance(transform.position, manager.parameter.patrolPoints[0].position);
-            if(isTool==false && distance<manager.parameter.patrolOuterRadius && GetItemManger.GetComponent<GetItem>().toolList.Count!=0)
+            if (isTool == false && distance < manager.parameter.patrolOuterRadius && GetItemManger.GetComponent<GetItem>().toolList.Count != 0)
             {
                 isTool = true;
-                GameObject toolToGet=GetItemManger.GetComponent<GetItem>().toolList[0];
+                GameObject toolToGet = GetItemManger.GetComponent<GetItem>().toolList[0];
                 toolList_human.Add(toolToGet);
                 toolToGet.SetActive(false);
-                GetItemManger.GetComponent<GetItem>().toolList.RemoveAt(0);//移除工具
-                if(toolToGet.gameObject.GetComponent<GetItem2dData>()._itemUserNum!=0)
+                GetItemManger.GetComponent<GetItem>().toolList.RemoveAt(0); //移除工具
+                if (toolToGet.gameObject.GetComponent<GetItem2dData>()._itemUserNum != 0)
                 {
                     //TODO:还需要判断工具的种类，之后再做
-                    manager.parameter.isTool =true;
+                    manager.parameter.isTool = true;
                 }
-                
-                
-                
             }
-            if(toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum==0)
+
+            if (toolList_human.Count > 0 && toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)
             {
                 Debug.Log("工具已经用完");
                 isTool = false;
-                manager.parameter.isTool =false;
+                manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
                 toolList_human.RemoveAt(0);
             }

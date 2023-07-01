@@ -65,11 +65,11 @@ TagManager:
   - name: Get_39
     uniqueID: 3449356641
     locked: 0
-  - name: Capsule_39
-    uniqueID: 3152898297
-    locked: 0
   - name: Human_39
     uniqueID: 2147871951
+    locked: 0
+  - name: Capsule_39
+    uniqueID: 3152898297
     locked: 0
   - name: UI
     uniqueID: 396238583
