@@ -21,13 +21,14 @@ namespace StateMachine.General
         {
             manager = GetComponent<FSM>();
             GetItemManger=GameObject.Find("GetItemManager");
-            GetTree();
+            //-----------------GetTree在这里---------------------
+            //GetTree();
         }
         private void Update()
         {
             GetFood();
             GetTool();
-            
+            //-----------------原本没有GetTree--------------------
         }
         public void GetFood()
         {
@@ -42,6 +43,9 @@ namespace StateMachine.General
                 foodList_human.Add(foodToGet);
                 foodToGet.SetActive(false);
                 GetItemManger.GetComponent<GetItem>().foodList.RemoveAt(0);//移除食物
+
+                GetTree();
+
                 manager.parameter.isHungry = false;
             }
             
@@ -77,19 +81,17 @@ namespace StateMachine.General
         }
         public void GetTree()
         {
+            TreeList.Clear();
+
             //获得场景内所有名称为Tree的物体并加入到TreeList中
             {
                 GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
                 foreach (GameObject tree in trees)
-                {
-                    
+                {                  
                     TreeList.Add(tree);
                 }
             }
-
         }
-
-
     }
 }
 
