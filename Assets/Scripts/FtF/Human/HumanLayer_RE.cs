@@ -3,7 +3,6 @@ using UnityEngine.Rendering;
 
 public class HumanLayer_RE : MonoBehaviour
 {
-    [SerializeField]public float rotationX = 0f;
     public int defaultSortingOrder = 0;
     public float rotationAngleLeft = 0f;    // Y rotation angle when moving left
     public float rotationAngleRight = -180f;    // Y rotation angle when moving right
@@ -44,7 +43,7 @@ public class HumanLayer_RE : MonoBehaviour
             float rotationAngle = (direction.x < 0) ? rotationAngleLeft : rotationAngleRight;
 
             // Set the Y rotation angle while preserving the X and Z rotation values
-            Quaternion newRotation = initialRotation * Quaternion.Euler(rotationX, rotationAngle, 0f);
+            Quaternion newRotation = Quaternion.Euler(initialRotation.eulerAngles.x, rotationAngle, initialRotation.eulerAngles.z);
             transform.rotation = newRotation;
 
             // Update the last frame's position
