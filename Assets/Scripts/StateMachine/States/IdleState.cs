@@ -28,44 +28,49 @@ public class IdleState : IState
     public void OnUpdate()
     {
         parameter.idleTimer += Time.deltaTime;
-        if (parameter.idleTimer >= parameter.idleTime&&parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==false)
+
+        if (parameter.idleTimer >= parameter.idleTime && parameter.isWork == false && manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Count > 0 && manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad == false)
         {
             manager.TransitState(StateType.Patrolling);
         }
-       
-        if(parameter.isWork==false&&manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad==true)
+
+        if (parameter.isWork == false && manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Count > 0 && manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad == true)
         {
-            if (parameter.idleTimer >= parameter.idleTime*5)
+            if (parameter.idleTimer >= parameter.idleTime * 5)
             {
-                
                 manager.TransitState(StateType.Patrolling);
             }
-            Transform child=manager.gameObject.transform.GetChild(1);
-            child.gameObject.GetComponent<SpriteRenderer>().sprite=parameter.HungryFace;
+            Transform child = manager.gameObject.transform.GetChild(1);
+            child.gameObject.GetComponent<SpriteRenderer>().sprite = parameter.HungryFace;
         }
-        
-        if (parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==false)
+
+        if (parameter.idleTimer >= parameter.workTimer && parameter.isWork == true && manager.parameter.isHungry == false)
         {
-            
-            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             manager.TransitState(StateType.Working);
         }
-        if(parameter.idleTimer < parameter.workTimer&&parameter.isWork==true&&isAnim==false)
+
+        if (parameter.idleTimer < parameter.workTimer && parameter.isWork == true && isAnim == false)
         {
-            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled=true;
+            parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             parameter.BuildAnim.gameObject.SetActive(true);
-            isAnim=true;
-            
+            isAnim = true;
         }
-        if(parameter.idleTimer >= parameter.workTimer&&parameter.isWork==true&&manager.parameter.isHungry==true)
+
+        if (parameter.idleTimer >= parameter.workTimer && parameter.isWork == true && manager.parameter.isHungry == true)
         {
-            manager.gameObject.GetComponent<GetItem_Human>().isFood=false;
-            manager.gameObject.GetComponent<GetItem_Human>().foodList_human.RemoveAt(0);
-            manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
-            manager.TransitState(StateType.Hungry);
+            var foodList = manager.gameObject.GetComponent<GetItem_Human>().foodList_human;
+            if (foodList.Count > 0)
+            {
+                manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
+                foodList.RemoveAt(0);
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human.Count > 0)
+                {
+                    manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
+                }
+                manager.TransitState(StateType.Hungry);
+            }
         }
-        
-        
     }
 
     public void OnExit()

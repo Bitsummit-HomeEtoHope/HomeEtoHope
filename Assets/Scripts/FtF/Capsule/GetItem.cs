@@ -43,11 +43,15 @@ public class GetItem : MonoBehaviour
     public List<GameObject> humanList = new List<GameObject>();
 
     [Header("HumanTell")]
-    [SerializeField]DaysManager daysManager = FindObjectOfType<DaysManager>();
-    [SerializeField]private string selectedHumanNames;
-    [SerializeField]private string path;
-    [SerializeField]private List<string> theirList = new List<string>();
+    [SerializeField] DaysManager daysManager;
+    [SerializeField] private string selectedHumanNames;
+    [SerializeField] private string path;
+    [SerializeField] private List<string> theirList = new List<string>();
 
+    private void Awake()
+    {
+        daysManager = FindObjectOfType<DaysManager>();
+    }
 
     private void Start()
     {
