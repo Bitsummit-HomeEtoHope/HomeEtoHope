@@ -2084,6 +2084,7 @@ MonoBehaviour:
   humanday_3: {fileID: 461206247}
   megane_3: {fileID: 829338673}
   selectedHumanName: 
+  EndingScene: Ending_furi
 --- !u!82 &250342056
 AudioSource:
   m_ObjectHideFlags: 0

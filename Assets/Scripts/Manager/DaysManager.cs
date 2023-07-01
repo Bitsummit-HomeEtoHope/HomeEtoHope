@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DaysManager : MonoBehaviour
@@ -58,7 +59,8 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public string selectedHumanName;
     public event Action<string> OnHumanSelected; // 定义事件
     public static string SelectedHumanName { get; private set; }
-
+    [Header("Ending")]
+    [SerializeField]public string EndingScene;
 
     private void Start()
     {
@@ -183,6 +185,9 @@ public class DaysManager : MonoBehaviour
 
                 case Days.Day3:
                 //TODO: 结束游戏转为结束场景。
+
+                SceneManager.LoadScene(EndingScene);
+
                 break;
 
             default:

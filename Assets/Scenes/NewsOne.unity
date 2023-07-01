@@ -1592,12 +1592,6 @@ MonoBehaviour:
   - {fileID: 646116200}
   news_open: {fileID: 692128983}
   isover: 0
-  move_x: -1930
-  move_time: 1.5
-  zoom_a: 1.5
-  time_zoom_a: 0.1
-  zoom_b: 1
-  time_zoom_b: 0.1
   isPaused: 0
   targetObjects:
   - {fileID: 2116541044}
@@ -1618,6 +1612,15 @@ MonoBehaviour:
   - {fileID: 14244141}
   - {fileID: 646116198}
   - {fileID: 499976582}
+  move_x: -1930
+  move_time: 1.5
+  zoom_a: 1.5
+  time_zoom_a: 0.1
+  zoom_b: 1
+  time_zoom_b: 0.1
+  targetSceneName: Level1
+  startTimer: 0
+  delay: 10
 --- !u!54 &499976585
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NewsManager : MonoBehaviour
@@ -24,6 +25,13 @@ public class NewsManager : MonoBehaviour
     [SerializeField] private float zoom_b; // Second scale change
     [SerializeField] private float time_zoom_b; // Time taken for the second scale change
 
+    [Header("Count TEN")]
+    public string targetSceneName; // 目标场景的名称
+    public bool startTimer = false; // 开始计时的开关
+    public float delay = 10f; // 延迟时间
+
+    private float timer = 0f; // 计时器
+
 
 
 
@@ -45,7 +53,32 @@ public class NewsManager : MonoBehaviour
     {
         SetTimeScale(1f);
         StartCoroutine(UpdateAfterDelay());
+
+        if (startTimer)
+        {
+            timer += Time.deltaTime; // 增加计时器
+
+            if (timer >= delay)
+            {
+                SwitchScene(); // 达到延迟时间后切换场景
+            }
+        }
+
+        // 检测鼠标左击
+        if (startTimer && Input.GetMouseButtonDown(0))
+        {
+            SwitchScene(); // 鼠标左击时切换场景
+        }
+
     }
+
+
+    private void SwitchScene()
+    {
+        SceneManager.LoadScene(targetSceneName); // 加载目标场景
+    }
+
+
     private void SetTimeScale(float timeScale)
     {
         // 检查是否指定了游戏对象
@@ -129,6 +162,8 @@ public class NewsManager : MonoBehaviour
         {
             isover = true;
         }
+
+        startTimer = true;
     }
 
     private IEnumerator Zoom(Transform targetTransform, float targetScale, float duration)
