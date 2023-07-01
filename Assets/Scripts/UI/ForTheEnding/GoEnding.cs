@@ -5,7 +5,7 @@ public class GoEnding : MonoBehaviour
 {
     public string fillAmountTargetObjectName; // 填充量目标游戏物体的名称
     public string colorTargetObjectName; // 颜色目标游戏物体的名称
-    public int buildCount = 6; // BuildCount设置为6
+    public int buildCount = 9; // BuildCount设置为9
     public float fillAmountIncreaseTime = 5f; // 增加Fill Amount的时间
     public float colorChangeTime = 5f; // 更改颜色的时间
     private Image fillAmountTargetImage; // 填充量目标UI Image组件
@@ -32,7 +32,7 @@ public class GoEnding : MonoBehaviour
         }
 
         fillAmountIncrement = 1f / buildCount;
-        hIncrement = 1f / buildCount;
+        hIncrement = Mathf.Min(125f / (360f * buildCount), 1f / buildCount);
         vIncrement = 45f / buildCount;
         hasIncreasedFillAmount = false;
         hasChangedColor = false;
@@ -82,8 +82,7 @@ public class GoEnding : MonoBehaviour
     private System.Collections.IEnumerator ChangeHValueOverTime()
     {
         Color.RGBToHSV(colorTargetImage.color, out float currentH, out float currentS, out float currentV);
-        float targetH = currentH + hIncrement;
-        targetH %= 1f;
+        float targetH = Mathf.Min(currentH + hIncrement, 125f / 360f);
         float startTime = Time.time;
 
         while (Time.time < startTime + colorChangeTime)
@@ -115,29 +114,29 @@ public class GoEnding : MonoBehaviour
         }
     }
 
-private System.Collections.IEnumerator ChangeVValueOverTime()
-{
-    Color.RGBToHSV(colorTargetImage.color, out float currentH, out float currentS, out float currentV);
-    float targetV = currentV + vIncrement;
-    float startTime = Time.time;
-
-    while (Time.time < startTime + colorChangeTime)
+    private System.Collections.IEnumerator ChangeVValueOverTime()
     {
-        float elapsedTime = Time.time - startTime;
-        float lerpValue = elapsedTime / colorChangeTime;
-        float newV = Mathf.Lerp(currentV, targetV, lerpValue);
+        Color.RGBToHSV(colorTargetImage.color, out float currentH, out float currentS, out float currentV);
+        float targetV = currentV + vIncrement;
+        float startTime = Time.time;
 
-        Color.RGBToHSV(colorTargetImage.color, out float newH, out float newS, out _);
-        Color newColor = Color.HSVToRGB(newH, newS, newV);
-        newColor.a = colorTargetImage.color.a;
-        colorTargetImage.color = newColor;
+        while (Time.time < startTime + colorChangeTime)
+        {
+            float elapsedTime = Time.time - startTime;
+            float lerpValue = elapsedTime / colorChangeTime;
+            float newV = Mathf.Lerp(currentV, targetV, lerpValue);
 
-        yield return null;
+            Color.RGBToHSV(colorTargetImage.color, out float newH, out float newS, out _);
+            Color newColor = Color.HSVToRGB(newH, newS, newV);
+            newColor.a = colorTargetImage.color.a;
+            colorTargetImage.color = newColor;
+
+            yield return null;
+        }
+
+        Color.RGBToHSV(colorTargetImage.color, out float finalH, out float finalS, out _);
+        Color finalColor = Color.HSVToRGB(finalH, finalS, targetV);
+        finalColor.a = colorTargetImage.color.a;
+        colorTargetImage.color = finalColor;
     }
-
-    Color.RGBToHSV(colorTargetImage.color, out float finalH, out float finalS, out _);
-    Color finalColor = Color.HSVToRGB(finalH, finalS, targetV);
-    finalColor.a = colorTargetImage.color.a;
-    colorTargetImage.color = finalColor;
-}
 }

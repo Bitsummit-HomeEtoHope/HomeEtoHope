@@ -10,7 +10,7 @@ namespace StateMachine.States
     {
 
         private float rotateBuild = -60f;
-        private float scaleBuild = 15f;
+        private float scaleBuild = 20f;
 
         private readonly Parameter parameter;
         private readonly FSM manager;
