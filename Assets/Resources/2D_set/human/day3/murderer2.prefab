@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 6090289852492249976}
   - component: {fileID: 1035811220178667080}
   - component: {fileID: 106280771727573249}
+  - component: {fileID: 6272018834444357369}
   m_Layer: 0
   m_Name: murderer2
   m_TagString: Untagged
@@ -497,10 +498,23 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2397070682436009853}
   m_Enabled: 1
-  m_SortingLayerID: -2147095345
+  m_SortingLayerID: -1142068999
   m_SortingLayer: 5
-  m_SortingOrder: 3
+  m_SortingOrder: 2
 --- !u!114 &106280771727573249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397070682436009853}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9710da2801da6f4a8af815c845d4978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: -50
+--- !u!114 &6272018834444357369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -509,10 +523,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2397070682436009853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9710da2801da6f4a8af815c845d4978, type: 3}
+  m_Script: {fileID: 11500000, guid: 4563ebf511098a44d8658e3273014cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation: -50
+  rotationX: -49
+  defaultSortingOrder: 2
+  rotationAngleLeft: 0
+  rotationAngleRight: -180
+  updateSortingLayer: 1
+  updateRotationAngle: 1
 --- !u!1 &3115486193398576785
 GameObject:
   m_ObjectHideFlags: 0
