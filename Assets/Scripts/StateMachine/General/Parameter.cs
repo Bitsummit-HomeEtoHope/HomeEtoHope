@@ -31,6 +31,8 @@ namespace StateMachine.General
         
         [Header("ifHungry")]
         public float hungrySpeed;
+        public Sprite HungryFace;
+        public Sprite defaultSprite;
 
         [Header("ifDie")]
         public Texture2D did;

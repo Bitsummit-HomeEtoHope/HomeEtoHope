@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4080816620323710939}
-  - component: {fileID: 6107294454531046945}
-  - component: {fileID: 100599743496938295}
-  - component: {fileID: 2421696941472728272}
-  - component: {fileID: 4338416617287635559}
-  - component: {fileID: 7379416137259829199}
+  - component: {fileID: 4077884401794316596}
+  - component: {fileID: -6709023443479978018}
+  - component: {fileID: -4198941684311045478}
+  - component: {fileID: -298638083204501072}
+  - component: {fileID: 1571727002135124073}
   m_Layer: 0
   m_Name: human2_6
   m_TagString: Human
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6107294454531046945
+--- !u!54 &4077884401794316596
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &100599743496938295
+--- !u!65 &-6709023443479978018
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,9 +70,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.0347369, y: 3.884594, z: 2.3729997}
-  m_Center: {x: -0.043885026, y: 0.43553746, z: 0.020892918}
---- !u!114 &2421696941472728272
+  m_Size: {x: 3.0396476, y: 3.9320817, z: 2.348112}
+  m_Center: {x: 0.022157261, y: 0.42385852, z: -0.005912611}
+--- !u!114 &-4198941684311045478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   xSpeed: 1
   ySpeed: 1
   rotateScale: 1
---- !u!114 &4338416617287635559
+--- !u!114 &-298638083204501072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,15 +105,6 @@ MonoBehaviour:
   highlightMaterial: {fileID: 0}
   ihaveChild: 1
   childRenderers:
-  - childRenderer: {fileID: 7923898422267302811}
-    childDefaultMaterial: {fileID: 2100000, guid: 012c7c29d10504225bae1d09010e7b01, type: 2}
-    childHighlightMaterial: {fileID: 2100000, guid: 0c81e7a2578394a3d984ebbf80b533a8, type: 2}
-  - childRenderer: {fileID: 7126225661800783102}
-    childDefaultMaterial: {fileID: 2100000, guid: 6f521a04b31b54d16821868f216afe8d, type: 2}
-    childHighlightMaterial: {fileID: 2100000, guid: de8dfea45f74145d2b6e86f2fa0688d3, type: 2}
-  - childRenderer: {fileID: 8747892277914482795}
-    childDefaultMaterial: {fileID: 2100000, guid: 91e374bf393e3448097cd43863c88205, type: 2}
-    childHighlightMaterial: {fileID: 2100000, guid: df1494e87c6384d7ca560fc19540037b, type: 2}
   - childRenderer: {fileID: 6468895025031563651}
     childDefaultMaterial: {fileID: 2100000, guid: be13afb5ec9214256b036e5cefb7765d, type: 2}
     childHighlightMaterial: {fileID: 2100000, guid: 4918908e633cf48a9bb52b84269bbbe7, type: 2}
@@ -123,10 +114,16 @@ MonoBehaviour:
   - childRenderer: {fileID: 5717937916132269963}
     childDefaultMaterial: {fileID: 2100000, guid: e9252caa6cd6f4d45a627c0322d8c829, type: 2}
     childHighlightMaterial: {fileID: 2100000, guid: e637027ec40f748f6a16d81de27443e5, type: 2}
-  - childRenderer: {fileID: 0}
-    childDefaultMaterial: {fileID: 0}
-    childHighlightMaterial: {fileID: 0}
---- !u!82 &7379416137259829199
+  - childRenderer: {fileID: 8747892277914482795}
+    childDefaultMaterial: {fileID: 2100000, guid: 91e374bf393e3448097cd43863c88205, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: df1494e87c6384d7ca560fc19540037b, type: 2}
+  - childRenderer: {fileID: 7923898422267302811}
+    childDefaultMaterial: {fileID: 2100000, guid: 012c7c29d10504225bae1d09010e7b01, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: 0c81e7a2578394a3d984ebbf80b533a8, type: 2}
+  - childRenderer: {fileID: 7126225661800783102}
+    childDefaultMaterial: {fileID: 2100000, guid: 6f521a04b31b54d16821868f216afe8d, type: 2}
+    childHighlightMaterial: {fileID: 2100000, guid: de8dfea45f74145d2b6e86f2fa0688d3, type: 2}
+--- !u!82 &1571727002135124073
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +134,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8270d7db24f8341fdbd25ca1d9875fde, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

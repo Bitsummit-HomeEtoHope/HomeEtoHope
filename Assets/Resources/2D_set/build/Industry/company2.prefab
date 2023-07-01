@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2355188680667216937}
   - component: {fileID: 5879937733975451579}
   - component: {fileID: 7855537788705299482}
+  - component: {fileID: -5538075556610123501}
   m_Layer: 9
   m_Name: company2
   m_TagString: Build_39
@@ -25,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7217269489047180236}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.3420201, y: 0, z: 0, w: 0.9396927}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -40, y: 0, z: 0}
 --- !u!212 &5879937733975451579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,3 +99,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.23, y: 3.58, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5538075556610123501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217269489047180236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9335c8955a3f87749a559169ac317f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillAmountTargetObjectName: green_Line
+  colorTargetObjectName: red_Mark
+  buildCount: 9
+  fillAmountIncreaseTime: 5
+  colorChangeTime: 5

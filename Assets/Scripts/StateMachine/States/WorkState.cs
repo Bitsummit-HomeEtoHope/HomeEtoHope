@@ -48,7 +48,7 @@ namespace StateMachine.States
             if(Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f&&manager.parameter.isWork==true)
             {
                 parameter.workPoints[random].gameObject.GetComponent<Check_HumanDistance>().isBuild=true;
-                manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
+                //manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
                 GameObject[] AgricultureResources=Resources.LoadAll<GameObject>("2D_set/build/Agriculture/");
                 GameObject[] IndustryResources=Resources.LoadAll<GameObject>("2D_set/build/Industry/");
                 GameObject[] SocietyResources=Resources.LoadAll<GameObject>("2D_set/build/Society/");

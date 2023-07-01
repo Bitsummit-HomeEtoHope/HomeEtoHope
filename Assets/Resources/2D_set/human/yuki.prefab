@@ -166,10 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
-    patrolPoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    idleTime: 1
+    idleTimer: 0
     workPoints:
     - {fileID: 0}
     - {fileID: 0}
@@ -181,12 +179,17 @@ MonoBehaviour:
     workTimer: 5
     BuildAnim: {fileID: 0}
     Build_FinsihAnim: {fileID: 0}
-    idleTime: 1
-    idleTimer: 0
+    Food_Tran: {fileID: 0}
+    patrolPoints:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     patrolOuterRadius: 40
     patrolInnerRadius: 20
     moveSpeed: 50
     hungrySpeed: 25
+    HungryFace: {fileID: 0}
+    defaultSprite: {fileID: 0}
     did: {fileID: 0}
     flower: {fileID: 0}
     CleanWanter: {fileID: 0}

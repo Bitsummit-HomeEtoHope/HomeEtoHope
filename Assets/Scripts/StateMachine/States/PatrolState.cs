@@ -51,6 +51,8 @@ namespace StateMachine.States
     
         public void Onenter()
         {
+            manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad=false;
+            //manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
             parameter.Food_Tran.gameObject.SetActive(false);
             GetTarget();
         }
