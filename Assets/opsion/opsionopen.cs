@@ -2,9 +2,11 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class opsionopen : MonoBehaviour
+using UnityEngine.UI;
+public class OpsionOpen : MonoBehaviour
 {
     //設定用のcanvas
     public GameObject Option_Canvas;
@@ -14,17 +16,69 @@ public class opsionopen : MonoBehaviour
     public GameObject titleScreen;
 
     public GameObject mainMoniterCanvas;
+    //ゲームを一時停止するかどうかのフラグ
+    private static bool isOpened = false;
+    public static bool isGamePaused { get { return isOpened; } }
+
+    private void Awake()
+    {
+        isOpened = false;
+    }
+
+    private void OnDestroy()
+    {
+        isOpened = false;
+    }
+
+    /*private void Update()
+     {
+         //オプションパネルがアクティブな間はゲームを一時停止する
+         if (gameObject.activeSelf)
+         {
+             PauseGame();
+         }
+         else
+         {
+             ResumeGame();
+         }
+
+     }
+     //ゲームを一時停止するメソッド
+     private void PauseGame()
+     {
+         if(!isGamePaused)
+         {
+             Time.timeScale =0f;
+             isGamePaused = true;
+         }
+     }
+     //ゲームを再開するメソッド
+     private void ResumeGame()
+     {
+         if (isGamePaused)
+         {
+             Time.timeScale = 1f;
+             isGamePaused=false; 
+         }
+     }*/
     // Start is called before the first frame update
     public void GoSetting()
     {
-        Option_Canvas.SetActive(true);
+        Option_Canvas.SetActive(true );
         mainMoniterCanvas.SetActive(false);
+        isOpened = true;
 
     }
     public void GoGame()
     {
         Option_Canvas.SetActive(false);
         mainMoniterCanvas.SetActive(true);
+        isOpened = false;
+    }
+    public void GoTitle()
+    {
+        //                       　↓変更したいscene名いれる
+       // SceneManager.LoadScene("Title");
     }
    
 }
