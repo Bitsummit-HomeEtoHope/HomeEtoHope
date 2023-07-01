@@ -2327,7 +2327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4563ebf511098a44d8658e3273014cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationX: 0
   defaultSortingOrder: 2
   rotationAngleLeft: 0
   rotationAngleRight: -180
@@ -2533,11 +2532,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1142068999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4046035341200599914, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
@@ -10708,7 +10707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4563ebf511098a44d8658e3273014cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationX: 0
   defaultSortingOrder: 2
   rotationAngleLeft: 0
   rotationAngleRight: -180
@@ -12860,7 +12858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingOrder
@@ -12868,7 +12866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1142068999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4046035341200599914, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
@@ -14173,10 +14171,10 @@ MonoBehaviour:
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   sendFood: 1
-  sendTool: 0
+  sendTool: 1
   sendHuman: 1
   food_goodWeight: 100
-  food_badWeight: 0
+  food_badWeight: 52
   tool_goodWeight: 60
   tool_badWeight: 40
   humanWeight: 29
@@ -16746,7 +16744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4563ebf511098a44d8658e3273014cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationX: 0
   defaultSortingOrder: 2
   rotationAngleLeft: 0
   rotationAngleRight: -180
@@ -17041,7 +17038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingOrder
@@ -17049,7 +17046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117237330302670162, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -1142068999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4046035341200599914, guid: 3a944e921b42d1c49ab959dad115524b, type: 3}
