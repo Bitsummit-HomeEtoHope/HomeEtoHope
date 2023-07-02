@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9061631466138469614}
   - component: {fileID: -111524265952683564}
   m_Layer: 0
-  m_Name: Shovelblack
+  m_Name: shovelblack
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
