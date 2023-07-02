@@ -99,30 +99,30 @@ namespace StateMachine.States
             else if (itemName == "Eggplant")
             {
                 GameObject eggplant = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                eggplant.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                eggplant.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                eggplant.transform.localScale = Vector3.one; // 应用父物体的缩放
+                eggplant.transform.localPosition = Vector3.zero;  
+                eggplant.transform.rotation = treeObject.transform.rotation;  
+                eggplant.transform.localScale = Vector3.one; 
             }
             else if (itemName == "Greenpepper")
             {
                 GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                greenpepper.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                greenpepper.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                greenpepper.transform.localScale = Vector3.one; // 应用父物体的缩放
+                greenpepper.transform.localPosition = Vector3.zero; 
+                greenpepper.transform.rotation = treeObject.transform.rotation;  
+                greenpepper.transform.localScale = Vector3.one;  
             }
             else if (itemName == "Orange")
             {
                 GameObject orange = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                orange.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                orange.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                orange.transform.localScale = Vector3.one; // 应用父物体的缩放
+                orange.transform.localPosition = Vector3.zero;  
+                orange.transform.rotation = treeObject.transform.rotation;  
+                orange.transform.localScale = Vector3.one;  
             }
             else if (itemName == "Pumpkin")
             {
                 GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                pumpkin.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                pumpkin.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                pumpkin.transform.localScale = Vector3.one; // 应用父物体的缩放
+                pumpkin.transform.localPosition = Vector3.zero;  
+                pumpkin.transform.rotation = treeObject.transform.rotation; 
+                pumpkin.transform.localScale = Vector3.one; 
             }
 
         }

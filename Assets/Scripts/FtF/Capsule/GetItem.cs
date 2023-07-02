@@ -158,8 +158,8 @@ public class GetItem : MonoBehaviour
 
             if (childPrefabName != null)
             {
-                GameObject parentGameObject = GameObject.Find("Environment");
-                GameObject referenceGameObject = GameObject.Find("-----HereClone-----");
+                GameObject parentGameObject = GameObject.Find("-----Human_Bag-----");
+                GameObject referenceGameObject = GameObject.Find("-----Human_Bag-----");
 
                 GameObject childPrefab = null;
 
@@ -223,36 +223,57 @@ public class GetItem : MonoBehaviour
     }
 
     private void TakeMeOut(GameObject prefab, Transform point, Vector3 scale, Vector3 offset, Vector3 initialRotation, float moveSpeed, Transform destinationPoint, string newTag)
-{
-
-        if (point != null)
     {
-            GameObject instance = Instantiate(prefab, point.position, Quaternion.Euler(initialRotation));
-            if(instance.gameObject.tag=="Food")
+        if (point != null)
+        {
+            GameObject parentObject = null;
+
+            if (newTag == "Tool_39")
             {
-                foodList.Add(instance);
+                // 寻找名为 "-----Tool_Bag-----" 的游戏物体作为Tool的父物体
+                parentObject = GameObject.Find("-----Tool_Bag-----");
             }
-            else if(instance.gameObject.tag=="Tool")
+            else if (newTag == "Food_39")
             {
-                toolList.Add(instance);
+                // 寻找名为 "-----Food_Bag-----" 的游戏物体作为Food的父物体
+                parentObject = GameObject.Find("-----Food_Bag-----");
             }
-            else if(instance.gameObject.tag=="Human")
+
+            if (parentObject != null)
             {
-                humanList.Add(instance);
+                GameObject instance = Instantiate(prefab, point.position, Quaternion.Euler(initialRotation), parentObject.transform);
+
+                // 根据标签将实例添加到相应的列表中
+                switch (instance.gameObject.tag)
+                {
+                    case "Food":
+                        foodList.Add(instance);
+                        break;
+                    case "Tool":
+                        toolList.Add(instance);
+                        break;
+                    case "Human":
+                        humanList.Add(instance);
+                        break;
+                }
+
+                currentSortingOrder += 1;
+                instance.GetComponent<Renderer>().sortingOrder = currentSortingOrder;
+
+                Vector3 initialScale = instance.transform.localScale;
+                Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
+                instance.transform.localScale = adjustedScale;
+
+                instance.transform.rotation = Quaternion.Euler(instance.transform.rotation.eulerAngles.x, instance.transform.rotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
+
+                StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
             }
-
-            currentSortingOrder += 1;
-            instance.GetComponent<Renderer>().sortingOrder = currentSortingOrder;
-
-            Vector3 initialScale = instance.transform.localScale;
-        Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
-        instance.transform.localScale = adjustedScale;
-
-        instance.transform.rotation = Quaternion.Euler(instance.transform.rotation.eulerAngles.x, instance.transform.rotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
-
-        StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
+            else
+            {
+                Debug.Log("Parent object not found for tag: " + newTag);
+            }
+        }
     }
-}
 
     private IEnumerator MoveItem(Transform itemTransform, float moveDuration, Transform destinationPoint, string newTag)
     {
