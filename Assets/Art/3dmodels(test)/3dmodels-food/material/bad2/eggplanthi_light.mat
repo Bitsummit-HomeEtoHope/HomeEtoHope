@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pumokinqaq_light
+  m_Name: eggplanthi_light
   m_Shader: {fileID: 4800000, guid: 468e0431e1f70314eaeb74cf8e6167d2, type: 3}
   m_ValidKeywords:
   - FillBlack_ON
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6a6ad5316ffac49e4bf2321771e93b74, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cdea5944e646498d9e4690e09cdf68e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatrixTex:
