@@ -232,13 +232,17 @@ public class ItemsManager : SingletonManager<ItemsManager>
         if (itemsArray[itemsArrayIndex] == null)
         {
             itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+
             Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
             itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+
             defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
             defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
             pauseHeight = defaultHeight + 0.5f;
+
             itemsArray[itemsArrayIndex].transform.position = initPosition.position;
             itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+
             if (itemsArrayIndex == 0)
             {
                 itemsArrayIndex = 1;
@@ -252,7 +256,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void MoveItems()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (itemsArray[i] != null && itemsArray[i].transform.position.x < disposePosition.position.x && !itemsArray[i].CompareTag(DisposeTag))
             {
@@ -291,9 +295,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         if (sendTool) addTool();
         if (sendHuman) addHuman();
 
-        itemsArray = new GameObject[2];
+        itemsArray = new GameObject[4];
         itemsArrayIndex = 0;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             itemsArray[i] = null;
         }
@@ -306,7 +310,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Update()
     {
-        if (itemsArray[0] == null && itemsArray[1] == null)
+        if (itemsArray[0] == null && itemsArray[1] == null && itemsArray[2] == null && itemsArray[3] == null)
         {
             _isCanRotate = false;
             InitializeItem(RandomSelectItem());
