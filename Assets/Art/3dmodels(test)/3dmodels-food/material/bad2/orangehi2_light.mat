@@ -7,10 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pumpkin
+  m_Name: orangehi2_light
   m_Shader: {fileID: 4800000, guid: 468e0431e1f70314eaeb74cf8e6167d2, type: 3}
   m_ValidKeywords:
   - FillBlack_ON
+  - RIMLIGHT_ON
   m_InvalidKeywords:
   - _CULL_OFF
   - _LIGHTSPACE_LOCAL
@@ -61,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4246694cd7851438f87e6cdcba07b0b9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d0c1d948b9b04869a964493a51ee6a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatrixTex:
@@ -168,7 +169,7 @@ Material:
     - _OUTLINE: 1
     - _OVERPERSPECTIVE: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.004
+    - _Outline: 0.003
     - _OutlineThickness: 0.0004
     - _OutlineWidth: 0.001
     - _OutlineWidth1: 0.05
@@ -180,9 +181,9 @@ Material:
     - _Rim_Dif: 0.01
     - _Rim_Dir: 1
     - _Rim_Pow: 1
-    - _RimlightThickness: 0.2
+    - _RimlightThickness: 0.08
     - _RimshadowThickness: 1
-    - _RmlightIntensity: 0.5
+    - _RmlightIntensity: 3.33
     - _Sdw1Brightness: 0
     - _Sdw1_Bdr: 0.3
     - _Sdw1_Dif: 1
@@ -207,7 +208,7 @@ Material:
     - _WhiteThreshold: 0.93
     - _ZWrite: 1
     - _Zwrite: 1
-    - _rimFlag: 0
+    - _rimFlag: 1
     - _rimshadowAmbient: 0
     - _rimshadowFlag: 0
     - _rimshadowRamp: 0
@@ -220,7 +221,7 @@ Material:
     - _LightCol: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _Main_Col: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Rim_Col: {r: 1, g: 1, b: 1, a: 1}
     - _Sdw1_Col: {r: 0.7, g: 0.7, b: 0.7, a: 1}
     - _Sdw2_Col: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
