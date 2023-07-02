@@ -17,4 +17,4 @@ MonoBehaviour:
   itemType: Food
   isBad: 0
   itemUserNum: 0
-  itemTreeSprite: {fileID: 6843368580651916364, guid: 7a80b42ff10cbd848888508217254d55, type: 3}
+  itemTreeSprite: {fileID: 7658066509432346516, guid: 21415f2f9badc274a9ef7663f473e831, type: 3}

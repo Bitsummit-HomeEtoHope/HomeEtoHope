@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2208118134666598147}
   - component: {fileID: 8003983226704149607}
+  - component: {fileID: -1885932872674462255}
   m_Layer: 0
   m_Name: pumpkin_on_tree
   m_TagString: Untagged
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &-1885932872674462255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207919924955786439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d16a0e2608723b46b8f1b67f3ef9e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springDuration: 0.15
+  isTwo: 1
+  springIntensity: 1.2
+  isOne: 0
+  JX: 1.5
+  JY: 1.5
