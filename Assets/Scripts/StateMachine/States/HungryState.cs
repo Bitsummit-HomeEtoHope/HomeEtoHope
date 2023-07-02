@@ -91,49 +91,40 @@ namespace StateMachine.States
 
             if (itemName == "Apple")
             {
-                GameObject apple = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                apple.transform.SetParent(treeObject.transform);
+                GameObject apple = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
                 apple.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = apple.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                apple.transform.localScale = scale; // 更新缩放值
+                apple.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                apple.transform.localScale = Vector3.one; // 应用父物体的缩放
             }
             else if (itemName == "Eggplant")
             {
-                GameObject eggplant = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                eggplant.transform.SetParent(treeObject.transform);
+                GameObject eggplant = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
                 eggplant.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = eggplant.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                eggplant.transform.localScale = scale; // 更新缩放值
+                eggplant.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                eggplant.transform.localScale = Vector3.one; // 应用父物体的缩放
             }
             else if (itemName == "Greenpepper")
             {
-                GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                greenpepper.transform.SetParent(treeObject.transform);
+                GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
                 greenpepper.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = greenpepper.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                greenpepper.transform.localScale = scale; // 更新缩放值
+                greenpepper.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                greenpepper.transform.localScale = Vector3.one; // 应用父物体的缩放
             }
             else if (itemName == "Orange")
             {
-                GameObject orange = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                orange.transform.SetParent(treeObject.transform);
+                GameObject orange = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
                 orange.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = orange.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                orange.transform.localScale = scale; // 更新缩放值
+                orange.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                orange.transform.localScale = Vector3.one; // 应用父物体的缩放
             }
             else if (itemName == "Pumpkin")
             {
-                GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, Vector3.zero, Quaternion.identity);
-                pumpkin.transform.SetParent(treeObject.transform);
+                GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
                 pumpkin.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                Vector3 scale = pumpkin.transform.localScale;
-                scale.x = 1f; // 将 X 缩放值设置为 1
-                pumpkin.transform.localScale = scale; // 更新缩放值
+                pumpkin.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                pumpkin.transform.localScale = Vector3.one; // 应用父物体的缩放
             }
+
         }
 
         private void SetObjectScaleX(GameObject obj, float scaleX)
