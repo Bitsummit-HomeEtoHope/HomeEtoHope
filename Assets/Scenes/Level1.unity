@@ -1723,8 +1723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera2d: {fileID: 1439728087}
-  fieldOfViewSpeed: 2
-  targetFieldOfView: 50
+  moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
   cameraMoveDuration: 0.5
@@ -14881,9 +14880,9 @@ MonoBehaviour:
   sendHuman: 1
   food_goodWeight: 100
   food_badWeight: 0
-  tool_goodWeight: 60
+  tool_goodWeight: 100
   tool_badWeight: 0
-  humanWeight: 29
+  humanWeight: 30
 --- !u!1 &1293836434
 GameObject:
   m_ObjectHideFlags: 0

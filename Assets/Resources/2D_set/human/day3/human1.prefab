@@ -134,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -529,7 +529,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -564,7 +564,7 @@ SortingGroup:
   m_GameObject: {fileID: 4934064282268166215}
   m_Enabled: 1
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 4
 --- !u!1 &4969910034908604516
 GameObject:
@@ -661,7 +661,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -696,7 +696,7 @@ SortingGroup:
   m_GameObject: {fileID: 4969910034908604516}
   m_Enabled: 1
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 4
 --- !u!1 &6024243050419279042
 GameObject:
@@ -891,7 +891,7 @@ SortingGroup:
   m_GameObject: {fileID: 7676261746328029597}
   m_Enabled: 1
   m_SortingLayerID: -1142068999
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
 --- !u!114 &1196215495190181060
 MonoBehaviour:
@@ -1128,7 +1128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6169569322897050032, guid: de0f104c5551849e99509280dceb7636, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6169569322897050032, guid: de0f104c5551849e99509280dceb7636, type: 3}
       propertyPath: m_SortingOrder
@@ -1166,7 +1166,7 @@ SortingGroup:
   m_GameObject: {fileID: 6340021945052399366}
   m_Enabled: 1
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 10
 --- !u!114 &8159138254237836015
 MonoBehaviour:
@@ -1204,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3579854303342043906, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3579854303342043906, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_SortingLayerID
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821678652664875902, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4821678652664875902, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_SortingOrder
@@ -1240,15 +1240,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8287106
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.71
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.683533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6586193054547882015, guid: e02870d6a1ca94f04928e09b52840395, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1298,7 +1298,7 @@ SortingGroup:
   m_GameObject: {fileID: 1860424437827078641}
   m_Enabled: 1
   m_SortingLayerID: -2147095345
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 10
 --- !u!1 &5308720531717270077 stripped
 GameObject:
