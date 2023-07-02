@@ -20,9 +20,12 @@ public class OpsionOpen : MonoBehaviour
     private static bool isOpened = false;
     public static bool isGamePaused { get { return isOpened; } }
 
+    private TimeManager timeManager;
+
     private void Awake()
     {
         isOpened = false;
+        timeManager = FindObjectOfType<TimeManager>();
     }
 
     private void OnDestroy()
@@ -65,7 +68,15 @@ public class OpsionOpen : MonoBehaviour
     public void GoSetting()
     {
         Option_Canvas.SetActive(true );
-        mainMoniterCanvas.SetActive(false);
+        //mainMoniterCanvas.SetActive(false);
+
+        //---the world----
+        if (timeManager != null)
+        {
+            timeManager.enabled = true; 
+        }
+        //----------------
+
         isOpened = true;
 
     }
@@ -73,6 +84,15 @@ public class OpsionOpen : MonoBehaviour
     {
         Option_Canvas.SetActive(false);
         mainMoniterCanvas.SetActive(true);
+
+        //---free the time---
+        if (timeManager != null)
+        {
+            timeManager.enabled = false;
+        }
+        //--------------------
+
+
         isOpened = false;
     }
     public void GoTitle()
