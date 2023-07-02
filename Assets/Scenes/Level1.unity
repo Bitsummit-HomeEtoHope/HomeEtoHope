@@ -260,9 +260,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8713756}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -1.2, y: 1.7, z: -17.86}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 410978975}
   - {fileID: 83321645}
@@ -3878,11 +3878,10 @@ MonoBehaviour:
   targetObjects:
   - {fileID: 563736476}
   - {fileID: 306791680}
-  codeHolderScriptName: CodeHolder
-  rotateScriptName: Rotate
-  uiElementsToDisable:
-  - {fileID: 614488885}
-  - {fileID: 1937995332}
+  buttonsToDisable:
+  - {fileID: 614488884}
+  objectsToDisable:
+  - {fileID: 1937995326}
 --- !u!1 &404642963
 GameObject:
   m_ObjectHideFlags: 0
