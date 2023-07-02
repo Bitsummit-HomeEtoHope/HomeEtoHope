@@ -81,7 +81,7 @@ namespace StateMachine.General
         {
             TreeList.Clear();
 
-            //获得场景内所有名称为Tree的物体并加入到TreeList中
+            //获得场景内所有名称(其实是Tag？)为Tree的物体并加入到TreeList中
             {
                 GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
                 foreach (GameObject tree in trees)
