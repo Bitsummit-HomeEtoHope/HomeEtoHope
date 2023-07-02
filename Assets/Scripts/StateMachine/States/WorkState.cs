@@ -9,8 +9,8 @@ namespace StateMachine.States
     public class WorkState :IState
     {
 
-        private float rotateBuild = -60f;
-        private float scaleBuild = 20f;
+        private float rotateBuild = 0f;
+        private float scaleBuild = 1f;
 
         private readonly Parameter parameter;
         private readonly FSM manager;
@@ -87,74 +87,66 @@ namespace StateMachine.States
 
         public void OnUpdate()
         {
-            if(isArriveWorkPoint==false)
+            if (isArriveWorkPoint == false)
             {
-                manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
-                parameter.currentTarget, parameter.moveSpeed*Time.deltaTime);
+                manager.transform.position = Vector3.MoveTowards(manager.transform.position, parameter.currentTarget, parameter.moveSpeed * Time.deltaTime);
                 //到达后等待1s
-
             }
-            if(Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f&&manager.parameter.isWork==true)
+            if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f && manager.parameter.isWork == true)
             {
-                parameter.workPoints[random].gameObject.GetComponent<Check_HumanDistance>().isBuild=true;
-                //manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum--;
-                GameObject[] AgricultureResources=Resources.LoadAll<GameObject>("2D_set/build/Agriculture/");
-                GameObject[] IndustryResources=Resources.LoadAll<GameObject>("2D_set/build/Industry/");
-                GameObject[] SocietyResources=Resources.LoadAll<GameObject>("2D_set/build/Society/");
-                GameObject randomAgricultureResource=AgricultureResources[Random.Range(0,AgricultureResources.Length)];
-                GameObject randomIndustryResource=IndustryResources[Random.Range(0,IndustryResources.Length)];
-                GameObject randomSocietyResource=SocietyResources[Random.Range(0,SocietyResources.Length)];
-                Debug.Log("tool:"+manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
+                parameter.workPoints[random].gameObject.GetComponent<Check_HumanDistance>().isBuild = true;
+
+                GameObject[] AgricultureResources = Resources.LoadAll<GameObject>("2D_set/build/Agriculture/");
+                GameObject[] IndustryResources = Resources.LoadAll<GameObject>("2D_set/build/Industry/");
+                GameObject[] SocietyResources = Resources.LoadAll<GameObject>("2D_set/build/Society/");
+                GameObject randomAgricultureResource = AgricultureResources[Random.Range(0, AgricultureResources.Length)];
+                GameObject randomIndustryResource = IndustryResources[Random.Range(0, IndustryResources.Length)];
+                GameObject randomSocietyResource = SocietyResources[Random.Range(0, SocietyResources.Length)];
+                Debug.Log("tool:" + manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
+
+                GameObject parentObject = parameter.workPoints[random].gameObject; // 目标物体的子物体作为父物体
+
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
                 {
-
-                    GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, parentObject.transform);
+                    tool1.transform.localPosition = Vector3.zero;
+                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
                 {
-
-                    GameObject tool1 = GameObject.Instantiate(randomIndustryResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    GameObject tool1 = GameObject.Instantiate(randomIndustryResource, parentObject.transform);
+                    tool1.transform.localPosition = Vector3.zero;
+                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
                 {
-
-                    GameObject tool1 = GameObject.Instantiate(randomSocietyResource, manager.transform.position, Quaternion.Euler(rotateBuild, 0f, 0f));
+                    GameObject tool1 = GameObject.Instantiate(randomSocietyResource, parentObject.transform);
+                    tool1.transform.localPosition = Vector3.zero;
+                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
                     tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
                 }
-
-
-                //Debug.Log("tool:"+tool);
 
                 isArriveWorkPoint = true;
                 manager.parameter.isHungry = true;
                 manager.TransitState(StateType.Idle);
-                
-                
             }
-            
-            //currentTime+=Time.deltaTime;
-            
-    
-            if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum==0)
+
+            if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)
             {
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
                 manager.TransitState(StateType.Patrolling);
             }
-            if(isArriveWorkPoint&&(Vector2.Distance(manager.transform.position, parameter.currentTarget) < 1f))
+            if (isArriveWorkPoint && (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 1f))
             {
                 //manager.TransitState(StateType.Working);
-                
             }
             /*if(manager.parameter.isHungry==true)
             {
                 manager.TransitState(StateType.Hungry);
             }*/
-            
-
-          
         }
 
         public void GetWorkTarget()
