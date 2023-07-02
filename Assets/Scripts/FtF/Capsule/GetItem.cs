@@ -241,7 +241,9 @@ public class GetItem : MonoBehaviour
 
             if (parentObject != null)
             {
-                GameObject instance = Instantiate(prefab, point.position, Quaternion.Euler(initialRotation), parentObject.transform);
+                GameObject instance = Instantiate(prefab, parentObject.transform);
+                instance.transform.localPosition = point.localPosition + offset;
+                instance.transform.localRotation = Quaternion.Euler(initialRotation);
 
                 // 根据标签将实例添加到相应的列表中
                 switch (instance.gameObject.tag)
@@ -264,9 +266,11 @@ public class GetItem : MonoBehaviour
                 Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
                 instance.transform.localScale = adjustedScale;
 
-                instance.transform.rotation = Quaternion.Euler(instance.transform.rotation.eulerAngles.x, instance.transform.rotation.eulerAngles.y, prefab.transform.rotation.eulerAngles.z);
+                // 重置位置和旋转
+                instance.transform.localPosition = Vector3.zero;
+                instance.transform.localRotation = Quaternion.identity;
 
-                StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
+     //           StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
             }
             else
             {
@@ -275,6 +279,7 @@ public class GetItem : MonoBehaviour
         }
     }
 
+    /*
     private IEnumerator MoveItem(Transform itemTransform, float moveDuration, Transform destinationPoint, string newTag)
     {
 
@@ -297,6 +302,6 @@ public class GetItem : MonoBehaviour
         // Change tag after moving
         itemTransform.gameObject.tag = newTag;
     }
-
+    */
 
 }

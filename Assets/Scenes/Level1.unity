@@ -11174,17 +11174,17 @@ MonoBehaviour:
   foodOffset: {x: 0, y: 0, z: 0}
   foodInitialRotation: {x: 0, y: 0, z: 0}
   foodMoveSpeed: 1.5
-  foodDestinationPoint: {fileID: 993702352}
+  foodDestinationPoint: {fileID: 748885543}
   toolScale: {x: 1, y: 1, z: 1}
   toolOffset: {x: 0, y: 0, z: 0}
   toolInitialRotation: {x: 0, y: 0, z: 0}
   toolMoveSpeed: 1.5
-  toolDestinationPoint: {fileID: 1236251867}
+  toolDestinationPoint: {fileID: 1475806964}
   humanScale: {x: 1, y: 1, z: 1}
   humanOffset: {x: 0, y: 0, z: 0}
   humanInitialRotation: {x: 0, y: 0, z: 0}
   humanMoveSpeed: 1.5
-  humanDestinationPoint: {fileID: 349488436}
+  humanDestinationPoint: {fileID: 1008993171}
   foodList: []
   toolList: []
   humanList: []
@@ -11302,6 +11302,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
+--- !u!1 &748885542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748885543}
+  m_Layer: 7
+  m_Name: -----Food_Bag-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748885543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748885542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.68, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 993702352}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774226108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -12719,6 +12750,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7195715053146679075, guid: c57052de6d0f98449bcd6fd82a99633b, type: 3}
   m_PrefabInstance: {fileID: 1123246195}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008993170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008993171}
+  m_Layer: 7
+  m_Name: -----Human_Bag-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1008993171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008993170}
+  m_LocalRotation: {x: 0.48480958, y: -0, z: -0, w: 0.8746198}
+  m_LocalPosition: {x: 0, y: -1.04, z: 0}
+  m_LocalScale: {x: 0.04761905, y: 0.04761904, z: 0.04761904}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 349488436}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028213128
 GameObject:
   m_ObjectHideFlags: 0
@@ -13518,6 +13580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: capsule_Food_neo
       objectReference: {fileID: 0}
+    - target: {fileID: 3005613004376427696, guid: c57052de6d0f98449bcd6fd82a99633b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7195715053146679075, guid: c57052de6d0f98449bcd6fd82a99633b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13959,6 +14025,10 @@ PrefabInstance:
     - target: {fileID: 5267557666870246249, guid: a2cdca1123c04f24b9d5001bcdeb8b89, type: 3}
       propertyPath: m_Name
       value: capsule_Tool_neo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267557666870246249, guid: a2cdca1123c04f24b9d5001bcdeb8b89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5753332547179293847, guid: a2cdca1123c04f24b9d5001bcdeb8b89, type: 3}
       propertyPath: m_RootOrder
@@ -16353,6 +16423,37 @@ SortingGroup:
   m_SortingLayerID: 396238583
   m_SortingLayer: 7
   m_SortingOrder: 5
+--- !u!1 &1475806963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475806964}
+  m_Layer: 7
+  m_Name: -----Tool_Bag-----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1475806964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475806963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.68, y: 0, z: 0}
+  m_LocalScale: {x: 0.22000001, y: 0.22000001, z: 0.22000001}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1236251867}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483946145
 GameObject:
   m_ObjectHideFlags: 0
@@ -17880,6 +17981,10 @@ PrefabInstance:
     - target: {fileID: 6393025743065393548, guid: fe9eefa62e15e7e458c5ebf198795260, type: 3}
       propertyPath: m_Name
       value: capsule_Human_neo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393025743065393548, guid: fe9eefa62e15e7e458c5ebf198795260, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6419400962995244676, guid: fe9eefa62e15e7e458c5ebf198795260, type: 3}
       propertyPath: m_RootOrder
