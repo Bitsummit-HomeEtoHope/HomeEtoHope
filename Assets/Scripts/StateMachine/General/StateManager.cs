@@ -17,6 +17,7 @@ namespace StateMachine.General
         {
 
             manager = GetComponent<FSM>();
+            manager.parameter.levelDataCurrent=GameObject.Find("LevelData").GetComponent<LevelDataCurrent>();
             GameObject[] WorkWithTag = GameObject.FindGameObjectsWithTag("Build_set");
             foreach(GameObject work in WorkWithTag)
             {

@@ -9,7 +9,7 @@ namespace StateMachine.General
     public class Parameter
     {
         //It is a class that lists the parameter you need, I recommend you declare variables here!
-
+        public LevelDataCurrent levelDataCurrent;
         
         [Header("ifIdle")]
         public float idleTime;

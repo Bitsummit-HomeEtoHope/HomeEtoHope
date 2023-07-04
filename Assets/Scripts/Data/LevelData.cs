@@ -20,10 +20,10 @@ public class LevelData : ScriptableObject
     //生成名为Future_Data的结构体
     public struct Future_Data
     {
-        public float tree_Speed;
+        public float tree_Time;
         public float human_Speed;
-        public float human_BadFood_Speed;
-        public float human_BadTool_Speed;
+        public float human_BadFood_Time;
+        public float human_BadTool_Time;
         public float build_Time;
         public float thief_Time;
         public int thief_Food_Num;

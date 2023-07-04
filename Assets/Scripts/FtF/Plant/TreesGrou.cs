@@ -4,12 +4,14 @@ public class TreesGrou : MonoBehaviour
 {
     public GameObject newPrefab; // 指定的新预制件
     public float delay = 10f; // 延迟时间
+    public LevelDataCurrent levelDataCurrent;
 
     private float timer;
     private bool prefabChanged;
 
     private void Start()
     {
+        levelDataCurrent=GameObject.Find("LevelData").GetComponent<LevelDataCurrent>();
         timer = 0f;
         prefabChanged = false;
     }
@@ -18,7 +20,7 @@ public class TreesGrou : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (!prefabChanged && timer >= delay)
+        if (!prefabChanged && timer >= levelDataCurrent._future_Data.tree_Time)
         {
             ChangePrefab();
         }

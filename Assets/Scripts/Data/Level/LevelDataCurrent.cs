@@ -14,6 +14,8 @@ public class LevelDataCurrent : MonoBehaviour
     public AudioClip _levelBGM;
     public LevelData _levelData;
 
+    public LevelData.Future_Data _future_Data;
+
     private void Awake()
     {
         _levelID = _levelData.levelID;
@@ -21,6 +23,7 @@ public class LevelDataCurrent : MonoBehaviour
         _levelTime = _levelData.levelTime;
         _interval = _levelData.Interval;
         _levelBGM = _levelData.levelBGM;
+        _future_Data=_levelData.future_Data;
         
     }
 }
