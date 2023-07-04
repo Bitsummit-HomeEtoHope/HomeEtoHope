@@ -84,7 +84,7 @@ public class DaysManager : MonoBehaviour
         switch (currentDay)
         {
             case Days.Day0:
-                if ( humanlist.Count > 0)
+                if ( humanlist.Count > 0 && wholist.Count>0 &&namelist.Count>0 )
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
@@ -121,7 +121,7 @@ public class DaysManager : MonoBehaviour
 
             case Days.Day1:
 
-                if (megane_2 != null && humanlist.Count > 0)
+                if (humanlist.Count > 0 && wholist.Count > 0 && namelist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
@@ -156,7 +156,7 @@ public class DaysManager : MonoBehaviour
 
             case Days.Day2:
 
-                if (megane_3 != null && humanlist.Count > 0)
+                if (humanlist.Count > 0 && wholist.Count > 0 && namelist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
