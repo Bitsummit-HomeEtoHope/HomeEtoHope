@@ -75,7 +75,7 @@ public class IdleState : IState
 
     public void OnExit()
     {
-        manager.TransitState(StateType.Hungry);
+       // manager.TransitState(StateType.Hungry);
         manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
         parameter.idleTimer = 0;
     }
