@@ -77,9 +77,6 @@ namespace StateMachine.States
 
         public void OnExit()
         {
-            //--- "energy", "energy_build", "energy_factory", "energy_farm" };
-            SetEnergyActive(manager.transform, "energy");
-            //---
             parameter.isHungry = false;
 
             GameObject foodObject = manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject;

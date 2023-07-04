@@ -1,4 +1,5 @@
 using StateMachine.General;
+using System.Linq;
 using UnityEngine;
 
 #region Tutorial of FSM (Check it in wiki)
@@ -48,9 +49,38 @@ namespace StateMachine.States
             this.manager = manager;
             parameter = manager.parameter;
         }
-    
+
+
+        public void SetEnergyActive(Transform selfTransform, string componentName)
+        {
+            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+
+            // 关闭所有组件
+            foreach (Transform child in selfTransform)
+            {
+                if (allowedComponentNames.Contains(child.name))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+
+            // 开启指定的组件
+            if (allowedComponentNames.Contains(componentName))
+            {
+                Transform componentTransform = selfTransform.Find(componentName);
+                if (componentTransform != null)
+                {
+                    componentTransform.gameObject.SetActive(true);
+                }
+            }
+        }
+
         public void Onenter()
         {
+            //--- "energy", "energy_build", "energy_factory", "energy_farm" };
+            SetEnergyActive(manager.transform, "energy");
+            //---
+
             manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad=false;
             //manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
             parameter.Food_Tran.gameObject.SetActive(false);
