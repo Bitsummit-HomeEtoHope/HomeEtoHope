@@ -13,6 +13,27 @@ public class LevelData : ScriptableObject
     [Tooltip("The interval between the appearance of props in the level")]
     public float Interval;
     public AudioClip levelBGM;
+    public Future_Data future_Data;
+
+
+    [System.Serializable]
+    //生成名为Future_Data的结构体
+    public struct Future_Data
+    {
+        public float tree_Speed;
+        public float human_Speed;
+        public float human_BadFood_Speed;
+        public float human_BadTool_Speed;
+        public float build_Time;
+        public float thief_Time;
+        public int thief_Food_Num;
+        public float itemBrokenHuman_time;
+        public float murderer_time;
+
+
+    }
+
+    
 
 
 }

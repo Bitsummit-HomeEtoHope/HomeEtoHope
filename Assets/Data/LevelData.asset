@@ -10,20 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38888df774cba8346bcf5f38c29899df, type: 3}
-  m_Name: Level1
+  m_Name: LevelData
   m_EditorClassIdentifier: 
-  levelID: 1
-  levelName: level01
-  levelTime: 90
-  Interval: 5
+  levelID: 0
+  levelName: 
+  levelTime: 0
+  Interval: 0
   levelBGM: {fileID: 0}
-  future_Data:
-    tree_Speed: 10
-    human_Speed: 50
-    human_BadFood_Speed: 0
-    human_BadTool_Speed: 0
-    build_Time: 0
-    thief_Time: 0
-    thief_Food_Num: 0
-    itemBrokenHuman_time: 0
-    murderer_time: 0
