@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pumpkinqaq 1
+  m_Name: pumpkinqaq
   m_Shader: {fileID: 4800000, guid: 468e0431e1f70314eaeb74cf8e6167d2, type: 3}
   m_ValidKeywords:
   - FillBlack_ON
