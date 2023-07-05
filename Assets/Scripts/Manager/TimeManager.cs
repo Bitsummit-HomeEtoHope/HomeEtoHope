@@ -11,6 +11,8 @@ public class TimeManager : MonoBehaviour
     [Header("Dio")]
     [SerializeField] private bool isPaused = false; // 控制暂停状态
     [SerializeField] public List<GameObject> targetObjects; // 多个游戏对象
+    private Dictionary<GameObject, Vector3> initialObjectPositions;
+
     [Header("JoJo")]
     public Button[] buttonsToDisable; // 指定需要禁用的按钮数组
     private List<MeshCollider> meshColliders;
@@ -33,6 +35,9 @@ public class TimeManager : MonoBehaviour
     {
         isPaused = true;
 
+       //SaveObjectStates();
+       // SetTargetObjectsEnabled(true); // 将物体的运动停止，并锁定其Transform
+
         DisableButtons();
 
         DisableObjects();
@@ -49,6 +54,8 @@ public class TimeManager : MonoBehaviour
     {
         isPaused = false;
 
+       // SetTargetObjectsEnabled(false); // 将物体的运动恢复，并解锁其Transform
+
         EnableButtons();
 
         EnableObjects();
@@ -59,6 +66,54 @@ public class TimeManager : MonoBehaviour
 
         
     }
+
+
+
+    private void SetTargetObjectsEnabled(bool enabled)
+    {
+        foreach (GameObject obj in targetObjects)
+        {
+            SetObjectEnabledRecursively(obj, enabled);
+        }
+    }
+
+    private void SetObjectEnabledRecursively(GameObject obj, bool enabled)
+    {
+        obj.transform.position = enabled ? initialObjectPositions[obj] : obj.transform.position;
+        obj.transform.rotation = enabled ? Quaternion.identity : obj.transform.rotation;
+        obj.transform.localScale = enabled ? Vector3.one : obj.transform.localScale;
+        obj.transform.GetComponent<Rigidbody>().isKinematic = enabled;
+
+        for (int i = 0; i < obj.transform.childCount; i++)
+        {
+            GameObject child = obj.transform.GetChild(i).gameObject;
+            SetObjectEnabledRecursively(child, enabled);
+        }
+    }
+
+
+
+    private void SaveObjectStates()
+    {
+        initialObjectPositions = new Dictionary<GameObject, Vector3>();
+        foreach (GameObject obj in targetObjects)
+        {
+            SaveObjectStateRecursively(obj);
+        }
+    }
+
+    private void SaveObjectStateRecursively(GameObject obj)
+    {
+        initialObjectPositions[obj] = obj.transform.position;
+
+        for (int i = 0; i < obj.transform.childCount; i++)
+        {
+            GameObject child = obj.transform.GetChild(i).gameObject;
+            SaveObjectStateRecursively(child);
+        }
+    }
+
+
 
     private void GetCollider()
     {
