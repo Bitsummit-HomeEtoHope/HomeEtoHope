@@ -4,16 +4,36 @@ using UnityEngine;
 
 public class GameManager : SingletonManager<GameManager>
 {
+    public Transform[] foodTarget; 
+    public Transform[] toolTarget;
+    public float stopDistance = 1f;
+    public float moveSpeed = 5f;
+    [SerializeField]
+    private List<bool> stopFoodFlags;
+    [SerializeField]
+    private List<bool> stopToolFlags;
+    public GetItem getItem;
     public LevelDataCurrent levelDataCurrent;
     [Tooltip("Temporarily replace the shady screen at the end of the level")]
     public GameObject shady;
     [SerializeField]
     public bool isPause;
+    [SerializeField]
+    
+    private int foodCount=0;
+    private int toolCount=0;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        foodTarget=new Transform[99];
+        toolTarget=new Transform[99];
+        foodTarget[0]=GameObject.Find("FoodTarget").transform;
+        toolTarget[0]=GameObject.Find("ToolTarget").transform;
+        getItem= FindObjectOfType<GetItem>();
+        
+        
         // levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         if (isPause)
         {
@@ -36,15 +56,81 @@ public class GameManager : SingletonManager<GameManager>
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // ¼ì²âÊó±ê×ó¼üµã»÷
+        
+        MoveFoodTarget();
+        MoveToolTarget();
+    }
+    private void MoveFoodTarget()
+    {
+        
+        if(foodCount!=getItem.foodList.Count)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            stopFoodFlags.Add(false);
+            foodCount=getItem.foodList.Count;
+        }
 
-            if (Physics.Raycast(ray, out hit))
+        
+        for(int i=0;i<getItem.foodList.Count;i++)
+        {
+            
+            GameObject currentFood= getItem.foodList[i];
+            
+            if(currentFood!=null)
             {
-                    ShadyClose();
+                
+                Vector3 targetPos= foodTarget[i].position;
+                Transform currentPos= currentFood.transform;
+
+                if(!stopFoodFlags[i])
+                {
+                    Vector3 moveDir= targetPos-currentPos.position;
+                    if(moveDir.magnitude>stopDistance)
+                    {
+                        currentFood.transform.position=Vector3.MoveTowards(currentPos.position,targetPos,moveSpeed*Time.deltaTime);
+                    }
+                    else
+                    {
+                        stopFoodFlags[i]=true;
+                        foodTarget[i+1]=currentPos;
+                    }
+                }
             }
         }
     }
+     private void MoveToolTarget()
+     {
+        if(toolCount!=getItem.toolList.Count)
+        {
+            stopToolFlags.Add(false);
+            toolCount=getItem.toolList.Count;
+        }
+
+        
+        for(int i=0;i<getItem.toolList.Count;i++)
+        {
+            
+            GameObject currentTool= getItem.toolList[i];
+            
+            if(currentTool!=null)
+            {
+                
+                Vector3 targetPos= toolTarget[i].position;
+                Transform currentPos= currentTool.transform;
+
+                if(!stopToolFlags[i])
+                {
+                    Vector3 moveDir= targetPos-currentPos.position;
+                    if(moveDir.magnitude>stopDistance)
+                    {
+                        currentTool.transform.position=Vector3.MoveTowards(currentPos.position,targetPos,moveSpeed*Time.deltaTime);
+                    }
+                    else
+                    {
+                        stopToolFlags[i]=true;
+                        toolTarget[i+1]=currentPos;
+                    }
+                }
+            }
+        }
+     }
 }
