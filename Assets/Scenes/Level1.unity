@@ -2979,7 +2979,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 632710746}
-        m_TargetAssemblyTypeName: opsionopen, Assembly-CSharp
+        m_TargetAssemblyTypeName: OpsionOpen, Assembly-CSharp
         m_MethodName: GoSetting
         m_Mode: 1
         m_Arguments:
@@ -3952,12 +3952,8 @@ MonoBehaviour:
   m_Item: {fileID: 0}
   m_ItemCameraObject: {fileID: 0}
   itemDataBases:
-  - m_Name: appleqaq(Clone)
-    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
   - m_Name: pumpkin(Clone)
     m_Items: {fileID: 8339481334851101340, guid: 7da5460897f43d948813183034306a95, type: 3}
-  - m_Name: orange(Clone)
-    m_Items: {fileID: 7128723905836028965, guid: 49f0e915451c66b43a6224e6adb93741, type: 3}
   - m_Name: wrench(Clone)
     m_Items: {fileID: 3827924249975033189, guid: 25a7aded40ca8384e9147f173c34dc0d, type: 3}
   - m_Name: greenpepperqaq(Clone)
@@ -10692,6 +10688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Option_Canvas: {fileID: 1457580299}
+  settingButton: {fileID: 306791680}
+  titleScreen: {fileID: 0}
+  mainMoniterCanvas: {fileID: 822714194}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -10700,8 +10700,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632710745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -336.03088, y: -187.40709, z: -1.5218812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 563736477}
@@ -18736,7 +18736,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1805800227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 632710746}
+        m_TargetAssemblyTypeName: OpsionOpen, Assembly-CSharp
+        m_MethodName: GoTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1805800227
 MonoBehaviour:
   m_ObjectHideFlags: 0
