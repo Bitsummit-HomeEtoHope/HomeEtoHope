@@ -15233,7 +15233,7 @@ MonoBehaviour:
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   sendFood: 1
   sendTool: 1
-  sendHuman: 0
+  sendHuman: 1
   food_goodWeight: 100
   food_badWeight: 29
   tool_goodWeight: 100
