@@ -15,7 +15,7 @@ MonoBehaviour:
   levelID: 1
   levelName: level01
   levelTime: 90
-  Interval: 5
+  Interval: 3
   levelBGM: {fileID: 0}
   future_Data:
     tree_Time: 10
