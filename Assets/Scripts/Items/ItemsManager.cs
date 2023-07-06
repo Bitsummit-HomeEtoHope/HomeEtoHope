@@ -234,29 +234,38 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         if (itemsArray[itemsArrayIndex] == null)
         {
-            itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+            GameObject parentObject = GameObject.Find("---items---");
 
-            Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
-            itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
-
-            defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
-            defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
-            pauseHeight = defaultHeight + 0.5f;
-
-            itemsArray[itemsArrayIndex].transform.position = initPosition.position;
-            itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
-
-            if (itemsArrayIndex == 0)
+            if (parentObject != null)
             {
-                itemsArrayIndex = 1;
+                itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+                itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
+
+                Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
+                itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+
+                defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
+                defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
+                pauseHeight = defaultHeight + 0.5f;
+
+                itemsArray[itemsArrayIndex].transform.position = initPosition.position;
+                itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+
+                if (itemsArrayIndex == 0)
+                {
+                    itemsArrayIndex = 1;
+                }
+                else
+                {
+                    itemsArrayIndex = 0;
+                }
             }
             else
             {
-                itemsArrayIndex = 0;
+                Debug.LogWarning("Parent object ---items--- not found!");
             }
         }
     }
-
     private void MoveItems()
     {
         for (int i = 0; i < 4; i++)

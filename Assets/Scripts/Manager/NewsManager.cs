@@ -64,8 +64,9 @@ public class NewsManager : MonoBehaviour
     public float delay = 10f; // —”≥Ÿ ±º‰
 
     [Header("-----------------------------------------")]
-    public GameObject Bar;
-    public GameObject Back;
+    private GameObject Bar;
+    private GameObject Back;
+    public GameObject Shady;
     public GameObject readyWhat;
     public GameObject readyWho;
     public GameObject TheNews;
@@ -85,6 +86,7 @@ public class NewsManager : MonoBehaviour
         Bar = GameObject.Find("news_bar");
         Back = GameObject.Find("news_back");
         TheNews = GameObject.Find("Canvas_News");
+       // Shady = GameObject.Find("--Shady--");
         //Items = GameObject.Find("ItemsManager");
         //PortBelt = GameObject.Find("PortBeltManager");
         //Moniter = GameObject.Find("Canvas_Moniter_Button");
@@ -124,6 +126,7 @@ public class NewsManager : MonoBehaviour
     {
         timer = 0f;
         takeThemOff();
+        if (Shady != null) if (!Shady.activeSelf) Shady.active = true;
 
         if (TheNews != null && !TheNews.activeSelf) TheNews.active = true;
 
@@ -238,6 +241,7 @@ public class NewsManager : MonoBehaviour
                     readytwo = false;
                     takeThemOn();
 
+                    if (Shady != null) if (Shady.activeSelf) Shady.active = false;
                     TheNews.active = false;
                     gameObject.SetActive(false);
                 }
@@ -261,6 +265,7 @@ public class NewsManager : MonoBehaviour
                 timer = 0;
                 readytwo = false;
                 takeThemOn();
+                if (Shady != null) if (Shady.activeSelf) Shady.active = false;
                 TheNews.active = false;
                 gameObject.SetActive(false);
                 //Bar.SetActive(false);
