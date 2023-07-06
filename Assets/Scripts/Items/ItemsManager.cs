@@ -30,6 +30,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private const string DisposeTag = "Dispose";
 
+    [Header("Desipose Item")]
+    [SerializeField] private float DushSpeed = 2.0f;
+
     [Header ("Send Item")]
     [SerializeField] private bool sendFood = true;
     [SerializeField] private bool sendTool = true;
@@ -282,7 +285,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         float distance = 1.0f;
         Vector3 backDirection = -Vector3.forward;
         Vector3 targetPosition = item.transform.position + backDirection * distance;
-        item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
+        item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, dushSpeed * Time.deltaTime);
     }
 
     private void Start()
