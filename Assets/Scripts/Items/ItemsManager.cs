@@ -31,7 +31,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private const string DisposeTag = "Dispose";
 
     [Header("Desipose Item")]
-    [SerializeField] private float DushSpeed = 2.0f;
+    [SerializeField] private float dushSpeed = 2.0f;
 
     [Header ("Send Item")]
     [SerializeField] private bool sendFood = true;
