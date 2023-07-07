@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemsManager : SingletonManager<ItemsManager>
 {
     [SerializeField]
-    private float spawnInterval = 5f;
+    private float spawnInterval;
     [SerializeField]
     private float moveTime = 6f;
 
@@ -247,7 +247,15 @@ public class ItemsManager : SingletonManager<ItemsManager>
             {
                 itemsArrayIndex = 1;
             }
-            else
+            else if(itemsArrayIndex == 1)
+            {
+                itemsArrayIndex = 2;
+            }
+            else if (itemsArrayIndex == 2)
+            {
+                itemsArrayIndex = 3;
+            }
+            else if (itemsArrayIndex == 3)
             {
                 itemsArrayIndex = 0;
             }
@@ -288,7 +296,13 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private void Start()
     {
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
+        food_goodWeight = _levelDataCurrent._food_goodWeight;
+        food_badWeight = _levelDataCurrent._food_badWeight;
+        tool_goodWeight = _levelDataCurrent._tool_goodweight;
+        tool_badWeight = _levelDataCurrent._tool_badweight;
+        humanWeight = _levelDataCurrent._human_weight;
         moveTime = _levelDataCurrent._interval;
+        spawnInterval = _levelDataCurrent._spawnInterval;
         Application.targetFrameRate = 120;
 
         if (sendFood) addFood();
@@ -310,24 +324,16 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Update()
     {
-        if (itemsArray[0] == null && itemsArray[1] == null && itemsArray[2] == null && itemsArray[3] == null)
+        
+        if (spendTime >= spawnInterval)
         {
-            _isCanRotate = false;
-            InitializeItem(RandomSelectItem());
-            MoveItems();
-            spendTime = 0;
-        }
-        else if (spendTime >= spawnInterval)
-        {
+            Debug.Log("spendTime >= spawnInterval");
             InitializeItem(RandomSelectItem());
             MoveItems();
             _isCanRotate = false;
             spendTime = 0;
         }
-        else
-        {
-            spendTime += Time.deltaTime;
-            MoveItems();
-        }
+        spendTime += Time.deltaTime;
+        MoveItems();
     }
 }

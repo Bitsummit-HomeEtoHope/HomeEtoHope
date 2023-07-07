@@ -17,6 +17,9 @@ namespace StateMachine.States
 		}
 		public void Onenter()
 		{
+            manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Clear();
+            manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
+            parameter.Food_Tran.gameObject.SetActive(false);
             OffEnergyActive(manager.transform);
 
             parameter.currentTarget = parameter.patrolPoints[2].position;

@@ -36,12 +36,13 @@ public class IdleState : IState
 
         if (parameter.isWork == false && manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Count > 0 && manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad == true)
         {
-            if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.human_BadFood_Time)
-            {
-                manager.TransitState(StateType.Patrolling);
-            }
             Transform child = manager.gameObject.transform.GetChild(1);
             child.gameObject.GetComponent<SpriteRenderer>().sprite = parameter.HungryFace;
+            if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.human_BadFood_Time)
+            {
+                manager.TransitState(StateType.Hungry);
+            }
+            
         }
 
         if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.build_Time && parameter.isWork == true && manager.parameter.isHungry == false)
