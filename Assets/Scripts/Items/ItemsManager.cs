@@ -255,24 +255,21 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 {
                     itemsArrayIndex = 1;
                 }
-                else
+            
+                else if(itemsArrayIndex == 1)
+                {
+                    itemsArrayIndex = 2;
+                }
+                else if (itemsArrayIndex == 2)
+                {
+                    itemsArrayIndex = 3;
+                }
+                else if (itemsArrayIndex == 3)
                 {
                     itemsArrayIndex = 0;
                 }
-            }
-            else if(itemsArrayIndex == 1)
-            {
-                itemsArrayIndex = 2;
-            }
-            else if (itemsArrayIndex == 2)
-            {
-                itemsArrayIndex = 3;
-            }
-            else if (itemsArrayIndex == 3)
-            {
-                Debug.LogWarning("Parent object ---items--- not found!");
-            }
         }
+    }
     }
     private void MoveItems()
     {
