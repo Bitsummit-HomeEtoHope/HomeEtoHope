@@ -27,3 +27,9 @@ MonoBehaviour:
     thief_Food_Num: 0
     itemBrokenHuman_time: 0
     murderer_time: 0
+  _food_goodWeight: 100
+  _food_badWeight: 30
+  _tool_goodweight: 100
+  _tool_badweight: 20
+  _human_weight: 50
+  _spawnInterval: 1

@@ -14,6 +14,18 @@ public class LevelData : ScriptableObject
     public float Interval;
     public AudioClip levelBGM;
     public Future_Data future_Data;
+    [Range(0,100)]
+    public int _food_goodWeight;
+    [Range(0,100)]
+    public int _food_badWeight;
+    [Range(0,100)]
+    public int _tool_goodweight;
+    [Range(0,100)]
+    public int _tool_badweight;
+    [Range(0,100)]
+    public int _human_weight;
+    [Range(0.5f,8)]
+    public float _spawnInterval;
 
 
     [System.Serializable]

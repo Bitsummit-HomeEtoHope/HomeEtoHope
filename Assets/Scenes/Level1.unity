@@ -21290,6 +21290,11 @@ MonoBehaviour:
   _interval: 0
   _levelBGM: {fileID: 8300000, guid: 6221092b5bb1246ae91c6b3a6f42e2db, type: 3}
   _levelData: {fileID: 11400000, guid: e21e0217893460c46a99d19901844a8a, type: 2}
+  _food_goodWeight: 0
+  _food_badWeight: 0
+  _tool_goodweight: 0
+  _tool_badweight: 0
+  _human_weight: 0
   _future_Data:
     tree_Time: 0
     human_Speed: 0

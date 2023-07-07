@@ -87,11 +87,12 @@ public class GameManager : SingletonManager<GameManager>
                     if(moveDir.magnitude>stopDistance)
                     {
                         currentFood.transform.position=Vector3.MoveTowards(currentPos.position,targetPos,moveSpeed*Time.deltaTime);
+                        foodTarget[i+1]=currentPos;
                     }
                     else
                     {
                         stopFoodFlags[i]=true;
-                        foodTarget[i+1]=currentPos;
+                        
                     }
                 }
             }
@@ -123,11 +124,12 @@ public class GameManager : SingletonManager<GameManager>
                     if(moveDir.magnitude>stopDistance)
                     {
                         currentTool.transform.position=Vector3.MoveTowards(currentPos.position,targetPos,moveSpeed*Time.deltaTime);
+                        toolTarget[i+1]=currentPos;
                     }
                     else
                     {
                         stopToolFlags[i]=true;
-                        toolTarget[i+1]=currentPos;
+                        
                     }
                 }
             }
