@@ -316,8 +316,7 @@ MonoBehaviour:
   targetSceneName: Level1
   startTimer: 0
   delay: 10
-  Bar: {fileID: 1099006864}
-  Back: {fileID: 1600803317}
+  Shady: {fileID: 1087118013}
   readyWhat: {fileID: 1333474248}
   readyWho: {fileID: 1088753997}
   TheNews: {fileID: 1515705036}
@@ -13681,12 +13680,12 @@ GameObject:
   - component: {fileID: 1087118016}
   - component: {fileID: 1087118015}
   m_Layer: 5
-  m_Name: shady
+  m_Name: --shady--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1087118014
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16358,9 +16357,9 @@ MonoBehaviour:
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   dushSpeed: 2
-  sendFood: 1
+  sendFood: 0
   sendTool: 1
-  sendHuman: 1
+  sendHuman: 0
   food_goodWeight: 100
   food_badWeight: 29
   tool_goodWeight: 100
@@ -18312,7 +18311,7 @@ GameObject:
   - component: {fileID: 1502374864}
   - component: {fileID: 1502374863}
   m_Layer: 5
-  m_Name: Image
+  m_Name: black back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23041,7 +23040,7 @@ GameObject:
   - component: {fileID: 2100491825}
   - component: {fileID: 2100491824}
   m_Layer: 5
-  m_Name: Image
+  m_Name: up up up tap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
