@@ -35,8 +35,10 @@ public class CodeHolder : MonoBehaviour
         if (tag == "Human")
         {
             showList = FindObjectOfType<ShowList_MRYM>();
-            if (showList != null)
+            if (showList != null && !showList.listing)
             {
+                //
+                showList.listing = true;
                 showList.OpenList();
             }
         }
@@ -112,7 +114,7 @@ public class CodeHolder : MonoBehaviour
 
         if (showList != null)
         {
-            showList.OffList();
+     //       showList.OffList();
         }
     }
 }

@@ -30,6 +30,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private const string DisposeTag = "Dispose";
 
+    [Header("Desipose Item")]
+    [SerializeField] private float dushSpeed = 2.0f;
+
     [Header ("Send Item")]
     [SerializeField] private bool sendFood = true;
     [SerializeField] private bool sendTool = true;
@@ -231,21 +234,31 @@ public class ItemsManager : SingletonManager<ItemsManager>
     {
         if (itemsArray[itemsArrayIndex] == null)
         {
-            itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+            GameObject parentObject = GameObject.Find("---items---");
 
-            Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
-            itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
-
-            defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
-            defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
-            pauseHeight = defaultHeight + 0.5f;
-
-            itemsArray[itemsArrayIndex].transform.position = initPosition.position;
-            itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
-
-            if (itemsArrayIndex == 0)
+            if (parentObject != null)
             {
-                itemsArrayIndex = 1;
+                itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
+                itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
+
+                Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
+                itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+
+                defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
+                defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
+                pauseHeight = defaultHeight + 0.5f;
+
+                itemsArray[itemsArrayIndex].transform.position = initPosition.position;
+                itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+
+                if (itemsArrayIndex == 0)
+                {
+                    itemsArrayIndex = 1;
+                }
+                else
+                {
+                    itemsArrayIndex = 0;
+                }
             }
             else if(itemsArrayIndex == 1)
             {
@@ -257,11 +270,10 @@ public class ItemsManager : SingletonManager<ItemsManager>
             }
             else if (itemsArrayIndex == 3)
             {
-                itemsArrayIndex = 0;
+                Debug.LogWarning("Parent object ---items--- not found!");
             }
         }
     }
-
     private void MoveItems()
     {
         for (int i = 0; i < 4; i++)
@@ -290,7 +302,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         float distance = 1.0f;
         Vector3 backDirection = -Vector3.forward;
         Vector3 targetPosition = item.transform.position + backDirection * distance;
-        item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, 1.0f * Time.deltaTime);
+        item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, dushSpeed * Time.deltaTime);
     }
 
     private void Start()

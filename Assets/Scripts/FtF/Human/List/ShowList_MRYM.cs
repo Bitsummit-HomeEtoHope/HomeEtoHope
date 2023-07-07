@@ -13,6 +13,20 @@ public class ShowList_MRYM : MonoBehaviour
 
     public List_Show listShow; // Reference to the List_Show script
 
+    public bool listing = false;
+
+    private void Update()
+    {
+        int humanCount = GameObject.FindGameObjectsWithTag("Human").Length;
+
+        if (humanCount < 1 && listing)
+        {
+            Debug.Log("-----was off-----");
+            listing = false;
+            OffList();
+        }
+    }
+
 
     private void Start()
     {

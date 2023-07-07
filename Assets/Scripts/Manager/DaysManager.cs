@@ -19,31 +19,29 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public List<Sprite> humanlist;
     [SerializeField] public List<Sprite> wholist;
     [SerializeField] public List<Sprite> namelist;
-    [SerializeField] public Sprite nogoru1;
-    [SerializeField] public Sprite nogoru2;
-    [SerializeField] public Sprite nogoru3;
+    [SerializeField] public Image Daysnubmer;
     [Header("what people")]
     [SerializeField] public Sprite today1;
     [SerializeField] public Sprite today2;
     [SerializeField] public Sprite today3;
 
     [Header("News Day1")]
-    [SerializeField] public Image Day1_ngoru;
     [SerializeField] public Image Day1_what;
     [SerializeField] public Image Day1_who;
     [SerializeField] public Image Day1_name;
+    [SerializeField] public Sprite Day1_when;
 
     [Header("News Day2")]
-    [SerializeField] public Image Day2_ngoru;
     [SerializeField] public Image Day2_what;
     [SerializeField] public Image Day2_who;
     [SerializeField] public Image Day2_name;
+    [SerializeField] public Sprite Day2_when;
 
     [Header("News Day3")]
-    [SerializeField] public Image Day3_ngoru;
     [SerializeField] public Image Day3_what;
     [SerializeField] public Image Day3_who;
     [SerializeField] public Image Day3_name;
+    [SerializeField] public Sprite Day3_when;
 
     [Header("List_Day1")]
     [SerializeField] private Image List_Day1;
@@ -66,6 +64,9 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public string selectedHumanName;
     public event Action<string> OnHumanSelected; // 定义事件
     public static string SelectedHumanName { get; private set; }
+
+    [Header("News")]
+    [SerializeField] public GameObject NewsContruler;//NewsManager
     [Header("Ending")]
     [SerializeField]public string EndingScene;
 
@@ -78,13 +79,18 @@ public class DaysManager : MonoBehaviour
         daysChange();
     }
 
+    private void OnDisable()
+    {
+
+    }
 
     public void daysChange()
     {
         switch (currentDay)
         {
             case Days.Day0:
-                if ( humanlist.Count > 0  )
+
+                if ( humanlist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
@@ -92,8 +98,9 @@ public class DaysManager : MonoBehaviour
                     Sprite listSprite = humanlist[randomIndex];
 
                     //天数
-                    if(Day1_ngoru!=null)Day1_ngoru.sprite = nogoru1;
-                    if(Day1_what!=null)Day1_what.sprite = today1;
+                    if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day1_when;
+                    //类型
+                    if (Day1_what!=null)Day1_what.sprite = today1;
                     //新闻
                     if(Day1_who!=null)Day1_who.sprite = whoSprite;
                     //名字
@@ -115,27 +122,29 @@ public class DaysManager : MonoBehaviour
                     humanlist.RemoveAt(randomIndex);
                 }
 
+                if (NewsContruler != null && !NewsContruler.activeSelf) NewsContruler.active = true;
+
                 currentDay = Days.Day1;
 
                 break;
 
             case Days.Day1:
 
-                if (humanlist.Count > 0 )
+                if (megane_2 != null && humanlist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
 
-                    //天数
-                    if (Day2_ngoru != null) Day2_ngoru.sprite = nogoru2;
+                    if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day2_when;
+
                     if (Day2_what != null) Day2_what.sprite = today2;
-                    //新闻
+                    
                     if (Day2_who != null) Day2_who.sprite = whoSprite;
-                    //名字
+
                     if (Day2_name != null) Day2_name.sprite = nameSprite;
-                    //名单
+
                     if (megane_2 != null) megane_2.sprite = listSprite;
 
                     humanday_2.transform.localScale = Vector3.one;
@@ -149,6 +158,8 @@ public class DaysManager : MonoBehaviour
                 }
 
 
+                if (NewsContruler != null && !NewsContruler.activeSelf) NewsContruler.active = true;
+
                 List_Day2.sprite = day2_Day2;
 
                 currentDay = Days.Day2;
@@ -156,7 +167,7 @@ public class DaysManager : MonoBehaviour
 
             case Days.Day2:
 
-                if (humanlist.Count > 0 )
+                if (megane_3 != null && humanlist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
@@ -164,14 +175,15 @@ public class DaysManager : MonoBehaviour
                     Sprite listSprite = humanlist[randomIndex];
 
                     //---------------------------
-                    //天数
-                    if (Day3_ngoru != null) Day3_ngoru.sprite = nogoru3;
+                    //
+                    if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day3_when;
+
                     if (Day3_what != null) Day3_what.sprite = today3;
-                    //新闻
+                    //
                     if (Day3_who != null) Day3_who.sprite = whoSprite;
-                    //名字
+                    //
                     if (Day3_name != null) Day3_name.sprite = nameSprite;
-                    //名单
+                    //
                     if (megane_3 != null) megane_3.sprite = listSprite;
                     //----------------------------
 
@@ -185,6 +197,8 @@ public class DaysManager : MonoBehaviour
                     humanlist.RemoveAt(randomIndex);
                 }
 
+
+                if (NewsContruler != null && !NewsContruler.activeSelf) NewsContruler.active = true;
 
                 List_Day3.sprite = day3_Day3;
 
@@ -203,8 +217,5 @@ public class DaysManager : MonoBehaviour
                 Debug.LogError("Invalid day!");
                 break;
         }
-
-        // 禁用脚本
-        enabled = false;
     }
 }
