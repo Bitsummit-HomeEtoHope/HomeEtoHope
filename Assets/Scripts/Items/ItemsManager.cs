@@ -302,7 +302,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, dushSpeed * Time.deltaTime);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         food_goodWeight = _levelDataCurrent._food_goodWeight;
@@ -312,6 +312,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
         humanWeight = _levelDataCurrent._human_weight;
         moveTime = _levelDataCurrent._interval;
         spawnInterval = _levelDataCurrent._spawnInterval;
+    }
+
+    private void Start()
+    {
+
         Application.targetFrameRate = 120;
 
         if (sendFood) addFood();

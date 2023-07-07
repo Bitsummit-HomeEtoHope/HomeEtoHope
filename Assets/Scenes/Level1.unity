@@ -325,6 +325,7 @@ MonoBehaviour:
   - {fileID: 822714194}
   - {fileID: 1863484837}
   - {fileID: 716220295}
+  - {fileID: 1853015592}
   - {fileID: 1291848735}
   - {fileID: 70604961}
   - {fileID: 1520000593}
@@ -16357,9 +16358,9 @@ MonoBehaviour:
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   dushSpeed: 2
-  sendFood: 0
+  sendFood: 1
   sendTool: 1
-  sendHuman: 0
+  sendHuman: 1
   food_goodWeight: 100
   food_badWeight: 29
   tool_goodWeight: 100
@@ -21284,17 +21285,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca254d3e1609bd0458c237f4f510c751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelDay: 0
   _levelID: 0
   _levelName: 
   _levelTime: 0
   _interval: 0
   _levelBGM: {fileID: 8300000, guid: 6221092b5bb1246ae91c6b3a6f42e2db, type: 3}
   _levelData: {fileID: 11400000, guid: e21e0217893460c46a99d19901844a8a, type: 2}
+  _levelData_1: {fileID: 11400000, guid: e21e0217893460c46a99d19901844a8a, type: 2}
+  _levelData_2: {fileID: 11400000, guid: 6e95fe02d43ec474faf26f55fa4fe758, type: 2}
+  _levelData_3: {fileID: 11400000, guid: 44bafdc97246b844f8db01ea0be3e2d2, type: 2}
   _food_goodWeight: 0
   _food_badWeight: 0
   _tool_goodweight: 0
   _tool_badweight: 0
   _human_weight: 0
+  _spawnInterval: 0
   _future_Data:
     tree_Time: 0
     human_Speed: 0

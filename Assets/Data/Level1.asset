@@ -15,7 +15,7 @@ MonoBehaviour:
   levelID: 1
   levelName: level01
   levelTime: 90
-  Interval: 3
+  Interval: 6
   levelBGM: {fileID: 0}
   future_Data:
     tree_Time: 10
@@ -32,4 +32,4 @@ MonoBehaviour:
   _tool_goodweight: 100
   _tool_badweight: 20
   _human_weight: 50
-  _spawnInterval: 1
+  _spawnInterval: 3

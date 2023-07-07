@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DaysManager : MonoBehaviour
 {
-    public enum Days { Day0,Day1, Day2, Day3 }
+    public enum Days { Day0, Day1, Day2, Day3 }
 
     [SerializeField] private Days currentDay = Days.Day0;
 
@@ -49,13 +49,13 @@ public class DaysManager : MonoBehaviour
     [SerializeField] public Image megane_1;
 
     [Header("List_Day2")]
-    [SerializeField] private Image List_Day2; 
+    [SerializeField] private Image List_Day2;
     [SerializeField] private Sprite day2_Day2;
     [SerializeField] public Image humanday_2;
     [SerializeField] public Image megane_2;
 
     [Header("List_Day3")]
-    [SerializeField] private Image List_Day3; 
+    [SerializeField] private Image List_Day3;
     [SerializeField] private Sprite day3_Day3;
     [SerializeField] public Image humanday_3;
     [SerializeField] public Image megane_3;
@@ -68,7 +68,7 @@ public class DaysManager : MonoBehaviour
     [Header("News")]
     [SerializeField] public GameObject NewsContruler;//NewsManager
     [Header("Ending")]
-    [SerializeField]public string EndingScene;
+    [SerializeField] public string EndingScene;
 
     private void Start()
     {
@@ -90,7 +90,7 @@ public class DaysManager : MonoBehaviour
         {
             case Days.Day0:
 
-                if ( humanlist.Count > 0)
+                if (humanlist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
@@ -100,13 +100,13 @@ public class DaysManager : MonoBehaviour
                     //天数
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day1_when;
                     //类型
-                    if (Day1_what!=null)Day1_what.sprite = today1;
+                    if (Day1_what != null) Day1_what.sprite = today1;
                     //新闻
-                    if(Day1_who!=null)Day1_who.sprite = whoSprite;
+                    if (Day1_who != null) Day1_who.sprite = whoSprite;
                     //名字
-                    if(Day1_name!=null)Day1_name.sprite = nameSprite;
+                    if (Day1_name != null) Day1_name.sprite = nameSprite;
                     //名单
-                    if(megane_1!=null)megane_1.sprite = listSprite;
+                    if (megane_1 != null) megane_1.sprite = listSprite;
 
                     humanday_1.transform.localScale = Vector3.one;
 
@@ -140,7 +140,7 @@ public class DaysManager : MonoBehaviour
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day2_when;
 
                     if (Day2_what != null) Day2_what.sprite = today2;
-                    
+
                     if (Day2_who != null) Day2_who.sprite = whoSprite;
 
                     if (Day2_name != null) Day2_name.sprite = nameSprite;
@@ -206,7 +206,7 @@ public class DaysManager : MonoBehaviour
                 break;
 
 
-                case Days.Day3:
+            case Days.Day3:
                 //TODO: 结束游戏转为结束场景。
 
                 SceneManager.LoadScene(EndingScene);

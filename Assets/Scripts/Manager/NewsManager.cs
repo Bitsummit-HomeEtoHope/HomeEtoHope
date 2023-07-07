@@ -57,6 +57,8 @@ public class NewsManager : MonoBehaviour
     [SerializeField] public Sprite OpenTwo;
     [SerializeField] public Sprite TitleTwo;
 
+    //[Header("Level")]
+    //[SerializeField] public GameObject LevelData;
 
     [Header("Count TEN")]
     public string targetSceneName; // 目标场景的名称
