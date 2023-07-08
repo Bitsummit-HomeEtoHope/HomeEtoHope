@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -73563293337487692}
   - component: {fileID: -192105432182500128}
   - component: {fileID: 8241241608143419474}
+  - component: {fileID: -6491212852133521108}
   m_Layer: 0
   m_Name: pumpkin_tree
   m_TagString: Tree
@@ -131,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newPrefab: {fileID: 6207919924955786439, guid: a62b4f2e731d17943b4f5f02a09516b3, type: 3}
   delay: 10
+  levelDataCurrent: {fileID: 0}
 --- !u!114 &8241241608143419474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +151,22 @@ MonoBehaviour:
   isOne: 0
   JX: 1.5
   JY: 1.5
+--- !u!114 &-6491212852133521108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616335951469185605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 0}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0
+  _itemTreeSprite: {fileID: 0}

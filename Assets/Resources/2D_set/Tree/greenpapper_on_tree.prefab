@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5847427138703681181}
   - component: {fileID: 3164024752013534542}
   - component: {fileID: 7020642124930046962}
+  - component: {fileID: 5298116102770343601}
   m_Layer: 0
   m_Name: greenpapper_on_tree
   m_TagString: Untagged
@@ -103,3 +104,22 @@ MonoBehaviour:
   isOne: 0
   JX: 1.5
   JY: 1.5
+--- !u!114 &5298116102770343601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832532675996231475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: df1dbe4a44440384f9bfef91dca66383, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0
+  _itemTreeSprite: {fileID: 0}

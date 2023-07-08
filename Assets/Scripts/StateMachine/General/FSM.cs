@@ -8,7 +8,7 @@ namespace StateMachine.General
 	public enum StateType
 	{
 		//I wrote a few state in advance，if you need create a new state don't forget to write it here!
-		Idle, Eating, Working, GettingSick, Patrolling, Hungry,Cleaning,Dying,
+		Idle, Eating, Working, GettingSick, Patrolling, Hungry,Cleaning,Dying,Treeing,
 	}
 
 	public class FSM : MonoBehaviour
@@ -32,6 +32,7 @@ namespace StateMachine.General
 			states.Add(StateType.Working, new WorkState(this));
 			states.Add(StateType.Cleaning, new CleanState(this));
 			states.Add(StateType.Dying, new DieState(this));
+			states.Add(StateType.Treeing, new TreeState(this));
 		
 			//	Default State is set to be "Idle"
 			TransitState(StateType.Idle);

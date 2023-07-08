@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4129209525346168407}
   - component: {fileID: 1942565912286720050}
   - component: {fileID: 19520034141089020}
+  - component: {fileID: -1900822814469736176}
   m_Layer: 0
   m_Name: orange_on_tree
   m_TagString: Untagged
@@ -103,3 +104,22 @@ MonoBehaviour:
   isOne: 0
   JX: 1.5
   JY: 1.5
+--- !u!114 &-1900822814469736176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357077475925902949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe42d736fa525945a7da2ebdc4644db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item2dData: {fileID: 11400000, guid: 36b532efb24596e4dbdeaf11ae811826, type: 2}
+  _isSelected: 0
+  _itemName: 
+  _itemType: 
+  _isBad: 0
+  _itemUserNum: 0
+  _itemTreeSprite: {fileID: 0}
