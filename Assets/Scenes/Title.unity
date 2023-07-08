@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -248,7 +248,7 @@ RectTransform:
   m_GameObject: {fileID: 164156237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.42857146}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1519689150}
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 1
-  speed: 20
+  speed: 30
 --- !u!1 &206312701
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ RectTransform:
   m_GameObject: {fileID: 269485167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.42857146}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1519689150}
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 5
-  speed: 20
+  speed: 30
 --- !u!1 &283168875
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +892,7 @@ GameObject:
   - component: {fileID: 410136266}
   - component: {fileID: 410136268}
   - component: {fileID: 410136267}
+  - component: {fileID: 410136269}
   m_Layer: 5
   m_Name: clouds
   m_TagString: Untagged
@@ -957,6 +958,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410136265}
   m_CullTransparentMesh: 1
+--- !u!95 &410136269
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410136265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4776b8140884942af9b44850d404a3aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &434868067
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,14 +1005,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434868067}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2328083, w: 0.9725227}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.35714287}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1519689150}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 26.925}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -75.8, y: -79.99999}
@@ -1047,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 2
-  speed: 20
+  speed: 30
 --- !u!1 &438838979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1408,7 @@ GameObject:
   - component: {fileID: 734195746}
   - component: {fileID: 734195745}
   - component: {fileID: 734195747}
+  - component: {fileID: 734195748}
   m_Layer: 5
   m_Name: earth
   m_TagString: Untagged
@@ -1466,6 +1489,27 @@ MonoBehaviour:
   rotateX: 0
   rotateY: 0
   rotateZ: 10
+--- !u!95 &734195748
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734195743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7cfd175f507f447edadbb47a72c77b36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &836450502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2335,7 @@ GameObject:
   - component: {fileID: 1393208325}
   - component: {fileID: 1393208327}
   - component: {fileID: 1393208326}
+  - component: {fileID: 1393208328}
   m_Layer: 5
   m_Name: Titlelogo
   m_TagString: Untagged
@@ -2356,6 +2401,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393208324}
   m_CullTransparentMesh: 1
+--- !u!95 &1393208328
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393208324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1dafcafc368a47f79b087c5ad2c887c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1514305583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3142,7 @@ RectTransform:
   m_GameObject: {fileID: 1965317728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.42857146}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1519689150}
@@ -3138,7 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 3
-  speed: 20
+  speed: 30
 --- !u!1 &2108108908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3233,7 @@ RectTransform:
   m_GameObject: {fileID: 2108108908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.42857146}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1519689150}
@@ -3229,4 +3295,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 4
-  speed: 20
+  speed: 30
