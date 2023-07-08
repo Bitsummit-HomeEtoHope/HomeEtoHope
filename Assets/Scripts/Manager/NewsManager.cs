@@ -127,6 +127,8 @@ public class NewsManager : MonoBehaviour
     private void OnEnable()
     {
         timer = 0f;
+        startTimer = true;
+
         takeThemOff();
         if (Shady != null) if (!Shady.activeSelf) Shady.active = true;
 
@@ -196,8 +198,9 @@ public class NewsManager : MonoBehaviour
 
     private void OnDisable()
     {
-       // readytwo = true;
-        enabled = true;
+        // readytwo = true;
+         startTimer = false;
+         enabled = true;
     }
 
     private void NewsOne() 
@@ -259,9 +262,15 @@ public class NewsManager : MonoBehaviour
             }
         }
 
-        // ¼ì²âÊó±ê×ó»÷
-        if (startTimer && Input.GetMouseButtonDown(0))
-        {
+      
+
+    }
+
+
+    public void NewsClick()
+    {
+        // ¼ì²âÊó±ê×ó»÷   && Input.GetMouseButtonDown(0)
+  
             if (readytwo)
             {
                 timer = 0;
@@ -281,10 +290,8 @@ public class NewsManager : MonoBehaviour
                 if (readyWho != null && !readyWho.activeSelf) readyWho.active = true;
                 enabled = false;
             }
-        }
-
+        
     }
-
    
 
 
