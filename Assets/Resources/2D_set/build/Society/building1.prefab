@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5046991542568729229}
   - component: {fileID: 5459973560107800323}
   - component: {fileID: 4976630339661063013}
+  - component: {fileID: 1167286738745951600}
   m_Layer: 9
   m_Name: building1
   m_TagString: Build_39
@@ -116,3 +117,27 @@ MonoBehaviour:
   buildCount: 9
   fillAmountIncreaseTime: 5
   colorChangeTime: 5
+--- !u!114 &1167286738745951600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693850785219115085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59cf9470eb025e408cc018115ab38f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canEnd_i: 1
+  points_end_i: 2
+  canEnd_ii: 0
+  points_end_ii: 0
+  canEnd_iii: 0
+  points_end_iii: 0
+  canEnd_iv: 1
+  points_end_iv: 1
+  canEnd_v: 0
+  points_end_v: 0
+  canEnd_vi: 0
+  points_end_vi: 0

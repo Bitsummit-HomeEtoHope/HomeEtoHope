@@ -68,10 +68,11 @@ public class DaysManager : MonoBehaviour
     [Header("News")]
     [SerializeField] public GameObject NewsContruler;//NewsManager
     [Header("Ending")]
-    [SerializeField] public string EndingScene;
+    private Point_Teacher teacher;
 
     private void Start()
     {
+        teacher = FindObjectOfType<Point_Teacher>();
     }
 
     private void OnEnable()
@@ -209,7 +210,12 @@ public class DaysManager : MonoBehaviour
             case Days.Day3:
                 //TODO: 结束游戏转为结束场景。
 
-                SceneManager.LoadScene(EndingScene);
+                //SceneManager.LoadScene(EndingScene);
+
+                if (teacher != null)
+                {
+                    teacher.totalScore(); 
+                }
 
                 break;
 
