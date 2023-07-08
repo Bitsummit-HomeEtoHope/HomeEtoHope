@@ -6,7 +6,7 @@ public class HumanMove : MonoBehaviour
 {
     void Update () {
 
-        var amplitude = 3; // 振幅
+        var amplitude = 2; // 振幅
         var t = Time.time; // 現在時間
 
         // 指定された振幅のPingPong
