@@ -344,7 +344,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
             Debug.Log("spendTime >= spawnInterval");
             InitializeItem(RandomSelectItem());
             MoveItems();
-            _isCanRotate = false;
+           // _isCanRotate = false;
             spendTime = 0;
         }
         spendTime += Time.deltaTime;

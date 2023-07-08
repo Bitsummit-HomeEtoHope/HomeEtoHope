@@ -432,7 +432,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -1142068999
   m_SortingLayer: 6
-  m_SortingOrder: 2
+  m_SortingOrder: 3
 --- !u!114 &5171377311652762566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
+    levelDataCurrent: {fileID: 0}
     idleTime: 1
     idleTimer: 0
     workPoints: []
@@ -549,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9710da2801da6f4a8af815c845d4978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation: -50
+  rotation: -66
 --- !u!114 &-7284888664591039196
 MonoBehaviour:
   m_ObjectHideFlags: 0

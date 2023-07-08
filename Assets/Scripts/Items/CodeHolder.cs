@@ -99,7 +99,6 @@ public class CodeHolder : MonoBehaviour
     {
         if (isClicked)
         {
-            // 物体被点击后的逻辑处理
             isClicked = false;
         }
     }
@@ -108,13 +107,7 @@ public class CodeHolder : MonoBehaviour
     {
         if (selectedObject == this)
         {
-            // 如果销毁的是选中的物体，则取消高亮
             selectedObject = null;
-        }
-
-        if (showList != null)
-        {
-     //       showList.OffList();
         }
     }
 }

@@ -892,7 +892,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -1142068999
   m_SortingLayer: 6
-  m_SortingOrder: 2
+  m_SortingOrder: 3
 --- !u!114 &1196215495190181060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
+    levelDataCurrent: {fileID: 0}
     idleTime: 1
     idleTimer: 0
     workPoints: []
