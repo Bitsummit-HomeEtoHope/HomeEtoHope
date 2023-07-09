@@ -10,10 +10,10 @@ public class Point_Student : MonoBehaviour
     [Header("will End_I -- total score")]
     public bool canEnd_i = false;
     public float points_end_i = 0f;
-    [Header("will End_II -- die number")]
+    [Header("will End_II -- bad number")]
     public bool canEnd_ii = false;
     public float points_end_ii = 0f ;
-    [Header("will End_III -- bad number")]
+    [Header("will End_III -- die number")]
     public bool canEnd_iii = false;
     public float points_end_iii = 0f;
     [Header("will End_IV -- building number")]

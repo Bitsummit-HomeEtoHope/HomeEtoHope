@@ -9,9 +9,9 @@ public class Point_Teacher : MonoBehaviour
     //public float credits = 0f;
     [Header("will End_I -- numal")]
     public float credits_end_i = 0f;
-    [Header("will End_II -- flower(die)")]
+    [Header("will End_II -- red(bad guys)")]
     public float credits_end_ii = 0f;
-    [Header("will End_III -- red(bad guys)")]
+    [Header("will End_III -- flower(die)")]
     public float credits_end_iii = 0f;
     [Header("will End_IV -- building")]
     public float credits_end_iv = 0f;
@@ -50,8 +50,8 @@ public class Point_Teacher : MonoBehaviour
 
         if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad"); Debug.Log("--BE--"); }
         if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii >= 8) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii < 8) if (credits_end_iii >= 8) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
+        if (credits_end_i >= passScore) if (credits_end_ii >= 8) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--bad--"); }
+        if (credits_end_i >= passScore) if (credits_end_ii < 8) if (credits_end_iii >= 8) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--die--") ; }
         if (credits_end_i >= passScore) if (credits_end_ii < 8) if (credits_end_iii < 8) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
         if (credits_end_i >= passScore) if (credits_end_ii < 8) if (credits_end_iii < 8) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
         if (credits_end_i >= passScore) if (credits_end_ii < 8) if (credits_end_iii < 8) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
