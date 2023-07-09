@@ -15,7 +15,7 @@ public class NewsManager : MonoBehaviour
     [Header("Ready")]
     // [SerializeField] private bool isPaused = false; // 控制暂停状态
     // [SerializeField] public List<GameObject> targetObjects; // 多个游戏对象
-    private bool readyone = false;
+    public bool readyone = false;
     private bool readytwo = false;
     //----------------------
     private GameObject DayNumber;
@@ -129,7 +129,6 @@ public class NewsManager : MonoBehaviour
         timer = 0f;
         startTimer = true;
 
-        takeThemOff();
         if (Shady != null) if (!Shady.activeSelf) Shady.active = true;
 
         if (TheNews != null && !TheNews.activeSelf) TheNews.active = true;
@@ -201,6 +200,7 @@ public class NewsManager : MonoBehaviour
         // readytwo = true;
          startTimer = false;
          enabled = true;
+
     }
 
     private void NewsOne() 
