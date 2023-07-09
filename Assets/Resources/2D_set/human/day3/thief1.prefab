@@ -640,14 +640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59cf9470eb025e408cc018115ab38f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isyourEnding: 0
-  points: 0
   canEnd_i: 0
   points_end_i: 0
-  canEnd_ii: 0
-  points_end_ii: 0
-  canEnd_iii: 1
-  points_end_iii: 1
+  canEnd_ii: 1
+  points_end_ii: 1
+  canEnd_iii: 0
+  points_end_iii: 0
   canEnd_iv: 0
   points_end_iv: 0
   canEnd_v: 0

@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/OpenGame.unity
-    guid: 6185b329302c2ea43b9b3d2a292e85a7
+    guid: 3eb29759d9747964bbb7d6cc7725141d
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 231fd8ec83e904322869ca1fc8f4a923
@@ -30,11 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/TheEnding/Ending_i.unity
     guid: 5aaeb30e43ac5564a803c1a5ac95cca0
   - enabled: 1
-    path: Assets/Scenes/TheEnding/Ending_iii.unity
-    guid: 9c166381e1490174bbbb0b65df31a5aa
-  - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_ii.unity
     guid: 5853139cef4febf49b529c6f344fa3ce
+  - enabled: 1
+    path: Assets/Scenes/TheEnding/Ending_iii.unity
+    guid: 9c166381e1490174bbbb0b65df31a5aa
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_iv.unity
     guid: 335efac8f1520904983b7f1dab9a67c1
