@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,23 +10,31 @@ public class OpenNews : MonoBehaviour
     public GameObject hereIsBack;
     public GameObject hereIsNews;
     public GameObject hereIsLight;
+    public GameObject hereIsPeople;
+    public GameObject hereIsShady;
+    public Image hereIsUp;
     public GameObject hereIsManager;
     public GameObject hereIsYourself;
     public Image hereIsBar;
     public Image hereIsBord;
-    public float opentime = 0.5f;
+    public float opentime = 0.8f;
+    public float filltime = 0.3f;
 
     private NewsManager newsScript;
     private Vector3 initialLightScale;
     private Vector3 initialNewsScale;
+    private Vector3 initialPeopleScale;
 
     private void Awake()
     {
         newsScript = newsManager.GetComponent<NewsManager>();
     }
-
     private void OnEnable()
     {
+        hereIsUp.fillAmount = 0f;
+
+        if (hereIsShady != null) if (!hereIsShady.activeSelf) hereIsShady.active = true;
+
         newsScript.takeThemOff();
         if (hereIsBack != null && !hereIsBack.activeSelf)
         {
@@ -43,7 +52,6 @@ public class OpenNews : MonoBehaviour
         {
             hereIsBack.SetActive(false);
         }
-
         ResetTransforms();
     }
 
@@ -51,12 +59,16 @@ public class OpenNews : MonoBehaviour
     {
         initialLightScale = hereIsLight.transform.localScale;
         initialNewsScale = hereIsNews.transform.localScale;
+        initialPeopleScale = hereIsPeople.transform.localScale;
 
         yield return StartCoroutine(hereIsOpen(hereIsLight, Vector3.one));
-        yield return StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
 
         StartCoroutine(hereIsFill(hereIsBar));
-        yield return StartCoroutine(hereIsFill(hereIsBord));
+        StartCoroutine(hereIsFill(hereIsBord));
+        StartCoroutine(hereIsFill(hereIsUp));
+        StartCoroutine(hereIsOpen(hereIsPeople, Vector3.one));
+        yield return        StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
+
 
         hereIsReady();
     }
@@ -94,10 +106,10 @@ public class OpenNews : MonoBehaviour
         float initialFillAmount = hereis.fillAmount;
         float targetFillAmount = 1f;
 
-        while (timer < opentime)
+        while (timer < filltime)
         {
             timer += Time.deltaTime;
-            float t = timer / opentime;
+            float t = timer / filltime;
             hereis.fillAmount = Mathf.Lerp(initialFillAmount, targetFillAmount, t);
             yield return null;
         }
@@ -109,6 +121,7 @@ public class OpenNews : MonoBehaviour
     {
         hereIsLight.transform.localScale = initialLightScale;
         hereIsNews.transform.localScale = initialNewsScale;
+        hereIsPeople.transform.localScale = initialPeopleScale;
         hereIsBar.fillAmount = 0f;
         hereIsBord.fillAmount = 0f;
     }

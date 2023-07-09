@@ -129,8 +129,6 @@ public class NewsManager : MonoBehaviour
         timer = 0f;
         startTimer = true;
 
-        if (Shady != null) if (!Shady.activeSelf) Shady.active = true;
-
         if (TheNews != null && !TheNews.activeSelf) TheNews.active = true;
 
         if (Bar != null)if (!Bar.activeSelf)Bar.active = true;
