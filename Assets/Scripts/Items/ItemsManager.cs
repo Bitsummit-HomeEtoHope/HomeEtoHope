@@ -78,12 +78,18 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Pumpkin,
 
         //---food---bad---
-        BadAppleHi,
-        BadAppleQaq,
-        EggplantQaq,
-        GreenPepperQaq,
-        OrangeQaq,
-        PumpkinQaq,
+        AppleQAQ,
+        EggplantQAQ,
+        GreenPepperQAQ,
+        OrangeQAQ,
+        PumpkinQAQ,
+
+        //---food---hi---
+        AppleHI,
+        EggplantHI,
+        GreenPepperHI,
+        OrangeHI,
+        PumpkinHI,
 
         //---tool---good---
         Burner,
@@ -129,12 +135,19 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Pumpkin, new WeightedItem<string>("3D/food/good/pumpkin", food_goodWeight));
 
         //---food---bad---
-        _itemsDictionary.Add(ItemsType.BadAppleHi, new WeightedItem<string>("3D/food/bad/applehi", food_badWeight));
-        _itemsDictionary.Add(ItemsType.BadAppleQaq, new WeightedItem<string>("3D/food/bad/appleqaq", food_badWeight));
-        _itemsDictionary.Add(ItemsType.EggplantQaq, new WeightedItem<string>("3D/food/bad/eggplantqaq", food_badWeight));
-        _itemsDictionary.Add(ItemsType.GreenPepperQaq, new WeightedItem<string>("3D/food/bad/greenpepperqaq", food_badWeight));
-        _itemsDictionary.Add(ItemsType.OrangeQaq, new WeightedItem<string>("3D/food/bad/orangeqaq", food_badWeight));
-        _itemsDictionary.Add(ItemsType.PumpkinQaq, new WeightedItem<string>("3D/food/bad/pumpkinqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.AppleQAQ, new WeightedItem<string>("3D/food/bad/appleqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.EggplantQAQ, new WeightedItem<string>("3D/food/bad/eggplantqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.GreenPepperQAQ, new WeightedItem<string>("3D/food/bad/greenpepperqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.OrangeQAQ, new WeightedItem<string>("3D/food/bad/orangeqaq", food_badWeight));
+        _itemsDictionary.Add(ItemsType.PumpkinQAQ, new WeightedItem<string>("3D/food/bad/pumpkinqaq", food_badWeight));
+
+
+        //---food---hi---
+        _itemsDictionary.Add(ItemsType.AppleHI, new WeightedItem<string>("3D/food/bad/applehi", food_badWeight));
+        _itemsDictionary.Add(ItemsType.EggplantHI, new WeightedItem<string>("3D/food/bad/eggplanthi", food_badWeight));
+        _itemsDictionary.Add(ItemsType.GreenPepperHI, new WeightedItem<string>("3D/food/bad/greenpepperhi", food_badWeight));
+        _itemsDictionary.Add(ItemsType.OrangeHI, new WeightedItem<string>("3D/food/bad/orangehi", food_badWeight));
+        _itemsDictionary.Add(ItemsType.PumpkinHI, new WeightedItem<string>("3D/food/bad/pumpkinhi", food_badWeight));
     }
 
     private void addTool()
