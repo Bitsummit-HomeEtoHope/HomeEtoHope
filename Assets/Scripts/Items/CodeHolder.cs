@@ -74,7 +74,16 @@ public class CodeHolder : MonoBehaviour
                     showList.OpenList();
                 }
             }
-
+            else
+            {
+                showList = FindObjectOfType<ShowList_MRYM>();
+                if (showList != null && showList.listing)
+                {
+                    //
+                    showList.listing = false;
+                    showList.OffList();
+                }
+            }
         }
         isClicked = true;
 
