@@ -322,15 +322,16 @@ MonoBehaviour:
   readyWho: {fileID: 1088753997}
   TheNews: {fileID: 1515705036}
   ShutDownList:
+  - {fileID: 1853015592}
   - {fileID: 922154644}
   - {fileID: 822714194}
   - {fileID: 1863484837}
   - {fileID: 716220295}
-  - {fileID: 1853015592}
   - {fileID: 1291848735}
   - {fileID: 70604961}
   - {fileID: 1520000593}
   - {fileID: 1943392801}
+  - {fileID: 0}
 --- !u!1001 &18767703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15937,10 +15938,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a968202e4aacd2b49b93b354d34f5f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 90
+  duration: 0
   increaseAmount: -300
   recoveryDuration: 0.5
-  levelDataCurrent: {fileID: 0}
+  levelDataCurrent: {fileID: 1853015593}
   daysManager: {fileID: 250342055}
   fillImage: {fileID: 1377825194}
   a: {fileID: 250342056}
