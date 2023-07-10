@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class CodeReader : MonoBehaviour
 {
+    private GameObject capsuleDoor;
+    private Animator openDoor;
+
+    private void Start()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         CodeHolder codeHolder = other.GetComponent<CodeHolder>(); // 获取碰撞到的物体上的CodeHolder组件
@@ -17,6 +25,29 @@ public class CodeReader : MonoBehaviour
             {
                 getItemScript.ReceiveCode(code); // 将代码传递给GetItem脚本中的接收方法
                 getItemScript.ReceiveTag(tag); // 将标签信息传递给GetItem脚本中的接收方法
+
+                if(tag == "Human")
+                {
+                    capsuleDoor = GameObject.Find("humanDoor");
+                    openDoor = capsuleDoor.GetComponent<Animator>();
+
+                  //  Debug.Log("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                    if (capsuleDoor != null) 
+                    {
+
+                        capsuleDoor.active = false;
+                        capsuleDoor.active = true;
+                       // Debug.Log("77777777777777777");
+                        if (openDoor != null)
+                        {
+                           // Debug.Log("XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                            openDoor.enabled = false;
+                            openDoor.enabled = true;
+
+                        }
+                    }
+                }
+
             }
             else
             {
