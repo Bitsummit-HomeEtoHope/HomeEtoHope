@@ -156,30 +156,26 @@ namespace StateMachine.States
 
         public void GetWorkTarget()
         {
-            buildPoints=GameObject.FindGameObjectsWithTag("Build_set");
-            //List<Transform> workPointsList = new List<Transform>(parameter.workPoints);//将数组转换为List
-            //int randomIndex = Random.Range(0, workPointsList.Count+1);//随机获取一个索引
-            //parameter.currentTarget = workPointsList[randomIndex].position;//获取随机索引对应的元素
-            //workPointsList.RemoveAt(randomIndex);//移除随机索引对应的元素
-            //parameter.workPoints = workPointsList.ToArray();//将List转换为数组
-            foreach(GameObject buildPoint in buildPoints)
+            parameter.workPoints.Clear(); // 清空列表
+
+            buildPoints = GameObject.FindGameObjectsWithTag("Build_set");
+
+            foreach (GameObject buildPoint in buildPoints)
             {
-                if(buildPoint.GetComponent<Check_HumanDistance>().isBuild==false)
+                if (buildPoint.GetComponent<Check_HumanDistance>().isBuild == false)
                 {
                     parameter.workPoints.Add(buildPoint.transform);
                 }
             }
-            int randomIndex = Random.Range(0, parameter.workPoints.Count+1);//随机获取一个索引
-            parameter.currentTarget = parameter.workPoints[randomIndex].position;//获取随机索引对应的元素
-            random=randomIndex;
-            
 
+            int randomIndex = Random.Range(0, parameter.workPoints.Count); // 随机获取一个索引
+            parameter.currentTarget = parameter.workPoints[randomIndex].position; // 获取随机索引对应的元素
+            random = randomIndex;
+
+            // 更改目标的标签为"Will_build"
+            parameter.workPoints[randomIndex].gameObject.tag = "Will_build";
         }
-
-        
-        
-    
     }
-   
+
 }
 

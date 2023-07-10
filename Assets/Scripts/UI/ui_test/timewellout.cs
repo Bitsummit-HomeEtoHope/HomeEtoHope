@@ -9,7 +9,7 @@ public class timewellout : MonoBehaviour
     private float targetPosX;
     private float startPosX;
 
-    public float duration = 90f;
+    [SerializeField]private int duration ;
     public float increaseAmount = 150f;
     public float recoveryDuration = 0.5f; // 恢复时间
 
@@ -33,10 +33,24 @@ public class timewellout : MonoBehaviour
     private float recoveryElapsedTime; // 恢复流逝的时间
     private Vector2 originalPosition; // 原始位置
 
+
+    private void OnEnable()
+    {
+
+
+        Debug.Log("--------------------------");
+        Debug.Log(levelDataCurrent._levelTime);
+        duration = levelDataCurrent._levelTime;
+        Debug.Log(duration);
+        Debug.Log("--------------------------");
+    }
+
     private void Start()
     {
         levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         daysManager = FindObjectOfType<DaysManager>();
+
+        duration = levelDataCurrent._levelTime;
 
         rectTransform = GetComponent<RectTransform>();
         startPosX = rectTransform.anchoredPosition.x;
@@ -60,6 +74,7 @@ public class timewellout : MonoBehaviour
 
     private void SunDown()
     {
+
         float fillSpeed = 1f / duration; // 每秒填充的速度
 
         float fillAmount = fillImage.fillAmount - fillSpeed * Time.deltaTime;
