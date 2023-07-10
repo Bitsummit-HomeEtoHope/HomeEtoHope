@@ -21,7 +21,6 @@ namespace StateMachine.States
             manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
             parameter.Food_Tran.gameObject.SetActive(false);
             OffEnergyActive(manager.transform);
-
             parameter.currentTarget = parameter.patrolPoints[2].position;
 			parameter.isWork = false;
 			parameter.isHungry = true;
@@ -30,6 +29,14 @@ namespace StateMachine.States
 
 		public void OnUpdate()
 		{
+            if(GameManager.Instance.treeFoodList.Count!=0)
+            {
+                parameter.currentTarget=GameManager.Instance.treeFoodList[0].gameObject.transform.position;
+            }
+            if(GameManager.Instance.treeFoodList.Count==0)
+            {
+                parameter.currentTarget = parameter.patrolPoints[2].position;
+            }
 			manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
 			if(manager.parameter.isHungry==false)
@@ -89,42 +96,46 @@ namespace StateMachine.States
 
             GameObject treeObject = manager.gameObject.GetComponent<GetItem_Human>().TreeList[0];
 
-            if (itemName == "Apple")
+            if(GameManager.Instance.treeFoodList.Count==0)
             {
-                GameObject apple = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                apple.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                apple.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                apple.transform.localScale = Vector3.one; // 应用父物体的缩放
-            }
-            else if (itemName == "Eggplant")
-            {
-                GameObject eggplant = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                eggplant.transform.localPosition = Vector3.zero;  
-                eggplant.transform.rotation = treeObject.transform.rotation;  
-                eggplant.transform.localScale = Vector3.one; 
-            }
-            else if (itemName == "Greenpepper")
-            {
-                GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                greenpepper.transform.localPosition = Vector3.zero; 
-                greenpepper.transform.rotation = treeObject.transform.rotation;  
-                greenpepper.transform.localScale = Vector3.one;  
-            }
-            else if (itemName == "Orange")
-            {
-                GameObject orange = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                orange.transform.localPosition = Vector3.zero;  
-                orange.transform.rotation = treeObject.transform.rotation;  
-                orange.transform.localScale = Vector3.one;  
-            }
-            else if (itemName == "Pumpkin")
-            {
-                GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                pumpkin.transform.localPosition = Vector3.zero;  
-                pumpkin.transform.rotation = treeObject.transform.rotation; 
-                pumpkin.transform.localScale = Vector3.one; 
-            }
+                if (itemName == "Apple")
+                {
+                    GameObject apple = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
+                    apple.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
+                    apple.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
+                    apple.transform.localScale = Vector3.one; // 应用父物体的缩放
+                }
+                else if (itemName == "Eggplant")
+                {
+                    GameObject eggplant = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
+                    eggplant.transform.localPosition = Vector3.zero;  
+                    eggplant.transform.rotation = treeObject.transform.rotation;  
+                    eggplant.transform.localScale = Vector3.one; 
+                }
+                else if (itemName == "Greenpepper")
+                {
+                    GameObject greenpepper = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
+                    greenpepper.transform.localPosition = Vector3.zero; 
+                    greenpepper.transform.rotation = treeObject.transform.rotation;  
+                    greenpepper.transform.localScale = Vector3.one;  
+                }
+                else if (itemName == "Orange")
+                {
+                    GameObject orange = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
+                    orange.transform.localPosition = Vector3.zero;  
+                    orange.transform.rotation = treeObject.transform.rotation;  
+                    orange.transform.localScale = Vector3.one;  
+                }
+                else if (itemName == "Pumpkin")
+                {
+                    GameObject pumpkin = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
+                    pumpkin.transform.localPosition = Vector3.zero;  
+                    pumpkin.transform.rotation = treeObject.transform.rotation; 
+                    pumpkin.transform.localScale = Vector3.one; 
+                }
 
+            }
+            
         }
 
         private void SetObjectScaleX(GameObject obj, float scaleX)

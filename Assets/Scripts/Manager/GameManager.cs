@@ -22,6 +22,8 @@ public class GameManager : SingletonManager<GameManager>
     
     private int foodCount=0;
     private int toolCount=0;
+    public List<GameObject> treeFoodList=new List<GameObject>();
+    public Transform treePoint;
 
 
     // Start is called before the first frame update
@@ -59,6 +61,8 @@ public class GameManager : SingletonManager<GameManager>
         
         MoveFoodTarget();
         MoveToolTarget();
+        treePoint=treeFoodList[0].transform;
+        Debug.Log("+++++++"+treePoint);
     }
     private void MoveFoodTarget()
     {
