@@ -12,6 +12,8 @@ namespace StateMachine.General
         public List<GameObject> toolList_human = new List<GameObject>();
 
         public List<GameObject> TreeList = new List<GameObject>();
+        [SerializeField]
+        private float treeDistance;
         
         public bool isFood = false;
         public bool isTool = false;
@@ -26,6 +28,7 @@ namespace StateMachine.General
         }
         private void Update()
         {
+            
             GetFood();
             GetTool();
             //-----------------原本没有GetTree--------------------
@@ -35,6 +38,10 @@ namespace StateMachine.General
             //计算当前位置与食物的距离
             float distance = Vector3.Distance(transform.position, manager.parameter.patrolPoints[2].position);
             
+            if(GameManager.Instance.treeFoodList.Count!=0)
+            {
+                treeDistance = Vector3.Distance(transform.position, GameManager.Instance.treePoint.position);
+            }
             //Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
             if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
@@ -48,6 +55,20 @@ namespace StateMachine.General
 
                 manager.parameter.isHungry = false;
             }
+            
+            if(isFood==false && treeDistance<1 && GameManager.Instance.treeFoodList.Count!=0)
+            {
+                isFood = true;
+                GameObject foodToGet=GameManager.Instance.treeFoodList[0];
+                foodList_human.Add(foodToGet);
+                foodToGet.SetActive(false);
+                GameManager.Instance.treeFoodList.RemoveAt(0);//移除食物
+
+                GetTree();
+
+                manager.parameter.isHungry = false;
+            }
+
             
         }
 
@@ -72,6 +93,7 @@ namespace StateMachine.General
             {
                 Debug.Log("工具已经用完");
                 isTool = false;
+                manager.parameter.isBroken = true;
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
                 toolList_human.RemoveAt(0);

@@ -20,6 +20,9 @@ TagManager:
   - Partol
   - Tree_still
   - Will_build
+  - Hair
+  - Face
+  - Body
   layers:
   - Default
   - TransparentFX

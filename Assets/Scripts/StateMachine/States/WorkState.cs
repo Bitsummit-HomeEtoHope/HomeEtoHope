@@ -137,6 +137,11 @@ namespace StateMachine.States
             {
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
+                if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad)
+                {
+                    manager.parameter.isBroken = true;
+                }
+                
                 manager.TransitState(StateType.Patrolling);
             }
             if (isArriveWorkPoint && (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 1f))

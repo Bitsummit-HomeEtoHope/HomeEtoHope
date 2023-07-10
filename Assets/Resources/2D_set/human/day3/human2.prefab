@@ -430,8 +430,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179067141144017384}
   m_Enabled: 1
-  m_SortingLayerID: -1142068999
-  m_SortingLayer: 6
+  m_SortingLayerID: -2147095345
+  m_SortingLayer: 5
   m_SortingOrder: 3
 --- !u!114 &5171377311652762566
 MonoBehaviour:
@@ -465,6 +465,7 @@ MonoBehaviour:
   foodList_human: []
   toolList_human: []
   TreeList: []
+  treeDistance: 0
   isFood: 0
   isTool: 0
   manager: {fileID: 0}
@@ -490,6 +491,7 @@ MonoBehaviour:
     BuildAnim: {fileID: 2818964497849620948}
     Build_FinsihAnim: {fileID: 3974735965216408156}
     Food_Tran: {fileID: 4366624649025858086}
+    isBroken: 0
     patrolPoints:
     - {fileID: 0}
     - {fileID: 0}
