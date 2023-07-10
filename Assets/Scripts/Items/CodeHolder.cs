@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class CodeHolder : MonoBehaviour
 {
-    public string code; // 存储物体的代码
-    public string tag; // 存储物体的标签
+    public string code; // Stores the code of the object
+    public string tag; // Stores the tag of the object
 
-    public Material defaultMaterial; // 默认材质
-    public Material highlightMaterial; // 高亮材质
-    private MeshRenderer meshRenderer; // 物体的 MeshRenderer 组件
+    public Material defaultMaterial; // Default material
+    public Material highlightMaterial; // Highlight material
+    private MeshRenderer meshRenderer; // MeshRenderer component of the object
 
     public bool ihaveChild = false;
-    
+
     [System.Serializable]
     public struct ChildRenderers
     {
-        public MeshRenderer childRenderer; // 子物体的 MeshRenderer 组件
-        public Material childDefaultMaterial; // 子物体的默认材质
-        public Material childHighlightMaterial; // 子物体的高亮材质
+        public MeshRenderer childRenderer; // MeshRenderer component of the child object
+        public Material childDefaultMaterial; // Default material of the child object
+        public Material childHighlightMaterial; // Highlight material of the child object
     }
     public List<ChildRenderers> childRenderers = new List<ChildRenderers>();
 
     private static CodeHolder selectedObject;
 
-    private ShowList_MRYM showList; // ShowList_MRYM 脚本的引用
+    private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
 
     private void Start()
     {
@@ -32,18 +32,7 @@ public class CodeHolder : MonoBehaviour
         tag = gameObject.tag;
         Debug.Log("Object Tag: " + tag);
 
-        if (tag == "Human")
-        {
-            showList = FindObjectOfType<ShowList_MRYM>();
-            if (showList != null && !showList.listing)
-            {
-                //
-                showList.listing = true;
-                showList.OpenList();
-            }
-        }
-         meshRenderer = GetComponent<MeshRenderer>();
-        
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     public string GetCode()
@@ -51,7 +40,7 @@ public class CodeHolder : MonoBehaviour
         return code;
     }
 
-    private bool isClicked = false; // 记录物体是否被点击过
+    private bool isClicked = false; // Records if the object has been clicked
 
     private void OnMouseDown()
     {
@@ -66,13 +55,27 @@ public class CodeHolder : MonoBehaviour
             }
             else
             {
-                // 取消上一个选中物体的高亮
+                // Deselect the previously selected object
                 selectedObject.meshRenderer.material = selectedObject.defaultMaterial;
             }
         }
-        if(selectedObject != this )
-        GetComponent<AudioSource>().Play();
+        if (selectedObject != this)
+            GetComponent<AudioSource>().Play();
         selectedObject = this;
+        if (selectedObject = this)
+        {
+            if (tag == "Human")
+            {
+                showList = FindObjectOfType<ShowList_MRYM>();
+                if (showList != null && !showList.listing)
+                {
+                    //
+                    showList.listing = true;
+                    showList.OpenList();
+                }
+            }
+
+        }
         isClicked = true;
 
         if (ihaveChild)
@@ -84,15 +87,15 @@ public class CodeHolder : MonoBehaviour
         }
         else
         {
-            // 将当前物体的材质更改为高亮材质
+            // Change the material of the current object to the highlight material
             meshRenderer.material = highlightMaterial;
         }
 
         Debug.Log("Object Clicked");
 
-        ItemsReading.Instance.ReceiveClickedObject(gameObject); // 将点击的物体信息发送给 ItemsReading
-        DisposeButtonScript.Instance.ReceiveClickedObject(gameObject); // 将点击的物体信息发送给 DisposeButtonScript
-        ItemsManager.Instance._isCanRotate = true; // 将 _isCanRotate 更改为 true
+        ItemsReading.Instance.ReceiveClickedObject(gameObject); // Send information about the clicked object to ItemsReading
+        DisposeButtonScript.Instance.ReceiveClickedObject(gameObject); // Send information about the clicked object to DisposeButtonScript
+        ItemsManager.Instance._isCanRotate = true; // Change _isCanRotate to true
     }
 
     private void Update()
