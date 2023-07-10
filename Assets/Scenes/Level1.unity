@@ -17046,7 +17046,7 @@ MonoBehaviour:
   sendTool: 1
   sendHuman: 1
   food_goodWeight: 100
-  food_badWeight: 29
+  food_badWeight: 30
   tool_goodWeight: 100
   tool_badWeight: 30
   humanWeight: 30
