@@ -62,7 +62,7 @@ public class GameManager : SingletonManager<GameManager>
         MoveFoodTarget();
         MoveToolTarget();
         treePoint=treeFoodList[0].transform;
-        Debug.Log("+++++++"+treePoint);
+        
     }
     private void MoveFoodTarget()
     {

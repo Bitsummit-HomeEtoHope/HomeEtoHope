@@ -55,7 +55,7 @@ namespace StateMachine.General
 
                 manager.parameter.isHungry = false;
             }
-            Debug.Log("++++++++++++++"+treeDistance);
+            
             if(isFood==false && treeDistance<1 && GameManager.Instance.treeFoodList.Count!=0)
             {
                 isFood = true;
@@ -93,6 +93,7 @@ namespace StateMachine.General
             {
                 Debug.Log("工具已经用完");
                 isTool = false;
+                manager.parameter.isBroken = true;
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
                 toolList_human.RemoveAt(0);

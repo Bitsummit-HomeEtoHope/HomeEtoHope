@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 5360809208037435532}
   m_Layer: 0
   m_Name: human-hair2
-  m_TagString: Untagged
+  m_TagString: Hair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 5952509865454744143}
   m_Layer: 0
   m_Name: human-body2-normal
-  m_TagString: Untagged
+  m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 4164840019223220839}
   m_Layer: 0
   m_Name: human-face-normal2
-  m_TagString: Untagged
+  m_TagString: Face
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 5090499649640799323}
   - component: {fileID: -724725195267506545}
   - component: {fileID: 1211122115170961784}
+  - component: {fileID: 701196753810886284}
   m_Layer: 0
   m_Name: human3
   m_TagString: Player
@@ -925,6 +926,7 @@ MonoBehaviour:
   foodList_human: []
   toolList_human: []
   TreeList: []
+  treeDistance: 0
   isFood: 0
   isTool: 0
   manager: {fileID: 0}
@@ -950,6 +952,7 @@ MonoBehaviour:
     BuildAnim: {fileID: 8300825166948764609}
     Build_FinsihAnim: {fileID: 7217546717261826940}
     Food_Tran: {fileID: 1905935609955363764}
+    isBroken: 0
     patrolPoints:
     - {fileID: 0}
     - {fileID: 0}
@@ -1029,6 +1032,22 @@ MonoBehaviour:
   updateSortingLayer: 1
   updateRotationAngle: 1
   fixedRotationX: -48
+--- !u!114 &701196753810886284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299590308912697605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701f4dfeab9772c40be1e1b4008772fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  spriteHair: {fileID: 3492688677829616308, guid: f69a2c383aa3d4b00b67c23dd8f5ce36, type: 3}
+  spriteFace: {fileID: 3303689674050725450, guid: e834f136f93bc42a1a5c8654b74a93a6, type: 3}
+  spriteBody: {fileID: 7374782513870509184, guid: 32ad3d3a6003d409ba4902b05a3f3eae, type: 3}
 --- !u!1 &8000108102757929647
 GameObject:
   m_ObjectHideFlags: 0

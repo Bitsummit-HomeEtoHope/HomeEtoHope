@@ -19,6 +19,9 @@ TagManager:
   - Cleaner
   - Partol
   - Tree_still
+  - Hair
+  - Face
+  - Body
   layers:
   - Default
   - TransparentFX

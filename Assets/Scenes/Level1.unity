@@ -19228,6 +19228,7 @@ MonoBehaviour:
   isPause: 0
   foodCount: 0
   treeFoodList: []
+  treePoint: {fileID: 0}
 --- !u!4 &1520000595
 Transform:
   m_ObjectHideFlags: 0
