@@ -322,16 +322,16 @@ MonoBehaviour:
   readyWho: {fileID: 1088753997}
   TheNews: {fileID: 1515705036}
   ShutDownList:
+  - {fileID: 1853015592}
   - {fileID: 922154644}
   - {fileID: 822714194}
   - {fileID: 1863484837}
   - {fileID: 716220295}
-  - {fileID: 1853015592}
   - {fileID: 1291848735}
   - {fileID: 70604961}
   - {fileID: 1520000593}
   - {fileID: 1943392801}
-  - {fileID: 1808109647}
+  - {fileID: 0}
 --- !u!1001 &18767703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15938,10 +15938,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a968202e4aacd2b49b93b354d34f5f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 90
+  duration: 0
   increaseAmount: -300
   recoveryDuration: 0.5
-  levelDataCurrent: {fileID: 0}
+  levelDataCurrent: {fileID: 1853015593}
   daysManager: {fileID: 250342055}
   fillImage: {fileID: 1377825194}
   a: {fileID: 250342056}
@@ -21749,51 +21749,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1808109647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1808109648}
-  - component: {fileID: 1808109649}
-  m_Layer: 0
-  m_Name: BuildManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1808109648
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808109647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2045684447}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1808109649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808109647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2921634ea44ecaf4292e1efa6a1cfe6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  workPoints: []
 --- !u!1 &1808123588
 GameObject:
   m_ObjectHideFlags: 0
@@ -23727,7 +23682,6 @@ Transform:
   - {fileID: 816584372}
   - {fileID: 12545983}
   - {fileID: 884485683}
-  - {fileID: 1808109648}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
