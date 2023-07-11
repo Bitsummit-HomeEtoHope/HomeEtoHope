@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 
 public class timewellout : MonoBehaviour
 {
+    [Header("Slow switch")]
+
+    [SerializeField] public bool needSlow = false;
+    [Header("-----------")]
+
     private RectTransform rectTransform;
     private float elapsedTime;
     private float targetPosX;
@@ -28,6 +34,7 @@ public class timewellout : MonoBehaviour
     [SerializeField] private AudioClip b2;
 
     private bool isPlaySound = true;
+    private bool isEndDaySound = true;
 
     private bool isRecovering; // 是否在恢复中
     private float recoveryElapsedTime; // 恢复流逝的时间
@@ -93,15 +100,49 @@ public class timewellout : MonoBehaviour
             float t = elapsedTime / duration;
             float currentPosX = Mathf.Lerp(startPosX, targetPosX, t);
             rectTransform.anchoredPosition = new Vector2(currentPosX, rectTransform.anchoredPosition.y);
-            if(elapsedTime >= duration - 3 && isPlaySound){
-                a.GetComponent<AudioSource>().PlayOneShot(b2);
-                isPlaySound = false;
+
+
+
+            if (needSlow)
+            {
+
+                if (elapsedTime >= duration - 5 && isPlaySound)
+                {
+                    a.GetComponent<AudioSource>().PlayOneShot(b2);
+                    isPlaySound = false;
+                }
+
+                if (elapsedTime >= duration - 1.333f && elapsedTime <= duration - 0.1f && isEndDaySound)
+                {
+                    // 在倒计时还剩下1.5秒时，改变时间缩放为0.5
+                    Time.timeScale = 0.5f;
+
+                    // 播放声音
+                    a.GetComponent<AudioSource>().PlayOneShot(b1);
+                    isEndDaySound = false;
+                }
+            }
+            else
+            {
+                if (elapsedTime >= duration - 3 && isPlaySound)
+                {
+                    a.GetComponent<AudioSource>().PlayOneShot(b2);
+                    isPlaySound = false;
+                }
             }
         }
         else
         {
+            if (needSlow)
+            {
+                Time.timeScale = 1f;
+                isEndDaySound = true;
+            }
+            else
+            {
+                a.GetComponent<AudioSource>().PlayOneShot(b1);
+            }
             // play sound
-            a.GetComponent<AudioSource>().PlayOneShot(b1);
 
             // 计时结束后启用 DaysManager 的 daysChange 方法
             daysManager.daysChange();
@@ -109,6 +150,7 @@ public class timewellout : MonoBehaviour
             isRecovering = true;
             recoveryElapsedTime = 0f;
             isPlaySound = true;
+
         }
     }
 
