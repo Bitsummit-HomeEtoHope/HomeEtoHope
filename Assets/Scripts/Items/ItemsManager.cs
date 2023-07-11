@@ -39,6 +39,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
     [SerializeField] private bool sendHuman = true;
 
     [Header("Send ")]
+    private bool startGame = true;
     [SerializeField, Range(0, 100)]
     private int food_goodWeight = 100 / 5; 
 
@@ -122,6 +123,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Human1_4, Human2_4, Human3_4,
         Human1_5, Human2_5, Human3_5,
         Human1_6, Human2_6, Human3_6,
+
+        Human0_0,
     }
 
 
@@ -204,6 +207,9 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Human3_4, new WeightedItem<string>("3D/human/human3/human3_4", humanWeight));
         _itemsDictionary.Add(ItemsType.Human3_5, new WeightedItem<string>("3D/human/human3/human3_5", humanWeight));
         _itemsDictionary.Add(ItemsType.Human3_6, new WeightedItem<string>("3D/human/human3/human3_6", humanWeight));
+
+        //--------------
+        _itemsDictionary.Add(ItemsType.Human0_0, new WeightedItem<string>("3D/human/human3/human0_0", 0));
     }
 
     //---------
@@ -329,6 +335,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Start()
     {
+        spendTime = 4;
 
         Application.targetFrameRate = 120;
 
@@ -351,7 +358,20 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Update()
     {
-        
+        //if (startGame)
+        //{
+        //    spendTime = 4;
+        //    if (spendTime >= spawnInterval)
+        //    {
+        //        InitializeItem("3D/human/human3/human0_0");
+        //        MoveItems();
+        //    }
+        //    spendTime += Time.deltaTime;
+        //    MoveItems();
+
+        //    startGame = false;
+        //}
+
         if (spendTime >= spawnInterval)
         {
             Debug.Log("spendTime >= spawnInterval");

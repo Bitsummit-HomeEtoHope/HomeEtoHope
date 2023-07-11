@@ -41,8 +41,8 @@ public class CodeReader : MonoBehaviour
                         if (openDoor != null)
                         {
                            // Debug.Log("XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                            openDoor.enabled = false;
-                            openDoor.enabled = true;
+                         openDoor.enabled = false;
+                         openDoor.enabled = true;
 
                         }
                     }
