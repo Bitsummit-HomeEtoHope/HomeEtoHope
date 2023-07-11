@@ -106,7 +106,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //---tool---bad---
         BurnerQAQ,
         ChainsawQAQ,
-        HammerLOL,
+        HammerQAQ,
         HoeQAQ,
         IceQAQ,
         KettleQAQ,
@@ -124,7 +124,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Human1_5, Human2_5, Human3_5,
         Human1_6, Human2_6, Human3_6,
 
-        Human0_0,
+      //  Human0_0,
     }
 
 
@@ -169,7 +169,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         //---tool---bad---
         _itemsDictionary.Add(ItemsType.BurnerQAQ,   new WeightedItem<string>("3D/tool/bad/burnerbroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.ChainsawQAQ, new WeightedItem<string>("3D/tool/bad/chainsawbroken", tool_badWeight));
-        _itemsDictionary.Add(ItemsType.HammerLOL,   new WeightedItem<string>("3D/tool/bad/hammerbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType.HammerQAQ,   new WeightedItem<string>("3D/tool/bad/hammerbroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.HoeQAQ,      new WeightedItem<string>("3D/tool/bad/hoebroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.IceQAQ,      new WeightedItem<string>("3D/tool/bad/iceaxbroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.KettleQAQ,   new WeightedItem<string>("3D/tool/bad/kettlebroken", tool_badWeight));
@@ -209,7 +209,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.Human3_6, new WeightedItem<string>("3D/human/human3/human3_6", humanWeight));
 
         //--------------
-        _itemsDictionary.Add(ItemsType.Human0_0, new WeightedItem<string>("3D/human/human3/human0_0", 0));
+        //_itemsDictionary.Add(ItemsType.Human0_0, new WeightedItem<string>("3D/human/human3/human0_0", 0));
     }
 
     //---------
