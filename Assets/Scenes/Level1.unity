@@ -17651,6 +17651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: adan
       objectReference: {fileID: 0}
+    - target: {fileID: 7299590308912697605, guid: 0f0079ca75016fe459fcf3ea020d7c72, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8468248766219766118, guid: 0f0079ca75016fe459fcf3ea020d7c72, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -21099,7 +21103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7831409562201332271, guid: fe9eefa62e15e7e458c5ebf198795260, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513867865959429741, guid: fe9eefa62e15e7e458c5ebf198795260, type: 3}
       propertyPath: m_RootOrder

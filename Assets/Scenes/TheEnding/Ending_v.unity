@@ -836,7 +836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4ffbb23fab0c2ac4ba7608c4cb1482eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4589d6527b28914594ec990a2d55a81, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1134,6 +1134,8 @@ MonoBehaviour:
   shady: {fileID: 0}
   isPause: 0
   foodCount: 0
+  treeFoodList: []
+  treePoint: {fileID: 0}
 --- !u!4 &1520000595
 Transform:
   m_ObjectHideFlags: 0
