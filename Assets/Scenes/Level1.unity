@@ -2108,6 +2108,7 @@ MonoBehaviour:
   targetPosition: {fileID: 156982316}
   targetRotation: {fileID: 156982316}
   requiredBuildCount: 7
+  buildCount: 0
   enableGameObject: {fileID: 562302279}
 --- !u!1001 &191202829
 PrefabInstance:
@@ -5132,6 +5133,7 @@ MonoBehaviour:
   targetPosition: {fileID: 0}
   targetRotation: {fileID: 0}
   requiredBuildCount: 4
+  buildCount: 0
   enableGameObject: {fileID: 0}
 --- !u!1 &555035678
 GameObject:
@@ -10014,6 +10016,7 @@ MonoBehaviour:
   targetPosition: {fileID: 0}
   targetRotation: {fileID: 0}
   requiredBuildCount: 14
+  buildCount: 0
   enableGameObject: {fileID: 528165680}
 --- !u!1 &562557098
 GameObject:
