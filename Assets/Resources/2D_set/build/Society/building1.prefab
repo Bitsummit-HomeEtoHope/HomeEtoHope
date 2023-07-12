@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillAmountTargetObjectName: green_Line
   colorTargetObjectName: red_Mark
-  buildCount: 9
+  buildCount: 21
   fillAmountIncreaseTime: 5
   colorChangeTime: 5
 --- !u!114 &1167286738745951600
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEnd_i: 1
-  points_end_i: 2
+  points_end_i: 1
   canEnd_ii: 0
   points_end_ii: 0
   canEnd_iii: 0

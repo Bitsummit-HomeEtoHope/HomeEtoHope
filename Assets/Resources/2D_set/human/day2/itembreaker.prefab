@@ -537,7 +537,7 @@ MonoBehaviour:
     patrolPoints: []
     patrolOuterRadius: 0
     patrolInnerRadius: 0
-    moveSpeed: 0
+    moveSpeed: 40
     hungrySpeed: 0
     HungryFace: {fileID: 0}
     defaultSprite: {fileID: 0}

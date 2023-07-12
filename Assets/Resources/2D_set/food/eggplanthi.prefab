@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8895431708627905165}
   m_Layer: 0
   m_Name: eggplanthi
-  m_TagString: Food
+  m_TagString: Food_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

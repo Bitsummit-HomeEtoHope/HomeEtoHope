@@ -73,7 +73,7 @@ public class StealFood : MonoBehaviour
             }
         } */
         foodCount=foodArray.Length;
-        foodArray = GameObject.FindGameObjectsWithTag("Food");
+        foodArray = GameObject.FindGameObjectsWithTag("Food_39");
         
         if(foodCount!=foodArray.Length)
         {

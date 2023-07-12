@@ -574,7 +574,7 @@ MonoBehaviour:
     patrolPoints: []
     patrolOuterRadius: 0
     patrolInnerRadius: 0
-    moveSpeed: 0
+    moveSpeed: 40
     hungrySpeed: 0
     HungryFace: {fileID: 0}
     defaultSprite: {fileID: 0}
@@ -591,8 +591,9 @@ MonoBehaviour:
     isDie: 0
   targetPos: {x: 0, y: 0, z: 0}
   targetFood: {fileID: 0}
-  CDTime: 20
+  CDTime: 10
   CDTimer: 0
+  getItem: {fileID: 0}
 --- !u!1 &8223745764867623667
 GameObject:
   m_ObjectHideFlags: 0

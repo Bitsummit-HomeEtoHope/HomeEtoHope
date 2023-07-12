@@ -248,7 +248,7 @@ public class GetItem : MonoBehaviour
                 // 根据标签将实例添加到相应的列表中
                 switch (instance.gameObject.tag)
                 {
-                    case "Food":
+                    case "Food_39":
                         foodList.Add(instance);
                         break;
                     case "Tool":

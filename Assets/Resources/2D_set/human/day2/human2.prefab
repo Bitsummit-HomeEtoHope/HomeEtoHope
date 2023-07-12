@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4354385502270243359}
   m_Layer: 0
   m_Name: human-hair3
-  m_TagString: Untagged
+  m_TagString: Hair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 8115330264147753610}
   m_Layer: 0
   m_Name: human-face-normal2
-  m_TagString: Untagged
+  m_TagString: Face
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 6146090885714247250}
   - component: {fileID: 1382670786384121946}
   - component: {fileID: -7284888664591039196}
+  - component: {fileID: 8391826972170261702}
   m_Layer: 0
   m_Name: human2
   m_TagString: Player
@@ -573,6 +574,22 @@ MonoBehaviour:
   updateSortingLayer: 1
   updateRotationAngle: 1
   fixedRotationX: -48
+--- !u!114 &8391826972170261702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179067141144017384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701f4dfeab9772c40be1e1b4008772fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  spriteHair: {fileID: -3974610792872120136, guid: a1fca8517217e461da910685416e1525, type: 3}
+  spriteFace: {fileID: 3303689674050725450, guid: f69a2c383aa3d4b00b67c23dd8f5ce36, type: 3}
+  spriteBody: {fileID: 1557538828731063111, guid: a1fca8517217e461da910685416e1525, type: 3}
 --- !u!1 &4366624649025858086
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +701,7 @@ GameObject:
   - component: {fileID: 3300782169274370324}
   m_Layer: 0
   m_Name: human-body3-normal
-  m_TagString: Untagged
+  m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

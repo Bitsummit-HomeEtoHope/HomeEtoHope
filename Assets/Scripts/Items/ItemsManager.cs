@@ -327,6 +327,22 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void OnEnable()
     {
+        Array.Clear(itemsArray, 0, itemsArray.Length);
+        spendTime = 4;
+
+        GameObject parentObject = GameObject.Find("---items---"); // ²éÕÒ¸¸ÎïÌå
+
+        if (parentObject != null)
+        {
+            int childCount = parentObject.transform.childCount;
+
+            for (int i = childCount - 1; i >= 0; i--)
+            {
+                Transform child = parentObject.transform.GetChild(i);
+                Destroy(child.gameObject);
+            }
+        }
+
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         food_goodWeight = _levelDataCurrent._food_goodWeight;
         food_badWeight = _levelDataCurrent._food_badWeight;
@@ -339,7 +355,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void Start()
     {
-        spendTime = 4;
 
         Application.targetFrameRate = 120;
 
