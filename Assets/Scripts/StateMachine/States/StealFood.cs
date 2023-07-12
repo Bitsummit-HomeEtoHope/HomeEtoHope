@@ -12,11 +12,18 @@ public class StealFood : MonoBehaviour
     public GameObject targetFood;
     public float CDTime;
     public float CDTimer;
+    public GetItem getItem;
+    private GameObject[] foodArray;
+    private int foodCount;
 
     private void Awake()
     {
+        getItem = GameObject.Find("GetItemManager").GetComponent<GetItem>();
         targetPos = new Vector3(0, 0, -203.296f);
         foodParent = GameObject.Find("-----Food_Bag-----").transform;
+    }
+    private void Start() {
+        foodArray = GameObject.FindGameObjectsWithTag("Food");
     }
     private void Update()
     {
@@ -55,7 +62,7 @@ public class StealFood : MonoBehaviour
 
     private void GetChildren()
     {
-        for (int i = 0; i < foodParent.childCount; i++)
+        /* for (int i = 0; i < foodParent.childCount; i++)
         {
             if (foodParent.GetChild(i).CompareTag("Food") && foodParent.GetChild(i).gameObject.activeSelf)
             {
@@ -64,7 +71,23 @@ public class StealFood : MonoBehaviour
                     foodSet.Add(foodParent.GetChild(i).gameObject);
                 }
             }
+        } */
+        foodCount=foodArray.Length;
+        foodArray = GameObject.FindGameObjectsWithTag("Food");
+        
+        if(foodCount!=foodArray.Length)
+        {
+            foodSet.Clear();
+            for (int i = 0; i < foodArray.Length; i++)
+            {
+                if (foodArray[i].activeSelf)
+                {
+                    foodSet.Add(foodArray[i]);
+                }
+            }
         }
+        
+        
     }
 
     private void EatFood()
@@ -77,15 +100,53 @@ public class StealFood : MonoBehaviour
             }
             else
             {
-                targetFood.gameObject.SetActive(false);
+                //targetFood.gameObject.SetActive(false);
                 foodSet.Remove(targetFood);
                 targetFood = null;
-                CDTimer = 0;
+                if (foodSet.Count >= 2)
+                {
+                    var randomIndex1 = Random.Range(0, foodSet.Count);
+                    var randomIndex2 = Random.Range(0, foodSet.Count - 1);
+
+                    if (randomIndex2 >= randomIndex1)
+                    {
+                        randomIndex2++;
+                    }
+
+                    var food1 = foodSet[randomIndex1];
+                    var food2 = foodSet[randomIndex2];
+
+                    food1.gameObject.SetActive(false);
+                    food2.gameObject.SetActive(false);
+                    
+                    if(getItem.foodList.Contains(food1))
+                    {
+                        getItem.foodList.Remove(food1);
+                    }
+                    if (getItem.foodList.Contains(food2))
+                    {
+                        getItem.foodList.Remove(food2);
+                    }
+                    foodSet.Remove(food1);
+                    foodSet.Remove(food2);
+
+
+                    CDTimer = 0;
+                }
+                else if (foodSet.Count == 1)
+                {
+                    foodSet[0].gameObject.SetActive(false);
+                    foodSet.RemoveAt(0);
+
+                    CDTimer = 0;
+                }
+                
             }
         }
         else
         {
             var a = Random.Range(0, foodSet.Count - 1);
+            
             targetFood = foodSet[a];
         }
     }
