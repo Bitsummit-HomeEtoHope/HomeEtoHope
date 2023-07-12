@@ -391,9 +391,10 @@ GameObject:
   - component: {fileID: 8569584810142074521}
   - component: {fileID: 6792576690438920361}
   - component: {fileID: -5707102478789773349}
-  - component: {fileID: -3735182838961398286}
-  - component: {fileID: 5999466491403398637}
-  - component: {fileID: -5565368188925078017}
+  - component: {fileID: -6591803349517404485}
+  - component: {fileID: -8469892030090204347}
+  - component: {fileID: -2083154696869480642}
+  - component: {fileID: 4887160007474826133}
   m_Layer: 0
   m_Name: itembreaker
   m_TagString: Untagged
@@ -453,7 +454,7 @@ SortingGroup:
   m_SortingLayerID: -2147095345
   m_SortingLayer: 5
   m_SortingOrder: 2
---- !u!114 &-3735182838961398286
+--- !u!114 &-6591803349517404485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: -50
---- !u!114 &5999466491403398637
+--- !u!114 &-8469892030090204347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -484,7 +485,7 @@ MonoBehaviour:
   updateSortingLayer: 1
   updateRotationAngle: 1
   fixedRotationX: -48
---- !u!114 &-5565368188925078017
+--- !u!114 &-2083154696869480642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -508,3 +509,50 @@ MonoBehaviour:
   points_end_v: 0
   canEnd_vi: 0
   points_end_vi: 0
+--- !u!114 &4887160007474826133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360392725814927098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcee47d99bf65854ba91019db6055d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolParent: {fileID: 0}
+  toolSet: []
+  parameter:
+    levelDataCurrent: {fileID: 0}
+    idleTime: 0
+    idleTimer: 0
+    workPoints: []
+    currentTarget: {x: 0, y: 0, z: 0}
+    workTimer: 0
+    BuildAnim: {fileID: 0}
+    Build_FinsihAnim: {fileID: 0}
+    Food_Tran: {fileID: 0}
+    isBroken: 0
+    patrolPoints: []
+    patrolOuterRadius: 0
+    patrolInnerRadius: 0
+    moveSpeed: 0
+    hungrySpeed: 0
+    HungryFace: {fileID: 0}
+    defaultSprite: {fileID: 0}
+    did: {fileID: 0}
+    flower: {fileID: 0}
+    CleanWanter: {fileID: 0}
+    cleanTargetList: []
+    CDtimer: 0
+    CDtime: 0
+    isHungry: 0
+    isTool: 0
+    isWork: 0
+    isClean: 0
+    isDie: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  targetTool: {fileID: 0}
+  CDTime: 20
+  CDTimer: 0

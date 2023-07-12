@@ -10013,7 +10013,7 @@ MonoBehaviour:
   cameraMoveDuration: 2
   targetPosition: {fileID: 0}
   targetRotation: {fileID: 0}
-  requiredBuildCount: 7
+  requiredBuildCount: 14
   enableGameObject: {fileID: 528165680}
 --- !u!1 &562557098
 GameObject:

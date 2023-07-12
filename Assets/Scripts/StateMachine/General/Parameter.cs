@@ -42,6 +42,8 @@ namespace StateMachine.General
         [Header("if Clean")]
         public GameObject CleanWanter;
         public Transform[] cleanTargetList;
+        public float CDtimer;
+        public float CDtime;
 
         [Header("switch")]
         public bool isHungry;
