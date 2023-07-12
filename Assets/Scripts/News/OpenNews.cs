@@ -7,6 +7,7 @@ public class OpenNews : MonoBehaviour
 {
     public GameObject newsManager;
 
+    public GameObject hereIsStart;
     public GameObject hereIsBack;
     public GameObject hereIsNews;
     public GameObject hereIsLight;
@@ -19,11 +20,13 @@ public class OpenNews : MonoBehaviour
     public Image hereIsBord;
     public float opentime = 0.8f;
     public float filltime = 0.3f;
+    public float movetime = 0.3f;
 
     private NewsManager newsScript;
     private Vector3 initialLightScale;
     private Vector3 initialNewsScale;
     private Vector3 initialPeopleScale;
+    private Vector3 initialPeoplePos;
 
     private void Awake()
     {
@@ -60,15 +63,21 @@ public class OpenNews : MonoBehaviour
         initialLightScale = hereIsLight.transform.localScale;
         initialNewsScale = hereIsNews.transform.localScale;
         initialPeopleScale = hereIsPeople.transform.localScale;
+        initialPeoplePos = hereIsPeople.transform.position;
 
         yield return StartCoroutine(hereIsOpen(hereIsLight, Vector3.one));
 
+        yield return new WaitForSeconds(1.3f);
+        if (hereIsStart != null) hereIsStart.active = false;
+        StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
         StartCoroutine(hereIsFill(hereIsBar));
+
         StartCoroutine(hereIsFill(hereIsBord));
         StartCoroutine(hereIsFill(hereIsUp));
-        StartCoroutine(hereIsOpen(hereIsPeople, Vector3.one));
-        yield return        StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
 
+        yield return StartCoroutine(hereIsMove(hereIsPeople.transform));
+
+        yield return new WaitForSeconds(0.3f);
 
         hereIsReady();
     }
@@ -117,11 +126,40 @@ public class OpenNews : MonoBehaviour
         hereis.fillAmount = targetFillAmount;
     }
 
+
+
+    private IEnumerator hereIsMove(Transform hereis)
+    {
+        float timer = 0f;
+        float initialX = hereis.position.x;
+        float targetX = -7f; // 设置目标x值
+
+        while (timer < movetime)
+        {
+            timer += Time.deltaTime;
+            float t = timer / movetime;
+            float newX = Mathf.Lerp(initialX, targetX, t);
+
+            Vector3 newPosition = hereis.position;
+            newPosition.x = newX;
+            hereis.position = newPosition;
+
+            yield return null;
+        }
+
+        Vector3 finalPosition = hereis.position;
+        finalPosition.x = targetX;
+        hereis.position = finalPosition;
+    }
+
+
     private void ResetTransforms()
     {
+        if (hereIsStart != null) hereIsStart.active = true;
         hereIsLight.transform.localScale = initialLightScale;
         hereIsNews.transform.localScale = initialNewsScale;
         hereIsPeople.transform.localScale = initialPeopleScale;
+        hereIsPeople.transform.position = initialPeoplePos;
         hereIsBar.fillAmount = 0f;
         hereIsBord.fillAmount = 0f;
     }

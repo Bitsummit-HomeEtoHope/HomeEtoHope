@@ -373,7 +373,7 @@ public class NewsManager : MonoBehaviour
 
     private IEnumerator OpenBord()
     {
-        OpenNews.SetActive(false);
+      //  OpenNews.SetActive(false);
 
         float elapsedTime = 0f;
 
@@ -410,7 +410,7 @@ public class NewsManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.1f);
-        OpenNews.SetActive(true);
+      //  OpenNews.SetActive(true);
     }
 
     private IEnumerator ZoomNewsObjects()
