@@ -257,38 +257,52 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
             if (parentObject != null)
             {
-                itemsArray[itemsArrayIndex] = GameObject.Instantiate(Resources.Load(type)) as GameObject;
-                itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
+                // 打印 type 变量的值
+                Debug.Log("Type: " + type);
 
-                Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
-                itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+                // 尝试加载资源
+                GameObject resourceObject = Resources.Load(type) as GameObject;
 
-                defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
-                defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
-                pauseHeight = defaultHeight + 0.5f;
+                // 检查资源是否存在
+                if (resourceObject != null)
+                {
+                    itemsArray[itemsArrayIndex] = GameObject.Instantiate(resourceObject) as GameObject;
+                    itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
 
-                itemsArray[itemsArrayIndex].transform.position = initPosition.position;
-                itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+                    Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
+                    itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
 
-                if (itemsArrayIndex == 0)
-                {
-                    itemsArrayIndex = 1;
+                    defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
+                    defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
+                    pauseHeight = defaultHeight + 0.5f;
+
+                    itemsArray[itemsArrayIndex].transform.position = initPosition.position;
+                    itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
+
+                    if (itemsArrayIndex == 0)
+                    {
+                        itemsArrayIndex = 1;
+                    }
+                    else if (itemsArrayIndex == 1)
+                    {
+                        itemsArrayIndex = 2;
+                    }
+                    else if (itemsArrayIndex == 2)
+                    {
+                        itemsArrayIndex = 3;
+                    }
+                    else if (itemsArrayIndex == 3)
+                    {
+                        itemsArrayIndex = 0;
+                    }
                 }
-            
-                else if(itemsArrayIndex == 1)
+                else
                 {
-                    itemsArrayIndex = 2;
+                    // 打印资源加载失败的信息
+                    Debug.LogError("Failed to load resource: " + type);
                 }
-                else if (itemsArrayIndex == 2)
-                {
-                    itemsArrayIndex = 3;
-                }
-                else if (itemsArrayIndex == 3)
-                {
-                    itemsArrayIndex = 0;
-                }
+            }
         }
-    }
     }
     private void MoveItems()
     {
@@ -323,14 +337,17 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void OnEnable()
     {
+
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
+        
+        moveTime = _levelDataCurrent._interval;
+        spawnInterval = _levelDataCurrent._spawnInterval;
         food_goodWeight = _levelDataCurrent._food_goodWeight;
         food_badWeight = _levelDataCurrent._food_badWeight;
         tool_goodWeight = _levelDataCurrent._tool_goodweight;
         tool_badWeight = _levelDataCurrent._tool_badweight;
         humanWeight = _levelDataCurrent._human_weight;
-        moveTime = _levelDataCurrent._interval;
-        spawnInterval = _levelDataCurrent._spawnInterval;
+        
     }
 
     private void Start()

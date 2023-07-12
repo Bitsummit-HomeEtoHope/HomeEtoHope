@@ -71,7 +71,7 @@ public class KillPeople : MonoBehaviour
 	{
 		for (int i = 0; i < parent.childCount; i++)
 		{
-			if (parent.GetChild(i).CompareTag("GoodGuy"))
+			if (parent.GetChild(i).CompareTag("Player"))
 			{
 				if (!peopleSet.Contains(parent.GetChild(i).gameObject))
 				{
