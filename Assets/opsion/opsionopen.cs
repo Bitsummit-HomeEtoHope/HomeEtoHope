@@ -99,7 +99,7 @@ public class OpsionOpen : MonoBehaviour
     public void GoTitle()
     {
         //                       @«•ÏX‚µ‚½‚¢scene–¼‚¢‚ê‚é
-        SceneManager.LoadScene("OpenGame");
+        SceneManager.LoadScene("Title");
     }
    
 }

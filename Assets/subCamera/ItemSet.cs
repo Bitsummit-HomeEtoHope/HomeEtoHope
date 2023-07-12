@@ -7,7 +7,6 @@ using UnityEngine.Analytics;
 public class ItemSet : MonoBehaviour
 {
     public ItemsManager m_itemMng;
-    private int m_lastItemIndex = 0;
     private bool m_isFoundObject = false;
 
     public criminal m_Criminal;
@@ -40,23 +39,22 @@ public class ItemSet : MonoBehaviour
     void Update()
     {
         //if (!m_Item)
-        if(m_lastItemIndex != m_itemMng.itemsArrayIndex)
+        if(m_Item == null)
         {
             //If the current item does not exist
-            if (m_ItemCameraObject)
+            if (m_ItemCameraObject != null)
             {
                 //Destroy the item's camera object
                 Destroy(m_ItemCameraObject);
                 // m_Criminal.ResetTextPosition();
             }
 
-            if (m_itemMng._isCanRotate)
+            if (CodeHolder.selectedObject != null)
             {
                 //Search for items tagged "Fruit"
                 //m_Item = GameObject.FindWithTag("Food");
                 //m_Item = GameObject.FindWithTag("Tool");
-                m_Item = m_itemMng.itemsArray[m_lastItemIndex];
-                m_lastItemIndex = m_itemMng.itemsArrayIndex;
+                m_Item = CodeHolder.selectedObject.gameObject;
                 m_isFoundObject = false;
             }
         }
@@ -87,7 +85,14 @@ public class ItemSet : MonoBehaviour
             {
                 //m_Criminal.MoveTextLeft();
                 //Update the rotation of the item's camera object
-                m_ItemCameraObject.transform.rotation = m_Item.transform.rotation;
+                if (m_Item == CodeHolder.selectedObject.gameObject)
+                {
+                    m_ItemCameraObject.transform.rotation = m_Item.transform.rotation;
+                }
+                else
+                {
+                    m_Item = null;
+                }
             }
         }
     }

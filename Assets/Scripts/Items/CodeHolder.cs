@@ -22,7 +22,7 @@ public class CodeHolder : MonoBehaviour
     }
     public List<ChildRenderers> childRenderers = new List<ChildRenderers>();
 
-    private static CodeHolder selectedObject;
+    public static CodeHolder selectedObject;
 
     private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
 
