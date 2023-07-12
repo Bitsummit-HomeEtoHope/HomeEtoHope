@@ -13,7 +13,7 @@ public class OpsionOpen : MonoBehaviour
     //設定用の画面に移行するボタン
     public GameObject settingButton;
     //
-    //public GameObject titleScreen;
+    public GameObject titleScreen;
 
     public GameObject mainMoniterCanvas;
     //ゲームを一時停止するかどうかのフラグ
@@ -99,7 +99,7 @@ public class OpsionOpen : MonoBehaviour
     public void GoTitle()
     {
         //                       　↓変更したいscene名いれる
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("OpenGame");
     }
    
 }

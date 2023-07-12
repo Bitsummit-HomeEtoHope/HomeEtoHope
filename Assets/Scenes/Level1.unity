@@ -11337,9 +11337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option_Canvas: {fileID: 1457580299}
-  settingButton: {fileID: 614488881}
-  mainMoniterCanvas: {fileID: 822714194}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
