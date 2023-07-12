@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 8391826972170261702}
   m_Layer: 0
   m_Name: human2
-  m_TagString: Player
+  m_TagString: GoodGuy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,6 +507,8 @@ MonoBehaviour:
     flower: {fileID: 2800000, guid: 410f222f3782c46a797e6a29c7049e72, type: 3}
     CleanWanter: {fileID: 0}
     cleanTargetList: []
+    CDtimer: 0
+    CDtime: 0
     isHungry: 0
     isTool: 0
     isWork: 0

@@ -84,13 +84,24 @@ public class KillPeople : MonoBehaviour
 	private void Kill(GameObject target)
 	{
 		var a = target.transform.position;
-		var obj = GameObject.Instantiate(Resources.Load("bone")) as GameObject;
-		
-		// Debug.Log("hi");
-		peopleSet.Remove(target);
+        GameObject obj = Instantiate(Resources.Load<GameObject>("2D_set/human/flower"));
+
+        GameObject flowersObject = GameObject.Find("-----Garden-----");
+
+
+        // Debug.Log("hi");
+        peopleSet.Remove(target);
 		Destroy(target);
-		obj.transform.position = a;
-		currentTarget = null;
+
+        if (flowersObject != null)
+        {
+            obj.transform.position = a;
+            obj.transform.SetParent(flowersObject.transform);
+        }
+        else
+        {
+            Debug.LogError("Parent object '-----Flowers-----' not found in the scene.");
+        }		currentTarget = null;
 		parameter.CDtimer = 0;
 	}
 

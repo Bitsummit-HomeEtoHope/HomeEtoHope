@@ -33,18 +33,20 @@ public class Build_Manager : MonoBehaviour
             // 使用正弦函数计算相机移动速度的衰减值
             //  float moveSpeed = Mathf.Lerp(cameraMoveSpeed, 0f, Mathf.Sin(cameraMoveTimer / cameraMoveDuration * Mathf.PI * 0.5f));
 
-
-            if(targetPosition!=null)
-            camera2d.transform.position = Vector3.Lerp(camera2d.transform.position, targetPosition.position, Time.deltaTime * moveSpeed);
-            if(targetRotation!=null)
-            camera2d.transform.rotation = Quaternion.Lerp(camera2d.transform.rotation, targetRotation.rotation, Time.deltaTime * moveSpeed);
-
-            if (enableGameObject != null)
+            if (camera2d != null)
             {
-                enableGameObject.SetActive(true);
-            }
+                if (targetPosition != null)
+                    camera2d.transform.position = Vector3.Lerp(camera2d.transform.position, targetPosition.position, Time.deltaTime * moveSpeed);
+                if (targetRotation != null)
+                    camera2d.transform.rotation = Quaternion.Lerp(camera2d.transform.rotation, targetRotation.rotation, Time.deltaTime * moveSpeed);
 
-            cameraMoveTimer += Time.deltaTime;
+                if (enableGameObject != null)
+                {
+                    enableGameObject.SetActive(true);
+                }
+
+                cameraMoveTimer += Time.deltaTime;
+            }
         }
     }
 

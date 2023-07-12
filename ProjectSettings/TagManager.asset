@@ -23,6 +23,7 @@ TagManager:
   - Hair
   - Face
   - Body
+  - GoodGuy
   layers:
   - Default
   - TransparentFX
