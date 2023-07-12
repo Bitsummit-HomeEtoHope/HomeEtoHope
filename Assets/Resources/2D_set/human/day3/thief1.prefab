@@ -532,9 +532,10 @@ GameObject:
   - component: {fileID: 5406074931571996325}
   - component: {fileID: 4276972381694196778}
   - component: {fileID: -2449163357494753155}
-  - component: {fileID: 2215503947297887836}
-  - component: {fileID: -912931331806999402}
-  - component: {fileID: 8273177041849283342}
+  - component: {fileID: 2156475645702830102}
+  - component: {fileID: 2728068929360821554}
+  - component: {fileID: 5908564218759486369}
+  - component: {fileID: 3567143590380297796}
   m_Layer: 0
   m_Name: thief1
   m_TagString: Untagged
@@ -597,7 +598,7 @@ SortingGroup:
   m_SortingLayerID: -2147095345
   m_SortingLayer: 5
   m_SortingOrder: 2
---- !u!114 &2215503947297887836
+--- !u!114 &2156475645702830102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -610,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: -50
---- !u!114 &-912931331806999402
+--- !u!114 &2728068929360821554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,7 +629,7 @@ MonoBehaviour:
   updateSortingLayer: 1
   updateRotationAngle: 1
   fixedRotationX: -48
---- !u!114 &8273177041849283342
+--- !u!114 &5908564218759486369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -652,6 +653,53 @@ MonoBehaviour:
   points_end_v: 0
   canEnd_vi: 0
   points_end_vi: 0
+--- !u!114 &3567143590380297796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615265950226017990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ab85d0a6229f84d82c2c0ad7a5625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodParent: {fileID: 0}
+  foodSet: []
+  parameter:
+    levelDataCurrent: {fileID: 0}
+    idleTime: 0
+    idleTimer: 0
+    workPoints: []
+    currentTarget: {x: 0, y: 0, z: 0}
+    workTimer: 0
+    BuildAnim: {fileID: 0}
+    Build_FinsihAnim: {fileID: 0}
+    Food_Tran: {fileID: 0}
+    isBroken: 0
+    patrolPoints: []
+    patrolOuterRadius: 0
+    patrolInnerRadius: 0
+    moveSpeed: 0
+    hungrySpeed: 0
+    HungryFace: {fileID: 0}
+    defaultSprite: {fileID: 0}
+    did: {fileID: 0}
+    flower: {fileID: 0}
+    CleanWanter: {fileID: 0}
+    cleanTargetList: []
+    CDtimer: 0
+    CDtime: 0
+    isHungry: 0
+    isTool: 0
+    isWork: 0
+    isClean: 0
+    isDie: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  targetFood: {fileID: 0}
+  CDTime: 20
+  CDTimer: 0
 --- !u!1 &8370638107734407950
 GameObject:
   m_ObjectHideFlags: 0

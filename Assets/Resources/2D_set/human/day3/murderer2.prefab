@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 106280771727573249}
   - component: {fileID: 6272018834444357369}
   - component: {fileID: 1668169536397438804}
+  - component: {fileID: -7769191693386677942}
   m_Layer: 0
   m_Name: murderer2
   m_TagString: Untagged
@@ -557,6 +558,51 @@ MonoBehaviour:
   points_end_v: 0
   canEnd_vi: 0
   points_end_vi: 0
+--- !u!114 &-7769191693386677942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397070682436009853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef8a8fe45e3d044babf052d85ed7873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleSet: []
+  parent: {fileID: 0}
+  currentTarget: {fileID: 0}
+  parameter:
+    levelDataCurrent: {fileID: 0}
+    idleTime: 0
+    idleTimer: 0
+    workPoints: []
+    currentTarget: {x: 0, y: 0, z: 0}
+    workTimer: 0
+    BuildAnim: {fileID: 0}
+    Build_FinsihAnim: {fileID: 0}
+    Food_Tran: {fileID: 0}
+    isBroken: 0
+    patrolPoints: []
+    patrolOuterRadius: 0
+    patrolInnerRadius: 0
+    moveSpeed: 0
+    hungrySpeed: 0
+    HungryFace: {fileID: 0}
+    defaultSprite: {fileID: 0}
+    did: {fileID: 0}
+    flower: {fileID: 0}
+    CleanWanter: {fileID: 0}
+    cleanTargetList: []
+    CDtimer: 0
+    CDtime: 20
+    isHungry: 0
+    isTool: 0
+    isWork: 0
+    isClean: 0
+    isDie: 0
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &3115486193398576785
 GameObject:
   m_ObjectHideFlags: 0
