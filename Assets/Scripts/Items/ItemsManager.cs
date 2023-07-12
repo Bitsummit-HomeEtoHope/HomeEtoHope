@@ -257,16 +257,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
             if (parentObject != null)
             {
-                // 打印 type 变量的值
-                Debug.Log("Type: " + type);
+                GameObject itemPrefab = Resources.Load(type) as GameObject;
 
-                // 尝试加载资源
-                GameObject resourceObject = Resources.Load(type) as GameObject;
-
-                // 检查资源是否存在
-                if (resourceObject != null)
+                if (itemPrefab != null)
                 {
-                    itemsArray[itemsArrayIndex] = GameObject.Instantiate(resourceObject) as GameObject;
+                    itemsArray[itemsArrayIndex] = GameObject.Instantiate(itemPrefab) as GameObject;
                     itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
 
                     Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
@@ -295,11 +290,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
                     {
                         itemsArrayIndex = 0;
                     }
-                }
-                else
-                {
-                    // 打印资源加载失败的信息
-                    Debug.LogError("Failed to load resource: " + type);
                 }
             }
         }
@@ -337,17 +327,14 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     private void OnEnable()
     {
-
         _levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
-        
-        moveTime = _levelDataCurrent._interval;
-        spawnInterval = _levelDataCurrent._spawnInterval;
         food_goodWeight = _levelDataCurrent._food_goodWeight;
         food_badWeight = _levelDataCurrent._food_badWeight;
         tool_goodWeight = _levelDataCurrent._tool_goodweight;
         tool_badWeight = _levelDataCurrent._tool_badweight;
         humanWeight = _levelDataCurrent._human_weight;
-        
+        moveTime = _levelDataCurrent._interval;
+        spawnInterval = _levelDataCurrent._spawnInterval;
     }
 
     private void Start()

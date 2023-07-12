@@ -94,7 +94,15 @@ namespace StateMachine.States
             }
             if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f && manager.parameter.isWork == true)
             {
-                parameter.workPoints[random].gameObject.GetComponent<Check_HumanDistance>().isBuild = true;
+                if (parameter.workPoints.Count > 0 && random < parameter.workPoints.Count)
+                {
+                    parameter.workPoints[random].gameObject.GetComponent<Check_HumanDistance>().isBuild = true;
+                }
+                else
+                {
+                    // 处理列表为空或随机索引超出范围的情况
+                    Debug.LogError("Invalid random index or no work points available.");
+                }
 
                 GameObject[] AgricultureResources = Resources.LoadAll<GameObject>("2D_set/build/Agriculture/");
                 GameObject[] IndustryResources = Resources.LoadAll<GameObject>("2D_set/build/Industry/");
@@ -105,6 +113,7 @@ namespace StateMachine.States
                 Debug.Log("tool:" + manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
 
                 GameObject parentObject = parameter.workPoints[random].gameObject; // 目标物体的子物体作为父物体
+
 
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
                 {
@@ -168,12 +177,20 @@ namespace StateMachine.States
                 }
             }
 
-            int randomIndex = Random.Range(0, parameter.workPoints.Count); // 随机获取一个索引
-            parameter.currentTarget = parameter.workPoints[randomIndex].position; // 获取随机索引对应的元素
-            random = randomIndex;
+            if (parameter.workPoints.Count > 0)
+            {
+                int randomIndex = Random.Range(0, parameter.workPoints.Count); // 随机获取一个索引
+                parameter.currentTarget = parameter.workPoints[randomIndex].position; // 获取随机索引对应的元素
+                random = randomIndex;
 
-            // 更改目标的标签为"Will_build"
-            parameter.workPoints[randomIndex].gameObject.tag = "Will_build";
+                // 更改目标的标签为"Will_build"
+                parameter.workPoints[randomIndex].gameObject.tag = "Will_build";
+            }
+            else
+            {
+                // 处理列表为空的情况
+                Debug.LogError("No work points available.");
+            }
         }
     }
 
