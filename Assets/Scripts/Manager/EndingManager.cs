@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EndingManager : MonoBehaviour
 {
+    [SerializeField]public GameObject fin;
+    [SerializeField]public GameObject fin_meto;
     // Update is called once per frame
     void Update()
     {
         // 检测鼠标左击
         if (Input.GetMouseButtonDown(0))
         {
-            // 结束运行（仅在编辑器中有效）
-            EndGame();
+            if (!fin.activeSelf) 
+            { 
+                fin_meto.active = false;
+            }
+
+            else EndGame();
+
+            //else fin.SetActive(false);
         }
     }
 
