@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ITellYou : MonoBehaviour
@@ -9,34 +10,61 @@ public class ITellYou : MonoBehaviour
     [Header("Eyes")]
     [SerializeField] public Image eyes;
     [SerializeField] public List<Sprite> eyeslist;
-    
+
     [Header("Hand")]
     [SerializeField] public GameObject hand;
-    [SerializeField]public float handHight = 5f;
-    [SerializeField]public float handTime = 0.2f;
+    [SerializeField] public float handHight = 5f;
+    [SerializeField] public float handTime = 0.2f;
 
     [Header("Body")]
     [SerializeField] public GameObject body;
-    
+
     [Header("Buble")]
     [SerializeField] public GameObject buble;
-    
+    [SerializeField] public float bubleTime = 0.3f;
+
     [Header("How")]
     [SerializeField] public Image How;
     [SerializeField] public List<Sprite> howlist;
+    private int currentSpriteIndex = 0;
 
+    [Header("System")]
+    public Button nextButton; 
+    public Button backButton; 
     // Start is called before the first frame update
     void OnEnable()
     {
+        nextButton.onClick.AddListener(NextButtonAction);
+
+        backButton.onClick.AddListener(BackButtonAction);
+
         YaYa();
         StartCoroutine(DaDa());
+        StartCoroutine(FaFa());
+        KaKa();
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        nextButton.onClick.RemoveListener(NextButtonAction);
+
+        backButton.onClick.RemoveListener(BackButtonAction);
+
+        enabled = true;
+    }
+
+
     void Update()
     {
-        
+
+        if (Input.GetMouseButtonDown(0))
+        {
+          //  enabled = false;
+
+
+        }
     }
+
 
 
     public void YaYa()
@@ -87,4 +115,61 @@ public class ITellYou : MonoBehaviour
     }
 
 
+    private IEnumerator FaFa()
+    {
+        buble.transform.localScale = Vector3.zero;
+
+        Vector3 initialScale = buble.transform.localScale;
+        Vector3 targetScale = Vector3.one;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < bubleTime)
+        {
+            float t = elapsedTime / bubleTime;
+            buble.transform.localScale = Vector3.Lerp(initialScale, targetScale, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        buble.transform.localScale = targetScale;
+    }
+
+
+    public void KaKa()
+    {
+        if (howlist.Count > 0)
+        {
+            // 获取当前索引对应的Sprite
+            Sprite currentSprite = howlist[currentSpriteIndex];
+
+            // 替换How的Image的Sprite
+            How.sprite = currentSprite;
+
+            // 增加索引并检查是否超出范围
+            currentSpriteIndex++;
+            if (currentSpriteIndex >= howlist.Count)
+            {
+                currentSpriteIndex = 0; // 重置索引为0，重新开始循环
+            }
+        }
+        else
+        {
+            Debug.LogError("Howlist is empty! Please assign sprites to the list.");
+        }
+    }
+
+    public void NextButtonAction()
+    {
+        enabled = false;
+    }
+
+    public void BackButtonAction()
+    {
+
+        SceneManager.LoadScene("Title");
+        // 或者：SceneManager.LoadScene(nextSceneIndex);
+
+    }
 }
