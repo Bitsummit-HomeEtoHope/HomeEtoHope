@@ -20,14 +20,11 @@ namespace StateMachine.States
 
         public void Onenter()
         {
-            Debug.Log("------------i am dying-----------");
-            manager.parameter.isDie = true;
-            // 将自身的贴图换成 did
-            manager.gameObject.GetComponent<SpriteRenderer>().sprite = Sprite.Create(parameter.did, new Rect(0, 0, parameter.did.width, parameter.did.height), Vector2.one * 0.5f);
-            manager.gameObject.GetComponent<StateManager>().enabled = false;
+            // 在自己的位置生成预制件
+            GameObject newPrefab = GameObject.Instantiate(parameter.flower, manager.transform.position, manager.transform.rotation);
 
-            // 将标签更改为"Flower"
-            manager.gameObject.tag = "Flower";
+            // 删除当前游戏对象
+            GameObject.Destroy(manager.gameObject);
         }
 
         public void OnExit()

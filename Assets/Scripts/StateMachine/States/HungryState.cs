@@ -1,4 +1,5 @@
 using StateMachine.General;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ namespace StateMachine.States
 	{
 		private readonly Parameter parameter;
 		private readonly FSM manager;
-		
+
+        private bool haveEat = false;
 
 		public HungryState(FSM manager)
 		{
@@ -17,6 +19,9 @@ namespace StateMachine.States
 		}
 		public void Onenter()
 		{
+            haveEat = false;
+            manager.StartCoroutine(HungryDie(0.1f));
+
             manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Clear();
             manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
             parameter.Food_Tran.gameObject.SetActive(false);
@@ -27,7 +32,14 @@ namespace StateMachine.States
 			Debug.Log("I'm hungry!!!");
 		}
 
-		public void OnUpdate()
+        private IEnumerator HungryDie(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            if (!haveEat) manager.TransitState(StateType.Dying);
+        }
+
+
+        public void OnUpdate()
 		{
             if(GameManager.Instance.treeFoodList.Count!=0)
             {

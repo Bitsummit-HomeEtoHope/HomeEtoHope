@@ -503,8 +503,7 @@ MonoBehaviour:
     hungrySpeed: 25
     HungryFace: {fileID: 4430586501114508684, guid: 9bc30513980604986884736572704164, type: 3}
     defaultSprite: {fileID: -1761758881718303641, guid: 002ede2f62b004e70bad3fc51d1b84dc, type: 3}
-    did: {fileID: 2800000, guid: 410f222f3782c46a797e6a29c7049e72, type: 3}
-    flower: {fileID: 2800000, guid: 410f222f3782c46a797e6a29c7049e72, type: 3}
+    flower: {fileID: 4834224211039033865, guid: 3862af2e8451b0343a422294a4e96fc0, type: 3}
     CleanWanter: {fileID: 0}
     cleanTargetList: []
     CDtimer: 0

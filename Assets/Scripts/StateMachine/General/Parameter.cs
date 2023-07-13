@@ -36,8 +36,7 @@ namespace StateMachine.General
         public Sprite defaultSprite;
 
         [Header("ifDie")]
-        public Texture2D did;
-        public Texture2D flower;
+        public GameObject flower;
         
         [Header("if Clean")]
         public GameObject CleanWanter;
