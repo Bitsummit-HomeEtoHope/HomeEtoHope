@@ -119,7 +119,7 @@ MonoBehaviour:
   code: 
   tag: 
   defaultMaterial: {fileID: 2100000, guid: 5125edcc173d34da99e1841cdb2719d1, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 7675e1728f8864294b9b3893132d8132, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: b6db96084703d4f8bb142769141c4ced, type: 2}
   ihaveChild: 0
   childRenderers: []
 --- !u!82 &-8948028980251244461
