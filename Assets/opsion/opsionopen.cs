@@ -67,7 +67,7 @@ public class OpsionOpen : MonoBehaviour
     // Start is called before the first frame update
     public void GoSetting()
     {
-        mainMoniterCanvas.SetActive(false);
+        if(mainMoniterCanvas!=null)mainMoniterCanvas.SetActive(false);
         Option_Canvas.SetActive(true );
         //mainMoniterCanvas.SetActive(false);
 
@@ -84,7 +84,7 @@ public class OpsionOpen : MonoBehaviour
     public void GoGame()
     {
         Option_Canvas.SetActive(false);
-        mainMoniterCanvas.SetActive(true);
+        if (mainMoniterCanvas != null) mainMoniterCanvas.SetActive(true);
 
         //---free the time---
         if (timeManager != null)
