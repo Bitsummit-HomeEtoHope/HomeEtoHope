@@ -1415,8 +1415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToBeHungry: 10
   manager: {fileID: 0}
-  isDie: 0
-  isClear: 0
 --- !u!1 &145145705
 GameObject:
   m_ObjectHideFlags: 0
@@ -11666,7 +11664,7 @@ MonoBehaviour:
   Option_Canvas: {fileID: 0}
   settingButton: {fileID: 0}
   titleScreen: {fileID: 0}
-  mainMoniterCanvas: {fileID: 0}
+  mainMoniterCanvas: {fileID: 1457580299}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
