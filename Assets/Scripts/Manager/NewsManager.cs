@@ -80,6 +80,7 @@ public class NewsManager : MonoBehaviour
     [Header("-----------------------------------------")]
     //public float duration = 0.5f;
     private float timer = 0f; // 计时器
+    private bool canClick = false; // 计时器
 
 
     private void Start()
@@ -126,6 +127,7 @@ public class NewsManager : MonoBehaviour
 
     private void OnEnable()
     {
+        canClick = false;
         timer = 0f;
         startTimer = true;
 
@@ -268,7 +270,8 @@ public class NewsManager : MonoBehaviour
     public void NewsClick()
     {
         // 检测鼠标左击   && Input.GetMouseButtonDown(0)
-  
+        if (canClick) 
+        {
             if (readytwo)
             {
                 timer = 0;
@@ -288,7 +291,8 @@ public class NewsManager : MonoBehaviour
                 if (readyWho != null && !readyWho.activeSelf) readyWho.active = true;
                 enabled = false;
             }
-        
+        }
+
     }
    
 
@@ -462,7 +466,10 @@ public class NewsManager : MonoBehaviour
 
         yield return new WaitForSeconds(move_time);
 
+        canClick = true;
+
         StartCoroutine(ZoomNewsObjects());
+
     }
 
     private void Move(Transform targetTransform)

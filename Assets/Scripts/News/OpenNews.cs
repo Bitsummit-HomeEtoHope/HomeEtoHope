@@ -65,9 +65,9 @@ public class OpenNews : MonoBehaviour
         initialPeopleScale = hereIsPeople.transform.localScale;
         initialPeoplePos = hereIsPeople.transform.position;
 
-        yield return StartCoroutine(hereIsOpen(hereIsLight, Vector3.one));
+        //yield return StartCoroutine(hereIsOpen(hereIsLight, Vector3.one));
 
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.2f);
         if (hereIsStart != null) hereIsStart.active = false;
         StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
         StartCoroutine(hereIsFill(hereIsBar));
