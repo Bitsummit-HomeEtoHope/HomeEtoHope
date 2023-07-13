@@ -1,26 +1,26 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Build_Manager : MonoBehaviour
 {
-    [Header("Secend Camera")]
+    [Header("Second Camera")]
     public Camera camera2d;
-    [SerializeField] public float moveSpeed = 2f; // Field of View 变化速度
-   // [SerializeField] public float fieldOfViewSpeed = 2f; // Field of View 变化速度
-   // [SerializeField] public int targetFieldOfView = 45; // Field of View 目标值
-    [SerializeField] public float cameraMoveSpeed = 2f; // 相机移动速度
-    [Header("Velus")]
-    [SerializeField]private float cameraMoveTimer = 0f; // 相机移动计时器
-    [SerializeField]public float cameraMoveDuration = 2f; // 相机移动总时间
-    [SerializeField]public Transform targetPosition; // 目标位置游戏物体
-    [SerializeField]public Transform targetRotation; // 目标旋转角度游戏物体
+    [SerializeField] public float moveSpeed = 2f; // Speed of FOV change
+                                                  // [SerializeField] public float fieldOfViewSpeed = 2f; // Speed of FOV change
+                                                  // [SerializeField] public int targetFieldOfView = 45; // Target FOV value
+    [SerializeField] public float cameraMoveSpeed = 2f; // Camera movement speed
+    [Header("Values")]
+    [SerializeField] private float cameraMoveTimer = 0f; // Camera movement timer
+    [SerializeField] public float cameraMoveDuration = 2f; // Total camera movement duration
+    [SerializeField] public Transform targetPosition; // Target position game object
+    [SerializeField] public Transform targetRotation; // Target rotation game object
     [Header("Change numbers")]
-    [SerializeField]public int requiredBuildCount = 4; // 需要的 Build_39 标签数量
+    [SerializeField] public int requiredBuildCount = 4; // Required number of objects with "Build_39" tag
     [SerializeField] private int buildCount;
-    [Header("Secend Set")]
-    public GameObject enableGameObject; // 启用的游戏物体
-
+    [Header("Second Set")]
+    public GameObject enableGameObject; // Enabled game object
 
 
     private void Update()
@@ -28,9 +28,9 @@ public class Build_Manager : MonoBehaviour
         buildCount = CountBuildsWithTag("Build_39");
         if (buildCount >= requiredBuildCount)
         {
-            // 平滑过渡相机的 Field of View 到目标值
+            // Smoothly transition the camera's FOV to the target value
             //  camera2d.fieldOfView = Mathf.Lerp(camera2d.fieldOfView, targetFieldOfView, Time.deltaTime * fieldOfViewSpeed);
-            // 使用正弦函数计算相机移动速度的衰减值
+            // Use sine function to calculate the decay value of camera movement speed
             //  float moveSpeed = Mathf.Lerp(cameraMoveSpeed, 0f, Mathf.Sin(cameraMoveTimer / cameraMoveDuration * Mathf.PI * 0.5f));
 
             if (camera2d != null)
@@ -51,11 +51,12 @@ public class Build_Manager : MonoBehaviour
     }
 
 
-    //目前不是检测自己的子物体。
+    // Currently not checking its own child objects.
 
     private int CountBuildsWithTag(string tag)
     {
         GameObject[] buildObjects = GameObject.FindGameObjectsWithTag(tag);
         return buildObjects.Length;
     }
+
 }

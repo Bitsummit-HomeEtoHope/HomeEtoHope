@@ -14,9 +14,9 @@ public class Eat_Food : MonoBehaviour
     }
     private void Update() 
     {
-        //sprite变为
+        //change Scale
         spriteRenderer.sprite=player.GetComponent<GetItem_Human>().foodList_human[0].GetComponent<SpriteRenderer>().sprite;
-        //本身的Scale变为2倍大
+        
         transform.localScale=new Vector3(2,2,1);
     }
         

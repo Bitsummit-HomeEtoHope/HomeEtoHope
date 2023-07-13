@@ -56,7 +56,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
     private int humanWeight = 100 / 21;
 
 
-    // 定义带有权重的项的泛型类
     public class WeightedItem<T>
     {
         public T Item { get; set; }
@@ -113,6 +112,17 @@ public class ItemsManager : SingletonManager<ItemsManager>
         KnifeQAQ,
         ShovelQAQ,
         WrenchQAQ,
+
+        //---tool---2---
+        _BurnerQAQ,
+        _ChainsawQAQ,
+        _HammerQAQ,
+        _HoeQAQ,
+        _IceQAQ,
+        _KettleQAQ,
+        _KnifeQAQ,
+        _ShovelQAQ,
+        _WrenchQAQ,
 
 
         //---human---
@@ -176,9 +186,19 @@ public class ItemsManager : SingletonManager<ItemsManager>
         _itemsDictionary.Add(ItemsType.KnifeQAQ,    new WeightedItem<string>("3D/tool/bad/nifebroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.ShovelQAQ,   new WeightedItem<string>("3D/tool/bad/shovelbroken", tool_badWeight));
         _itemsDictionary.Add(ItemsType.WrenchQAQ,   new WeightedItem<string>("3D/tool/bad/wrenchbroken", tool_badWeight));
+
+        //---tool---bad---
+        _itemsDictionary.Add(ItemsType._BurnerQAQ,      new WeightedItem<string>("3D/tool/bad/_burnerbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._ChainsawQAQ,    new WeightedItem<string>("3D/tool/bad/_chainsawbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._HammerQAQ,      new WeightedItem<string>("3D/tool/bad/_hammerbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._HoeQAQ,         new WeightedItem<string>("3D/tool/bad/_hoebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._IceQAQ,         new WeightedItem<string>("3D/tool/bad/_iceaxbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._KettleQAQ,      new WeightedItem<string>("3D/tool/bad/_kettlebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._KnifeQAQ,       new WeightedItem<string>("3D/tool/bad/_nifebroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._ShovelQAQ,      new WeightedItem<string>("3D/tool/bad/_shovelbroken", tool_badWeight));
+        _itemsDictionary.Add(ItemsType._WrenchQAQ,      new WeightedItem<string>("3D/tool/bad/_wrenchbroken", tool_badWeight));
     }
 
-    // 添加人物物品及其权重
     private void addHuman()
     {
         //---human-1---
@@ -330,7 +350,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         Array.Clear(itemsArray, 0, itemsArray.Length);
         spendTime = 4;
 
-        GameObject parentObject = GameObject.Find("---items---"); // 查找父物体
+        GameObject parentObject = GameObject.Find("---items---"); 
 
         if (parentObject != null)
         {
