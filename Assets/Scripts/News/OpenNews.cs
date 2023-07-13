@@ -67,7 +67,7 @@ public class OpenNews : MonoBehaviour
 
         //yield return StartCoroutine(hereIsOpen(hereIsLight, Vector3.one));
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.4f);
         if (hereIsStart != null) hereIsStart.active = false;
         StartCoroutine(hereIsOpen(hereIsNews, Vector3.one));
         StartCoroutine(hereIsFill(hereIsBar));

@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OpenGame.unity
     guid: 3eb29759d9747964bbb7d6cc7725141d
   - enabled: 1
@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: b0cef8827c9eaa14f9dd28fcc118ccbb
   - enabled: 1
     path: Assets/Scenes/Level1.unity
-    guid: 83762692880856743a5985eb5b3e1bb2
+    guid: e675e369a26c8e34e8dff4ea3241f02f
   - enabled: 0
     path: Assets/Scenes/Scenes/Level1_test.unity
     guid: d122f428cc56faa45a5f2f4dce5dcf4e
@@ -28,20 +28,23 @@ EditorBuildSettings:
     guid: 19d7e8291c5529544adfe0a295f53b50
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_i.unity
-    guid: 5aaeb30e43ac5564a803c1a5ac95cca0
+    guid: 2d9554b921b6e804cb5cb34aadb82fdf
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_ii.unity
-    guid: 5853139cef4febf49b529c6f344fa3ce
+    guid: 0d8dc9d1a5433a448a0505a8794475b3
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_iii.unity
-    guid: 9c166381e1490174bbbb0b65df31a5aa
+    guid: c77b82fdda4f78d4f8ba252fe9e9bee5
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_iv.unity
-    guid: 335efac8f1520904983b7f1dab9a67c1
+    guid: 61923e2b4b8b0b240a02f5e2f0c682f5
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_v.unity
-    guid: 1d26dccdfb14858428f174d1d2820047
+    guid: e8d4efbbb8cb313458670800a080b3e3
   - enabled: 1
     path: Assets/Scenes/TheEnding/Ending_vi.unity
-    guid: f80d45d57946c7748afc741f32843f70
+    guid: d4b87e01010e4f34d8760e71bb90930d
+  - enabled: 1
+    path: Assets/Scenes/TellYou.unity
+    guid: 98a535a46e7bf484ba8f7b602dd301dd
   m_configObjects: {}
