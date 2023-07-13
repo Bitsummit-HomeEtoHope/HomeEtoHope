@@ -18,7 +18,7 @@ MonoBehaviour:
   Interval: 3
   levelBGM: {fileID: 0}
   future_Data:
-    tree_Time: 10
+    tree_Time: 15
     human_Speed: 50
     human_BadFood_Time: 5
     human_BadTool_Time: 5

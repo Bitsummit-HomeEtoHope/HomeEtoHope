@@ -9,7 +9,6 @@ namespace StateMachine.States
     {
         private readonly Parameter parameter;
         private readonly FSM manager;
-        private bool isArriveWorkPoint;
         private GameObject tool;
 
         public DieState(FSM manager)
@@ -20,10 +19,15 @@ namespace StateMachine.States
 
         public void Onenter()
         {
-            // 在自己的位置生成预制件
-            GameObject newPrefab = GameObject.Instantiate(parameter.flower, manager.transform.position, manager.transform.rotation);
+            Debug.Log("ddddddddddddddddddddddddddddddd");
 
-            // 删除当前游戏对象
+            GameObject gardenObject = GameObject.Find("-----Garden-----");
+            if (gardenObject != null)
+            {
+                GameObject newPrefab = GameObject.Instantiate(parameter.flower, manager.transform.position, manager.transform.rotation);
+                newPrefab.transform.SetParent(gardenObject.transform, worldPositionStays: true);
+            }
+
             GameObject.Destroy(manager.gameObject);
         }
 

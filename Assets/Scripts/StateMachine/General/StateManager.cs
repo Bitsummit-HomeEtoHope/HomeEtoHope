@@ -10,9 +10,6 @@ namespace StateMachine.General
         public FSM manager;
         private int time = 0;
 
-        public bool isDie = false;
-        public bool isClear = false;
-
         private void Start()
         {
 
@@ -42,14 +39,7 @@ namespace StateMachine.General
 
         private void Update()
         {
-            if (isDie)
-            {
-                manager.TransitState(StateType.Dying);
-            }
-            if (isClear)
-            {
-                manager.TransitState(StateType.Cleaning);
-            }
+
         }
 
         private IEnumerator GetHungry()

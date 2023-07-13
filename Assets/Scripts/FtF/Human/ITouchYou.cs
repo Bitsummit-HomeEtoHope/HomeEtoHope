@@ -26,7 +26,6 @@ public class ITouchYou : MonoBehaviour
             if (distance < 2f)
             {
                 Debug.Log("--------I get you--------");
-                otherStateManager.isDie = true;
 
                 manager.TransitState(StateType.Patrolling);
             }

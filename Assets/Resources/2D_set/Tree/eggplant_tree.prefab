@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPrefab: {fileID: 2791635077399999, guid: 46636ff69ff37c043afce0e5ec4b2d1e, type: 3}
-  delay: 10
+  delay: 40
   levelDataCurrent: {fileID: 0}
   childrens: []
   _food: {fileID: 4992113685510553885, guid: da37d8dd1295b784487e54fe08f09392, type: 3}
