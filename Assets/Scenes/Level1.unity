@@ -4597,6 +4597,12 @@ MonoBehaviour:
   m_Item: {fileID: 0}
   m_ItemCameraObject: {fileID: 0}
   itemDataBases:
+  - m_Name: apple(Clone)
+    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
+  - m_Name: applehi(Clone)
+    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
+  - m_Name: appleqaq(Clone)
+    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
   - m_Name: pumpkin(Clone)
     m_Items: {fileID: 8339481334851101340, guid: 7da5460897f43d948813183034306a95, type: 3}
   - m_Name: wrench(Clone)
@@ -4609,8 +4615,6 @@ MonoBehaviour:
     m_Items: {fileID: 4677070150171835147, guid: 79a822a809e965d40bae7fe1e8c9a4e3, type: 3}
   - m_Name: eggplant(Clone)
     m_Items: {fileID: 4677070150171835147, guid: 79a822a809e965d40bae7fe1e8c9a4e3, type: 3}
-  - m_Name: apple(Clone)
-    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
   - m_Name: greenpepper(Clone)
     m_Items: {fileID: 4463735194717809907, guid: 6193908a5e145d847a1648df827aed1f, type: 3}
   - m_Name: burner(Clone)
@@ -4621,10 +4625,6 @@ MonoBehaviour:
     m_Items: {fileID: 2650555765871544205, guid: 7bf5718443c759248841534c25a8eeca, type: 3}
   - m_Name: hoe(Clone)
     m_Items: {fileID: 2385820244937738796, guid: 16268fb1fb3fb9e439debbe87c3aea66, type: 3}
-  - m_Name: applehi(Clone)
-    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
-  - m_Name: appleqaq(Clone)
-    m_Items: {fileID: 8333620934935875084, guid: 2abd164f6bbe4ce4aaeb7ad99662e091, type: 3}
   - m_Name: chainsaw(Clone)
     m_Items: {fileID: 3780820489551549235, guid: a51f863dd6e27e244ad4dd676d8bc69f, type: 3}
   - m_Name: orangeqaq(Clone)
