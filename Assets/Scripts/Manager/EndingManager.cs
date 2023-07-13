@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndingManager : MonoBehaviour
 {
@@ -13,12 +14,14 @@ public class EndingManager : MonoBehaviour
         // 检测鼠标左击
         if (Input.GetMouseButtonDown(0))
         {
-            if (!fin.activeSelf) 
-            { 
+            if (!fin.activeSelf)
+            {
                 fin_meto.active = false;
             }
 
-            else EndGame();
+            //  else EndGame();
+
+            else BackTitle();
 
             //else fin.SetActive(false);
         }
@@ -40,6 +43,13 @@ public class EndingManager : MonoBehaviour
         // 退出应用程序
         Application.Quit();
     }
+
+    private void BackTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+
 }
 
 /*
