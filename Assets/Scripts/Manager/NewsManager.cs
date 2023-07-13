@@ -284,6 +284,8 @@ public class NewsManager : MonoBehaviour
             }
             else
             {
+                GetComponent<AudioSource>().Play();
+
                 timer = 0;
                 readytwo = true;
 

@@ -55,7 +55,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
     [SerializeField, Range(0, 100)]
     private int humanWeight = 100 / 21;
 
-
     public class WeightedItem<T>
     {
         public T Item { get; set; }
@@ -345,8 +344,11 @@ public class ItemsManager : SingletonManager<ItemsManager>
         item.transform.position = Vector3.MoveTowards(item.transform.position, targetPosition, dushSpeed * Time.deltaTime);
     }
 
+
     private void OnEnable()
     {
+        GetComponent<AudioSource>().Play();
+
         Array.Clear(itemsArray, 0, itemsArray.Length);
         spendTime = 4;
 

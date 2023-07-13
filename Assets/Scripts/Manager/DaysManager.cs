@@ -70,6 +70,7 @@ public class DaysManager : MonoBehaviour
     [Header("Ending")]
     private Point_Teacher teacher;
 
+
     private void Start()
     {
         teacher = FindObjectOfType<Point_Teacher>();
