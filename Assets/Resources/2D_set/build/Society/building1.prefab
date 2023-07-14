@@ -115,8 +115,8 @@ MonoBehaviour:
   fillAmountTargetObjectName: green_Line
   colorTargetObjectName: red_Mark
   buildCount: 22
-  fillAmountIncreaseTime: 4.6
-  colorChangeTime: 4.6
+  fillAmountIncreaseTime: 5
+  colorChangeTime: 5
 --- !u!114 &1167286738745951600
 MonoBehaviour:
   m_ObjectHideFlags: 0
