@@ -35,10 +35,14 @@ public class LevelDataCurrent : MonoBehaviour
     public float _spawnInterval;
     [Header("hungry to die")]
     public float _dietime;
-    [Header("end Day wait next News")]
+    [Header("waiting for next News")]
     public float _endDaytime;
-    [Header("for the buildings with fillamount")]
+    [Header("number for the buildings with fillamount")]
     public int _buildfill;
+    [Header("number for build Ending")]
+    public int _theBuildNumber = 3;
+    [Header("number for human Ending")]
+    public int _theHumanNumber = 8;
 
     public LevelData.Future_Data _future_Data;
 
