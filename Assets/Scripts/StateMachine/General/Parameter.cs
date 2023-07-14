@@ -34,6 +34,7 @@ namespace StateMachine.General
         public float hungrySpeed;
         public Sprite HungryFace;
         public Sprite defaultSprite;
+        public bool haveEat;
 
         [Header("ifDie")]
         public GameObject flower;

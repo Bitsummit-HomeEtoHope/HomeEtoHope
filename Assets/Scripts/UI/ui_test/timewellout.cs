@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Runtime.ExceptionServices;
 
 public class timewellout : MonoBehaviour
 {
     [Header("Slow switch")]
-
     [SerializeField] public bool needSlow = false;
     [Header("-----------")]
 
@@ -15,9 +13,9 @@ public class timewellout : MonoBehaviour
     private float targetPosX;
     private float startPosX;
 
-    [SerializeField]private int duration ;
+    [SerializeField] private int duration;
     public float increaseAmount = 150f;
-    public float recoveryDuration = 0.5f; // 恢复时间
+    public float recoveryDuration = 0.5f; // Recovery time
 
     public LevelDataCurrent levelDataCurrent;
     public DaysManager daysManager;
@@ -36,21 +34,15 @@ public class timewellout : MonoBehaviour
     private bool isPlaySound = true;
     private bool isEndDaySound = true;
 
-    private bool isRecovering; // 是否在恢复中
-    private float recoveryElapsedTime; // 恢复流逝的时间
-    private Vector2 originalPosition; // 原始位置
-
-
-    private void OnEnable()
-    {
-
-
-        Debug.Log("--------------------------");
-        Debug.Log(levelDataCurrent._levelTime);
-        duration = levelDataCurrent._levelTime;
-        Debug.Log(duration);
-        Debug.Log("--------------------------");
-    }
+    private bool isRecovering; // Is recovering
+    private float recoveryElapsedTime; // Elapsed time during recovery
+    private Vector2 originalPosition; // Original position
+    [Header("List Item Line Button Monitor")]
+    public List<GameObject> endDayOff;
+    public Image watingImage;
+    private float waitngSpeed;
+    private float waitngfill;
+    private float waitngTime;
 
     private void Start()
     {
@@ -67,6 +59,11 @@ public class timewellout : MonoBehaviour
         originalPosition = rectTransform.anchoredPosition;
     }
 
+    private void OnEnable()
+    {
+        duration = levelDataCurrent._levelTime;
+    }
+
     private void Update()
     {
         if (isRecovering)
@@ -81,11 +78,10 @@ public class timewellout : MonoBehaviour
 
     private void SunDown()
     {
-
-        float fillSpeed = 1f / duration; // 每秒填充的速度
+        float fillSpeed = 1f / duration;
 
         float fillAmount = fillImage.fillAmount - fillSpeed * Time.deltaTime;
-        fillImage.fillAmount = Mathf.Clamp01(fillAmount); // 将填充量限制在0到1之间
+        fillImage.fillAmount = Mathf.Clamp01(fillAmount);
 
         if (Time.time - currentTime >= 1)
         {
@@ -101,25 +97,38 @@ public class timewellout : MonoBehaviour
             float currentPosX = Mathf.Lerp(startPosX, targetPosX, t);
             rectTransform.anchoredPosition = new Vector2(currentPosX, rectTransform.anchoredPosition.y);
 
-
-
             if (needSlow)
             {
-
                 if (elapsedTime >= duration - 5 && isPlaySound)
                 {
                     a.GetComponent<AudioSource>().PlayOneShot(b2);
                     isPlaySound = false;
                 }
 
-                if (elapsedTime >= duration - 1.333f && elapsedTime <= duration - 0.1f && isEndDaySound)
+                if (elapsedTime >= duration - 1.333f && elapsedTime <= duration - 1f && isEndDaySound)
                 {
-                    // 在倒计时还剩下1.5秒时，改变时间缩放为0.5
                     Time.timeScale = 0.5f;
 
-                    // 播放声音
                     a.GetComponent<AudioSource>().PlayOneShot(b1);
                     isEndDaySound = false;
+                }
+                if (elapsedTime >= duration - 1f && elapsedTime <= duration - 0.1f)
+                {
+                    //-----turn off the list in endDayOff-----
+
+                    waitngSpeed = 1f / 4 * levelDataCurrent._endDaytime;
+
+                    waitngfill = watingImage.fillAmount + waitngSpeed * Time.deltaTime;
+                    watingImage.fillAmount = Mathf.Clamp01(waitngfill);
+
+                    foreach (GameObject item in endDayOff)
+                    {
+                        item.SetActive(false);
+                    }
+
+                    //----------
+
+                    Time.timeScale = 1 / levelDataCurrent._endDaytime;
                 }
             }
             else
@@ -136,30 +145,39 @@ public class timewellout : MonoBehaviour
             if (needSlow)
             {
                 Time.timeScale = 1f;
+                //--------------------------------
+
+                watingImage.fillAmount = Mathf.Clamp01(0);
+
+                foreach (GameObject item in endDayOff)
+                {
+                    item.SetActive(true);
+                }
+
+                //--------------------------------
+
                 isEndDaySound = true;
             }
             else
             {
                 a.GetComponent<AudioSource>().PlayOneShot(b1);
             }
-            // play sound
 
-            // 计时结束后启用 DaysManager 的 daysChange 方法
+            // play sound
             daysManager.daysChange();
 
             isRecovering = true;
             recoveryElapsedTime = 0f;
             isPlaySound = true;
-
         }
     }
 
     private void SunReset()
     {
-        float fillSpeed = 1f / recoveryDuration; // 每秒填充的速度
+        float fillSpeed = 1f / recoveryDuration; // Fill speed per second
 
         float fillAmount = fillImage.fillAmount + fillSpeed * Time.deltaTime;
-        fillImage.fillAmount = Mathf.Clamp01(fillAmount); // 将填充量限制在0到1之间
+        fillImage.fillAmount = Mathf.Clamp01(fillAmount);
 
         if (Time.time - currentTime >= 1)
         {

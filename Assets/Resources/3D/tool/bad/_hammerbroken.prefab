@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8046696294661194067}
   - component: {fileID: -1768332687543529014}
   m_Layer: 0
-  m_Name: _hammerbrokenn
+  m_Name: _hammerbroken
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
