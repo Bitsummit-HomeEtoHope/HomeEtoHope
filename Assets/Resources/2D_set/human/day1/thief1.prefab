@@ -685,7 +685,7 @@ MonoBehaviour:
     hungrySpeed: 0
     HungryFace: {fileID: 0}
     defaultSprite: {fileID: 0}
-    haveEat: 0
+    did: {fileID: 0}
     flower: {fileID: 0}
     CleanWanter: {fileID: 0}
     cleanTargetList: []

@@ -24,7 +24,6 @@ TagManager:
   - Face
   - Body
   - GoodGuy
-  - Tree_Set
   layers:
   - Default
   - TransparentFX

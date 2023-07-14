@@ -91,7 +91,7 @@ namespace StateMachine.General
 
             if (toolList_human.Count > 0 && toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)
             {
-                Debug.Log("tool zero");
+                Debug.Log("工具已经用完");
                 isTool = false;
                 manager.parameter.isBroken = true;
                 manager.parameter.isTool = false;
@@ -104,10 +104,8 @@ namespace StateMachine.General
             TreeList.Clear();
 
             //获得场景内所有名称(其实是Tag？)为Tree的物体并加入到TreeList中
-            // GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
-
             {
-                GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree_Set");
+                GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
                 foreach (GameObject tree in trees)
                 {                  
                     TreeList.Add(tree);
