@@ -38,6 +38,8 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
             }
             else
             {
+                GetComponent<AudioSource>().Play();
+
                 Close();
             }
         }
@@ -48,7 +50,7 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
         if (currentMoveCoroutine != null)
             StopCoroutine(currentMoveCoroutine);
 
-        currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveAmount, Quaternion.Euler(0f, 0f, rotationAmount)));
+        currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + 130f, originalRotation));
 
         isShowing = true;
     }
@@ -57,13 +59,17 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
     {
         if (isShowing)
         {
+            currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveAmount, Quaternion.Euler(0f, 0f, rotationAmount)));
+
             isShowing = false;
-            currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + 130f, originalRotation));
+
         }
         else
         {
             currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y, originalRotation));
         }
+        isShowing = false;
+
     }
 
     private IEnumerator MoveList(float targetY, Quaternion targetRotation)
@@ -93,12 +99,13 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
     {
         if (isShowing)
         {
+
             isShowing = false;
-            currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + 130f, originalRotation));
+           currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + 130f, originalRotation));
         }
         else
         {
-            currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y, originalRotation));
+            currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveAmount, Quaternion.Euler(0f, 0f, rotationAmount)));
         }
     }
 }

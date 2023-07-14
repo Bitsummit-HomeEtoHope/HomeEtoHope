@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowList_MRYM : MonoBehaviour
-{
+{/// <summary>
+/// 
+/// ShouList
+/// 
+/// </summary>
     public RectTransform listTransform; // Reference to the UI Image's RectTransform component
     public float moveDuration = 0.5f; // Duration of the movement
     public float moveFirst = 130f; // Amount of movement
@@ -40,7 +44,7 @@ public class ShowList_MRYM : MonoBehaviour
         if (currentMoveCoroutine != null)
             StopCoroutine(currentMoveCoroutine);
 
-        currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveFirst, Quaternion.Euler(0f, 0f, -60f)));
+        currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveFirst, Quaternion.Euler(0f, 0f, 0f)));
         listShow.isCanClick = true;
     }
 

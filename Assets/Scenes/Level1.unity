@@ -24658,6 +24658,7 @@ MonoBehaviour:
   _tool_badweight: 0
   _human_weight: 0
   _spawnInterval: 0
+  _dietime: 0
   _future_Data:
     tree_Time: 0
     human_Speed: 0
@@ -24668,6 +24669,7 @@ MonoBehaviour:
     thief_Food_Num: 0
     itemBrokenHuman_time: 0
     murderer_time: 0
+    dietime: 0
 --- !u!4 &1853015594
 Transform:
   m_ObjectHideFlags: 0
@@ -25431,7 +25433,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937995326}
-  m_LocalRotation: {x: -0, y: -0, z: -0.50011295, w: 0.86596024}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_ConstrainProportionsScale: 1
@@ -25443,7 +25445,7 @@ RectTransform:
   - {fileID: 225911742}
   m_Father: {fileID: 1863484838}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60.015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -259.7, y: -419.1}
@@ -25463,7 +25465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listTransform: {fileID: 1937995327}
   moveDuration: 0.2
-  moveFirst: 130
+  moveFirst: 400
   listShow: {fileID: 1937995329}
   listing: 0
 --- !u!114 &1937995329
@@ -25480,7 +25482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listTransform: {fileID: 1937995327}
   moveDuration: 0.2
-  moveAmount: 350
+  moveAmount: 400
   rotationAmount: 0
   isShowing: 0
   isCanClick: 1
