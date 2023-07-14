@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774655146647217920}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 70, y: 70, z: 70}
   m_ConstrainProportionsScale: 1
@@ -120,6 +120,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: ea2b63994af3e46748302c4bda112e02, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 3baed6e72b235468186b37944eeb9d77, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &581539327737527171
 AudioSource:

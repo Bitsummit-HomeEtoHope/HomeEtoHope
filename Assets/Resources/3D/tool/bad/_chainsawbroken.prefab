@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -812389524133588231}
   m_Layer: 0
   m_Name: _chainsawbroken
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,14 +30,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9098625738792345470}
-  m_LocalRotation: {x: -0.32653117, y: -0.7261728, z: -0.55180186, w: 0.24812344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 110, y: 110, z: 110}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1334.4609, y: 0, z: -131.577}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4801053664771754593
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 5795259d1a304432aa6e00ab2f5a2ba1, type: 2}
   highlightMaterial: {fileID: 2100000, guid: b0d27f431392d4060871edf8df0b40b5, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &-812389524133588231
 AudioSource:

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7046917431442505748}
   m_Layer: 0
   m_Name: _nifebroken
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676215433918957588}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 110, y: 110, z: 110}
   m_ConstrainProportionsScale: 1
@@ -150,6 +150,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 4a5c8d1dd1a25478ebbe172ca1117614, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 8b7db1fe2dacb4870a746b6852d1ab62, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &-7046917431442505748
 AudioSource:

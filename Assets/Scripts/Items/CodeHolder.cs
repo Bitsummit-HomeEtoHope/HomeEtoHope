@@ -12,6 +12,7 @@ public class CodeHolder : MonoBehaviour
     private MeshRenderer meshRenderer; // MeshRenderer component of the object
 
     public bool ihaveChild = false;
+    public bool two = false;
 
     [System.Serializable]
     public struct ChildRenderers
@@ -55,8 +56,21 @@ public class CodeHolder : MonoBehaviour
             }
             else
             {
+                //selectedObject.meshRenderer.material = selectedObject.defaultMaterial;
+
                 // Deselect the previously selected object
-                selectedObject.meshRenderer.material = selectedObject.defaultMaterial;
+                if (selectedObject.two)
+                {
+                    Material[] materials = selectedObject.meshRenderer.materials;
+                    materials[1] = selectedObject.defaultMaterial;
+                    selectedObject.meshRenderer.materials = materials;
+                }
+                else
+                {
+
+                    selectedObject.meshRenderer.material = selectedObject.defaultMaterial;
+                }
+
             }
         }
         if (selectedObject != this)
@@ -97,7 +111,14 @@ public class CodeHolder : MonoBehaviour
         else
         {
             // Change the material of the current object to the highlight material
-            meshRenderer.material = highlightMaterial;
+            if (two)
+            {
+                Material[] materials = selectedObject.meshRenderer.materials;
+                materials[1] = selectedObject.highlightMaterial;
+                selectedObject.meshRenderer.materials = materials;
+            }
+            else meshRenderer.material = highlightMaterial;
+
         }
 
         Debug.Log("Object Clicked");

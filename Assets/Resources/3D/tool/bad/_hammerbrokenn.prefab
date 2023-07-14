@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1768332687543529014}
   m_Layer: 0
   m_Name: _hammerbrokenn
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447881893637983987}
-  m_LocalRotation: {x: -0.66842455, y: -0.23067, z: 0.23066999, w: 0.66842455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 110, y: 110, z: 110}
   m_ConstrainProportionsScale: 1
@@ -150,6 +150,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: f9532210a530a45fe804f188f25d2c4e, type: 2}
   highlightMaterial: {fileID: 2100000, guid: fc66ccbe77b884843846c5e328030d22, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &-1768332687543529014
 AudioSource:

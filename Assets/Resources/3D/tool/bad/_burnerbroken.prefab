@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -6192015225153499229}
   m_Layer: 0
   m_Name: _burnerbroken
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: cd588641bdc9d4793a54e2613b908f38, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 535f24b7b86f64b24a54c2eed38d295e, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &-6192015225153499229
 AudioSource:

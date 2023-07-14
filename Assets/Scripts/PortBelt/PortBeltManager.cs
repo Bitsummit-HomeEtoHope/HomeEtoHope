@@ -9,38 +9,58 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     public Transform startPoint;
     public Transform endPoint;
 
-    /** 
-     * Direction and speed of belt flow
-     * 
-     * @auther Yuichi Kawasaki
-     * @date   2023/06/04
-     **/
-    private void MovePortBelts(List<Transform> portBelts)
+    private List<Vector3> defaultPositions; // 用于保存默认位置
+
+    private void Awake()
     {
-        foreach (var portBelt in portBelts)
+        defaultPositions = new List<Vector3>();
+
+        // 保存所有物体的默认位置
+        foreach (var portBelt in portBeltsList)
         {
-            if (Vector3.Distance(portBelt.position,endPoint.position) > 0)
-            {
-                portBelt.position -= new Vector3((float)(0.73*-Time.deltaTime), 0, 0);
-            }
+            defaultPositions.Add(portBelt.position);
         }
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        MovePortBelts(portBeltsList);
-        TransportPortBelts(portBeltsList);
-            
+
+
+        // 开始移动物体
+        StartCoroutine(MovePortBelts());
     }
 
-    private void TransportPortBelts(List<Transform> portBelts)
+
+    private void OnDisable()
     {
-        foreach (var portBelt in portBelts)
+        // 将所有物体的位置重置为默认位置
+        for (int i = 0; i < portBeltsList.Count; i++)
         {
-            if (Vector3.Distance(portBelt.position,endPoint.position) < 0.1f)
+            portBeltsList[i].position = defaultPositions[i];
+        }        
+    }
+
+    private IEnumerator MovePortBelts()
+    {
+        while (true)
+        {
+            foreach (var portBelt in portBeltsList)
             {
-                portBelt.position = startPoint.position;
+                if (Vector3.Distance(portBelt.position, endPoint.position) > 0)
+                {
+                    portBelt.position -= new Vector3((float)(0.73 * -Time.deltaTime), 0, 0);
+                }
             }
+
+            foreach (var portBelt in portBeltsList)
+            {
+                if (Vector3.Distance(portBelt.position, endPoint.position) < 0.05f)
+                {
+                    portBelt.position = startPoint.position;
+                }
+            }
+
+            yield return null;
         }
     }
 }

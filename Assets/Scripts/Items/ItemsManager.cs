@@ -233,7 +233,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     //---------
 
-
     private string RandomSelectItem()
     {
         int totalWeight = CalculateTotalWeight(_itemsDictionary);
@@ -247,11 +246,13 @@ public class ItemsManager : SingletonManager<ItemsManager>
             if (randomValue < 0)
             {
                 selectedItem = item.Value.Item;
-                break;
+                return selectedItem;
             }
         }
 
-        return selectedItem;
+        // 如果未找到目标，重置计时器并进行下一次物品随机与生成
+        spendTime = spawnInterval;
+        return null;
     }
 
     private int CalculateTotalWeight(Dictionary<ItemsType, WeightedItem<string>> items)
@@ -280,11 +281,8 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
                 if (itemPrefab != null)
                 {
-                    itemsArray[itemsArrayIndex] = GameObject.Instantiate(itemPrefab) as GameObject;
-                    itemsArray[itemsArrayIndex].transform.SetParent(parentObject.transform, false);
-
-                    Vector3 currentScale = itemsArray[itemsArrayIndex].transform.localScale;
-                    itemsArray[itemsArrayIndex].transform.localScale = new Vector3(currentScale.x * itemScale.x, currentScale.y * itemScale.y, currentScale.z * itemScale.z);
+                    itemsArray[itemsArrayIndex] = GameObject.Instantiate(itemPrefab, parentObject.transform);
+                    itemsArray[itemsArrayIndex].transform.localScale = Vector3.Scale(itemsArray[itemsArrayIndex].transform.localScale, itemScale);
 
                     defaultRotation = itemsArray[itemsArrayIndex].transform.rotation;
                     defaultHeight = itemsArray[itemsArrayIndex].transform.position.y;
@@ -293,26 +291,39 @@ public class ItemsManager : SingletonManager<ItemsManager>
                     itemsArray[itemsArrayIndex].transform.position = initPosition.position;
                     itemsArray[itemsArrayIndex].transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
 
-                    if (itemsArrayIndex == 0)
-                    {
-                        itemsArrayIndex = 1;
-                    }
-                    else if (itemsArrayIndex == 1)
-                    {
-                        itemsArrayIndex = 2;
-                    }
-                    else if (itemsArrayIndex == 2)
-                    {
-                        itemsArrayIndex = 3;
-                    }
-                    else if (itemsArrayIndex == 3)
-                    {
-                        itemsArrayIndex = 0;
-                    }
+                    itemsArrayIndex = (itemsArrayIndex + 1) % itemsArray.Length;
+                }
+                else
+                {
+                    // 如果加载的对象为空，直接进行下一次物品随机与生成
+                    itemsArrayIndex = (itemsArrayIndex + 1) % itemsArray.Length;
+                    InitializeNextItem();
                 }
             }
         }
     }
+
+    private void InitializeNextItem()
+    {
+        string itemType = RandomSelectItem();
+        if (itemType != null)
+        {
+            InitializeItem(itemType);
+        }
+        else
+        {
+            // 如果未找到目标，重置计时器并进行下一次物品随机与生成
+            spendTime = 4;
+
+            // 打印信息
+            Debug.Log("---yyyyyyyyyyyyyyyyyyyyyyyyyy--- " + itemType);
+        }
+    }
+
+
+
+
+
     private void MoveItems()
     {
         for (int i = 0; i < 4; i++)
@@ -397,6 +408,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         return _go;
     }
 
+
     private void Update()
     {
         //if (startGame)
@@ -415,13 +427,22 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
         if (spendTime >= spawnInterval)
         {
-            Debug.Log("spendTime >= spawnInterval");
             InitializeItem(RandomSelectItem());
             MoveItems();
-           // _isCanRotate = false;
             spendTime = 0;
         }
         spendTime += Time.deltaTime;
         MoveItems();
+
+        //if (spendTime >= spawnInterval)
+        //{
+        //    Debug.Log("spendTime >= spawnInterval");
+        //    InitializeItem(RandomSelectItem());
+        //    MoveItems();
+        //   // _isCanRotate = false;
+        //    spendTime = 0;
+        //}
+        //spendTime += Time.deltaTime;
+        //MoveItems();
     }
 }

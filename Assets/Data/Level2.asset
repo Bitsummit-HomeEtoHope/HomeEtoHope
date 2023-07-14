@@ -15,21 +15,21 @@ MonoBehaviour:
   levelID: 2
   levelName: Level2
   levelTime: 90
-  Interval: 5
+  Interval: 5.5
   levelBGM: {fileID: 0}
   future_Data:
     tree_Time: 25
     human_Speed: 50
     human_BadFood_Time: 5
     human_BadTool_Time: 5
-    build_Time: 0
+    build_Time: 8
     thief_Time: 0
     thief_Food_Num: 0
-    itemBrokenHuman_time: 0
+    itemBrokenHuman_time: 7
     murderer_time: 0
-  _food_goodWeight: 100
-  _food_badWeight: 30
-  _tool_goodweight: 100
-  _tool_badweight: 20
-  _human_weight: 50
+  _food_goodWeight: 40
+  _food_badWeight: 70
+  _tool_goodweight: 55
+  _tool_badweight: 29
+  _human_weight: 43
   _spawnInterval: 2.5

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5192003367038199314}
   - component: {fileID: -1979729708436898044}
   m_Layer: 0
-  m_Name: _burnerBroken
+  m_Name: _burnerbroken
   m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

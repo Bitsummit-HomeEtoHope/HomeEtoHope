@@ -31,14 +31,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3827924249975033189}
-  m_LocalRotation: {x: -0.5153078, y: -0, z: -0, w: 0.8570052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 110, y: 110, z: 110}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -62.036, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5120306531005292680
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 22295639e8d8142aaa426c5ec83b6cd9, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 0b0b1bbf177d846e39e5b70f8f17d877, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!114 &-1104454944411998019
 MonoBehaviour:
