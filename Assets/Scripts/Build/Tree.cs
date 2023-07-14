@@ -10,7 +10,8 @@ public class Tree : MonoBehaviour
             gameObject.name = "Tree_still";
 
             gameObject.tag = "Tree_still";
+            isTree = true;
+
         }
-        isTree = true;
     }
 }

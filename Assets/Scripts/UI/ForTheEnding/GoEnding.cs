@@ -3,21 +3,26 @@ using UnityEngine.UI;
 
 public class GoEnding : MonoBehaviour
 {
-    public string fillAmountTargetObjectName; // 填充量目标游戏物体的名称
-    public string colorTargetObjectName; // 颜色目标游戏物体的名称
-    public int buildCount = 9; // BuildCount设置为9
-    public float fillAmountIncreaseTime = 5f; // 增加Fill Amount的时间
-    public float colorChangeTime = 5f; // 更改颜色的时间
-    private Image fillAmountTargetImage; // 填充量目标UI Image组件
-    private Image colorTargetImage; // 颜色目标UI Image组件
-    private float fillAmountIncrement; // 增加的Fill Amount量
-    private float hIncrement; // 增加的H值量
-    private float vIncrement; // 增加的V值量
-    private bool hasIncreasedFillAmount; // 是否已经增加过Fill Amount
-    private bool hasChangedColor; // 是否已经更改过颜色
+    public string fillAmountTargetObjectName; // 
+    public string colorTargetObjectName; // 
+    private int buildCount; // 
+    public float fillAmountIncreaseTime = 5f; //  
+    public float colorChangeTime = 5f; // 
+    private Image fillAmountTargetImage; //  
+    private Image colorTargetImage; //  
+    private float fillAmountIncrement; //  
+    private float hIncrement; // 
+    private float vIncrement; // 
+    private bool hasIncreasedFillAmount; //  
+    private bool hasChangedColor; // 
+    [Header("levelData")]
+    public LevelDataCurrent levelDataCurrent;
 
     private void Start()
     {
+        levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
+        buildCount = levelDataCurrent._buildfill; 
+
         GameObject fillAmountTargetObject = GameObject.Find(fillAmountTargetObjectName);
         GameObject colorTargetObject = GameObject.Find(colorTargetObjectName);
 
@@ -37,7 +42,7 @@ public class GoEnding : MonoBehaviour
         hasIncreasedFillAmount = false;
         hasChangedColor = false;
 
-        // 在 Start 时同时触发增加 Fill Amount 和更改颜色的方法
+        //      
         IncreaseFillAmountSmoothly();
         ChangeColorHValueSmoothly();
         ChangeColorVValueSmoothly();
