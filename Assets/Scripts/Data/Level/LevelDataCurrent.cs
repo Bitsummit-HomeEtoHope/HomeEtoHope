@@ -33,6 +33,7 @@ public class LevelDataCurrent : MonoBehaviour
     public int _human_weight;
     [Range(0.5f,8)]
     public float _spawnInterval;
+    public float _dietime;
 
     public LevelData.Future_Data _future_Data;
 
@@ -67,6 +68,7 @@ public class LevelDataCurrent : MonoBehaviour
         _tool_badweight = _levelData._tool_badweight;
         _human_weight = _levelData._human_weight;
         _spawnInterval = _levelData._spawnInterval;
+        _dietime = _levelData._dietime;
     }
 
 

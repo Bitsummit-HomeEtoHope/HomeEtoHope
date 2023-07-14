@@ -26,7 +26,7 @@ public class LevelData : ScriptableObject
     public int _human_weight;
     [Range(0.5f,8)]
     public float _spawnInterval;
-
+    public float _dietime;
 
     [System.Serializable]
     //生成名为Future_Data的结构体
@@ -41,6 +41,7 @@ public class LevelData : ScriptableObject
         public int thief_Food_Num;
         public float itemBrokenHuman_time;
         public float murderer_time;
+        public float dietime;
 
 
     }

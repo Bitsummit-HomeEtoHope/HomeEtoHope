@@ -1,75 +1,113 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ChangeScene : MonoBehaviour
+public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-
     [Header("System")]
     public Button playButton;
     public Button exitButton;
     public Button howButton;
     public Button listButton;
+    public Button hardButton;
+    public Image redImage; // 指定的红色Image
 
-    void Awake()
+    private bool isPressing = false; // 记录按钮是否处于按下状态
+    private float pressStartTime; // 记录按下按钮的起始时间
+
+    private void Start()
     {
-        if (playButton != null && exitButton != null && howButton != null && listButton != null) IN();
+        hardButton.onClick.AddListener(OnButtonPressed);
+    }
+
+    private void Update()
+    {
+        if (isPressing)
+        {
+            float elapsedTime = Time.time - pressStartTime;
+            float fillAmount = Mathf.Clamp01(elapsedTime / 3f);
+            redImage.fillAmount = fillAmount;
+
+            if (elapsedTime >= 3f)
+            {
+                SceneManager.LoadScene("Level2");
+            }
+        }
+    }
+
+    private void OnButtonPressed()
+    {
+        isPressing = true;
+        pressStartTime = Time.time;
+    }
+
+    private void OnButtonReleased()
+    {
+        isPressing = false;
+        redImage.fillAmount = 0f;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (eventData.pointerEnter == hardButton.gameObject)
+        {
+            // 开始长按计时
+            StartCoroutine(LongPressTimer());
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (eventData.pointerEnter == hardButton.gameObject)
+        {
+            // 松开按钮后重置红色Image的FillAmount为0
+            redImage.fillAmount = 0f;
+
+            // 停止计时器协程
+            StopCoroutine(LongPressTimer());
+        }
+    }
+
+    private IEnumerator LongPressTimer()
+    {
+        yield return new WaitForSeconds(3f);
+
+        if (isPressing)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 
     public void PlayGame()
-
     {
-        if (playButton != null && exitButton != null && howButton != null && listButton != null) OUT();
-
         SceneManager.LoadScene("Level1");
     }
 
     public void ExitGame()
     {
-        if (playButton != null && exitButton != null && howButton != null && listButton != null) OUT();
-
         EndGame();
-        // 或者：SceneManager.LoadScene(nextSceneIndex);
     }
-
 
     public void HowToPlay()
     {
-        if (playButton != null && exitButton != null && howButton != null && listButton != null) OUT();
-
         SceneManager.LoadScene("TellYou");
     }
 
-
     public void OurList()
     {
-        if (playButton != null && exitButton != null && howButton != null && listButton != null) OUT();
-
         SceneManager.LoadScene("OurList");
     }
 
-
-
-
-    void EndGame()
+    private void EndGame()
     {
-        // 在编辑器中停止播放
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        // 在游戏中退出应用程序
-        QuitGame();
+        Application.Quit();
 #endif
     }
-
-    void QuitGame()
-    {
-        // 退出应用程序
-        Application.Quit();
-    }
-
 
     private void IN()
     {
@@ -78,6 +116,7 @@ public class ChangeScene : MonoBehaviour
         howButton.onClick.AddListener(HowToPlay);
         listButton.onClick.AddListener(OurList);
     }
+
     private void OUT()
     {
         playButton.onClick.RemoveListener(PlayGame);
@@ -85,6 +124,4 @@ public class ChangeScene : MonoBehaviour
         howButton.onClick.RemoveListener(HowToPlay);
         listButton.onClick.RemoveListener(OurList);
     }
-
 }
-

@@ -20,7 +20,7 @@ namespace StateMachine.States
 		public void Onenter()
 		{
             haveEat = false;
-            manager.StartCoroutine(HungryDie(45f));
+            manager.StartCoroutine(HungryDie(parameter.levelDataCurrent._dietime));
 
             manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Clear();
             manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
