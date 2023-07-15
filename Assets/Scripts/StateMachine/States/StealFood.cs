@@ -19,11 +19,11 @@ public class StealFood : MonoBehaviour
     private void Awake()
     {
         getItem = GameObject.Find("GetItemManager").GetComponent<GetItem>();
-        targetPos = new Vector3(0, 0, -203.296f);
+        targetPos = new Vector3(0, -175.9f, -203.296f);
         foodParent = GameObject.Find("-----Food_Bag-----").transform;
     }
     private void Start() {
-        foodArray = GameObject.FindGameObjectsWithTag("Food");
+        foodArray = GameObject.FindGameObjectsWithTag("Food_39");
     }
     private void Update()
     {

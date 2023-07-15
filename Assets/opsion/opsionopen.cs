@@ -93,11 +93,13 @@ public class OpsionOpen : MonoBehaviour
         }
         //--------------------
 
-
+        Time.timeScale = 1.0f;
         isOpened = false;
     }
     public void GoTitle()
     {
+        Time.timeScale = 1.0f;
+
         //                       Å@Å´ïœçXÇµÇΩÇ¢sceneñºÇ¢ÇÍÇÈ
         SceneManager.LoadScene("Title");
     }

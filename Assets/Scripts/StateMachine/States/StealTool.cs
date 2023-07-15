@@ -15,7 +15,7 @@ public class StealTool : MonoBehaviour
 
     private void Awake()
     {
-        targetPos = new Vector3(0, 0, -203.296f);
+        targetPos = new Vector3(0, -175.9f, -203.296f);
         toolParent = GameObject.Find("-----Tool_Bag-----").transform;
     }
     private void Update()

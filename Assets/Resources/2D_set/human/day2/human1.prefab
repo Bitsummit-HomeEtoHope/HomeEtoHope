@@ -908,8 +908,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToBeHungry: 0
   manager: {fileID: 6754820350715143020}
-  isDie: 0
-  isClear: 0
 --- !u!114 &4594934901008837326
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,12 +31,15 @@ public class ITellYou : MonoBehaviour
     [Header("System")]
     public Button nextButton; 
     public Button backButton; 
+    public Button startButton; 
     // Start is called before the first frame update
     void OnEnable()
     {
         nextButton.onClick.AddListener(NextButtonAction);
 
         backButton.onClick.AddListener(BackButtonAction);
+
+        startButton.onClick.AddListener(StartButtonAction);
 
         YaYa();
         StartCoroutine(DaDa());
@@ -49,6 +52,8 @@ public class ITellYou : MonoBehaviour
         nextButton.onClick.RemoveListener(NextButtonAction);
 
         backButton.onClick.RemoveListener(BackButtonAction);
+
+        startButton.onClick.RemoveListener(StartButtonAction);
 
         enabled = true;
     }
@@ -170,6 +175,12 @@ public class ITellYou : MonoBehaviour
 
         SceneManager.LoadScene("Title");
         // 或者：SceneManager.LoadScene(nextSceneIndex);
+    }
 
+    public void StartButtonAction()
+    {
+
+        SceneManager.LoadScene("Level1");
+        // 或者：SceneManager.LoadScene(nextSceneIndex);
     }
 }

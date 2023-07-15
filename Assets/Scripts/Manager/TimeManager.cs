@@ -48,6 +48,8 @@ public class TimeManager : MonoBehaviour
 
     public void Resume()
     {
+        Time.timeScale = 1f;
+
         isPaused = false;
 
        // SetTargetObjectsEnabled(false); // 将物体的运动恢复，并解锁其Transform
@@ -58,7 +60,6 @@ public class TimeManager : MonoBehaviour
 
         SetCollidersEnabled(true);
 
-        Time.timeScale = 1f;
 
         
     }

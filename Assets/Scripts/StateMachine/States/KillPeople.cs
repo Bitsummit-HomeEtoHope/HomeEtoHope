@@ -15,8 +15,8 @@ public class KillPeople : MonoBehaviour
 
 	private void Awake()
 	{
-		targetPos = new Vector3(0, 0, -203.296f);
-		parent = GameObject.Find("-----Human_Bag-----").transform;
+		targetPos = new Vector3(0, -175.9f, -203.296f);//-203.296
+        parent = GameObject.Find("-----Human_Bag-----").transform;
 	}
 
 	private void MoveToTarget(GameObject target)

@@ -14,24 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelID: 1
   levelName: level01
-  levelTime: 70
-  Interval: 7
+  levelTime: 91
+  Interval: 6
   levelBGM: {fileID: 0}
   future_Data:
     tree_Time: 30
     human_Speed: 50
     human_BadFood_Time: 5
     human_BadTool_Time: 5
-    build_Time: 5
+    build_Time: 10
     thief_Time: 0
     thief_Food_Num: 0
     itemBrokenHuman_time: 5
     murderer_time: 0
-    dietime: 45
   _food_goodWeight: 80
   _food_badWeight: 10
   _tool_goodweight: 30
   _tool_badweight: 10
   _human_weight: 30
   _spawnInterval: 3.5
-  _dietime: 70
+  _dietime: 45

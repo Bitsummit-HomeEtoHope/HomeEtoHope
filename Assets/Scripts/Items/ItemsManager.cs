@@ -313,7 +313,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         else
         {
             // 如果未找到目标，重置计时器并进行下一次物品随机与生成
-            spendTime = 4;
+            spendTime = 5;
 
             // 打印信息
             Debug.Log("---yyyyyyyyyyyyyyyyyyyyyyyyyy--- " + itemType);
@@ -345,6 +345,26 @@ public class ItemsManager : SingletonManager<ItemsManager>
                 Disposed(itemsArray[i]);
             }
         }
+
+        bool isListEmpty = true; // 列表是否为空的标志
+
+        for (int i = 0; i < itemsArray.Length; i++)
+        {
+            if (itemsArray[i] != null)
+            {
+                isListEmpty = false; // 列表不为空，将标志设置为 false
+                                     // 移动物体的逻辑...
+            }
+        }
+
+        // 如果列表为空，则立即刷新下一个物体
+        if (isListEmpty)
+        {
+            spendTime = 0;
+            InitializeNextItem();
+        }
+
+
     }
 
     private void Disposed(GameObject item)
@@ -361,7 +381,7 @@ public class ItemsManager : SingletonManager<ItemsManager>
         GetComponent<AudioSource>().Play();
 
         Array.Clear(itemsArray, 0, itemsArray.Length);
-        spendTime = 4;
+        spendTime = 5;
 
         GameObject parentObject = GameObject.Find("---items---"); 
 

@@ -6650,8 +6650,8 @@ MonoBehaviour:
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
   cameraMoveDuration: 0.5
-  targetPosition: {fileID: 0}
-  targetRotation: {fileID: 0}
+  targetPosition: {fileID: 1905078572}
+  targetRotation: {fileID: 1905078572}
   requiredBuildCount: 25
   buildCount: 0
   enableGameObject: {fileID: 1566832607}
@@ -20683,7 +20683,7 @@ MonoBehaviour:
   itemsArray: []
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
-  dushSpeed: 2
+  dushSpeed: 6
   sendFood: 1
   sendTool: 1
   sendHuman: 1
@@ -27606,14 +27606,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905078571}
-  m_LocalRotation: {x: -0.39643764, y: -0, z: -0, w: 0.9180617}
-  m_LocalPosition: {x: 0, y: -398, z: -640}
+  m_LocalRotation: {x: -0.33791664, y: -0, z: -0, w: 0.94117606}
+  m_LocalPosition: {x: 0, y: -381.3, z: -666.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1859795710}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -50.64, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1911400420
 GameObject:
   m_ObjectHideFlags: 0

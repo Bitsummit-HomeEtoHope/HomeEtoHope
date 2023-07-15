@@ -51,7 +51,7 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
 
             foreach (var portBelt in portBeltsList)
             {
-                if (Vector3.Distance(portBelt.position, endPoint.position) <= 0.9f)
+                if (Vector3.Distance(portBelt.position, endPoint.position) <= 0.095f)
                 {
                     portBelt.position = startPoint.position;
                 }
