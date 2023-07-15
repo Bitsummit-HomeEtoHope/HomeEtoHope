@@ -25679,7 +25679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259.7, y: -419.1}
+  m_AnchoredPosition: {x: -277, y: -405.15}
   m_SizeDelta: {x: 290.6093, y: 400.6097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937995328
@@ -25696,7 +25696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listTransform: {fileID: 1937995327}
   moveDuration: 0.2
-  moveFirst: 400
+  moveFirst: 350
   listShow: {fileID: 1937995329}
   listing: 0
 --- !u!114 &1937995329
@@ -25713,7 +25713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listTransform: {fileID: 1937995327}
   moveDuration: 0.2
-  moveAmount: 400
+  moveAmount: 350
   rotationAmount: 0
   isShowing: 0
   isCanClick: 1
