@@ -1,4 +1,3 @@
-// CodeReader.cs
 using UnityEngine;
 
 public class CodeReader : MonoBehaviour
@@ -6,9 +5,17 @@ public class CodeReader : MonoBehaviour
     private GameObject capsuleDoor;
     private Animator openDoor;
 
+
+    [SerializeField] private AudioSource sePlayer;
+
+    [SerializeField] private AudioClip maruSE;
+    [SerializeField] private AudioClip batsuSE;
+
+    private GetItem getItem;
+
     private void Start()
     {
-
+        getItem = FindObjectOfType<GetItem>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,27 +33,48 @@ public class CodeReader : MonoBehaviour
                 getItemScript.ReceiveCode(code); // 将代码传递给GetItem脚本中的接收方法
                 getItemScript.ReceiveTag(tag); // 将标签信息传递给GetItem脚本中的接收方法
 
-                if(tag == "Human")
+                if (tag == "Human")
                 {
                     capsuleDoor = GameObject.Find("humanDoor");
                     openDoor = capsuleDoor.GetComponent<Animator>();
 
-                  //  Debug.Log("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-                    if (capsuleDoor != null) 
+                    if (capsuleDoor != null)
                     {
+                        capsuleDoor.SetActive(false);
+                        capsuleDoor.SetActive(true);
 
-                        capsuleDoor.active = false;
-                        capsuleDoor.active = true;
-                       // Debug.Log("77777777777777777");
                         if (openDoor != null)
                         {
-                           // Debug.Log("XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-                         openDoor.enabled = false;
-                         openDoor.enabled = true;
-
+                            openDoor.enabled = false;
+                            openDoor.enabled = true;
                         }
                     }
                 }
+
+
+                bool codeMatches = false;
+
+                if (getItem.theirList != null)
+                {
+                    foreach (string feature in getItem.theirList)
+                    {
+                        if (code.Contains(feature))
+                        {
+                            codeMatches = true;
+                            break;
+                        }
+                    }
+                }
+               
+
+                if (code.Contains("broken") || code.Contains("hi") || code.Contains("qaq"))// || codeMatches
+                {
+                    Debug.Log("22222222222222222Code is right!!222222222222222222");
+                    sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
+                }
+                else sePlayer.GetComponent<AudioSource>().PlayOneShot(maruSE);
+
+
 
             }
             else
@@ -56,12 +84,9 @@ public class CodeReader : MonoBehaviour
         }
         else
         {
-            Debug.Log("no");
+            Debug.Log("CodeHolder component not found!");
         }
 
         Destroy(other.gameObject); // 删除碰撞到的物体
     }
-
-
-
 }

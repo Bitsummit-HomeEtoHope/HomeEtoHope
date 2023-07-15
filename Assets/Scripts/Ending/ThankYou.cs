@@ -10,6 +10,8 @@ public class ThankYou : MonoBehaviour
     [SerializeField] public GameObject curtain;
     [SerializeField] public GameObject Rest;
     [SerializeField] public GameObject theSkip;
+    private GameObject _button;
+
 
     private Image curtainX;
     private Image finX;
@@ -18,6 +20,9 @@ public class ThankYou : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _button = GameObject.Find("Button");
+
+
         audioSource = GetComponent<AudioSource>();
         curtainX = curtain.GetComponent<Image>();
         finX = fin.GetComponent<Image>();
@@ -43,7 +48,9 @@ public class ThankYou : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (bgm)
         {
-            if(theSkip.activeSelf)theSkip.SetActive(false);
+            if (_button.activeSelf) _button.SetActive(false);
+
+            if (theSkip.activeSelf)theSkip.SetActive(false);
             Rest.SetActive(true);
             curtain.active=true;
             fin.active=true;

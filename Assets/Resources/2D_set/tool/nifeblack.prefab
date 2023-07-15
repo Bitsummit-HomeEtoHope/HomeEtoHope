@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2758268980689232336}
   m_Layer: 0
   m_Name: nifeblack
-  m_TagString: Tool
+  m_TagString: Tool_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

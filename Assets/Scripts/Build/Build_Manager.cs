@@ -21,31 +21,37 @@ public class Build_Manager : MonoBehaviour
     [SerializeField] private int buildCount;
     [Header("Second Set")]
     public GameObject enableGameObject; // Enabled game object
+    private bool setOk = false;
 
 
     private void Update()
     {
-        buildCount = CountBuildsWithTag("Build_39");
-        if (buildCount >= requiredBuildCount)
+        if (!setOk)
         {
-            // Smoothly transition the camera's FOV to the target value
-            //  camera2d.fieldOfView = Mathf.Lerp(camera2d.fieldOfView, targetFieldOfView, Time.deltaTime * fieldOfViewSpeed);
-            // Use sine function to calculate the decay value of camera movement speed
-            //  float moveSpeed = Mathf.Lerp(cameraMoveSpeed, 0f, Mathf.Sin(cameraMoveTimer / cameraMoveDuration * Mathf.PI * 0.5f));
-
-            if (camera2d != null)
+            buildCount = CountBuildsWithTag("Build_39");
+            if (buildCount >= requiredBuildCount)
             {
-                if (targetPosition != null)
-                    camera2d.transform.position = Vector3.Lerp(camera2d.transform.position, targetPosition.position, Time.deltaTime * moveSpeed);
-                if (targetRotation != null)
-                    camera2d.transform.rotation = Quaternion.Lerp(camera2d.transform.rotation, targetRotation.rotation, Time.deltaTime * moveSpeed);
+                // Smoothly transition the camera's FOV to the target value
+                //  camera2d.fieldOfView = Mathf.Lerp(camera2d.fieldOfView, targetFieldOfView, Time.deltaTime * fieldOfViewSpeed);
+                // Use sine function to calculate the decay value of camera movement speed
+                //  float moveSpeed = Mathf.Lerp(cameraMoveSpeed, 0f, Mathf.Sin(cameraMoveTimer / cameraMoveDuration * Mathf.PI * 0.5f));
 
-                if (enableGameObject != null)
+                if (camera2d != null)
                 {
-                    enableGameObject.SetActive(true);
-                }
+                    if (targetPosition != null)
+                        camera2d.transform.position = Vector3.Lerp(camera2d.transform.position, targetPosition.position, Time.deltaTime * moveSpeed);
+                    if (targetRotation != null)
+                        camera2d.transform.rotation = Quaternion.Lerp(camera2d.transform.rotation, targetRotation.rotation, Time.deltaTime * moveSpeed);
 
-                cameraMoveTimer += Time.deltaTime;
+                    if (enableGameObject != null)
+                    {
+                        enableGameObject.SetActive(true);
+
+                    }
+
+                       cameraMoveTimer += Time.deltaTime;
+                    if(cameraMoveTimer >= cameraMoveDuration)setOk = true;
+                }
             }
         }
     }

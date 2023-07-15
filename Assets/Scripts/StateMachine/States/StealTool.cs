@@ -57,7 +57,7 @@ public class StealTool : MonoBehaviour
     {
         for (int i = 0; i < toolParent.childCount; i++)
         {
-            if (toolParent.GetChild(i).CompareTag("Tool") && toolParent.GetChild(i).gameObject.activeSelf)
+            if (toolParent.GetChild(i).CompareTag("Tool_39") && toolParent.GetChild(i).gameObject.activeSelf)
             {
                 if (!toolSet.Contains(toolParent.GetChild(i).gameObject))
                 {

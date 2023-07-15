@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using StateMachine.General;
 using System.Linq;
+using Unity.VisualScripting;
 
 namespace StateMachine.States
 {
-    public class WorkState :IState
+    public class WorkState : IState
     {
 
         private float rotateBuild = 0f;
@@ -19,7 +20,9 @@ namespace StateMachine.States
         private GameObject[] buildPoints;
         private int random;
 
-
+        //------
+        private bool isLate = false;
+        //------
         public WorkState(FSM manager)
         {
             this.manager = manager;
@@ -50,8 +53,22 @@ namespace StateMachine.States
             }
         }
 
-            public void Onenter()
+
+
+        private IEnumerator HungryLate(float delay)
         {
+            yield return new WaitForSeconds(delay);
+            if (!isLate) manager.TransitState(StateType.Hungry);
+        }
+
+
+
+
+        public void Onenter()
+        {
+            isLate = false;
+            manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+
 
             if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
             {
@@ -59,13 +76,13 @@ namespace StateMachine.States
                 SetEnergyActive(manager.transform, "energy_farm");
                 //---      
             }
-                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
+            if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
             {
                 //--- "energy", "energy_build", "energy_factory", "energy_farm" };
                 SetEnergyActive(manager.transform, "energy_factory");
                 //---
             }
-                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
+            if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
             {
                 //--- "energy", "energy_build", "energy_factory", "energy_farm" };
                 SetEnergyActive(manager.transform, "energy_build");
@@ -80,15 +97,21 @@ namespace StateMachine.States
 
         public void OnExit()
         {
+
+            manager.StopCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+
             //清空parameter.workPoints
+
             parameter.workPoints.Clear();
-            
+
         }
 
         public void OnUpdate()
         {
             if (isArriveWorkPoint == false)
             {
+                isLate = true;
+
                 manager.transform.position = Vector3.MoveTowards(manager.transform.position, parameter.currentTarget, parameter.moveSpeed * Time.deltaTime);
                 //到达后等待1s
             }
@@ -146,11 +169,11 @@ namespace StateMachine.States
             {
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
-                if(manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad)
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad)
                 {
                     manager.parameter.isBroken = true;
                 }
-                
+
                 manager.TransitState(StateType.Patrolling);
             }
             if (isArriveWorkPoint && (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 1f))

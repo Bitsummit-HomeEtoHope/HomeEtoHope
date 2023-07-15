@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4237787906975860742}
   m_Layer: 0
   m_Name: burnerBroken_
-  m_TagString: Tool
+  m_TagString: Tool_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
