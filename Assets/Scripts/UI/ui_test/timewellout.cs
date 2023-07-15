@@ -44,8 +44,12 @@ public class timewellout : MonoBehaviour
     private float waitngfill;
     private float waitngTime;
 
+    private bool switchWantsee = true;
+    private int  countWantsee = 0;
+
     private void Start()
     {
+
         levelDataCurrent = FindObjectOfType<LevelDataCurrent>();
         daysManager = FindObjectOfType<DaysManager>();
 
@@ -99,24 +103,24 @@ public class timewellout : MonoBehaviour
 
             if (needSlow)
             {
+
                 if (elapsedTime >= duration - 5 && isPlaySound)
                 {
                     a.GetComponent<AudioSource>().PlayOneShot(b2);
                     isPlaySound = false;
                 }
 
-                if (elapsedTime >= duration - 1.333f && elapsedTime <= duration - 1f && isEndDaySound)
+                if (elapsedTime >= duration - 1.333f && elapsedTime < duration - 0.9f && isEndDaySound)
                 {
                     Time.timeScale = 0.5f;
 
                     a.GetComponent<AudioSource>().PlayOneShot(b1);
                     isEndDaySound = false;
                 }
-                if (elapsedTime >= duration - 1f && elapsedTime <= duration - 0.1f)
-                {
-                    //-----turn off the list in endDayOff-----
 
-                    waitngSpeed = 1f / 4 * levelDataCurrent._endDaytime;
+                if (elapsedTime >= duration - 0.9f && elapsedTime < duration - 0.5f && countWantsee < 2)
+                {
+                    waitngSpeed = 1f / 0.2f;
 
                     waitngfill = watingImage.fillAmount + waitngSpeed * Time.deltaTime;
                     watingImage.fillAmount = Mathf.Clamp01(waitngfill);
@@ -125,11 +129,49 @@ public class timewellout : MonoBehaviour
                     {
                         item.SetActive(false);
                     }
-
-                    //----------
-
-                    Time.timeScale = 1 / levelDataCurrent._endDaytime;
                 }
+
+
+                if (elapsedTime >= duration - 0.5f && elapsedTime < duration - 0.3f )
+                {
+                    if (switchWantsee && countWantsee < 2)
+                    {
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            switchWantsee = false;
+                            Time.timeScale = 1f; 
+                        }
+                        else
+                        {
+                            Time.timeScale = 0f; 
+                        }
+                    }
+                }
+
+
+
+
+                //-----------------------------------------------------------------------------------
+
+                //if (elapsedTime >= duration - 1f && elapsedTime <= duration - 0.1f)
+                //{
+                //    //-----turn off the list in endDayOff-----
+
+                //    waitngSpeed = 1f / 4 * levelDataCurrent._endDaytime;
+
+                //    waitngfill = watingImage.fillAmount + waitngSpeed * Time.deltaTime;
+                //    watingImage.fillAmount = Mathf.Clamp01(waitngfill);
+
+                //    foreach (GameObject item in endDayOff)
+                //    {
+                //        item.SetActive(false);
+                //    }
+
+                //    //----------
+
+                //    Time.timeScale = 1 / levelDataCurrent._endDaytime;
+                //}
+
             }
             else
             {
@@ -144,6 +186,9 @@ public class timewellout : MonoBehaviour
         {
             if (needSlow)
             {
+                switchWantsee = true;
+                countWantsee += 1;
+
                 Time.timeScale = 1f;
                 //--------------------------------
 

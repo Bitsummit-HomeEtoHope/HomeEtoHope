@@ -34,9 +34,9 @@ public class TimeManager : MonoBehaviour
        //SaveObjectStates();
        // SetTargetObjectsEnabled(true); // 将物体的运动停止，并锁定其Transform
 
-        DisableButtons();
+       DisableButtons();
 
-        DisableObjects();
+      //  DisableObjects();
 
         SetCollidersEnabled(false);
 
@@ -168,6 +168,7 @@ public class TimeManager : MonoBehaviour
         {
             button.interactable = true; // 启用按钮的交互功能
         }
+
     }
 
     public void DisableObjects()

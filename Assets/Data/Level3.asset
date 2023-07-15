@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelID: 3
   levelName: Level3
-  levelTime: 90
+  levelTime: 92
   Interval: 4.5
   levelBGM: {fileID: 0}
   future_Data:
@@ -34,4 +34,3 @@ MonoBehaviour:
   _human_weight: 40
   _spawnInterval: 2.2
   _dietime: 35
-  _buildfill: 22

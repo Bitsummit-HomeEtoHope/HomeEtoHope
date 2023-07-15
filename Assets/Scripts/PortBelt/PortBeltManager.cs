@@ -9,13 +9,12 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     public Transform startPoint;
     public Transform endPoint;
 
-    private List<Vector3> defaultPositions; // 用于保存默认位置
+    private List<Vector3> defaultPositions; 
 
     private void Awake()
     {
         defaultPositions = new List<Vector3>();
 
-        // 保存所有物体的默认位置
         foreach (var portBelt in portBeltsList)
         {
             defaultPositions.Add(portBelt.position);
@@ -26,14 +25,12 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     {
 
 
-        // 开始移动物体
         StartCoroutine(MovePortBelts());
     }
 
 
     private void OnDisable()
     {
-        // 将所有物体的位置重置为默认位置
         for (int i = 0; i < portBeltsList.Count; i++)
         {
             portBeltsList[i].position = defaultPositions[i];
@@ -54,7 +51,7 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
 
             foreach (var portBelt in portBeltsList)
             {
-                if (Vector3.Distance(portBelt.position, endPoint.position) < 0.05f)
+                if (Vector3.Distance(portBelt.position, endPoint.position) <= 0.9f)
                 {
                     portBelt.position = startPoint.position;
                 }
