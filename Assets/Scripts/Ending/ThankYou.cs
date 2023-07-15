@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,12 @@ public class ThankYou : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] public GameObject fin;
     [SerializeField] public GameObject curtain;
+    [SerializeField] public GameObject Rest;
+    [SerializeField] public GameObject theSkip;
 
     private Image curtainX;
     private Image finX;
-    private bool bgm = true;
+    public bool bgm = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +22,18 @@ public class ThankYou : MonoBehaviour
         curtainX = curtain.GetComponent<Image>();
         finX = fin.GetComponent<Image>();
 
-       StartCoroutine(CurtainFalls(8f));
+        StartCoroutine(CurtainFalls(8f));
+
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Skip()
     {
-        if (Input.GetMouseButtonDown(0))
+        Debug.Log("xxxxxxxxxxx");
+
+        if (bgm)
         {
-            if (bgm)
-            {
-                StartCoroutine(CurtainFalls(0.1f));
-            }
+            StartCoroutine(CurtainFalls(0.1f));
         }
     }
 
@@ -41,6 +43,8 @@ public class ThankYou : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (bgm)
         {
+            if(theSkip.activeSelf)theSkip.SetActive(false);
+            Rest.SetActive(true);
             curtain.active=true;
             fin.active=true;
             audioSource.Play();
