@@ -77,7 +77,7 @@ namespace StateMachine.States
         {
             string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
 
-            // 关闭所有组件
+            // effect Clear
             foreach (Transform child in selfTransform)
             {
                 if (allowedComponentNames.Contains(child.name))
@@ -86,7 +86,7 @@ namespace StateMachine.States
                 }
             }
 
-            // 开启指定的组件
+            // effect On
             if (allowedComponentNames.Contains(componentName))
             {
                 Transform componentTransform = selfTransform.Find(componentName);
@@ -100,8 +100,7 @@ namespace StateMachine.States
 
         public void OnExit()
         {
-            if (haveEat)
-            {
+          
                 parameter.isHungry = false;
 
                 GameObject foodObject = manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject;
@@ -116,9 +115,9 @@ namespace StateMachine.States
                     if (itemName == "Apple")
                     {
                         GameObject apple = GameObject.Instantiate(itemTreeSprite, treeObject.transform);
-                        apple.transform.localPosition = Vector3.zero; // 设置位置为父物体的坐标位置
-                        apple.transform.rotation = treeObject.transform.rotation; // 应用父物体的旋转
-                        apple.transform.localScale = Vector3.one; // 应用父物体的缩放
+                        apple.transform.localPosition = Vector3.zero; // -- Position
+                        apple.transform.rotation = treeObject.transform.rotation; // -- Rotationg
+                        apple.transform.localScale = Vector3.one; // -- Scale
                     }
                     else if (itemName == "Eggplant")
                     {
@@ -148,8 +147,7 @@ namespace StateMachine.States
                         pumpkin.transform.rotation = treeObject.transform.rotation;
                         pumpkin.transform.localScale = Vector3.one;
                     }
-                }
-            }            
+                }            
         }
 
         private void SetObjectScaleX(GameObject obj, float scaleX)

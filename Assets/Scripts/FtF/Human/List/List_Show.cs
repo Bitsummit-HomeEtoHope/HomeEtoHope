@@ -61,7 +61,7 @@ public class List_Show : MonoBehaviour, IPointerClickHandler
         {
             currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y + moveAmount, Quaternion.Euler(0f, 0f, rotationAmount)));
 
-            isShowing = false;
+          //  isShowing = false;
 
         }
         else

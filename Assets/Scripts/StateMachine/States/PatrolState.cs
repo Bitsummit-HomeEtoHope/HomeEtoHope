@@ -53,9 +53,13 @@ namespace StateMachine.States
 
         public void SetEnergyActive(Transform selfTransform, string componentName)
         {
+            //-------------------------
+
+            parameter.Food_Tran.gameObject.SetActive(false);
+
             string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
 
-            // 关闭所有组件
+            
             foreach (Transform child in selfTransform)
             {
                 if (allowedComponentNames.Contains(child.name))
@@ -64,7 +68,6 @@ namespace StateMachine.States
                 }
             }
 
-            // 开启指定的组件
             if (allowedComponentNames.Contains(componentName))
             {
                 Transform componentTransform = selfTransform.Find(componentName);
@@ -73,6 +76,8 @@ namespace StateMachine.States
                     componentTransform.gameObject.SetActive(true);
                 }
             }
+
+            //--------------------------------
         }
 
         public void Onenter()

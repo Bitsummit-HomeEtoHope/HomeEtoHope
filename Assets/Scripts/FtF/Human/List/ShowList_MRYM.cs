@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowList_MRYM : MonoBehaviour
-{/// <summary>
-/// 
-/// ShouList
-/// 
-/// </summary>
+{
     public RectTransform listTransform; // Reference to the UI Image's RectTransform component
     public float moveDuration = 0.5f; // Duration of the movement
     public float moveFirst = 130f; // Amount of movement
@@ -16,6 +12,7 @@ public class ShowList_MRYM : MonoBehaviour
     private Quaternion originalRotation; // Original rotation angle
 
     public List_Show listShow; // Reference to the List_Show script
+   
 
     public bool listing = false;
 
@@ -56,6 +53,7 @@ public class ShowList_MRYM : MonoBehaviour
 
         currentMoveCoroutine = StartCoroutine(MoveList(originalPosition.y, originalRotation));
         listShow.isCanClick = false;
+        listShow.isShowing = false;
     }
 
     private IEnumerator MoveList(float targetY, Quaternion targetRotation)

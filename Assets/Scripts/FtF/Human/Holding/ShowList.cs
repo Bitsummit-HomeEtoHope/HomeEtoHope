@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ShowList : MonoBehaviour
 {
-    /// <summary>
-    /// 
-    /// MRYM_showList
-    /// 
-    /// 
-    /// </summary>
     public RectTransform listTransform; // Reference to the UI Image's RectTransform component
     public float moveDuration = 0.5f; // Duration of the movement
     public float moveFirst = 130f; // Amount of movement
