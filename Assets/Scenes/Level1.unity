@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2698,12 +2698,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 156982316}
   targetRotation: {fileID: 156982316}
   requiredBuildCount: 7
   buildCount: 0
   enableGameObject: {fileID: 562302279}
+  needTimeMove: 0
 --- !u!1 &190360770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -5365,12 +5366,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 1713945929}
   targetRotation: {fileID: 1713945929}
   requiredBuildCount: 53
   buildCount: 0
   enableGameObject: {fileID: 0}
+  needTimeMove: 0
 --- !u!1 &380241488
 GameObject:
   m_ObjectHideFlags: 0
@@ -7698,12 +7700,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 1
+  cameraMoveDuration: 0
   targetPosition: {fileID: 1742076402}
   targetRotation: {fileID: 1742076402}
   requiredBuildCount: 25
   buildCount: 0
   enableGameObject: {fileID: 1566832607}
+  needTimeMove: 0
 --- !u!1 &533557488
 GameObject:
   m_ObjectHideFlags: 0
@@ -12975,12 +12978,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 1905078572}
   targetRotation: {fileID: 1905078572}
   requiredBuildCount: 13
   buildCount: 0
   enableGameObject: {fileID: 528165680}
+  needTimeMove: 0
 --- !u!1 &562557098
 GameObject:
   m_ObjectHideFlags: 0
@@ -14390,6 +14394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Option_Canvas: {fileID: 1457580299}
+  settingButton: {fileID: 306791680}
+  titleScreen: {fileID: 1805800224}
+  mainMoniterCanvas: {fileID: 0}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -26808,12 +26816,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 624523970}
   targetRotation: {fileID: 624523970}
   requiredBuildCount: 33
   buildCount: 0
   enableGameObject: {fileID: 1897402429}
+  needTimeMove: 0
 --- !u!1001 &1567147838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29578,12 +29587,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 0}
   targetRotation: {fileID: 0}
   requiredBuildCount: 53
   buildCount: 0
   enableGameObject: {fileID: 0}
+  needTimeMove: 0
 --- !u!1 &1774945492
 GameObject:
   m_ObjectHideFlags: 0
@@ -30847,12 +30857,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 0
   targetPosition: {fileID: 1713945929}
   targetRotation: {fileID: 1713945929}
   requiredBuildCount: 42
   buildCount: 0
   enableGameObject: {fileID: 373475299}
+  needTimeMove: 0
 --- !u!4 &1898114409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5754182327689710315, guid: c57052de6d0f98449bcd6fd82a99633b, type: 3}
