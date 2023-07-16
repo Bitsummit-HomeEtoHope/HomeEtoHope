@@ -2698,13 +2698,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 0.5
   targetPosition: {fileID: 156982316}
   targetRotation: {fileID: 156982316}
-  requiredBuildCount: 7
+  requiredBuildCount: 4
   buildCount: 0
   enableGameObject: {fileID: 562302279}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1 &190360770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -5366,13 +5366,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 1
   targetPosition: {fileID: 1713945929}
   targetRotation: {fileID: 1713945929}
-  requiredBuildCount: 53
+  requiredBuildCount: 50
   buildCount: 0
   enableGameObject: {fileID: 0}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1 &380241488
 GameObject:
   m_ObjectHideFlags: 0
@@ -7700,13 +7700,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 0.5
   targetPosition: {fileID: 1742076402}
   targetRotation: {fileID: 1742076402}
-  requiredBuildCount: 25
+  requiredBuildCount: 21
   buildCount: 0
   enableGameObject: {fileID: 1566832607}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1 &533557488
 GameObject:
   m_ObjectHideFlags: 0
@@ -12978,13 +12978,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 1
   targetPosition: {fileID: 1905078572}
   targetRotation: {fileID: 1905078572}
-  requiredBuildCount: 13
+  requiredBuildCount: 10
   buildCount: 0
   enableGameObject: {fileID: 528165680}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1 &562557098
 GameObject:
   m_ObjectHideFlags: 0
@@ -17704,7 +17704,7 @@ MonoBehaviour:
   for_credits_end_v: 0
   credits_end_vi: 0
   for_credits_end_vi: 0
-  passScore: 30
+  passScore: 22
   levelDataCurrent: {fileID: 1853015593}
   number_buildend: 0
   number_humanend: 0
@@ -26816,13 +26816,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 1
   targetPosition: {fileID: 624523970}
   targetRotation: {fileID: 624523970}
-  requiredBuildCount: 33
+  requiredBuildCount: 31
   buildCount: 0
   enableGameObject: {fileID: 1897402429}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1001 &1567147838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29587,13 +29587,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 1
   targetPosition: {fileID: 0}
   targetRotation: {fileID: 0}
   requiredBuildCount: 53
   buildCount: 0
   enableGameObject: {fileID: 0}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!1 &1774945492
 GameObject:
   m_ObjectHideFlags: 0
@@ -30279,7 +30279,7 @@ MonoBehaviour:
   _dietime: 0
   _latetime: 13
   _endDaytime: 10
-  _buildfill: 30
+  _buildfill: 24
   _theBuildNumber: 3
   _theHumanNumber: 8
   _future_Data:
@@ -30857,13 +30857,13 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0
+  cameraMoveDuration: 1
   targetPosition: {fileID: 1713945929}
   targetRotation: {fileID: 1713945929}
-  requiredBuildCount: 42
+  requiredBuildCount: 39
   buildCount: 0
   enableGameObject: {fileID: 373475299}
-  needTimeMove: 0
+  needTimeMove: 1
 --- !u!4 &1898114409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5754182327689710315, guid: c57052de6d0f98449bcd6fd82a99633b, type: 3}

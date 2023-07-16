@@ -17,6 +17,9 @@ public class ItemSet : MonoBehaviour
     //Current Items
     public GameObject m_Item;
 
+    //The Tag
+    public string m_tag;
+
     //Camera object of the item
     public GameObject m_ItemCameraObject;
     [System.Serializable]
@@ -55,6 +58,7 @@ public class ItemSet : MonoBehaviour
                 //m_Item = GameObject.FindWithTag("Food");
                 //m_Item = GameObject.FindWithTag("Tool");
                 m_Item = CodeHolder.selectedObject.gameObject;
+                m_tag = CodeHolder.selectedObject.tag;
                 m_isFoundObject = false;
             }
         }
