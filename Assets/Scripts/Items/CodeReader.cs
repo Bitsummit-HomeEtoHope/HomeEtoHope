@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class CodeReader : MonoBehaviour
@@ -9,6 +10,7 @@ public class CodeReader : MonoBehaviour
     [SerializeField] private AudioSource sePlayer;
 
     [SerializeField] private AudioClip maruSE;
+    [SerializeField] private AudioClip humanSE;
     [SerializeField] private AudioClip batsuSE;
 
     private GetItem getItem;
@@ -65,14 +67,21 @@ public class CodeReader : MonoBehaviour
                         }
                     }
                 }
-               
+
 
                 if (code.Contains("broken") || code.Contains("hi") || code.Contains("qaq"))// || codeMatches
                 {
                     Debug.Log("22222222222222222Code is right!!222222222222222222");
-                    sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
+                   if(batsuSE!=null) sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
                 }
-                else sePlayer.GetComponent<AudioSource>().PlayOneShot(maruSE);
+                else if (codeMatches)
+                {
+                    if(humanSE!=null)sePlayer.GetComponent<AudioSource>().PlayOneShot(humanSE);
+                }
+                else
+                {
+                    if(maruSE!=null)sePlayer.GetComponent<AudioSource>().PlayOneShot(maruSE);
+                }
 
 
 

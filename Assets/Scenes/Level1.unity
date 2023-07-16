@@ -13517,6 +13517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sePlayer: {fileID: 609686903}
   maruSE: {fileID: 8300000, guid: 90faf5180d7c0b34c8c9ecc1fcddf992, type: 3}
+  humanSE: {fileID: 8300000, guid: 06c96dc982b10444d978ce6ec7483a41, type: 3}
   batsuSE: {fileID: 8300000, guid: 89a6a257a94ed8c43987a51d4e366433, type: 3}
 --- !u!82 &609686903
 AudioSource:
