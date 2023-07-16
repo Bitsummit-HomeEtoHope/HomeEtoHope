@@ -114,9 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillAmountTargetObjectName: green_Line
   colorTargetObjectName: red_Mark
-  buildCount: 22
-  fillAmountIncreaseTime: 5
+  fillAmountIncreaseTime: 4.6
   colorChangeTime: 5
+  levelDataCurrent: {fileID: 0}
 --- !u!114 &-1039537890950034344
 MonoBehaviour:
   m_ObjectHideFlags: 0
