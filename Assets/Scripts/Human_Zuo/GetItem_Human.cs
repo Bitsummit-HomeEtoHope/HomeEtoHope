@@ -93,7 +93,11 @@ namespace StateMachine.General
             {
                 Debug.Log("tool zero");
                 isTool = false;
-                manager.parameter.isBroken = true;
+                //manager.parameter.isBroken = true;
+                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad)
+                {
+                    manager.parameter.isBroken = true;
+                }
                 manager.parameter.isTool = false;
                 manager.parameter.isWork = false;
                 toolList_human.RemoveAt(0);
