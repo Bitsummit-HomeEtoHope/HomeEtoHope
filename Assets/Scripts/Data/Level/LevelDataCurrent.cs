@@ -35,6 +35,8 @@ public class LevelDataCurrent : MonoBehaviour
     public float _spawnInterval;
     [Header("hungry to die")]
     public float _dietime;
+    [Header("late to hungry")]
+    public float _latetime;
     [Header("waiting for next News")]
     public float _endDaytime;
     [Header("number for the buildings with fillamount")]

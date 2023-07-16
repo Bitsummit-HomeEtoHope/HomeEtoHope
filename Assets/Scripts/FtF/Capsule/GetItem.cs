@@ -46,7 +46,7 @@ public class GetItem : MonoBehaviour
     [SerializeField] DaysManager daysManager;
     [SerializeField] private string selectedHumanNames;
     [SerializeField] private string path;
-    [SerializeField] private List<string> theirList = new List<string>();
+    [SerializeField] public List<string> theirList = new List<string>();
 
     private void Awake()
     {
@@ -251,7 +251,7 @@ public class GetItem : MonoBehaviour
                     case "Food_39":
                         foodList.Add(instance);
                         break;
-                    case "Tool":
+                    case "Tool_39":
                         toolList.Add(instance);
                         break;
                     case "Human":

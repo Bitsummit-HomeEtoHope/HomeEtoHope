@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2472653544441800523}
   m_Layer: 0
   m_Name: wrenchblack
-  m_TagString: Tool
+  m_TagString: Tool_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

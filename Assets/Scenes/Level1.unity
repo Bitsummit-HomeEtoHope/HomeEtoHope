@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6086,7 +6086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421335641}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 4.68, z: 8}
+  m_LocalPosition: {x: -1333, y: 4.68, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7698,7 +7698,7 @@ MonoBehaviour:
   moveSpeed: 2
   cameraMoveSpeed: 2
   cameraMoveTimer: 0
-  cameraMoveDuration: 0.5
+  cameraMoveDuration: 1
   targetPosition: {fileID: 1742076402}
   targetRotation: {fileID: 1742076402}
   requiredBuildCount: 25
@@ -13467,6 +13467,7 @@ GameObject:
   - component: {fileID: 609686900}
   - component: {fileID: 609686901}
   - component: {fileID: 609686902}
+  - component: {fileID: 609686903}
   m_Layer: 0
   m_Name: SendWall
   m_TagString: Untagged
@@ -13514,6 +13515,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c4e599fdf14214082f1eeeae5b0924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sePlayer: {fileID: 609686903}
+  maruSE: {fileID: 8300000, guid: 90faf5180d7c0b34c8c9ecc1fcddf992, type: 3}
+  batsuSE: {fileID: 8300000, guid: 89a6a257a94ed8c43987a51d4e366433, type: 3}
+--- !u!82 &609686903
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609686899}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5909025118221204238, guid: fb9960961def5b8438d3c4b35706181a, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &613110902
 GameObject:
   m_ObjectHideFlags: 0
@@ -14289,6 +14389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Option_Canvas: {fileID: 1457580299}
+  settingButton: {fileID: 306791680}
+  titleScreen: {fileID: 1805800224}
+  mainMoniterCanvas: {fileID: 0}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -17595,7 +17699,7 @@ MonoBehaviour:
   for_credits_end_v: 0
   credits_end_vi: 0
   for_credits_end_vi: 0
-  passScore: 22
+  passScore: 30
   levelDataCurrent: {fileID: 1853015593}
   number_buildend: 0
   number_humanend: 0
@@ -27573,7 +27677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628777304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.86, y: 0, z: -48.34}
+  m_LocalPosition: {x: -1437.62, y: 0, z: -48.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -30166,8 +30270,9 @@ MonoBehaviour:
   _human_weight: 0
   _spawnInterval: 0
   _dietime: 0
+  _latetime: 13
   _endDaytime: 10
-  _buildfill: 23
+  _buildfill: 30
   _theBuildNumber: 3
   _theHumanNumber: 8
   _future_Data:

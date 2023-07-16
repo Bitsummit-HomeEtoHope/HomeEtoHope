@@ -8,7 +8,6 @@ TagManager:
   - Food
   - Dispose
   - Human
-  - Tool
   - Build_39
   - Build_set
   - Human_39
@@ -24,6 +23,8 @@ TagManager:
   - Face
   - Body
   - GoodGuy
+  - Tree_Set
+  - Tool
   layers:
   - Default
   - TransparentFX
