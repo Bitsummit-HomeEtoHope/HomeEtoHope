@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13516,8 +13516,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sePlayer: {fileID: 609686903}
-  maruSE: {fileID: 8300000, guid: 90faf5180d7c0b34c8c9ecc1fcddf992, type: 3}
-  humanSE: {fileID: 8300000, guid: 06c96dc982b10444d978ce6ec7483a41, type: 3}
+  maruSE: {fileID: 0}
+  humanSE: {fileID: 8300000, guid: 89a6a257a94ed8c43987a51d4e366433, type: 3}
   batsuSE: {fileID: 8300000, guid: 89a6a257a94ed8c43987a51d4e366433, type: 3}
 --- !u!82 &609686903
 AudioSource:
@@ -14390,10 +14390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option_Canvas: {fileID: 1457580299}
-  settingButton: {fileID: 306791680}
-  titleScreen: {fileID: 1805800224}
-  mainMoniterCanvas: {fileID: 0}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
