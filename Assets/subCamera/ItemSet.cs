@@ -41,8 +41,11 @@ public class ItemSet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_tag = CodeHolder.selectedObject.tag;
+
+
         //if (!m_Item)
-        if(m_Item == null)
+        if (m_Item == null )
         {
             //If the current item does not exist
             if (m_ItemCameraObject != null)
@@ -58,14 +61,13 @@ public class ItemSet : MonoBehaviour
                 //m_Item = GameObject.FindWithTag("Food");
                 //m_Item = GameObject.FindWithTag("Tool");
                 m_Item = CodeHolder.selectedObject.gameObject;
-                m_tag = CodeHolder.selectedObject.tag;
                 m_isFoundObject = false;
             }
         }
         else if(m_Item != null)
         {
             //If the current item exists
-            if (!m_ItemCameraObject)
+            if (!m_ItemCameraObject )
             {
                 if (!m_isFoundObject)
                 {
@@ -81,7 +83,12 @@ public class ItemSet : MonoBehaviour
                             //Set item rotation
                             m_ItemCameraObject.transform.rotation = m_Item.transform.rotation;
                             return;
+                        }else if (m_tag == "Human")
+                        {
+                            m_Item.name = "human";
+
                         }
+
                     }
                 }
             }
@@ -89,7 +96,7 @@ public class ItemSet : MonoBehaviour
             {
                 //m_Criminal.MoveTextLeft();
                 //Update the rotation of the item's camera object
-                if (m_Item == CodeHolder.selectedObject.gameObject)
+                if (m_Item == CodeHolder.selectedObject.gameObject )
                 {
                     m_ItemCameraObject.transform.rotation = m_Item.transform.rotation;
                 }
@@ -99,6 +106,26 @@ public class ItemSet : MonoBehaviour
                 }
             }
         }
+
+        //if (m_tag == "Human")
+        //{
+        //    if (m_ItemCameraObject != null)
+        //    {
+        //        //Destroy the item's camera object
+        //        Destroy(m_ItemCameraObject);
+        //        // m_Criminal.ResetTextPosition();
+        //    }
+
+        //    if (CodeHolder.selectedObject != null)
+        //    {
+        //        //Search for items tagged "Fruit"
+        //        //m_Item = GameObject.FindWithTag("Food");
+        //        //m_Item = GameObject.FindWithTag("Tool");
+        //        m_Item = CodeHolder.selectedObject.gameObject;
+        //        m_isFoundObject = false;
+        //    }
+        //    Destroy(m_ItemCameraObject);    
+        //}
     }
    
 }

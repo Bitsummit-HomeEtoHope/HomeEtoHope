@@ -35,7 +35,7 @@ public class CodeReader : MonoBehaviour
                 getItemScript.ReceiveCode(code); // 将代码传递给GetItem脚本中的接收方法
                 getItemScript.ReceiveTag(tag); // 将标签信息传递给GetItem脚本中的接收方法
 
-                if (tag == "Human")
+                if (tag == "Human" )
                 {
                     capsuleDoor = GameObject.Find("humanDoor");
                     openDoor = capsuleDoor.GetComponent<Animator>();

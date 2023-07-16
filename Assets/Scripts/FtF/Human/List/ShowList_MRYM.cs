@@ -22,12 +22,16 @@ public class ShowList_MRYM : MonoBehaviour
 
         if (humanCount < 1 && listing)
         {
-            Debug.Log("-----was off-----");
-            listing = false;
-            OffList();
+            turnOff();
         }
     }
 
+    public void turnOff()
+    {
+        Debug.Log("-----was off-----");
+        listing = false;
+        OffList();
+    }
 
     private void Start()
     {

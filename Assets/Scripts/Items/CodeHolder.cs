@@ -27,8 +27,12 @@ public class CodeHolder : MonoBehaviour
 
     private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
 
+    
     private void Start()
     {
+
+
+
         code = gameObject.name.Replace("(Clone)", "");
         tag = gameObject.tag;
         Debug.Log("Object Tag: " + tag);
@@ -94,8 +98,7 @@ public class CodeHolder : MonoBehaviour
                 if (showList != null && showList.listing)
                 {
                     //
-                    showList.listing = false;
-                    showList.OffList();
+                    showList.turnOff();
                 }
             }
         }

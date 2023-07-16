@@ -6113,6 +6113,7 @@ MonoBehaviour:
   m_Criminal: {fileID: 0}
   m_ItemSetPos: {fileID: 901190559}
   m_Item: {fileID: 0}
+  m_tag: 
   m_ItemCameraObject: {fileID: 0}
   itemDataBases:
   - m_Name: apple(Clone)
@@ -6199,6 +6200,8 @@ MonoBehaviour:
     m_Items: {fileID: 5427197627829305278, guid: a017733e005fe024f8158dc7401b6144, type: 3}
   - m_Name: _burnerbroken(Clone)
     m_Items: {fileID: 5427197627829305278, guid: a017733e005fe024f8158dc7401b6144, type: 3}
+  - m_Name: human
+    m_Items: {fileID: 1730006861443363124, guid: fb5da18adc5b66543b465c391c9a12d1, type: 3}
 --- !u!20 &421335644
 Camera:
   m_ObjectHideFlags: 0
@@ -25115,6 +25118,7 @@ MonoBehaviour:
   m_Criminal: {fileID: 0}
   m_ItemSetPos: {fileID: 0}
   m_Item: {fileID: 0}
+  m_tag: 
   m_ItemCameraObject: {fileID: 0}
   itemDataBases:
   - m_Name: apple(Clone)
