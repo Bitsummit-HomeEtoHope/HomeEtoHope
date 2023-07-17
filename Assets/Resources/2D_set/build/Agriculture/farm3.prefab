@@ -115,7 +115,7 @@ MonoBehaviour:
   fillAmountTargetObjectName: green_Line
   colorTargetObjectName: red_Mark
   fillAmountIncreaseTime: 4.6
-  colorChangeTime: 5
+  colorChangeTime: 4.6
   levelDataCurrent: {fileID: 0}
 --- !u!114 &1798406031585074509
 MonoBehaviour:
