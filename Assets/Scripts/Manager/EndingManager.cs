@@ -95,22 +95,19 @@ public class EndingManager : MonoBehaviour
 
         
     
-
+    //exit Game
 
     void EndGame()
     {
-        // 在编辑器中停止播放
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        // 在游戏中退出应用程序
         QuitGame();
 #endif
     }
 
     void QuitGame()
     {
-        // 退出应用程序
         Application.Quit();
     }
 
@@ -185,10 +182,8 @@ public class EndingManager : MonoBehaviour
 
 /*
   
-  // 检测鼠标左击
         if (Input.GetMouseButtonDown(0))
         {
-            // 跳转到指定场景（假设场景名称为 "NextScene"）
             SceneManager.LoadScene("NextScene");
         } 
  

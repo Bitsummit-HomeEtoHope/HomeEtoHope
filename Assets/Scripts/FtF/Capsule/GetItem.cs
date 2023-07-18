@@ -70,17 +70,22 @@ public class GetItem : MonoBehaviour
         {
             Debug.Log("Selected human name already exists: " + selectedHumanName);
         }
-
     }
 
-
-
+    /// <summary>
+    /// Receives the tag of the item to be spawned.
+    /// </summary>
+    /// <param name="tag">The tag of the item.</param>
     public void ReceiveTag(string tag)
     {
         readytag = tag;
         CallItem();
     }
 
+    /// <summary>
+    /// Receives the code associated with the item.
+    /// </summary>
+    /// <param name="code">The code associated with the item.</param>
     public void ReceiveCode(string code)
     {
         readycode = code;
@@ -88,7 +93,6 @@ public class GetItem : MonoBehaviour
 
     private void CallItem()
     {
-
         Debug.Log("Ready Tag: " + readytag);
         Debug.Log("Ready Code: " + readycode);
 
@@ -110,7 +114,7 @@ public class GetItem : MonoBehaviour
 
             Debug.Log(currentDay);
             Debug.Log(childPrefabName);
-             switch (currentDay.ToString())
+            switch (currentDay.ToString())
             {
                 case "Day1":
                     path = "2D_set/human/Day1/";
@@ -183,7 +187,6 @@ public class GetItem : MonoBehaviour
                     if (referenceGameObject != null)
                     {
                         prefab.transform.position = referenceGameObject.transform.position;
-                        // 修改这里，将默认的旋转应用到预制件
                         prefab.transform.rotation = referenceGameObject.transform.rotation * childPrefab.transform.rotation;
                     }
                     else
@@ -196,9 +199,7 @@ public class GetItem : MonoBehaviour
                     Debug.LogWarning("Prefab not found for: " + childPrefabName);
                 }
             }
-
         }
-
 
         if (prefab != null)
         {
@@ -206,12 +207,10 @@ public class GetItem : MonoBehaviour
             {
                 case "Food":
                     TakeMeOut(prefab, foodPoint, foodScale, foodOffset, foodInitialRotation, foodMoveSpeed, foodDestinationPoint, "Food_39");
-                    //foodList.Add(prefab);
                     Debug.Log("-----Food coming-----");
                     break;
                 case "Tool":
                     TakeMeOut(prefab, toolPoint, toolScale, toolOffset, toolInitialRotation, toolMoveSpeed, toolDestinationPoint, "Tool_39");
-                    //toolList.Add(prefab);
                     Debug.Log("-----Tool coming-----");
                     break;
             }
@@ -230,12 +229,10 @@ public class GetItem : MonoBehaviour
 
             if (newTag == "Tool_39")
             {
-                // 寻找名为 "-----Tool_Bag-----" 的游戏物体作为Tool的父物体
                 parentObject = GameObject.Find("-----Tool_Bag-----");
             }
             else if (newTag == "Food_39")
             {
-                // 寻找名为 "-----Food_Bag-----" 的游戏物体作为Food的父物体
                 parentObject = GameObject.Find("-----Food_Bag-----");
             }
 
@@ -245,7 +242,6 @@ public class GetItem : MonoBehaviour
                 instance.transform.localPosition = point.localPosition + offset;
                 instance.transform.localRotation = Quaternion.Euler(initialRotation);
 
-                // 根据标签将实例添加到相应的列表中
                 switch (instance.gameObject.tag)
                 {
                     case "Food_39":
@@ -266,11 +262,10 @@ public class GetItem : MonoBehaviour
                 Vector3 adjustedScale = new Vector3(initialScale.x * scale.x, initialScale.y * scale.y, initialScale.z * scale.z);
                 instance.transform.localScale = adjustedScale;
 
-                // 重置位置和旋转
                 instance.transform.localPosition = Vector3.zero;
                 instance.transform.localRotation = Quaternion.identity;
 
-     //           StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
+                //StartCoroutine(MoveItem(instance.transform, moveSpeed, destinationPoint, newTag));
             }
             else
             {
@@ -282,7 +277,6 @@ public class GetItem : MonoBehaviour
     /*
     private IEnumerator MoveItem(Transform itemTransform, float moveDuration, Transform destinationPoint, string newTag)
     {
-
         Vector3 startPosition = itemTransform.localPosition;
         Vector3 targetPosition = destinationPoint.position;
         float elapsedTime = 0f;
@@ -303,5 +297,4 @@ public class GetItem : MonoBehaviour
         itemTransform.gameObject.tag = newTag;
     }
     */
-
 }

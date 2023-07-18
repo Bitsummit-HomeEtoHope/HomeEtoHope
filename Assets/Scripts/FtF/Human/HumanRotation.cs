@@ -8,23 +8,23 @@ public class HumanRotation : MonoBehaviour
 
     private void Start()
     {
-        characterTransform = transform; // 获取角色的Transform组件
-        previousPosition = characterTransform.position; // 保存初始位置
+        characterTransform = transform; 
+        previousPosition = characterTransform.position; 
     }
 
     private void Update()
     {
-        Vector3 currentPosition = characterTransform.position; // 获取当前位置
+        Vector3 currentPosition = characterTransform.position; 
 
         if (currentPosition.x < previousPosition.x)
         {
-            characterTransform.rotation = Quaternion.Euler(rotation, 0f, 0f); // 向左移动时，Y轴旋转为0度
+            characterTransform.rotation = Quaternion.Euler(rotation, 0f, 0f); 
         }
         else if (currentPosition.x > previousPosition.x)
         {
-            characterTransform.rotation = Quaternion.Euler(-rotation, 180f, 0f); // 向右移动时，Y轴旋转为180度
+            characterTransform.rotation = Quaternion.Euler(-rotation, 180f, 0f);
         }
 
-        previousPosition = currentPosition; // 更新前一位置
+        previousPosition = currentPosition;
     }
 }

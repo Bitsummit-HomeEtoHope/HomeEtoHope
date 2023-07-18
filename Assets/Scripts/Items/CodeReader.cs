@@ -6,9 +6,7 @@ public class CodeReader : MonoBehaviour
     private GameObject capsuleDoor;
     private Animator openDoor;
 
-
     [SerializeField] private AudioSource sePlayer;
-
     [SerializeField] private AudioClip maruSE;
     [SerializeField] private AudioClip humanSE;
     [SerializeField] private AudioClip batsuSE;
@@ -22,42 +20,51 @@ public class CodeReader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        CodeHolder codeHolder = other.GetComponent<CodeHolder>(); // 获取碰撞到的物体上的CodeHolder组件
+        // Get the CodeHolder component from the collided object
+        CodeHolder codeHolder = other.GetComponent<CodeHolder>();
         if (codeHolder != null)
         {
-            string code = codeHolder.GetCode(); // 从CodeHolder中获取code
+            // Get the code from the CodeHolder
+            string code = codeHolder.GetCode();
             Debug.Log("Received code: " + code);
 
-            string tag = other.gameObject.tag; // 获取碰撞物体的标签
-            GetItem getItemScript = GameObject.Find("GetItemManager").GetComponent<GetItem>(); // 获取GetItem脚本的实例
+            // Get the tag of the collided object
+            string tag = other.gameObject.tag;
+
+            // Get the GetItem component from the GetItemManager object
+            GetItem getItemScript = GameObject.Find("GetItemManager").GetComponent<GetItem>();
             if (getItemScript != null)
             {
-                getItemScript.ReceiveCode(code); // 将代码传递给GetItem脚本中的接收方法
-                getItemScript.ReceiveTag(tag); // 将标签信息传递给GetItem脚本中的接收方法
+                // Pass the code and tag to the GetItem component
+                getItemScript.ReceiveCode(code);
+                getItemScript.ReceiveTag(tag);
 
-                if (tag == "Human" )
+                // Perform specific actions if the tag is "Human"
+                if (tag == "Human")
                 {
                     capsuleDoor = GameObject.Find("humanDoor");
                     openDoor = capsuleDoor.GetComponent<Animator>();
 
                     if (capsuleDoor != null)
                     {
+                        // Disable and enable the capsuleDoor object to trigger its animation
                         capsuleDoor.SetActive(false);
                         capsuleDoor.SetActive(true);
 
                         if (openDoor != null)
                         {
+                            // Disable and enable the openDoor animator to restart its animation
                             openDoor.enabled = false;
                             openDoor.enabled = true;
                         }
                     }
                 }
 
-
                 bool codeMatches = false;
 
                 if (getItem.theirList != null)
                 {
+                    // Check if the code contains any feature from the theirList
                     foreach (string feature in getItem.theirList)
                     {
                         if (code.Contains(feature))
@@ -68,23 +75,20 @@ public class CodeReader : MonoBehaviour
                     }
                 }
 
-
-                if (code.Contains("broken") || code.Contains("hi") || code.Contains("qaq"))// || codeMatches
+                // Play sound effects based on the code and codeMatches
+                if (code.Contains("broken") || code.Contains("hi") || code.Contains("qaq"))
                 {
                     Debug.Log("22222222222222222Code is right!!222222222222222222");
-                   if(batsuSE!=null) sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
+                    if (batsuSE != null) sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
                 }
                 else if (codeMatches)
                 {
-                    if(humanSE!=null)sePlayer.GetComponent<AudioSource>().PlayOneShot(humanSE);
+                    if (humanSE != null) sePlayer.GetComponent<AudioSource>().PlayOneShot(humanSE);
                 }
                 else
                 {
-                    if(maruSE!=null)sePlayer.GetComponent<AudioSource>().PlayOneShot(maruSE);
+                    if (maruSE != null) sePlayer.GetComponent<AudioSource>().PlayOneShot(maruSE);
                 }
-
-
-
             }
             else
             {
@@ -96,6 +100,7 @@ public class CodeReader : MonoBehaviour
             Debug.Log("CodeHolder component not found!");
         }
 
-        Destroy(other.gameObject); // 删除碰撞到的物体
+        // Destroy the collided object
+        Destroy(other.gameObject);
     }
 }
