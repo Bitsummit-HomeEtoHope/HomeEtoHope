@@ -23,7 +23,7 @@ public class Point_Teacher : MonoBehaviour
     public float credits_end_vi = 0f;
     public bool for_credits_end_vi = false;
     [Header("--will Pass-- if Bad Ending")]
-    public float passScore = 100f;
+    [SerializeField]private float passScore;
 
     [Header("Level_states")]
     public LevelDataCurrent levelDataCurrent;
@@ -32,6 +32,7 @@ public class Point_Teacher : MonoBehaviour
 
     void Start()
     {
+        passScore = levelDataCurrent._clearPoints ;
         number_buildend = levelDataCurrent._theBuildNumber;
         number_humanend = levelDataCurrent._theHumanNumber;
 

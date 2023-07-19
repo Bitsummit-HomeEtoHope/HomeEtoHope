@@ -17707,7 +17707,7 @@ MonoBehaviour:
   for_credits_end_v: 0
   credits_end_vi: 0
   for_credits_end_vi: 0
-  passScore: 22
+  passScore: 0
   levelDataCurrent: {fileID: 1853015593}
   number_buildend: 0
   number_humanend: 0
@@ -30284,6 +30284,7 @@ MonoBehaviour:
   _latetime: 13
   _endDaytime: 10
   _buildfill: 24
+  _clearPoints: 24
   _theBuildNumber: 3
   _theHumanNumber: 8
   _future_Data:

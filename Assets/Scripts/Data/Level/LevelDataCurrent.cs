@@ -41,6 +41,7 @@ public class LevelDataCurrent : MonoBehaviour
     public float _endDaytime;
     [Header("number for the buildings with fillamount")]
     public int _buildfill;
+    public int _clearPoints;
     [Header("number for build Ending")]
     public int _theBuildNumber = 3;
     [Header("number for human Ending")]
