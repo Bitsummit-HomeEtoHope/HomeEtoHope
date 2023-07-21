@@ -12,7 +12,7 @@ public class GoEnding : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("+++++good bye+++++");
+ //       Debug.Log("+++++good bye+++++");
     }
 
     //public string fillAmountTargetObjectName; // 

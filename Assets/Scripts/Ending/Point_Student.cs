@@ -6,8 +6,6 @@ using UnityEngine.Events;
 public class Point_Student : MonoBehaviour
 {
     [Header("your Ending")]
-    public UnityEvent BuildEvent;
-
     //public bool isyourEnding = true;
     //public float points = 1f;
     [Header("will End_I -- total score")]
@@ -38,7 +36,8 @@ public class Point_Student : MonoBehaviour
             if (canEnd_i)
             {
                 teacher.AddPoints(0, points_end_i, 0, 0, 0, 0, 0);
-                BuildEvent.Invoke();
+                teacher.EventCall();
+                Debug.Log("+++++good bye+++++");
             }
             // if(isyourEnding) teacher.AddPoints(points,0,0,0,0,0,0);
             if (canEnd_ii) teacher.AddPoints(0, 0, points_end_ii, 0, 0, 0, 0);
