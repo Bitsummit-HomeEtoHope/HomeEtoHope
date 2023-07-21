@@ -26,7 +26,7 @@ public class CodeHolder : MonoBehaviour
     public static CodeHolder selectedObject;
 
     private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
-
+    private ItemSet itemSet;
     
     private void Start()
     {
@@ -38,6 +38,7 @@ public class CodeHolder : MonoBehaviour
         Debug.Log("Object Tag: " + tag);
 
         meshRenderer = GetComponent<MeshRenderer>();
+        itemSet = GetComponent<ItemSet>();
     }
 
     public string GetCode()
@@ -144,6 +145,7 @@ public class CodeHolder : MonoBehaviour
         if (selectedObject == this)
         {
             selectedObject = null;
+            itemSet.Clear();
         }
     }
 }

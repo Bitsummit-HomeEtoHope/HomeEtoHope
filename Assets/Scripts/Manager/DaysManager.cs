@@ -203,7 +203,7 @@ public class DaysManager : MonoBehaviour
                 break;
 
             case Days.Day3:
-                SceneManager.LoadScene(EndingScene);
+                //SceneManager.LoadScene(EndingScene);
 
                 if (teacher != null)
                 {

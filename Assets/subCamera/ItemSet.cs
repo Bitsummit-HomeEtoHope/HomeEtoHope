@@ -41,7 +41,6 @@ public class ItemSet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_tag = CodeHolder.selectedObject.tag;
 
 
         //if (!m_Item)
@@ -51,7 +50,7 @@ public class ItemSet : MonoBehaviour
             if (m_ItemCameraObject != null)
             {
                 //Destroy the item's camera object
-                Destroy(m_ItemCameraObject);
+                Clear();
                 // m_Criminal.ResetTextPosition();
             }
 
@@ -66,6 +65,8 @@ public class ItemSet : MonoBehaviour
         }
         else if(m_Item != null)
         {
+            m_tag = CodeHolder.selectedObject.tag;
+
             //If the current item exists
             if (!m_ItemCameraObject )
             {
@@ -127,5 +128,11 @@ public class ItemSet : MonoBehaviour
         //    Destroy(m_ItemCameraObject);    
         //}
     }
-   
+
+    public void Clear()
+    {
+        Destroy(m_ItemCameraObject);
+
+    }
+
 }
