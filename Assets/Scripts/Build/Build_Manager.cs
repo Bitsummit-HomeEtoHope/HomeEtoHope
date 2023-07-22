@@ -33,7 +33,7 @@ public class Build_Manager : MonoBehaviour
         {
             if (!setOk)
             {
-                buildCount = CountBuildsWithTag("Build_39");
+                buildCount = CountBuildsWithTag("Build_OK");
                 if (buildCount >= requiredBuildCount)
                 {
                     if (camera2d != null)
@@ -58,7 +58,7 @@ public class Build_Manager : MonoBehaviour
         {
             if (!setOk)
             {
-                buildCount = CountBuildsWithTag("Build_39");
+                buildCount = CountBuildsWithTag("Build_OK");
                 if (buildCount >= requiredBuildCount)
                 {
                     // Smoothly transition the camera's FOV to the target value

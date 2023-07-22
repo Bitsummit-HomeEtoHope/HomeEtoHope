@@ -51,10 +51,10 @@ public class Point_Teacher : MonoBehaviour
 
     private void Update() 
     {
-        if(yourScore < passScore)
-        {
-            buildWord();
-        }
+        //if(yourScore < passScore)
+        //{
+        //    buildWord();
+        //}
     }
 
 

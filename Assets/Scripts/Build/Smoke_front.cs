@@ -8,6 +8,8 @@ using UnityEngine;
         public GameObject player;
         public GameObject finishEffect;
         
+        private LevelDataCurrent levelDataCurrent;
+//        private LevelData levelData;
         private float buildTime=0f;
 
         private void Start()
@@ -18,7 +20,7 @@ using UnityEngine;
         private void Update()
          {
             buildTime+=Time.deltaTime;
-            if(buildTime>5f)
+            if(buildTime> levelDataCurrent._levelData._buildTime)
             {
                 finishEffect.SetActive(true);
                 buildTime=0f;

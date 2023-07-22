@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Point_Student : MonoBehaviour
 {
     [Header("your Ending")]
+    private LevelDataCurrent leveldatacurrent;
     //public bool isyourEnding = true;
     //public float points = 1f;
     [Header("will End_I -- total score")]
@@ -46,7 +47,16 @@ public class Point_Student : MonoBehaviour
             if (canEnd_v) teacher.AddPoints(0, 0, 0, 0, 0, points_end_v, 0);
             if (canEnd_vi) teacher.AddPoints(0, 0, 0, 0, 0, 0, points_end_vi);
         }
+        if (canEnd_i)
+        {
+            StartCoroutine(BuildOkTime(leveldatacurrent._levelData._buildTime));//leveldatacurrent._levelData._buildTime
+        }
+    }
 
+    private IEnumerator BuildOkTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.tag = "Build_OK";
     }
 }
 

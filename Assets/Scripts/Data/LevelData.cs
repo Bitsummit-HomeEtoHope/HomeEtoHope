@@ -27,6 +27,7 @@ public class LevelData : ScriptableObject
     [Range(0.5f,8)]
     public float _spawnInterval;
     public float _dietime;
+    public float _buildTime;
     //public float _endDaytime;
     //public int _buildfill;
 
