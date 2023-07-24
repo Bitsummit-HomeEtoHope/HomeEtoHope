@@ -1,3 +1,4 @@
+using StateMachine.General;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,29 +6,32 @@ using UnityEngine;
 
     public class Smoke_front : MonoBehaviour
     {
-        public GameObject player;
-        public GameObject finishEffect;
+//        public GameObject player;
+//        public GameObject finishEffect;
         
-        private float buildTime=0f;
+//        private LevelDataCurrent levelDataCurrent;
+////        private LevelData levelData;
+//        private float buildTime=0f;
 
-        private void Start()
-        {
+//        private void Start()
+//        {
             
             
-        }
-        private void Update()
-         {
-            buildTime+=Time.deltaTime;
-            if(buildTime>5f)
-            {
-                finishEffect.SetActive(true);
-                buildTime=0f;
-                this.gameObject.SetActive(false);
+//        }
+       // private void Update()
+       //  {
+       // buildTime+=Time.deltaTime;
+       //     if(buildTime> levelDataCurrent._future_Data.build_Time)
+       //     {
+       //     Debug.Log("=="+levelDataCurrent._future_Data.build_Time);
+       //         finishEffect.SetActive(true);
+       //         buildTime=0f;
+       //         this.gameObject.SetActive(false);
                 
                 
-            }
-       //     Debug.Log(buildTime);
+       //     }
+       ////     Debug.Log(buildTime);
             
-        }
+       // }
     }
 

@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 6840235416659167364}
   - component: {fileID: 3300782169274370324}
   m_Layer: 0
-  m_Name: human-body3-normal
+  m_Name: human-body
   m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,8 +1455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050f26409b0876c438166474d3f1be01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  finishEffect: {fileID: 3974735965216408156}
 --- !u!1001 &8463820128643586454
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,8 +40,9 @@ public class LevelDataCurrent : MonoBehaviour
     [Header("waiting for next News")]
     public float _endDaytime;
     [Header("number for the buildings with fillamount")]
-    public int _buildfill;
-    public int _clearPoints;
+    public int _buildcount;
+    public float _changeTime;
+  //  public float _clearPoints;
     [Header("number for build Ending")]
     public int _theBuildNumber = 3;
     [Header("number for human Ending")]

@@ -5,11 +5,10 @@ public class DisposeButtonScript : MonoBehaviour
     private static DisposeButtonScript _instance;
     public static DisposeButtonScript Instance => _instance;
 
-    private GameObject clickedObject; // 被点击的物体
-
+    private GameObject clickedObject; 
+    
     [SerializeField]
-    private float moveSpeed = 5f; // 直线移动的速度
-
+    private float moveSpeed = 5f; 
     void Awake()
     {
         _instance = this;

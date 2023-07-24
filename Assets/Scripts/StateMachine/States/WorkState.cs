@@ -29,11 +29,12 @@ namespace StateMachine.States
             parameter = manager.parameter;
         }
 
+            //SetEnergyActive(manager.transform, " CHANGE HERE ");
         public void SetEnergyActive(Transform selfTransform, string componentName)
         {
-            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm"  };//, "human-body"
 
-            // 关闭所有组件
+            // human effect Off
             foreach (Transform child in selfTransform)
             {
                 if (allowedComponentNames.Contains(child.name))
@@ -42,7 +43,7 @@ namespace StateMachine.States
                 }
             }
 
-            // 开启指定的组件
+            // human effect On  (choose effect in "energy(eat food __ no tool),energy_build,energy_factor,energy_farm")
             if (allowedComponentNames.Contains(componentName))
             {
                 Transform componentTransform = selfTransform.Find(componentName);
@@ -55,21 +56,24 @@ namespace StateMachine.States
 
 
 
-        private IEnumerator HungryLate(float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            if (!isLate) manager.TransitState(StateType.Hungry);
-        }
+
+        //count down for the Hungry
+        //private IEnumerator HungryLate(float delay)
+        //{
+        //    yield return new WaitForSeconds(delay);
+        //    if (!isLate) manager.TransitState(StateType.Hungry);
+        //}
+
 
 
 
 
         public void Onenter()
         {
-            isLate = false;
-            manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+            //isLate = false;
+            //manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
 
-
+            //if get [food] -- if get [tool] -- select the [build] and change [effect]
             if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
             {
                 //--- "energy", "energy_build", "energy_factory", "energy_farm" };
@@ -89,6 +93,7 @@ namespace StateMachine.States
                 //---
             }
 
+            //the food well human take is the [Game Object] named "Food_Tran"
             parameter.Food_Tran.gameObject.SetActive(false);
             isArriveWorkPoint = false;
             GetWorkTarget();
@@ -98,9 +103,9 @@ namespace StateMachine.States
         public void OnExit()
         {
 
-            manager.StopCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+            //manager.StopCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
 
-            //清空parameter.workPoints
+            //Clear the List [parameter.workPoints]
 
             parameter.workPoints.Clear();
 
@@ -113,7 +118,7 @@ namespace StateMachine.States
                 isLate = true;
 
                 manager.transform.position = Vector3.MoveTowards(manager.transform.position, parameter.currentTarget, parameter.moveSpeed * Time.deltaTime);
-                //到达后等待1s
+                
             }
             if (Vector2.Distance(manager.transform.position, parameter.currentTarget) < 0.1f && manager.parameter.isWork == true)
             {
@@ -123,8 +128,7 @@ namespace StateMachine.States
                 }
                 else
                 {
-                    // 处理列表为空或随机索引超出范围的情况
-                    Debug.LogError("Invalid random index or no work points available.");
+                    Debug.LogError("[WorkState] the OnUpdate 114-130 bug .");
                 }
 
                 GameObject[] AgricultureResources = Resources.LoadAll<GameObject>("2D_set/build/Agriculture/");
@@ -135,9 +139,10 @@ namespace StateMachine.States
                 GameObject randomSocietyResource = SocietyResources[Random.Range(0, SocietyResources.Length)];
                 Debug.Log("tool:" + manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName);
 
-                GameObject parentObject = parameter.workPoints[random].gameObject; // 目标物体的子物体作为父物体
+                GameObject parentObject = parameter.workPoints[random].gameObject; // creat under the target
 
 
+                //choose the build prefab
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
                 {
                     GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, parentObject.transform);
@@ -162,7 +167,9 @@ namespace StateMachine.States
 
                 isArriveWorkPoint = true;
                 manager.parameter.isHungry = true;
+                SetEnergyActive(manager.transform, "xxx");
                 manager.TransitState(StateType.Idle);
+                //manager.TransitState(StateType.Hungry);
             }
 
             if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)
@@ -188,7 +195,7 @@ namespace StateMachine.States
 
         public void GetWorkTarget()
         {
-            parameter.workPoints.Clear(); // 清空列表
+            parameter.workPoints.Clear(); // clear the workpoints befor get
 
             buildPoints = GameObject.FindGameObjectsWithTag("Build_set");
 
@@ -202,17 +209,16 @@ namespace StateMachine.States
 
             if (parameter.workPoints.Count > 0)
             {
-                int randomIndex = Random.Range(0, parameter.workPoints.Count); // 随机获取一个索引
-                parameter.currentTarget = parameter.workPoints[randomIndex].position; // 获取随机索引对应的元素
+                int randomIndex = Random.Range(0, parameter.workPoints.Count); 
+                parameter.currentTarget = parameter.workPoints[randomIndex].position; 
                 random = randomIndex;
 
-                // 更改目标的标签为"Will_build"
+                // change Tag from "build_set" to "Will_build"
                 parameter.workPoints[randomIndex].gameObject.tag = "Will_build";
             }
             else
             {
-                // 处理列表为空的情况
-                Debug.LogError("No work points available.");
+                //if can not find work change to ,,,,
             }
         }
     }

@@ -9,17 +9,17 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [Header("System")]
     public Button playButton;
     public Button exitButton;
-    public Button howButton;
+    public Button howButton; 
     public Button listButton;
-    public Button hardButton;
-    public Image redImage; // 指定的红色Image
+    public Button hardButton; //level2 button
+    public Image redImage; 
 
-    private float pressDuration = 3f; // 长按的持续时间
-    private bool isPressing = false; // 记录按钮是否处于按下状态
-    private float pressStartTime; // 记录按下按钮的起始时间
+    private float pressDuration = 3f; 
+    private bool isPressing = false; 
+    private float pressStartTime; 
 
-    private bool isPressed = false; // 按钮是否被按下
-    private float timer = 0f; // 计时器
+    private bool isPressed = false; 
+    private float timer = 0f;
 
     private void Start()
     {
@@ -57,15 +57,16 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             IN();
     }
 
+    //go to [Level1]
     public void PlayGame()
     {
         if (!isPressing)
         {
-            // 执行单击切换场景的逻辑
             SceneManager.LoadScene("Level1");
         }
     }
 
+    //Exit Game
     public void ExitGame()
     {
         if (playButton != null && exitButton != null && howButton != null && listButton != null && hardButton != null)
@@ -74,6 +75,7 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         EndGame();
     }
 
+    //go to [TellYou],tell you How to play
     public void HowToPlay()
     {
         if (playButton != null && exitButton != null && howButton != null && listButton != null && hardButton != null)
@@ -86,7 +88,6 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (eventData.pointerEnter == hardButton.gameObject)
         {
-            // 开始长按计时的协程
             StartCoroutine(StartLongPressTimer());
         }
     }
@@ -95,22 +96,19 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (eventData.pointerEnter == hardButton.gameObject)
         {
-            // 松开按钮后重置红色Image的FillAmount为0
             redImage.fillAmount = 0f;
 
-            // 重置长按状态
             isPressing = false;
 
-            // 停止计时器协程
             StopCoroutine(StartLongPressTimer());
         }
     }
 
+    //press 3 secend then chage to the [Level2]
     private IEnumerator StartLongPressTimer()
     {
-        float elapsedTime = 0f; // 记录经过的时间
+        float elapsedTime = 0f;
 
-        // 记录按下按钮的起始时间
         pressStartTime = Time.time;
         isPressing = true;
 
@@ -118,14 +116,11 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             elapsedTime = Time.time - pressStartTime;
 
-            // 更新红色Image的FillAmount
             float fillAmount = Mathf.Clamp01(elapsedTime / pressDuration);
             redImage.fillAmount = fillAmount;
 
-            // 如果长按的持续时间超过预设的时间，执行长按切换场景的逻辑
             if (elapsedTime >= pressDuration)
             {
-                // 执行长按切换场景的逻辑
                 SceneManager.LoadScene("Level2");
                 break;
             }
@@ -133,7 +128,6 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             yield return null;
         }
 
-        // 松开按钮后重置红色Image的FillAmount为0
         redImage.fillAmount = 0f;
     }
 
@@ -145,6 +139,8 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         SceneManager.LoadScene("OurList");
     }
 
+
+    //Exit Game in Windows
     private void EndGame()
     {
 #if UNITY_EDITOR
@@ -174,7 +170,6 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         howButton.onClick.RemoveListener(HowToPlay);
         listButton.onClick.RemoveListener(OurList);
 
-        // 重置长按状态
         isPressing = false;
     }
 }

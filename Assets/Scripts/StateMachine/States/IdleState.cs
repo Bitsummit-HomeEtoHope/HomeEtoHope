@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using StateMachine.General;
 using UnityEngine;
 
@@ -18,12 +19,60 @@ public class IdleState : IState
     }
     public void Onenter()
     {
-        defaultSprite=manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
+        //---------------------------
+
+       // TurnOffEffect();
+ 
+
+        //
+
+        defaultSprite =manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
         //parameter.Food_Tran.gameObject.SetActive(false);
         parameter.Build_FinsihAnim.gameObject.SetActive(false);
         isAnim=false;
-        Debug.Log("进入idle");
+        Debug.Log("==========idle==========");
     }
+
+
+    public void TurnOffEffect()
+    {
+        string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" , "smoke_front 1" };
+
+        // human effect Off
+        foreach (Transform child in manager.transform)
+        {
+            if (allowedComponentNames.Contains(child.name))
+            {
+                child.gameObject.SetActive(false);
+            }
+        }       
+    }
+
+    public void TurnOnEffect(Transform selfTransform, string componentName)
+    {
+        string[] allowedComponentNames = { componentName };
+
+        // human effect Off
+        foreach (Transform child in selfTransform)
+        {
+            if (allowedComponentNames.Contains(child.name))
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+
+        // human effect On  (choose effect in "energy(eat food __ no tool),energy_build,energy_factor,energy_farm")
+        if (allowedComponentNames.Contains(componentName))
+        {
+            Transform componentTransform = selfTransform.Find(componentName);
+            if (componentTransform != null)
+            {
+                componentTransform.gameObject.SetActive(true);
+            }
+        }
+    }
+
+
 
     public void OnUpdate()
     {
@@ -58,8 +107,10 @@ public class IdleState : IState
             isAnim = true;
         }
 
-        if (parameter.idleTimer >= parameter.workTimer && parameter.isWork == true && manager.parameter.isHungry == true)
+        if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.build_Time && parameter.isWork == true && manager.parameter.isHungry == true)
         {
+            TurnOnEffect(manager.transform, "human-body");
+            TurnOnEffect(manager.transform, "finish-building");
             var foodList = manager.gameObject.GetComponent<GetItem_Human>().foodList_human;
             if (foodList.Count > 0)
             {
@@ -76,7 +127,9 @@ public class IdleState : IState
 
     public void OnExit()
     {
-       // manager.TransitState(StateType.Hungry);
+        TurnOffEffect();
+
+        // manager.TransitState(StateType.Hungry);
         manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
         parameter.idleTimer = 0;
     }

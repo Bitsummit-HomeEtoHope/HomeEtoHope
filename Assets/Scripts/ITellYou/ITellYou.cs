@@ -146,17 +146,14 @@ public class ITellYou : MonoBehaviour
     {
         if (howlist.Count > 0)
         {
-            // 获取当前索引对应的Sprite
             Sprite currentSprite = howlist[currentSpriteIndex];
 
-            // 替换How的Image的Sprite
             How.sprite = currentSprite;
 
-            // 增加索引并检查是否超出范围
             currentSpriteIndex++;
             if (currentSpriteIndex >= howlist.Count)
             {
-                currentSpriteIndex = 0; // 重置索引为0，重新开始循环
+                currentSpriteIndex = 0; 
             }
         }
         else
@@ -174,13 +171,11 @@ public class ITellYou : MonoBehaviour
     {
 
         SceneManager.LoadScene("Title");
-        // 或者：SceneManager.LoadScene(nextSceneIndex);
     }
 
     public void StartButtonAction()
     {
 
         SceneManager.LoadScene("Level1");
-        // 或者：SceneManager.LoadScene(nextSceneIndex);
     }
 }

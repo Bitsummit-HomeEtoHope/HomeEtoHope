@@ -62,14 +62,13 @@ public class DaysManager : MonoBehaviour
 
     [Header("HumanTell")]
     [SerializeField] public string selectedHumanName;
-    public event Action<string> OnHumanSelected; // 定义事件
+    public event Action<string> OnHumanSelected;
     public static string SelectedHumanName { get; private set; }
 
     [Header("News")]
-    [SerializeField] public GameObject NewsContruler;//NewsManager
+    [SerializeField] public GameObject NewsContruler;
     [Header("Ending")]
     private Point_Teacher teacher;
-
 
     private void Start()
     {
@@ -99,26 +98,25 @@ public class DaysManager : MonoBehaviour
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
 
-                    //天数
+                //----------------------------------------------------------------
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day1_when;
-                    //类型
+
                     if (Day1_what != null) Day1_what.sprite = today1;
-                    //新闻
+
                     if (Day1_who != null) Day1_who.sprite = whoSprite;
-                    //名字
+
                     if (Day1_name != null) Day1_name.sprite = nameSprite;
-                    //名单
+
                     if (megane_1 != null) megane_1.sprite = listSprite;
+
+                //----------------------------------------------------------------
+
 
                     humanday_1.transform.localScale = Vector3.one;
 
-                    // 获取选定人物的名称
                     SelectedHumanName = humanlist[randomIndex].name;
-
-                    // 触发事件并传递选定人物的名称
                     OnHumanSelected?.Invoke(SelectedHumanName);
 
-                    // 删除已选择
                     wholist.RemoveAt(randomIndex);
                     namelist.RemoveAt(randomIndex);
                     humanlist.RemoveAt(randomIndex);
@@ -176,18 +174,15 @@ public class DaysManager : MonoBehaviour
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
 
-                    //---------------------------
-                    //
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day3_when;
 
                     if (Day3_what != null) Day3_what.sprite = today3;
-                    //
+
                     if (Day3_who != null) Day3_who.sprite = whoSprite;
-                    //
+
                     if (Day3_name != null) Day3_name.sprite = nameSprite;
-                    //
+
                     if (megane_3 != null) megane_3.sprite = listSprite;
-                    //----------------------------
 
                     humanday_3.transform.localScale = Vector3.one;
 
@@ -207,10 +202,7 @@ public class DaysManager : MonoBehaviour
                 currentDay = Days.Day3;
                 break;
 
-
             case Days.Day3:
-                //TODO: 结束游戏转为结束场景。
-
                 //SceneManager.LoadScene(EndingScene);
 
                 if (teacher != null)

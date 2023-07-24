@@ -132,7 +132,7 @@ public class OpenNews : MonoBehaviour
     {
         float timer = 0f;
         float initialX = hereis.position.x;
-        float targetX = -7f; // 设置目标x值
+        float targetX = -7f; // 
 
         while (timer < movetime)
         {

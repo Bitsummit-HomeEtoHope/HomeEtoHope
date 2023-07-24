@@ -23,7 +23,7 @@ public class Build_Manager : MonoBehaviour
     public GameObject enableGameObject; // Enabled game object
     private bool setOk = false;
     [Header("time?")]
-    public bool needTimeMove = true;
+    public bool needTimeMove = true; // if Move need time 
 
 
     private void Update()
@@ -33,7 +33,7 @@ public class Build_Manager : MonoBehaviour
         {
             if (!setOk)
             {
-                buildCount = CountBuildsWithTag("Build_39");
+                buildCount = CountBuildsWithTag("Build_OK");
                 if (buildCount >= requiredBuildCount)
                 {
                     if (camera2d != null)
@@ -58,7 +58,7 @@ public class Build_Manager : MonoBehaviour
         {
             if (!setOk)
             {
-                buildCount = CountBuildsWithTag("Build_39");
+                buildCount = CountBuildsWithTag("Build_OK");
                 if (buildCount >= requiredBuildCount)
                 {
                     // Smoothly transition the camera's FOV to the target value
@@ -66,7 +66,7 @@ public class Build_Manager : MonoBehaviour
                     // Use sine function to calculate the decay value of camera movement speed
                     //  float moveSpeed = Mathf.Lerp(cameraMoveSpeed, 0f, Mathf.Sin(cameraMoveTimer / cameraMoveDuration * Mathf.PI * 0.5f));
 
-                    if (camera2d != null)
+                    if (camera2d != null)   //set the new Camera
                     {
                         if (targetPosition != null)
                             camera2d.transform.position = Vector3.Lerp(camera2d.transform.position, targetPosition.position, Time.deltaTime * moveSpeed);

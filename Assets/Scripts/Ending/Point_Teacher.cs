@@ -1,11 +1,17 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Point_Teacher : MonoBehaviour
 {
     [Header("your Ending")]
+    public UnityEvent BuildEvent;
+    public UnityEvent BuildEvent_1;
+    public UnityEvent BuildEvent_2;
+    private int buildCount = 0;
     //public float credits = 0f;
     [Header("will End_I -- numal")]
     public float credits_end_i = 0f;
@@ -23,22 +29,103 @@ public class Point_Teacher : MonoBehaviour
     public float credits_end_vi = 0f;
     public bool for_credits_end_vi = false;
     [Header("--will Pass-- if Bad Ending")]
-    [SerializeField]private float passScore;
+    public float passScore;
+    public float yourScore;
+
+    private Coroutine lineCoroutine;
+    private Coroutine markCoroutine;
+
+    [Header("------------------------------")]
+    [Header("Ending Line")]
+    private Image endLine;
+    private Image endMark;
+    [SerializeField] private float changePoint;
+    [SerializeField] private float changeTime;
+
+    private float lineChanges;
+    private float markChanges;
+    private bool lineChaging = false;
+    private bool markChaging = false;
+    private bool isChangingLine = false;
+    private bool isChangingMark = false;
+    [Header("------------------------------")]
+
 
     [Header("Level_states")]
     public LevelDataCurrent levelDataCurrent;
-    [SerializeField]private int number_buildend;
-    [SerializeField]private int number_humanend;
+    [SerializeField] private int number_buildend;
+    [SerializeField] private int number_humanend;
 
-    void Start()
+    private void Update()
     {
-        passScore = levelDataCurrent._clearPoints ;
-        number_buildend = levelDataCurrent._theBuildNumber;
-        number_humanend = levelDataCurrent._theHumanNumber;
+
+        Debug.Log("==+" + buildCount);
+
+        if (buildCount < 0)
+        {
+            StopCoroutine(lineCoroutine);
+            StopCoroutine(markCoroutine);
+        }
+    }
+
+
+    public void EventCall()
+    {
+        BuildEvent.Invoke();
+    }
+    private void OnEnable()
+    {
+        // Register to listen to the BuildEvent
+
+        BuildEvent.AddListener(HandleBuildEvent);
+        BuildEvent_1.AddListener(SpeedUp);
+        BuildEvent_2.AddListener(SpeedBack);
+
 
     }
 
-    public void AddPoints(float points ,float points_end_i, float points_end_ii, float points_end_iii, float points_end_iv, float points_end_v, float points_end_vi)
+
+    private void OnDisable()
+    {
+        // Unregister the listener when the script is disabled or destroyed to avoid memory leaks
+
+        BuildEvent.RemoveListener(HandleBuildEvent);
+
+    }
+
+    private void HandleBuildEvent()
+    {
+        // Handle the BuildEvent here
+        Debug.Log(" +++++welcom here+++++");
+
+        buildWord();
+        // You can add your custom logic here based on the BuildEvent.
+    }
+
+    void Start()
+    {
+        BuildEvent.AddListener(HandleBuildEvent);
+
+        //-----level----------------------------------------
+        changeTime = levelDataCurrent._changeTime;
+        passScore = changePoint = levelDataCurrent._buildcount;
+        //  passScore = levelDataCurrent._clearPoints;
+        number_buildend = levelDataCurrent._theBuildNumber;
+        number_humanend = levelDataCurrent._theHumanNumber;
+
+        //-----ending---------------------------------------
+        GameObject EndLine = GameObject.Find("end_line");
+        GameObject EndMark = GameObject.Find("end_mark");
+        if (EndLine != null) endLine = EndLine.GetComponent<Image>();
+        if (EndMark != null) endMark = EndMark.GetComponent<Image>();
+
+        if (endLine != null) Debug.Log("+++++hi+++++");
+        if (endMark != null) Debug.Log("+++++ok+++++");
+
+
+    }
+
+    public void AddPoints(float points, float points_end_i, float points_end_ii, float points_end_iii, float points_end_iv, float points_end_v, float points_end_vi)
     {
         //credits += points;
         credits_end_i += points_end_i;
@@ -48,6 +135,7 @@ public class Point_Teacher : MonoBehaviour
         credits_end_v += points_end_v;
         credits_end_vi += points_end_vi;
 
+        yourScore = credits_end_i;
         Debug.Log("Points added: " + points + " | Total credits: " + credits_end_i);
     }
 
@@ -61,11 +149,97 @@ public class Point_Teacher : MonoBehaviour
         if (credits_end_vi - credits_end_iv >= number_buildend && credits_end_vi - credits_end_v >= number_buildend) for_credits_end_vi = true;
 
         if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad"); Debug.Log("--BE--"); }
-        if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--") ; }
-        if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
-        if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
+        else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
+        else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
+            else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
+                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
+                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
+                                            else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
     }
+
+
+    private void buildWord()
+    {
+
+        StopCoroutine(lineCoroutine);
+        StopCoroutine(markCoroutine);
+
+
+        if (endLine != null)
+        {
+            lineCoroutine = StartCoroutine(ChangingLine(lineChanges));
+        }
+        if (endMark != null)
+        {
+            markCoroutine = StartCoroutine(ChangingMark(markChanges));
+        }
+    }
+
+    public void SpeedUp()
+    {
+        buildCount = buildCount + 1;
+        lineChanges = 1f / changePoint * buildCount;
+        markChanges = Mathf.Min(125f / (360f * changePoint * buildCount), 1f / changePoint * buildCount);
+
+        buildWord();
+
+    }
+
+    public void SpeedBack()
+    {
+        buildCount = buildCount - 1;
+        lineChanges = 1f / changePoint * buildCount;
+        markChanges = Mathf.Min(125f / (360f * changePoint * buildCount), 1f / changePoint * buildCount);
+
+        buildWord();
+
+    }
+
+
+    private IEnumerator ChangingLine(float lineChanges)
+    {
+        float currentFillAmount = endLine.fillAmount;
+        float targetFillAmount = currentFillAmount + lineChanges;
+        float startTime = Time.time;
+
+        while (true)
+        {
+            float elapsedTime = Time.time - startTime;
+            float lerpValue = elapsedTime / changeTime;
+            float newFillAmount = Mathf.Lerp(currentFillAmount, targetFillAmount, lerpValue);
+
+            endLine.fillAmount = Mathf.Clamp(newFillAmount, currentFillAmount, targetFillAmount);
+            yield return null;
+        }
+        endLine.fillAmount = targetFillAmount;
+        isChangingLine = false;
+    }
+
+    private IEnumerator ChangingMark(float markChanges)
+    {
+        Color.RGBToHSV(endMark.color, out float currentH, out float currentS, out float currentV);
+        float targetH = Mathf.Min(currentH + markChanges, 125f / 360f);
+        float startTime = Time.time;
+
+        while (true)
+        {
+            float elapsedTime = Time.time - startTime;
+            float lerpValue = elapsedTime / changeTime;
+            float newH = Mathf.Lerp(currentH, targetH, lerpValue);
+
+            Color.RGBToHSV(endMark.color, out float _, out float newS, out float newV);
+            Color newColor = Color.HSVToRGB(newH, newS, newV);
+            newColor.a = endMark.color.a;
+
+            endMark.color = newColor;
+            yield return null;
+        }
+        Color.RGBToHSV(endMark.color, out float _, out float finalS, out float finalV);
+        Color finalColor = Color.HSVToRGB(targetH, finalS, finalV);
+        finalColor.a = endMark.color.a;
+        endMark.color = finalColor;
+        isChangingMark = false;
+    }
+
+
 }
