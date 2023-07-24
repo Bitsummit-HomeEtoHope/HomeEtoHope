@@ -48,7 +48,7 @@ public class Point_Student : MonoBehaviour
                 Debug.Log("=+="+leveldatacurrent._future_Data.build_Time);
                 teacher.AddPoints(0, points_end_i, 0, 0, 0, 0, 0);
                 teacher.SpeedUp();
-                teacher.BuildEvent.Invoke();
+               // teacher.BuildEvent.Invoke();
                 //teacher.buildWord();
             }
             // if(isyourEnding) teacher.AddPoints(points,0,0,0,0,0,0);
