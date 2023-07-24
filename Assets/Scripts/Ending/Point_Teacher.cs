@@ -9,7 +9,9 @@ public class Point_Teacher : MonoBehaviour
 {
     [Header("your Ending")]
     public UnityEvent BuildEvent;
-
+    public UnityEvent BuildEvent_1;
+    public UnityEvent BuildEvent_2;
+    private int buildCount = 0;
     //public float credits = 0f;
     [Header("will End_I -- numal")]
     public float credits_end_i = 0f;
@@ -41,6 +43,8 @@ public class Point_Teacher : MonoBehaviour
     private float maekChanges;
     private bool lineChaging = false;
     private bool markChaging = false;
+    private bool isChangingLine = false;
+    private bool isChangingMark = false;
     [Header("------------------------------")]
 
 
@@ -55,6 +59,8 @@ public class Point_Teacher : MonoBehaviour
         //{
         //    buildWord();
         //}
+        Debug.Log("==+"+buildCount);
+
     }
 
 
@@ -67,8 +73,23 @@ public class Point_Teacher : MonoBehaviour
         // Register to listen to the BuildEvent
 
         BuildEvent.AddListener(HandleBuildEvent);
+        BuildEvent_1.AddListener(SpeedUp);
+        BuildEvent_2.AddListener(SpeedBack);
 
     }
+
+    public void SpeedUp()
+    {
+        buildCount = buildCount + 1;
+    
+    }
+
+    public void SpeedBack()
+    {
+        buildCount = buildCount -1;
+
+    }
+
 
     private void OnDisable()
     {
@@ -107,8 +128,7 @@ public class Point_Teacher : MonoBehaviour
         if (endLine != null) Debug.Log("+++++hi+++++");
         if (endMark != null) Debug.Log("+++++ok+++++");
 
-        lineChanges = 1f / changePoint;
-        maekChanges = Mathf.Min(125f / (360f * changePoint), 1f / changePoint);
+      
     }
 
     public void AddPoints(float points, float points_end_i, float points_end_ii, float points_end_iii, float points_end_iv, float points_end_v, float points_end_vi)
@@ -145,21 +165,23 @@ public class Point_Teacher : MonoBehaviour
 
     private void buildWord()
     {
+ 
         lineChaging = false;
         markChaging = false;
 
-        if (endLine != null)//if (endLine != null && !lineChaging)
+        if (endLine != null)
         {
             StartCoroutine(ChangingLine());
             lineChaging = true;
         }
 
-        if (endMark != null)//if (endMark != null && !markChaging)
+        if (endMark != null)
         {
             StartCoroutine(ChangingMark());
             markChaging = true;
         }
     }
+
 
     private void destroyWord()
     {
@@ -169,6 +191,8 @@ public class Point_Teacher : MonoBehaviour
 
     private IEnumerator ChangingLine()
     {
+        lineChanges = 1f / changePoint * buildCount; // 更新填充变化量
+
         float currentFillAmount = endLine.fillAmount;
         float targetFillAmount = currentFillAmount + lineChanges;
         float startTime = Time.time;
@@ -183,12 +207,13 @@ public class Point_Teacher : MonoBehaviour
         }
 
         endLine.fillAmount = targetFillAmount;
+        isChangingLine = false;
     }
-
-
 
     private IEnumerator ChangingMark()
     {
+        maekChanges = Mathf.Min(125f / (360f * changePoint * buildCount), 1f / changePoint * buildCount); // 更新填充变化量
+
         Color.RGBToHSV(endMark.color, out float currentH, out float currentS, out float currentV);
         float targetH = Mathf.Min(currentH + maekChanges, 125f / 360f);
         float startTime = Time.time;
@@ -211,6 +236,7 @@ public class Point_Teacher : MonoBehaviour
         Color finalColor = Color.HSVToRGB(targetH, finalS, finalV);
         finalColor.a = endMark.color.a;
         endMark.color = finalColor;
+        isChangingMark = false;
     }
 
 }

@@ -32,7 +32,7 @@ namespace StateMachine.States
             //SetEnergyActive(manager.transform, " CHANGE HERE ");
         public void SetEnergyActive(Transform selfTransform, string componentName)
         {
-            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm" };
+            string[] allowedComponentNames = { "energy", "energy_build", "energy_factory", "energy_farm"  };//, "human-body"
 
             // human effect Off
             foreach (Transform child in selfTransform)
@@ -56,12 +56,13 @@ namespace StateMachine.States
 
 
 
+
         //count down for the Hungry
-        private IEnumerator HungryLate(float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            if (!isLate) manager.TransitState(StateType.Hungry);
-        }
+        //private IEnumerator HungryLate(float delay)
+        //{
+        //    yield return new WaitForSeconds(delay);
+        //    if (!isLate) manager.TransitState(StateType.Hungry);
+        //}
 
 
 
@@ -69,8 +70,8 @@ namespace StateMachine.States
 
         public void Onenter()
         {
-            isLate = false;
-            manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+            //isLate = false;
+            //manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
 
             //if get [food] -- if get [tool] -- select the [build] and change [effect]
             if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
@@ -102,7 +103,7 @@ namespace StateMachine.States
         public void OnExit()
         {
 
-            manager.StopCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
+            //manager.StopCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
 
             //Clear the List [parameter.workPoints]
 
@@ -166,7 +167,9 @@ namespace StateMachine.States
 
                 isArriveWorkPoint = true;
                 manager.parameter.isHungry = true;
+                SetEnergyActive(manager.transform, "xxx");
                 manager.TransitState(StateType.Idle);
+                //manager.TransitState(StateType.Hungry);
             }
 
             if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)

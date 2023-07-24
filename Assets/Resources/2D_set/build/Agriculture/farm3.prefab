@@ -112,11 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9335c8955a3f87749a559169ac317f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmountTargetObjectName: green_Line
-  colorTargetObjectName: red_Mark
-  fillAmountIncreaseTime: 4.6
-  colorChangeTime: 4.6
-  levelDataCurrent: {fileID: 0}
 --- !u!114 &1798406031585074509
 MonoBehaviour:
   m_ObjectHideFlags: 0
