@@ -10,6 +10,7 @@ public class Point_Student : MonoBehaviour
 
     [Header("your Ending")]
     [SerializeField]private LevelDataCurrent leveldatacurrent;
+    [SerializeField]private Point_Teacher teacher;
     [SerializeField]private float changeTimer = 0f;
     [SerializeField]private bool changeIt = false;
     [SerializeField] private float changeTime;
@@ -34,10 +35,10 @@ public class Point_Student : MonoBehaviour
     public bool canEnd_vi = false;
     public float points_end_vi = 0f;
 
-    void Awake()
+    void Start()
     {
-        Point_Teacher teacher = FindObjectOfType<Point_Teacher>();
-        LevelDataCurrent leveldatacurrent = FindObjectOfType<LevelDataCurrent>();
+        teacher = FindObjectOfType<Point_Teacher>();
+        leveldatacurrent = FindObjectOfType<LevelDataCurrent>();
 
         if (teacher != null)
         {
@@ -64,13 +65,11 @@ public class Point_Student : MonoBehaviour
     private void Update()
     {
 
-        if (canEnd_i && changeIt)
+        if (changeIt)
         {
             changeTimer += Time.deltaTime;
             if( changeTimer >= changeTime)
             {
-                Point_Teacher teacher = FindObjectOfType<Point_Teacher>();
-
                 gameObject.tag = "Build_OK";
                 //teacher.BuildEvent_2.Invoke();
                 teacher.SpeedBack();

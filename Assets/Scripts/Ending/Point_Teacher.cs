@@ -161,8 +161,8 @@ public class Point_Teacher : MonoBehaviour
     private void buildWord()
     {
 
-        StopCoroutine(lineCoroutine);
-        StopCoroutine(markCoroutine);
+      if(lineCoroutine!=null)  StopCoroutine(lineCoroutine);
+      if(markCoroutine!=null)  StopCoroutine(markCoroutine);
 
 
         if (endLine != null)
