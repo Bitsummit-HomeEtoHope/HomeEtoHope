@@ -34,7 +34,7 @@ public class OpenNews : MonoBehaviour
     }
     private void OnEnable()
     {
-        hereIsUp.fillAmount = 0f;
+      if(hereIsUp!=null)  hereIsUp.fillAmount = 0f;
 
         if (hereIsShady != null) if (!hereIsShady.activeSelf) hereIsShady.active = true;
 
@@ -73,7 +73,7 @@ public class OpenNews : MonoBehaviour
         StartCoroutine(hereIsFill(hereIsBar));
 
         StartCoroutine(hereIsFill(hereIsBord));
-        StartCoroutine(hereIsFill(hereIsUp));
+        if (hereIsUp != null) StartCoroutine(hereIsFill(hereIsUp));
 
         yield return StartCoroutine(hereIsMove(hereIsPeople.transform));
 

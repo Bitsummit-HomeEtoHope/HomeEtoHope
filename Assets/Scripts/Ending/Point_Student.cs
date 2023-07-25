@@ -34,8 +34,6 @@ public class Point_Student : MonoBehaviour
     public bool canEnd_vi = false;
     public float points_end_vi = 0f;
 
-    private bool ischange = true;
-
     void Awake()
     {
         Point_Teacher teacher = FindObjectOfType<Point_Teacher>();
@@ -43,16 +41,15 @@ public class Point_Student : MonoBehaviour
 
         if (teacher != null)
         {
-            if (canEnd_i && ischange)
+            if (canEnd_i)
             {
                 changeIt = true;
                 changeTime = leveldatacurrent._future_Data.build_Time;
                 Debug.Log("=+="+leveldatacurrent._future_Data.build_Time);
                 teacher.AddPoints(0, points_end_i, 0, 0, 0, 0, 0);
                 teacher.SpeedUp();
-                // teacher.BuildEvent.Invoke();
+               // teacher.BuildEvent.Invoke();
                 //teacher.buildWord();
-                ischange = false;
             }
             // if(isyourEnding) teacher.AddPoints(points,0,0,0,0,0,0);
             if (canEnd_ii) teacher.AddPoints(0, 0, points_end_ii, 0, 0, 0, 0);
