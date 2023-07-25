@@ -9,6 +9,8 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
     public Transform startPoint;
     public Transform endPoint;
 
+    public bool useThis = true;
+
     private List<Vector3> defaultPositions; 
 
     private void Awake()
@@ -53,6 +55,7 @@ public class PortBeltManager : SingletonManager<PortBeltManager>
             {
                 if (Vector3.Distance(portBelt.position, endPoint.position) <= 0.095f)
                 {
+                    if(useThis)
                     portBelt.position = startPoint.position;
                 }
             }

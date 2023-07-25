@@ -141,28 +141,41 @@ namespace StateMachine.States
 
                 GameObject parentObject = parameter.workPoints[random].gameObject; // creat under the target
 
+                var getItemHuman = manager.gameObject.GetComponent<GetItem_Human>();
+                if (getItemHuman != null && getItemHuman.toolList_human.Count > 0)
+                {
+                    string itemName = getItemHuman.toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName;
+                    Debug.Log("Item Name: " + itemName);
 
-                //choose the build prefab
-                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Agriculture")
-                {
-                    GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, parentObject.transform);
-                    tool1.transform.localPosition = Vector3.zero;
-                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
-                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
+                    if (itemName == "Agriculture")
+                    {
+                        GameObject tool1 = GameObject.Instantiate(randomAgricultureResource, parentObject.transform);
+                        tool1.transform.localPosition = Vector3.zero;
+                        tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
+                        tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
+                    }
+                    else if (itemName == "Industry")
+                    {
+                        GameObject tool1 = GameObject.Instantiate(randomIndustryResource, parentObject.transform);
+                        tool1.transform.localPosition = Vector3.zero;
+                        tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
+                        tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
+                    }
+                    else if (itemName == "Society")
+                    {
+                        GameObject tool1 = GameObject.Instantiate(randomSocietyResource, parentObject.transform);
+                        tool1.transform.localPosition = Vector3.zero;
+                        tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
+                        tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Unknown item name: " + itemName);
+                    }
                 }
-                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Industry")
+                else
                 {
-                    GameObject tool1 = GameObject.Instantiate(randomIndustryResource, parentObject.transform);
-                    tool1.transform.localPosition = Vector3.zero;
-                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
-                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
-                }
-                if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemName == "Society")
-                {
-                    GameObject tool1 = GameObject.Instantiate(randomSocietyResource, parentObject.transform);
-                    tool1.transform.localPosition = Vector3.zero;
-                    tool1.transform.localRotation = Quaternion.Euler(rotateBuild, 0f, 0f);
-                    tool1.transform.localScale = new Vector3(scaleBuild, scaleBuild, scaleBuild);
+                    Debug.LogWarning("Tool list is empty or manager or components not found.");
                 }
 
                 isArriveWorkPoint = true;
