@@ -124,6 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59cf9470eb025e408cc018115ab38f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leveldatacurrent: {fileID: 0}
+  changeTimer: 0
+  changeIt: 0
+  changeTime: 0
   canEnd_i: 1
   points_end_i: 1
   canEnd_ii: 0
