@@ -54,6 +54,7 @@ namespace StateMachine.States
 			if(manager.parameter.isHungry==false)
 			{
                 haveEat = true;
+                parameter.Tool_Tran.gameObject.SetActive(false);
                 parameter.Food_Tran.gameObject.SetActive(true);
 				manager.TransitState(StateType.Idle);
 			}

@@ -22,6 +22,7 @@ namespace StateMachine.General
         public GameObject BuildAnim;
         public GameObject Build_FinsihAnim;
         public GameObject Food_Tran;
+        public GameObject Tool_Tran;
         public bool isBroken;
         
         [Header("ifPatrol")]

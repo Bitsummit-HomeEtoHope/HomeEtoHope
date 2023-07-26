@@ -25,7 +25,7 @@ public class IdleState : IState
  
 
         //
-
+        
         defaultSprite =manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
         //parameter.Food_Tran.gameObject.SetActive(false);
         parameter.Build_FinsihAnim.gameObject.SetActive(false);
@@ -77,9 +77,10 @@ public class IdleState : IState
     public void OnUpdate()
     {
         parameter.idleTimer += Time.deltaTime;
-
+        
         if (parameter.idleTimer >= parameter.idleTime && parameter.isWork == false && manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Count > 0 && manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad == false)
         {
+            
             manager.TransitState(StateType.Patrolling);
         }
 

@@ -23,6 +23,8 @@ namespace StateMachine.General
         {
             manager = GetComponent<FSM>();
             GetItemManger=GameObject.Find("GetItemManager");
+            //获得子物体名为ToolTran的物体
+            manager.parameter.Tool_Tran = transform.Find("ToolTran").gameObject;
             //-----------------GetTree在这里---------------------
             //GetTree();
         }
@@ -92,6 +94,7 @@ namespace StateMachine.General
             if (toolList_human.Count > 0 && toolList_human[0].gameObject.GetComponent<GetItem2dData>()._itemUserNum == 0)
             {
                 Debug.Log("tool zero");
+                manager.parameter.Tool_Tran.gameObject.SetActive(false);
                 isTool = false;
                 //manager.parameter.isBroken = true;
                 if (manager.gameObject.GetComponent<GetItem_Human>().toolList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad)

@@ -34,7 +34,7 @@ namespace StateMachine.States
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
 			if(manager.parameter.isHungry==false)
 			{
-				parameter.Food_Tran.gameObject.SetActive(true);
+				//parameter.Food_Tran.gameObject.SetActive(true);
 				manager.TransitState(StateType.Idle);
 			}
 		}
