@@ -12,6 +12,7 @@ public class Point_Teacher : MonoBehaviour
     public UnityEvent BuildEvent_1;
     public UnityEvent BuildEvent_2;
     private int buildCount = 0;
+    private float buildSpeed  ;
     //public float credits = 0f;
     [Header("will End_I -- numal")]
     public float credits_end_i = 0f;
@@ -161,8 +162,8 @@ public class Point_Teacher : MonoBehaviour
     private void buildWord()
     {
 
-        StopCoroutine(lineCoroutine);
-        StopCoroutine(markCoroutine);
+      if(lineCoroutine!=null)  StopCoroutine(lineCoroutine);
+      if(markCoroutine!=null)  StopCoroutine(markCoroutine);
 
 
         if (endLine != null)
@@ -178,8 +179,9 @@ public class Point_Teacher : MonoBehaviour
     public void SpeedUp()
     {
         buildCount = buildCount + 1;
-        lineChanges = 1f / changePoint * buildCount;
-        markChanges = Mathf.Min(125f / (360f * changePoint * buildCount), 1f / changePoint * buildCount);
+        buildSpeed = buildCount * 0.9f;
+        lineChanges = 1f / changePoint * buildSpeed;
+        markChanges = Mathf.Min(125f / (360f * changePoint * buildSpeed), 1f / changePoint * buildSpeed);
 
         buildWord();
 
@@ -188,8 +190,9 @@ public class Point_Teacher : MonoBehaviour
     public void SpeedBack()
     {
         buildCount = buildCount - 1;
-        lineChanges = 1f / changePoint * buildCount;
-        markChanges = Mathf.Min(125f / (360f * changePoint * buildCount), 1f / changePoint * buildCount);
+        buildSpeed = buildCount * 0.9f;
+        lineChanges = 1f / changePoint * buildSpeed;
+        markChanges = Mathf.Min(125f / (360f * changePoint * buildSpeed), 1f / changePoint * buildSpeed);
 
         buildWord();
 
