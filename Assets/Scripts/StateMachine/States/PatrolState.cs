@@ -83,6 +83,7 @@ namespace StateMachine.States
         public void Onenter()
         {
             parameter.Tool_Tran.gameObject.SetActive(true);
+            //parameter.isHungry=false;
             //--- "energy", "energy_build", "energy_factory", "energy_farm" };
             SetEnergyActive(manager.transform, "energy");
             //---

@@ -19,12 +19,12 @@ namespace StateMachine.States
 		}
 		public void Onenter()
 		{
+            parameter.Food_Tran.gameObject.SetActive(false);
             haveEat = false;
             manager.StartCoroutine(HungryDie(parameter.levelDataCurrent._dietime));
 
             manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Clear();
             manager.gameObject.GetComponent<GetItem_Human>().isFood = false;
-            parameter.Food_Tran.gameObject.SetActive(false);
             OffEnergyActive(manager.transform);
             parameter.currentTarget = parameter.patrolPoints[2].position;
 			parameter.isWork = false;
@@ -51,7 +51,7 @@ namespace StateMachine.States
             }
 			manager.transform.position = Vector3.MoveTowards(manager.transform.position, 
                 parameter.currentTarget, parameter.hungrySpeed*Time.deltaTime);
-			if(manager.parameter.isHungry==false)
+			if(manager.parameter.isHungry==false&&manager.gameObject.GetComponent<GetItem_Human>().isFood==true)
 			{
                 haveEat = true;
                 parameter.Tool_Tran.gameObject.SetActive(false);

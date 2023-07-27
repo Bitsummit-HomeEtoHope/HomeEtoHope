@@ -30,7 +30,10 @@ namespace StateMachine.General
         }
         private void Update()
         {
-            
+            if(isFood==false)
+            {
+                manager.parameter.Food_Tran.SetActive(false);
+            }
             GetFood();
             GetTool();
             //-----------------原本没有GetTree--------------------
@@ -45,6 +48,10 @@ namespace StateMachine.General
                 treeDistance = Vector3.Distance(transform.position, GameManager.Instance.treePoint.position);
             }
             //Debug.Log("GetItemManger.GetComponent<GetItem>().foodList.Count"+GetItemManger.GetComponent<GetItem>().foodList.Count);
+            if(distance>1&&treeDistance>1&&isFood==false)
+            {
+                manager.parameter.Food_Tran.SetActive(false);
+            }
             if(isFood==false && distance<1 && GetItemManger.GetComponent<GetItem>().foodList.Count!=0)
             {
                 isFood = true;
@@ -54,7 +61,7 @@ namespace StateMachine.General
                 GetItemManger.GetComponent<GetItem>().foodList.RemoveAt(0);//移除食物
 
                 GetTree();
-
+                
                 manager.parameter.isHungry = false;
             }
             

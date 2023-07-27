@@ -129,6 +129,7 @@ public class IdleState : IState
     public void OnExit()
     {
         TurnOffEffect();
+        parameter.Food_Tran.SetActive(false);
 
         // manager.TransitState(StateType.Hungry);
         manager.gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite=parameter.defaultSprite;
