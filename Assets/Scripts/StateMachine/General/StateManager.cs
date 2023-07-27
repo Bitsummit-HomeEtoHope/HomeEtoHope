@@ -39,7 +39,7 @@ namespace StateMachine.General
 
         private void Update()
         {
-
+            
         }
 
         private IEnumerator GetHungry()

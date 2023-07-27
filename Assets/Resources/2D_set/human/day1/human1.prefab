@@ -849,6 +849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4115707d638752a4890684b95bb1d20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!212 &4768240938332341296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1048,6 +1050,7 @@ MonoBehaviour:
     BuildAnim: {fileID: 6340021945052399366}
     Build_FinsihAnim: {fileID: 5308720531717270077}
     Food_Tran: {fileID: 1767801231314963990}
+    Tool_Tran: {fileID: 0}
     isBroken: 0
     patrolPoints:
     - {fileID: 0}

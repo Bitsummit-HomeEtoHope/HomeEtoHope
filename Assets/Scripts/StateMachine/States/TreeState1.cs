@@ -24,7 +24,7 @@ namespace StateMachine.States
 
             parameter.currentTarget = parameter.patrolPoints[2].position;
 			parameter.isWork = false;
-			parameter.isHungry = true;
+			//parameter.isHungry = true;
 			Debug.Log("I'm hungry!!!");
 		}
 
@@ -80,7 +80,7 @@ namespace StateMachine.States
 
         public void OnExit()
         {
-            parameter.isHungry = false;
+            //parameter.isHungry = false;
 
             GameObject foodObject = manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject;
             GetItem2dData foodData = foodObject.GetComponent<GetItem2dData>();
