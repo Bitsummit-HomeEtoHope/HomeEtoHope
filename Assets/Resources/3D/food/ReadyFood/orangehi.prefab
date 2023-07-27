@@ -119,6 +119,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 5125edcc173d34da99e1841cdb2719d1, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 7675e1728f8864294b9b3893132d8132, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!82 &-8948028980251244461
 AudioSource:
@@ -131,7 +132,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5909025118221204238, guid: fb9960961def5b8438d3c4b35706181a, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8270d7db24f8341fdbd25ca1d9875fde, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

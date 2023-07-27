@@ -135,6 +135,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 65fe00463dff44c4bbb50412350a89c5, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 78d5c983660ff4df481e164131354c0b, type: 2}
   ihaveChild: 0
+  two: 0
   childRenderers: []
 --- !u!114 &1807391871682979118
 MonoBehaviour:
