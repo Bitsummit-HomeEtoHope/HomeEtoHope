@@ -233,21 +233,38 @@ public class ItemsManager : SingletonManager<ItemsManager>
 
     //---------
 
+    private string[] lastSelected = new string[1]; // 用于存储上次选择的项目
+
     private string RandomSelectItem()
     {
         int totalWeight = CalculateTotalWeight(_itemsDictionary);
 
-        int randomValue = UnityEngine.Random.Range(0, totalWeight);
+        int randomValue;
+        string selected;
 
-        foreach (var item in _itemsDictionary)
+        do
         {
-            randomValue -= item.Value.Weight;
+            randomValue = UnityEngine.Random.Range(0, totalWeight);
+            selected = null;
 
-            if (randomValue < 0)
+            foreach (var item in _itemsDictionary)
             {
-                selectedItem = item.Value.Item;
-                return selectedItem;
+                randomValue -= item.Value.Weight;
+
+                if (randomValue < 0)
+                {
+                    selected = item.Value.Item;
+                    break;
+                }
             }
+        } while (selected == lastSelected[0]); // 检查新选择是否与上次选择相同，如果相同则重新随机选择
+
+        lastSelected[0] = selected; // 更新上次选择为当前选择
+
+        if (selected != null)
+        {
+            selectedItem = selected;
+            return selectedItem;
         }
 
         // 如果未找到目标，重置计时器并进行下一次物品随机与生成
