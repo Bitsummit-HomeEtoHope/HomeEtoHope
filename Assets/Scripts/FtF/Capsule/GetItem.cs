@@ -100,10 +100,14 @@ public class GetItem : MonoBehaviour
 
         if (readytag == "Food")
         {
+            readycode = readycode.Replace("_", "");
+
             prefab = Resources.Load<GameObject>("2D_set/food/" + readycode);
         }
         else if (readytag == "Tool")
         {
+            readycode = readycode.Replace("_", "");
+
             prefab = Resources.Load<GameObject>("2D_set/tool/" + readycode);
         }
         else if (readytag == "Human")
