@@ -25,7 +25,7 @@ MonoBehaviour:
     build_Time: 5
     thief_Time: 0
     thief_Food_Num: 0
-    itemBrokenHuman_time: 15
+    itemBrokenHuman_time: 90
     murderer_time: 0
   _food_goodWeight: 35
   _food_badWeight: 20

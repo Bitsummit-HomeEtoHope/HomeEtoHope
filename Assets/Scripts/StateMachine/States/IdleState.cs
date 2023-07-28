@@ -48,6 +48,34 @@ public class IdleState : IState
         }       
     }
 
+    public void TurnOffAll()
+    {
+        string[] allowedComponentNames = { "smoke_front 1", "finish-building" };
+
+        // human effect Off
+        foreach (Transform child in manager.transform)
+        {
+            if (!allowedComponentNames.Contains(child.name))
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void TurnOnAll()
+    {
+        string[] allowedComponentNames = { "smoke_front 1", "finish-building" };
+
+        // human effect Off
+        foreach (Transform child in manager.transform)
+        {
+            if (!allowedComponentNames.Contains(child.name))
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
+    }
+
     public void TurnOnEffect(Transform selfTransform, string componentName)
     {
         string[] allowedComponentNames = { componentName };
@@ -77,10 +105,10 @@ public class IdleState : IState
     public void OnUpdate()
     {
         parameter.idleTimer += Time.deltaTime;
-        
+
         if (parameter.idleTimer >= parameter.idleTime && parameter.isWork == false && manager.gameObject.GetComponent<GetItem_Human>().foodList_human.Count > 0 && manager.gameObject.GetComponent<GetItem_Human>().foodList_human[0].gameObject.GetComponent<GetItem2dData>()._isBad == false)
         {
-            
+
             manager.TransitState(StateType.Patrolling);
         }
 
@@ -92,7 +120,7 @@ public class IdleState : IState
             {
                 manager.TransitState(StateType.Hungry);
             }
-            
+
         }
 
         if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.build_Time && parameter.isWork == true && manager.parameter.isHungry == false)
@@ -107,11 +135,15 @@ public class IdleState : IState
             parameter.BuildAnim.gameObject.SetActive(true);
             isAnim = true;
         }
-
+        if (parameter.idleTimer >= 0 && parameter.isWork == true && manager.parameter.isHungry == true)
+        {
+            parameter.Tool_Tran.gameObject.SetActive(false);
+            TurnOffAll();
+        }
         if (parameter.idleTimer >= parameter.levelDataCurrent._future_Data.build_Time && parameter.isWork == true && manager.parameter.isHungry == true)
         {
-            TurnOnEffect(manager.transform, "human-body");
-            TurnOnEffect(manager.transform, "finish-building");
+            TurnOnAll();
+            parameter.Tool_Tran.gameObject.SetActive(true);
             var foodList = manager.gameObject.GetComponent<GetItem_Human>().foodList_human;
             if (foodList.Count > 0)
             {

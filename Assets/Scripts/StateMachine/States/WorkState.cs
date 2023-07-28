@@ -94,7 +94,7 @@ namespace StateMachine.States
             }
 
             //the food well human take is the [Game Object] named "Food_Tran"
-            parameter.Food_Tran.gameObject.SetActive(false);
+            //parameter.Food_Tran.gameObject.SetActive(false);
             isArriveWorkPoint = false;
             GetWorkTarget();
             manager.parameter.isWork = true;

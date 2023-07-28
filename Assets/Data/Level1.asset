@@ -18,14 +18,14 @@ MonoBehaviour:
   Interval: 10
   levelBGM: {fileID: 0}
   future_Data:
-    tree_Time: 10
+    tree_Time: 40
     human_Speed: 20
     human_BadFood_Time: 60
     human_BadTool_Time: 60
     build_Time: 5
     thief_Time: 0
     thief_Food_Num: 0
-    itemBrokenHuman_time: 15
+    itemBrokenHuman_time: 90
     murderer_time: 0
   _food_goodWeight: 75
   _food_badWeight: 20
