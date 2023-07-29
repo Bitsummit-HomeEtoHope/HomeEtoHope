@@ -12,7 +12,9 @@ public class Point_Teacher : MonoBehaviour
     public UnityEvent BuildEvent_1;
     public UnityEvent BuildEvent_2;
     private int buildCount = 0;
-    private float buildSpeed  ;
+    private float buildSpeed;
+
+    private GameObject endingSingle;
     //public float credits = 0f;
     [Header("will End_I -- numal")]
     public float credits_end_i = 0f;
@@ -105,6 +107,8 @@ public class Point_Teacher : MonoBehaviour
 
     void Start()
     {
+        endingSingle = GameObject.Find("EndingGame_single");
+
         BuildEvent.AddListener(HandleBuildEvent);
 
         //-----level----------------------------------------
@@ -149,13 +153,29 @@ public class Point_Teacher : MonoBehaviour
         if (credits_end_v - credits_end_iv >= number_buildend && credits_end_v - credits_end_vi >= number_buildend) for_credits_end_v = true;
         if (credits_end_vi - credits_end_iv >= number_buildend && credits_end_vi - credits_end_v >= number_buildend) for_credits_end_vi = true;
 
-        if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad"); Debug.Log("--BE--"); }
-        else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
-        else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
-            else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
-                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
-                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
-                                            else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
+
+        if (endingSingle == null)
+        {
+            if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad"); Debug.Log("--BE--"); }
+            else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
+            else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
+                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
+                        else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
+                                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
+                                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
+        }
+        else if(endingSingle != null)
+        {
+            if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad_single"); Debug.Log("--BE--"); }
+            else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i_single"); Debug.Log("--nomal--"); }
+            else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii_single"); Debug.Log("--bad--"); }
+                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii_single"); Debug.Log("--die--"); }
+                        else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv_single"); Debug.Log("--building--"); }
+                                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v_single"); Debug.Log("--factory--"); }
+                                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi_single"); Debug.Log("--farm--"); }
+        }
+
+
     }
 
 

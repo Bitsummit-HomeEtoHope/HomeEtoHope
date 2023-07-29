@@ -19,23 +19,26 @@ public class EndingManager : MonoBehaviour
     public Button _TitleButton;
     public Button _Button;
     private GameObject _button;
+
+    private GameObject endingSingle;
     // Update is called once per frame
 
     void Start()
     {
+        endingSingle = GameObject.Find("Ending_single");
         thankyou = FindObjectOfType<ThankYou>();
 
         _button = GameObject.Find("Button");
 
-        SkipButton.onClick.AddListener(SkipAction);
+        if(SkipButton!=null)SkipButton.onClick.AddListener(SkipAction);
 
-        ContinueButton.onClick.AddListener(ContinueAction);
+        if (ContinueButton != null) ContinueButton.onClick.AddListener(ContinueAction);
 
 
-        _RestButton.onClick.AddListener(_RestGame);
+        if (_RestButton != null) _RestButton.onClick.AddListener(_RestGame);
 
-        _TitleButton.onClick.AddListener(_TitleGame);
-        _Button.onClick.AddListener(_);
+        if (_TitleButton != null) _TitleButton.onClick.AddListener(_TitleGame);
+        if (_Button != null) _Button.onClick.AddListener(_);
 
     }
 
@@ -70,7 +73,14 @@ public class EndingManager : MonoBehaviour
 
     private void _TitleGame()
     {
-        SceneManager.LoadScene("Title");
+        if (endingSingle == null)
+        {
+            SceneManager.LoadScene("Title");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title_single");
+        }
     }
 
     private void SkipAction()

@@ -21,8 +21,11 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool isPressed = false; 
     private float timer = 0f;
 
+    private GameObject goplaySingle;
+
     private void Start()
     {
+        goplaySingle = GameObject.Find("OpenSingleScene");
         hardButton.onClick.AddListener(OnButtonPressed);
     }
 
@@ -34,6 +37,7 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             if (timer >= 3f)
             {
+                if(goplaySingle == null)
                 SceneManager.LoadScene("Level2");
             }
         }
@@ -62,10 +66,17 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (!isPressing)
         {
-            SceneManager.LoadScene("Level1");
+            if (goplaySingle == null)
+            {
+                SceneManager.LoadScene("Level1");
+            }
+            else
+            {
+                SceneManager.LoadScene("OneScene");
+
+            }
         }
     }
-
     //Exit Game
     public void ExitGame()
     {

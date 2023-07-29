@@ -17,6 +17,8 @@ public class ThankYou : MonoBehaviour
     private Image finX;
     public bool bgm = true;
 
+    private Coroutine theFIN;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +29,14 @@ public class ThankYou : MonoBehaviour
         curtainX = curtain.GetComponent<Image>();
         finX = fin.GetComponent<Image>();
 
-        StartCoroutine(CurtainFalls(8f));
+        theFIN = StartCoroutine(CurtainFalls(8f));
 
 
     }
 
     public void Skip()
     {
-        Debug.Log("xxxxxxxxxxx");
-
+        StopCoroutine(theFIN);
         if (bgm)
         {
             StartCoroutine(CurtainFalls(0.1f));
@@ -118,7 +119,7 @@ public class ThankYou : MonoBehaviour
 }
 
 /*-------RGB-------
- 协程套协程，就是花哨
+ 协程套协程，就是花zuo哨si
         
         private IEnumerator CurtainFalls(float delay)
     {
