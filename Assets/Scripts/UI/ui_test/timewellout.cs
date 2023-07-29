@@ -121,7 +121,6 @@ public class timewellout : MonoBehaviour
                 if (elapsedTime >= duration - 0.9f && elapsedTime < duration - 0.5f && countWantsee < 2)
                 {
                     waitngSpeed = 1f / 0.2f;
-
                     waitngfill = watingImage.fillAmount + waitngSpeed * Time.deltaTime;
                     watingImage.fillAmount = Mathf.Clamp01(waitngfill);
 
@@ -129,7 +128,21 @@ public class timewellout : MonoBehaviour
                     {
                         item.SetActive(false);
                     }
+
+
+                    GameObject timeLinObject = GameObject.Find("Scene_future");
+                    GameObject singleVer = GameObject.Find("Happy_Single");
+                    if(singleVer != null)
+                    {
+                        if (timeLinObject != null)
+                        {
+                            // set the future Scane -ookisa- Vector3(1.9, 1.9, 1.9)
+                            timeLinObject.transform.localScale = new Vector3(1.9f, 1.9f, 1.9f);
+                        }
+                    }
+                 
                 }
+
 
 
                 if (elapsedTime >= duration - 0.5f && elapsedTime < duration - 0.3f )
@@ -202,6 +215,19 @@ public class timewellout : MonoBehaviour
                 //--------------------------------
 
                 isEndDaySound = true;
+
+                GameObject timeLinObject = GameObject.Find("Scene_future");
+                GameObject singleVer = GameObject.Find("Happy_Single");
+                if (singleVer != null)
+                {
+                    if (timeLinObject != null)
+                    {
+                        timeLinObject.transform.localScale = Vector3.one;
+                    }
+                }
+
+
+
             }
             else
             {

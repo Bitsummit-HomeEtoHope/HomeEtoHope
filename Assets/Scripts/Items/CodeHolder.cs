@@ -27,11 +27,14 @@ public class CodeHolder : MonoBehaviour
 
     private ShowList_MRYM showList; // Reference to the ShowList_MRYM script
     private ItemSet itemSet;
-    
+
+    [SerializeField] private GameObject singleVer;
+
+
     private void Start()
     {
 
-
+        singleVer = GameObject.Find("Happy_Single");
 
         code = gameObject.name.Replace("(Clone)", "");
         tag = gameObject.tag;
@@ -50,6 +53,8 @@ public class CodeHolder : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+
         if (selectedObject != null)
         {
             if (selectedObject.ihaveChild)
@@ -83,25 +88,28 @@ public class CodeHolder : MonoBehaviour
         selectedObject = this;
         if (selectedObject = this)
         {
-            if (tag == "Human")
+            if (singleVer == null)
             {
-                showList = FindObjectOfType<ShowList_MRYM>();
-                if (showList != null && !showList.listing)
+                if (tag == "Human")
                 {
-                    //
-                    showList.listing = true;
-                    showList.OpenList();
+                    showList = FindObjectOfType<ShowList_MRYM>();
+                    if (showList != null && !showList.listing)
+                    {
+                        //
+                        showList.listing = true;
+                        showList.OpenList();
+                    }
                 }
-            }
-            else
-            {
-                showList = FindObjectOfType<ShowList_MRYM>();
-                if (showList != null && showList.listing)
+                else
                 {
-                    //
-                    showList.turnOff();
+                    showList = FindObjectOfType<ShowList_MRYM>();
+                    if (showList != null && showList.listing)
+                    {
+                        //
+                        showList.turnOff();
+                    }
                 }
-            }
+            }            
         }
         isClicked = true;
 
