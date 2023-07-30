@@ -77,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SingleHere/Ending_vi_single.unity
     guid: 61f8ad722ff0b034180f68da81c28315
+  - enabled: 1
+    path: Assets/Scenes/SingleHere/TellYou_single.unity
+    guid: 92d81e4284ec7f143a1e113149c01a18
   m_configObjects: {}

@@ -15,15 +15,22 @@ public class OpsionOpen : MonoBehaviour
     //
     public GameObject titleScreen;
 
-    public GameObject mainMoniterCanvas;
+   // public GameObject mainMoniterCanvas;
     //ゲームを一時停止するかどうかのフラグ
     private static bool isOpened = false;
     public static bool isGamePaused { get { return isOpened; } }
 
     private TimeManager timeManager;
 
+
+    //---single---
+    private GameObject opsionSingle;
+
     private void Awake()
     {
+        opsionSingle = GameObject.Find("Play_single");
+
+
         isOpened = false;
         timeManager = FindObjectOfType<TimeManager>();
     }
@@ -101,7 +108,15 @@ public class OpsionOpen : MonoBehaviour
         Time.timeScale = 1.0f;
 
         //                       　↓変更したいscene名いれる
-        SceneManager.LoadScene("Title");
+
+        if(opsionSingle == null)
+        {
+            SceneManager.LoadScene("Title");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title_single");
+        }
     }
    
 }

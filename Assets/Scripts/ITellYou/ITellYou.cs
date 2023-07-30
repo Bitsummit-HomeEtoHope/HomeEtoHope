@@ -31,8 +31,15 @@ public class ITellYou : MonoBehaviour
     [Header("System")]
     public Button nextButton; 
     public Button backButton; 
-    public Button startButton; 
+    public Button startButton;
+    private GameObject tellSingle;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        tellSingle = GameObject.Find("Here_single");
+    }
+
     void OnEnable()
     {
         nextButton.onClick.AddListener(NextButtonAction);
@@ -170,12 +177,25 @@ public class ITellYou : MonoBehaviour
     public void BackButtonAction()
     {
 
-        SceneManager.LoadScene("Title");
+        if (tellSingle == null)
+        {
+            SceneManager.LoadScene("Title");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title_single");
+        }
     }
 
     public void StartButtonAction()
     {
-
-        SceneManager.LoadScene("Level1");
+        if(tellSingle == null)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        else
+        {
+            SceneManager.LoadScene("OneScene");
+        }
     }
 }

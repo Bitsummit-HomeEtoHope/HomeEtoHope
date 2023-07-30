@@ -14434,7 +14434,6 @@ MonoBehaviour:
   Option_Canvas: {fileID: 1457580299}
   settingButton: {fileID: 306791680}
   titleScreen: {fileID: 1805800224}
-  mainMoniterCanvas: {fileID: 822714194}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -22918,7 +22917,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

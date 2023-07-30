@@ -107,7 +107,7 @@ public class Point_Teacher : MonoBehaviour
 
     void Start()
     {
-        endingSingle = GameObject.Find("EndingGame_single");
+        endingSingle = GameObject.Find("Play_single");
 
         BuildEvent.AddListener(HandleBuildEvent);
 

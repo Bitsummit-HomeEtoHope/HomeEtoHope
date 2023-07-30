@@ -73,7 +73,6 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             else
             {
                 SceneManager.LoadScene("OneScene");
-
             }
         }
     }
@@ -92,7 +91,14 @@ public class ChangeScene : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (playButton != null && exitButton != null && howButton != null && listButton != null && hardButton != null)
             OUT();
 
-        SceneManager.LoadScene("TellYou");
+        if (goplaySingle == null)
+        {
+            SceneManager.LoadScene("TellYou");
+        }
+        else
+        {
+            SceneManager.LoadScene("TellYou_single");
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
