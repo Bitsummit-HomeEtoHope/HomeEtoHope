@@ -67,7 +67,7 @@ public class LevelDataCurrent : MonoBehaviour
                 _levelData = _levelData_3;
                 break;
         }
-
+        _changeTime = _future_Data.build_Time;
 
         _levelID = _levelData.levelID;
         _levelName = _levelData.levelName;

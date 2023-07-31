@@ -2214,6 +2214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e841cb1260cb549898c7cc11522c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiTextList: []
+  fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
+  fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
 --- !u!4 &1261930378
 Transform:
   m_ObjectHideFlags: 0
