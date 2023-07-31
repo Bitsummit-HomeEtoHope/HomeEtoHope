@@ -1522,75 +1522,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &105973199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 105973200}
-  - component: {fileID: 105973201}
-  m_Layer: 0
-  m_Name: Play_single (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &105973200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105973199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2045684447}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &105973201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105973199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f94e5952de2b8b4ea80bc582a3ff8a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BuildEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  BuildEvent_1:
-    m_PersistentCalls:
-      m_Calls: []
-  BuildEvent_2:
-    m_PersistentCalls:
-      m_Calls: []
-  credits_end_i: 0
-  credits_end_ii: 0
-  credits_end_iii: 0
-  credits_end_iv: 0
-  for_credits_end_iv: 0
-  credits_end_v: 0
-  for_credits_end_v: 0
-  credits_end_vi: 0
-  for_credits_end_vi: 0
-  passScore: 0
-  yourScore: 0
-  changePoint: 0
-  changeTime: 0
-  levelDataCurrent: {fileID: 1853015593}
-  number_buildend: 0
-  number_humanend: 0
 --- !u!1 &108450504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -34095,7 +34026,6 @@ Transform:
   - {fileID: 816584372}
   - {fileID: 12545983}
   - {fileID: 884485683}
-  - {fileID: 105973200}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

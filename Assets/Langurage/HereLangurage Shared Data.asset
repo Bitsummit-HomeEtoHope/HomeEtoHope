@@ -87,6 +87,14 @@ MonoBehaviour:
     m_Key: news_a_3
     m_Metadata:
       m_Items: []
+  - m_Id: 142085919993856
+    m_Key: news_b_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142980653117440
+    m_Key: news_b_1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
