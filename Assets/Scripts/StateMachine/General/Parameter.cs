@@ -16,6 +16,7 @@ namespace StateMachine.General
         public float idleTimer;
         
         [Header("ifWork")]
+        public bool isNotWorkPoint=false;
         public List<Transform> workPoints;
         public Vector3 currentTarget;       
         public float workTimer;
