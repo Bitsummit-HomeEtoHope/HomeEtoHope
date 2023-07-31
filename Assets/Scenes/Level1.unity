@@ -1104,12 +1104,12 @@ GameObject:
   - component: {fileID: 51834466}
   - component: {fileID: 51834468}
   m_Layer: 5
-  m_Name: name_5
+  m_Name: name_5 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &51834465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1241,9 +1241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 115438579740672
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2135,7 +2135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &120397267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2146,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1585544673}
   m_RootOrder: 3
@@ -5061,8 +5061,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280689441
-  m_fontColor: {r: 0.12941177, g: 0.13725491, b: 0.14901961, a: 1}
+    rgba: 4278914147
+  m_fontColor: {r: 0.38823533, g: 0.04705883, b: 0.043137256, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8324,8 +8324,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280689186
-  m_fontColor: {r: 0.13333334, g: 0.13333334, b: 0.14901961, a: 1}
+    rgba: 4278914147
+  m_fontColor: {r: 0.38823533, g: 0.04705883, b: 0.043137256, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8951,7 +8951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3226.49, y: -101.02}
+  m_AnchoredPosition: {x: 3226.49, y: -70.705}
   m_SizeDelta: {x: 154.53, y: 162.59}
   m_Pivot: {x: 0.49999988, y: 0.5}
 --- !u!54 &524411851
@@ -16877,7 +16877,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e841cb1260cb549898c7cc11522c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiTextList: []
+  uiTextList:
+  - {fileID: 1060671172}
+  - {fileID: 785365754}
+  - {fileID: 880699524}
+  - {fileID: 1423353138}
+  - {fileID: 1611084480}
+  - {fileID: 977229629}
+  - {fileID: 1307948969}
+  - {fileID: 51834466}
+  - {fileID: 2120515796}
+  - {fileID: 18551431}
+  - {fileID: 293088818}
+  - {fileID: 509422452}
+  - {fileID: 696650633}
+  - {fileID: 770914644}
+  - {fileID: 1958246331}
+  - {fileID: 1203744273}
+  - {fileID: 283108762}
+  - {fileID: 1541660243}
+  - {fileID: 551965190}
+  - {fileID: 12858549}
+  - {fileID: 1323765496}
+  - {fileID: 2024946142}
+  - {fileID: 627096653}
+  - {fileID: 895448665}
+  - {fileID: 469288361}
   fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
 --- !u!1 &693611705
@@ -17683,7 +17708,7 @@ GameObject:
   - component: {fileID: 770914644}
   - component: {fileID: 770914646}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: news_b_0 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17729,7 +17754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Feature
+  m_text: "\u7279\u5FB4\u306F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   m_sharedMaterial: {fileID: -3436682886127383258, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
@@ -17756,7 +17781,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 97.1
+  m_fontSize: 115.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17986,7 +18011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &778822896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19876,12 +19901,12 @@ GameObject:
   - component: {fileID: 880699524}
   - component: {fileID: 880699526}
   m_Layer: 5
-  m_Name: name_0
+  m_Name: name_0 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &880699523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20013,9 +20038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 112585706434560
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -21423,12 +21448,12 @@ GameObject:
   - component: {fileID: 977229629}
   - component: {fileID: 977229631}
   m_Layer: 5
-  m_Name: name_3
+  m_Name: name_3 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &977229628
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21560,9 +21585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 114512297062400
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -22701,7 +22726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1088753998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22754,7 +22779,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 2
-  m_FillAmount: 0.988
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 3
   m_UseSpriteMesh: 0
@@ -25839,7 +25864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3056.5, y: -83.66}
+  m_AnchoredPosition: {x: 3056.5, y: -68.50001}
   m_SizeDelta: {x: 185.44, y: 162.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &1277643486
@@ -26266,12 +26291,12 @@ GameObject:
   - component: {fileID: 1307948969}
   - component: {fileID: 1307948971}
   m_Layer: 5
-  m_Name: name_4
+  m_Name: name_4 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1307948968
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26403,9 +26428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 114821526319104
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -27075,7 +27100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333474249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27124,7 +27149,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 2
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -28384,12 +28409,12 @@ GameObject:
   - component: {fileID: 1423353138}
   - component: {fileID: 1423353140}
   m_Layer: 5
-  m_Name: name_1
+  m_Name: name_1 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1423353137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28521,9 +28546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 113196455817216
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -29775,7 +29800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515705037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31241,12 +31266,12 @@ GameObject:
   - component: {fileID: 1611084480}
   - component: {fileID: 1611084482}
   m_Layer: 5
-  m_Name: name_2
+  m_Name: name_2 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1611084479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31378,9 +31403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 113578531745792
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -35939,7 +35964,7 @@ GameObject:
   - component: {fileID: 1958246331}
   - component: {fileID: 1958246333}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: news_b_1 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35985,7 +36010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ...Look Out!!
+  m_text: ".\u8B66\u6212\u304C\u5FC5\u8981\uFF01"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   m_sharedMaterial: {fileID: -3436682886127383258, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
@@ -36012,7 +36037,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 118.55
+  m_fontSize: 123.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36086,7 +36111,19 @@ MonoBehaviour:
   m_FormatArguments: []
   m_UpdateString:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958246331}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   references:
     version: 2
     RefIds: []
@@ -38670,12 +38707,12 @@ GameObject:
   - component: {fileID: 2120515796}
   - component: {fileID: 2120515798}
   m_Layer: 5
-  m_Name: name_6
+  m_Name: name_6 oktext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2120515795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38807,9 +38844,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:075c79863a55be849adf8c6b845626aa
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 116257073000448
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

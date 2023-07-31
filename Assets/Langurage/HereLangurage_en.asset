@@ -99,7 +99,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 142980653117440
-    m_Localized: 
+    m_Localized: ...Look Out!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142085919993856
+    m_Localized: 'Feature:'
     m_Metadata:
       m_Items: []
   references:
