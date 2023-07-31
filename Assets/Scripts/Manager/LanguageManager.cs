@@ -17,7 +17,7 @@ public class LanguageManager : MonoBehaviour
     public TMPro.TMP_FontAsset fontENJP; // 用于英语和日语的字体
     public TMPro.TMP_FontAsset fontCNTW; // 用于中文和台湾的字体
 
-    private void Awake()
+    private IEnumerator Start()
     {
         // 第一步：寻找目标文件夹并根据其命名修改游戏物体名和字体
         string currentFolderName = GetCurrentFolderName();
@@ -25,7 +25,7 @@ public class LanguageManager : MonoBehaviour
         {
             SetLanguageName(currentFolderName);
             UpdateUITextFont(currentFolderName);
-            UpdateLanguage(currentFolderName);
+            yield return StartCoroutine(UpdateLanguage(currentFolderName));
         }
         else
         {
@@ -56,19 +56,30 @@ public class LanguageManager : MonoBehaviour
 
     private void UpdateFolderName(string newName)
     {
-        // 第三步：重命名目标文件夹
+        // 第三步：删除目标文件夹（如果存在）
         string currentFolderName = GetCurrentFolderName();
-        if (currentFolderName != newName && IsValidFolderName(newName))
-        {
-            string newPath = Path.Combine(folderPath, newName);
-            // 进行文件夹的重命名
-            Directory.Move(Path.Combine(folderPath, currentFolderName), newPath);
+        string currentFolderPath = Path.Combine(folderPath, currentFolderName);
 
-            // 更新游戏物体名称和字体
-            SetLanguageName(newName);
-            UpdateUITextFont(newName);
-            UpdateLanguage(newName);
+        if (Directory.Exists(currentFolderPath))
+        {
+            Directory.Delete(currentFolderPath, true);
         }
+
+        // 第四步：删除Assets/Log目录下所有文件夹
+        string[] folders = Directory.GetDirectories(folderPath);
+        foreach (string folder in folders)
+        {
+            Directory.Delete(folder, true);
+        }
+
+        // 第五步：根据按键新建文件夹
+        string newFolderPath = Path.Combine(folderPath, newName);
+        Directory.CreateDirectory(newFolderPath);
+
+        // 更新游戏物体名称和字体
+        SetLanguageName(newName);
+        UpdateUITextFont(newName);
+        StartCoroutine(UpdateLanguage(newName));
     }
 
     private bool IsValidFolderName(string name)
@@ -76,26 +87,33 @@ public class LanguageManager : MonoBehaviour
         return System.Array.Exists(validFolderNames, element => element == name);
     }
 
-    private void UpdateLanguage(string folderName)
+    private IEnumerator UpdateLanguage(string folderName)
     {
-        int code = 2; // Default to English (EN)
+        int code;
 
         if (folderName == "1")
         {
-            code = 3; // Japanese (JP)
+            code = 3; // 日语
         }
         else if (folderName == "2")
         {
-            code = 0; // Chinese (Simplified) (CN)
+            code = 0; // 简体中文
         }
         else if (folderName == "3")
         {
-            code = 2; // English (EN)
+            code = 2; // 英语
         }
         else if (folderName == "4")
         {
-            code = 1; // Chinese (Traditional) (TW)
+            code = 1; // 繁体中文
         }
+        else
+        {
+            Debug.LogWarning("Invalid folder name: " + folderName);
+            yield break;
+        }
+
+        yield return LocalizationSettings.InitializationOperation;
 
         if (code >= 0 && code < LocalizationSettings.AvailableLocales.Locales.Count)
         {
