@@ -80,4 +80,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SingleHere/TellYou_single.unity
     guid: 92d81e4284ec7f143a1e113149c01a18
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 34220b31cf0c8094f914958c77f4e820, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: d9eecc08ba0f6104d9a678068b7e434a, type: 2}
