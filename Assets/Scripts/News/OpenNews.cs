@@ -73,7 +73,7 @@ public class OpenNews : MonoBehaviour
         StartCoroutine(hereIsFill(hereIsBar));
 
         StartCoroutine(hereIsFill(hereIsBord));
-        if (hereIsUp != null) StartCoroutine(hereIsFill(hereIsUp));
+        if(hereIsUp != null) StartCoroutine(hereIsFill(hereIsUp));
 
         yield return StartCoroutine(hereIsMove(hereIsPeople.transform));
 
@@ -162,5 +162,6 @@ public class OpenNews : MonoBehaviour
         hereIsPeople.transform.position = initialPeoplePos;
         hereIsBar.fillAmount = 0f;
         hereIsBord.fillAmount = 0f;
+        hereIsUp.fillAmount = 0f;
     }
 }
