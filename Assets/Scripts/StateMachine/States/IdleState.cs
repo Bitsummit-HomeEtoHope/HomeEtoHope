@@ -129,7 +129,7 @@ public class IdleState : IState
             manager.TransitState(StateType.Working);
         }
 
-        if (parameter.idleTimer < parameter.workTimer && parameter.isWork == true && isAnim == false)
+        if (parameter.idleTimer < parameter.workTimer && parameter.isWork == true && isAnim == false&&parameter.isNotWorkPoint==false)
         {
             parameter.BuildAnim.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             parameter.BuildAnim.gameObject.SetActive(true);

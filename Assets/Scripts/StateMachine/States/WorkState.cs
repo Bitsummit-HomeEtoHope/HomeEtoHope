@@ -70,6 +70,8 @@ namespace StateMachine.States
 
         public void Onenter()
         {
+            
+             parameter.isNotWorkPoint=false;
             //isLate = false;
             //manager.StartCoroutine(HungryLate(parameter.levelDataCurrent._latetime));
 
@@ -96,8 +98,9 @@ namespace StateMachine.States
             //the food well human take is the [Game Object] named "Food_Tran"
             //parameter.Food_Tran.gameObject.SetActive(false);
             isArriveWorkPoint = false;
-            GetWorkTarget();
             manager.parameter.isWork = true;
+            GetWorkTarget();
+            
         }
 
         public void OnExit()
@@ -222,6 +225,7 @@ namespace StateMachine.States
 
             if (parameter.workPoints.Count > 0)
             {
+               
                 int randomIndex = Random.Range(0, parameter.workPoints.Count); 
                 parameter.currentTarget = parameter.workPoints[randomIndex].position; 
                 random = randomIndex;
@@ -231,7 +235,9 @@ namespace StateMachine.States
             }
             else
             {
-                //if can not find work change to ,,,,
+                manager.parameter.isWork = false;
+                parameter.isNotWorkPoint = true;
+                manager.TransitState(StateType.Idle);
             }
         }
     }

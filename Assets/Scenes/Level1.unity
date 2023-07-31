@@ -2778,7 +2778,7 @@ MonoBehaviour:
   cameraMoveDuration: 0.5
   targetPosition: {fileID: 156982316}
   targetRotation: {fileID: 156982316}
-  requiredBuildCount: 4
+  requiredBuildCount: 7
   buildCount: 0
   enableGameObject: {fileID: 562302279}
   needTimeMove: 1
@@ -13018,7 +13018,7 @@ MonoBehaviour:
   cameraMoveDuration: 1
   targetPosition: {fileID: 1905078572}
   targetRotation: {fileID: 1905078572}
-  requiredBuildCount: 10
+  requiredBuildCount: 14
   buildCount: 0
   enableGameObject: {fileID: 528165680}
   needTimeMove: 1
@@ -14431,9 +14431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option_Canvas: {fileID: 1457580299}
-  settingButton: {fileID: 306791680}
-  titleScreen: {fileID: 1805800224}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -22895,9 +22892,9 @@ MonoBehaviour:
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   dushSpeed: 6
-  sendFood: 1
+  sendFood: 0
   sendTool: 1
-  sendHuman: 1
+  sendHuman: 0
   food_goodWeight: 100
   food_badWeight: 30
   tool_goodWeight: 100
