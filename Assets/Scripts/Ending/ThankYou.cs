@@ -31,22 +31,31 @@ public class ThankYou : MonoBehaviour
         finX = fin.GetComponent<Image>();
 
         theFIN = StartCoroutine(CurtainFalls(8f));
+
+
+        if (isMeto)
+        {
+            if (_button != null)
+            {
+                if (_button.activeSelf)
+                {
+                    _button.SetActive(false);
+                }
+            }
+        }
+
+
     }
 
     public void Skip()
     {
-        if (isMeto)
-        {
-
-        }
-        else
-        {
+    
             StopCoroutine(theFIN);
             if (bgm)
             {
                 StartCoroutine(CurtainFalls(0.1f));
             }
-        }
+        
     }
 
 
@@ -55,7 +64,10 @@ public class ThankYou : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (bgm)
         {
-            if (_button.activeSelf) _button.SetActive(false);
+            if (!isMeto)
+            {
+                if (_button.activeSelf) _button.SetActive(false);
+            }
 
             if (theSkip.activeSelf)theSkip.SetActive(false);
             Rest.SetActive(true);
