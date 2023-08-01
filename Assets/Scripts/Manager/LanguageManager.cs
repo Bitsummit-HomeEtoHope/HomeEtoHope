@@ -29,11 +29,11 @@ public class LanguageManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SetLanguage("zh-CN"); // Chinese (Simplified)
+            SetLanguage("zh-Hans"); // Chinese (Simplified)
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SetLanguage("zh-TW"); // Chinese (Traditional)
+            SetLanguage("zh-Hant"); // Chinese (Traditional)
         }
     }
 

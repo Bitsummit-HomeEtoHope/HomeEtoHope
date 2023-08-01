@@ -7,24 +7,22 @@ public class SingleOpen : MonoBehaviour
 {
     public Image changeImage;
 
-    private bool isTitle;
+    private GameObject shoutDown;
     // Start is called before the first frame update
     void Start()
     {
+        shoutDown = GameObject.Find("Title Image Canvas");
 
-        isTitle = true;
-        StartCoroutine("Waiting");
+        StartCoroutine(Waiting());
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 检测鼠标左键的点击事件
-        if (Input.GetMouseButtonDown(0) && isTitle)
+        if (Input.GetMouseButtonDown(0) && shoutDown.activeSelf)
         {
-            StopCoroutine("Waiting");
+            StopCoroutine(Waiting());
             StartCoroutine(WelcomeCoroutine());
-            isTitle = false;
         }
     }
 
@@ -34,12 +32,10 @@ public class SingleOpen : MonoBehaviour
         StartCoroutine(WelcomeCoroutine());
     }
 
-
-    private IEnumerator WelcomeCoroutine() { 
-    
+    private IEnumerator WelcomeCoroutine()
+    {
 
         yield return StartCoroutine(AdjustImageA(0.5f, 100f));
-        GameObject shoutDown = GameObject.Find("Title Image Canvas");
       //  GameObject openStage = GameObject.Find("Tap to Start Canvas");
         shoutDown.SetActive(false);
       //  openStage.SetActive(true);
