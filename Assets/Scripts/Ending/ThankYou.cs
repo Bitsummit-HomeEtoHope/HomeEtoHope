@@ -17,6 +17,7 @@ public class ThankYou : MonoBehaviour
     private Image finX;
     public bool bgm = true;
 
+    private bool isMeto = true;
     private Coroutine theFIN;
 
     // Start is called before the first frame update
@@ -30,16 +31,21 @@ public class ThankYou : MonoBehaviour
         finX = fin.GetComponent<Image>();
 
         theFIN = StartCoroutine(CurtainFalls(8f));
-
-
     }
 
     public void Skip()
     {
-        StopCoroutine(theFIN);
-        if (bgm)
+        if (isMeto)
         {
-            StartCoroutine(CurtainFalls(0.1f));
+
+        }
+        else
+        {
+            StopCoroutine(theFIN);
+            if (bgm)
+            {
+                StartCoroutine(CurtainFalls(0.1f));
+            }
         }
     }
 
