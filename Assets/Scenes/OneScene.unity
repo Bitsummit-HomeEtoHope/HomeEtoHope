@@ -4530,7 +4530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 66213815e4ba1ec459441de9611630f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bb4eb511359c9140813892ba4618603, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17897,6 +17897,7 @@ MonoBehaviour:
   BuildEvent_2:
     m_PersistentCalls:
       m_Calls: []
+  endingCheck: 0
   credits_end_i: 0
   credits_end_ii: 0
   credits_end_iii: 0
@@ -30788,10 +30789,10 @@ MonoBehaviour:
   _dietime: 0
   _latetime: 13
   _endDaytime: 10
-  _buildcount: 29
+  _buildcount: 24
   _changeTime: 5
   _theBuildNumber: 3
-  _theHumanNumber: 5
+  _theHumanNumber: 8
   _future_Data:
     tree_Time: 0
     human_Speed: 0
