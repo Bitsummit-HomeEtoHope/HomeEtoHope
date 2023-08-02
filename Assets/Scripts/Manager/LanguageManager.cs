@@ -24,13 +24,19 @@ public class LanguageManager : MonoBehaviour
     {
         titleScene = GameObject.Find("HereTitle");
         // Load the default language (e.g., English)
-        if(titleScene!=null)SetLanguage("en");
+        if (titleScene != null) 
+        {
+            SetLanguage("en");
+            if (btnJa != null) btnJa.onClick.AddListener(() => SetLanguage("ja"));
+            if (btnEn != null) btnEn.onClick.AddListener(() => SetLanguage("en"));
+            if (btnZhCN != null) btnZhCN.onClick.AddListener(() => SetLanguage("zh-CN"));
+            if (btnZhTW != null) btnZhTW.onClick.AddListener(() => SetLanguage("zh-TW"));
+        }
+
+        UpdateUITextFont();
 
         // Bind button click events
-        if(btnJa!=null)btnJa.onClick.AddListener(() => SetLanguage("ja"));
-        if(btnEn!=null)btnEn.onClick.AddListener(() => SetLanguage("en"));
-        if(btnZhCN!=null)btnZhCN.onClick.AddListener(() => SetLanguage("zh-CN"));
-        if(btnZhTW!=null)btnZhTW.onClick.AddListener(() => SetLanguage("zh-TW"));
+
     }
 
     private void Update()
@@ -59,7 +65,7 @@ public class LanguageManager : MonoBehaviour
         LocalizationSettings.SelectedLocale = GetLocaleFromLanguageCode(languageCode);
 
         // Update the UI text font based on the selected locale
-        UpdateUITextFont(languageCode);
+        UpdateUITextFont();
     }
 
     private Locale GetLocaleFromLanguageCode(string languageCode)
@@ -75,17 +81,22 @@ public class LanguageManager : MonoBehaviour
         return null;
     }
 
-    private void UpdateUITextFont(string languageCode)
+    private void UpdateUITextFont()
     {
         TMPro.TMP_FontAsset selectedFont = null;
 
-        // Determine the font to use based on the language code
-        if (languageCode == "ja" || languageCode == "en") // Japanese or English
+        // Get the currently selected locale
+        Locale selectedLocale = LocalizationSettings.SelectedLocale;
+
+        // Determine the font to use based on the selected locale
+        if (selectedLocale.Identifier.Code == "ja" || selectedLocale.Identifier.Code == "en")
         {
+            // Japanese or English
             selectedFont = fontENJP;
         }
-        else // Chinese (Simplified) or Chinese (Traditional)
+        else
         {
+            // Chinese (Simplified) or Chinese (Traditional)
             selectedFont = fontCNTW;
         }
 
@@ -98,4 +109,5 @@ public class LanguageManager : MonoBehaviour
             }
         }
     }
+
 }

@@ -16947,6 +16947,10 @@ MonoBehaviour:
   - {fileID: 819470993}
   fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
+  btnJa: {fileID: 0}
+  btnEn: {fileID: 0}
+  btnZhCN: {fileID: 0}
+  btnZhTW: {fileID: 0}
 --- !u!1 &693611705
 GameObject:
   m_ObjectHideFlags: 0
@@ -26382,9 +26386,9 @@ MonoBehaviour:
   itemsArrayIndex: 0
   itemScale: {x: 0.3, y: 0.3, z: 0.3}
   dushSpeed: 6
-  sendFood: 0
+  sendFood: 1
   sendTool: 1
-  sendHuman: 0
+  sendHuman: 1
   food_goodWeight: 100
   food_badWeight: 30
   tool_goodWeight: 100

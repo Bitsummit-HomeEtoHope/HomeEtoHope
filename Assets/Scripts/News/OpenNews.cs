@@ -34,7 +34,7 @@ public class OpenNews : MonoBehaviour
     }
     private void OnEnable()
     {
-        hereIsUp.fillAmount = 0f;
+        if(hereIsUp!=null)hereIsUp.fillAmount = 0f;
 
         if (hereIsUp!=null)  hereIsUp.fillAmount = 0f;
 
