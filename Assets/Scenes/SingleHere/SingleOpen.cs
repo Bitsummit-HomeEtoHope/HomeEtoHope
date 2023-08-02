@@ -12,7 +12,6 @@ public class SingleOpen : MonoBehaviour
     void Start()
     {
         shoutDown = GameObject.Find("Title Image Canvas");
-
         StartCoroutine(Waiting());
     }
 
@@ -40,6 +39,9 @@ public class SingleOpen : MonoBehaviour
         shoutDown.SetActive(false);
       //  openStage.SetActive(true);
         yield return StartCoroutine(AdjustImageA(0.5f, 0f));
+
+        GameObject Image = GameObject.Find("changeImage");
+        if(Image.activeSelf)Image.SetActive(false);
     }
 
     private IEnumerator AdjustImageA(float duration, float targetA)

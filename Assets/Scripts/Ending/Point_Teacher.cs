@@ -115,7 +115,8 @@ public class Point_Teacher : MonoBehaviour
 
         //-----level----------------------------------------
         changeTime = levelDataCurrent._changeTime;
-        passScore = changePoint = levelDataCurrent._buildcount;
+        passScore = levelDataCurrent._buildcount;
+        changePoint = passScore - 3;
         //  passScore = levelDataCurrent._clearPoints;
         number_buildend = levelDataCurrent._theBuildNumber;
         number_humanend = levelDataCurrent._theHumanNumber;
