@@ -2470,7 +2470,7 @@ GameObject:
   - component: {fileID: 1261930378}
   - component: {fileID: 1261930377}
   m_Layer: 0
-  m_Name: HereLangurage
+  m_Name: HereTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2488,9 +2488,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e841cb1260cb549898c7cc11522c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiTextList: []
+  TxT_List: []
   fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
+  btnJa: {fileID: 0}
+  btnEn: {fileID: 0}
+  btnZhCN: {fileID: 0}
+  btnZhTW: {fileID: 0}
 --- !u!4 &1261930378
 Transform:
   m_ObjectHideFlags: 0

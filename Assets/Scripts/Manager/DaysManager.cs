@@ -70,6 +70,16 @@ public class DaysManager : MonoBehaviour
     [Header("Ending")]
     private Point_Teacher teacher;
 
+    [Header("Title")]
+    public GameObject TxT_post_a;
+    public GameObject TxT_post_b;
+    public GameObject TxT_post_c;
+
+    public List<GameObject> Txt_post_List;
+    public List<GameObject> Txt_news_List;
+    public List<GameObject> Txt_news_List_b;
+    public List<GameObject> Txt_news_List_c;
+
     private void Start()
     {
         teacher = FindObjectOfType<Point_Teacher>();
@@ -82,6 +92,18 @@ public class DaysManager : MonoBehaviour
 
     private void OnDisable()
     {
+        foreach (GameObject obj in Txt_news_List_b)
+        {
+
+            obj.SetActive(false);
+
+        }
+        foreach (GameObject obj in Txt_news_List_c)
+        {
+
+            obj.SetActive(false);
+
+        }
 
     }
 
@@ -97,6 +119,8 @@ public class DaysManager : MonoBehaviour
                     Sprite whoSprite = wholist[randomIndex];
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
+                    GameObject postTxt = Txt_post_List[randomIndex];
+                    GameObject newsTxt = Txt_news_List[randomIndex];
 
                 //----------------------------------------------------------------
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day1_when;
@@ -108,6 +132,19 @@ public class DaysManager : MonoBehaviour
                     if (Day1_name != null) Day1_name.sprite = nameSprite;
 
                     if (megane_1 != null) megane_1.sprite = listSprite;
+                    
+                    if(TxT_post_a != null)if(!TxT_post_a.activeSelf)TxT_post_a.SetActive(true);
+                    if(TxT_post_b != null)if(TxT_post_b.activeSelf)TxT_post_b.SetActive(false);
+                    if(TxT_post_c != null)if(TxT_post_c.activeSelf)TxT_post_c.SetActive(false);
+
+                    if(postTxt != null && newsTxt != null)
+                    {
+                        if(!postTxt.activeSelf && !newsTxt.activeSelf)
+                        {
+                            postTxt.SetActive(true);
+                            newsTxt.SetActive(true);
+                        }
+                    }
 
                 //----------------------------------------------------------------
 
@@ -120,6 +157,8 @@ public class DaysManager : MonoBehaviour
                     wholist.RemoveAt(randomIndex);
                     namelist.RemoveAt(randomIndex);
                     humanlist.RemoveAt(randomIndex);
+                    Txt_news_List.RemoveAt(randomIndex);
+                    Txt_post_List.RemoveAt(randomIndex);
                 }
 
                 if (NewsContruler != null && !NewsContruler.activeSelf) NewsContruler.active = true;
@@ -136,6 +175,8 @@ public class DaysManager : MonoBehaviour
                     Sprite whoSprite = wholist[randomIndex];
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
+                    GameObject postTxt = Txt_post_List[randomIndex];
+                    GameObject newsTxt = Txt_news_List[randomIndex];
 
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day2_when;
 
@@ -147,6 +188,20 @@ public class DaysManager : MonoBehaviour
 
                     if (megane_2 != null) megane_2.sprite = listSprite;
 
+                    if (TxT_post_b != null) if (!TxT_post_b.activeSelf) TxT_post_b.SetActive(true);
+                    if (TxT_post_a != null) if (TxT_post_a.activeSelf) TxT_post_a.SetActive(false);
+                    if (TxT_post_c != null) if (TxT_post_c.activeSelf) TxT_post_c.SetActive(false);
+
+                    if (postTxt != null && newsTxt != null)
+                    {
+                        if (!postTxt.activeSelf && !newsTxt.activeSelf)
+                        {
+                            postTxt.SetActive(true);
+                            newsTxt.SetActive(true);
+                        }
+                    }
+
+
                     humanday_2.transform.localScale = Vector3.one;
 
                     SelectedHumanName = humanlist[randomIndex].name;
@@ -155,6 +210,8 @@ public class DaysManager : MonoBehaviour
                     wholist.RemoveAt(randomIndex);
                     namelist.RemoveAt(randomIndex);
                     humanlist.RemoveAt(randomIndex);
+                    Txt_news_List.RemoveAt(randomIndex);
+                    Txt_post_List.RemoveAt(randomIndex);
                 }
 
 
@@ -173,6 +230,8 @@ public class DaysManager : MonoBehaviour
                     Sprite whoSprite = wholist[randomIndex];
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
+                    GameObject postTxt = Txt_post_List[randomIndex];
+                    GameObject newsTxt = Txt_news_List[randomIndex];
 
                     if (Daysnubmer != null && Day1_when != null) Daysnubmer.sprite = Day3_when;
 
@@ -184,6 +243,20 @@ public class DaysManager : MonoBehaviour
 
                     if (megane_3 != null) megane_3.sprite = listSprite;
 
+                    if (TxT_post_c != null) if (!TxT_post_c.activeSelf) TxT_post_c.SetActive(true);
+                    if (TxT_post_b != null) if (TxT_post_b.activeSelf) TxT_post_b.SetActive(false);
+                    if (TxT_post_a != null) if (TxT_post_a.activeSelf) TxT_post_a.SetActive(false);
+
+                    if (postTxt != null && newsTxt != null)
+                    {
+                        if (!postTxt.activeSelf && !newsTxt.activeSelf)
+                        {
+                            postTxt.SetActive(true);
+                            newsTxt.SetActive(true);
+                        }
+                    }
+
+
                     humanday_3.transform.localScale = Vector3.one;
 
                     SelectedHumanName = humanlist[randomIndex].name;
@@ -192,6 +265,8 @@ public class DaysManager : MonoBehaviour
                     wholist.RemoveAt(randomIndex);
                     namelist.RemoveAt(randomIndex);
                     humanlist.RemoveAt(randomIndex);
+                    Txt_news_List.RemoveAt(randomIndex);
+                    Txt_post_List.RemoveAt(randomIndex);
                 }
 
 

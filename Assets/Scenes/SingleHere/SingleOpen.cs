@@ -41,7 +41,7 @@ public class SingleOpen : MonoBehaviour
         yield return StartCoroutine(AdjustImageA(0.5f, 0f));
 
         GameObject Image = GameObject.Find("changeImage");
-        if(Image.activeSelf)Image.SetActive(false);
+        if(Image!=null)if(Image.activeSelf)Image.SetActive(false);
     }
 
     private IEnumerator AdjustImageA(float duration, float targetA)

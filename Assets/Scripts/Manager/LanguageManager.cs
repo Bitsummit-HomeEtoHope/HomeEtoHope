@@ -8,13 +8,29 @@ using UnityEngine.Localization.Tables;
 
 public class LanguageManager : MonoBehaviour
 {
+    public List<TextMeshProUGUI> TxT_List;
+
     public TMPro.TMP_FontAsset fontENJP; // Font for English and Japanese
     public TMPro.TMP_FontAsset fontCNTW; // Font for Chinese (Simplified) and Chinese (Traditional)
 
+    [Header("Language Change")]
+    public Button btnJa;
+    public Button btnEn;
+    public Button btnZhCN;
+    public Button btnZhTW;
+    private GameObject titleScene;
+
     private void Start()
     {
+        titleScene = GameObject.Find("HereTitle");
         // Load the default language (e.g., English)
-        SetLanguage("en");
+        if(titleScene!=null)SetLanguage("en");
+
+        // Bind button click events
+        if(btnJa!=null)btnJa.onClick.AddListener(() => SetLanguage("ja"));
+        if(btnEn!=null)btnEn.onClick.AddListener(() => SetLanguage("en"));
+        if(btnZhCN!=null)btnZhCN.onClick.AddListener(() => SetLanguage("zh-CN"));
+        if(btnZhTW!=null)btnZhTW.onClick.AddListener(() => SetLanguage("zh-TW"));
     }
 
     private void Update()
@@ -29,11 +45,11 @@ public class LanguageManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SetLanguage("zh-Hans"); // Chinese (Simplified)
+            SetLanguage("zh-CN"); // Chinese (Simplified)
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SetLanguage("zh-Hant"); // Chinese (Traditional)
+            SetLanguage("zh-TW"); // Chinese (Traditional)
         }
     }
 
@@ -73,11 +89,10 @@ public class LanguageManager : MonoBehaviour
             selectedFont = fontCNTW;
         }
 
-        // Set the font for all Text (TMP) components
-        var uiTextList = FindObjectsOfType<TextMeshProUGUI>();
+        // Set the font for all Text (TMP) components in the TxT_List
         if (selectedFont != null)
         {
-            foreach (TextMeshProUGUI text in uiTextList)
+            foreach (TextMeshProUGUI text in TxT_List)
             {
                 text.font = selectedFont;
             }

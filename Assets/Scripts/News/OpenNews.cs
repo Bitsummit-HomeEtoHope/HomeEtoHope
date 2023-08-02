@@ -34,7 +34,9 @@ public class OpenNews : MonoBehaviour
     }
     private void OnEnable()
     {
-      if(hereIsUp!=null)  hereIsUp.fillAmount = 0f;
+        hereIsUp.fillAmount = 0f;
+
+        if (hereIsUp!=null)  hereIsUp.fillAmount = 0f;
 
         if (hereIsShady != null) if (!hereIsShady.activeSelf) hereIsShady.active = true;
 
@@ -162,6 +164,5 @@ public class OpenNews : MonoBehaviour
         hereIsPeople.transform.position = initialPeoplePos;
         hereIsBar.fillAmount = 0f;
         hereIsBord.fillAmount = 0f;
-        hereIsUp.fillAmount = 0f;
     }
 }
