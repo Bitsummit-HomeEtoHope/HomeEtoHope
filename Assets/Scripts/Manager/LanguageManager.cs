@@ -18,13 +18,22 @@ public class LanguageManager : MonoBehaviour
     public Button btnEn;
     public Button btnZhCN;
     public Button btnZhTW;
+    [Header("Select Change")]
     private GameObject titleScene;
+    public GameObject Language;
+    public GameObject Screen;
+
+    private bool change = false;
+
+    private void Awake()
+    {
+        titleScene = GameObject.Find("OpenGame");
+    }
 
     private void Start()
     {
-        titleScene = GameObject.Find("HereTitle");
         // Load the default language (e.g., English)
-        if (titleScene != null) 
+        if (titleScene != null)
         {
             SetLanguage("en");
             if (btnJa != null) btnJa.onClick.AddListener(() => SetLanguage("ja"));
@@ -66,6 +75,17 @@ public class LanguageManager : MonoBehaviour
 
         // Update the UI text font based on the selected locale
         UpdateUITextFont();
+
+        if (titleScene != null)
+        {
+            if (change)
+            {
+                if(Language.activeSelf)Language.SetActive(false);
+                if(!Screen.activeSelf)Screen.SetActive(true);
+            }
+
+        }
+        change = true;
     }
 
     private Locale GetLocaleFromLanguageCode(string languageCode)
