@@ -19,6 +19,8 @@ public class LanguageManager : MonoBehaviour
     public Button btnZhCN;
     public Button btnZhTW;
     [Header("Select Change")]
+    public Button reSelect;
+    public Button exitGame;
     private GameObject titleScene;
     public GameObject Language;
     public GameObject Screen;
@@ -40,6 +42,8 @@ public class LanguageManager : MonoBehaviour
             if (btnEn != null) btnEn.onClick.AddListener(() => SetLanguage("en"));
             if (btnZhCN != null) btnZhCN.onClick.AddListener(() => SetLanguage("zh-CN"));
             if (btnZhTW != null) btnZhTW.onClick.AddListener(() => SetLanguage("zh-TW"));
+            if (reSelect != null) reSelect.onClick.AddListener(returnLanguage);
+            if (exitGame != null) exitGame.onClick.AddListener(EndGame);
         }
 
         UpdateUITextFont();
@@ -47,6 +51,17 @@ public class LanguageManager : MonoBehaviour
         // Bind button click events
 
     }
+
+
+    private void EndGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+    }
+
 
     private void Update()
     {
@@ -65,6 +80,18 @@ public class LanguageManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             SetLanguage("zh-TW"); // Chinese (Traditional)
+        }
+    }
+
+    private void returnLanguage()
+    {
+        if (titleScene != null)
+        {
+
+                if (!Language.activeSelf) Language.SetActive(true);
+                if (Screen.activeSelf) Screen.SetActive(false);
+            
+
         }
     }
 
