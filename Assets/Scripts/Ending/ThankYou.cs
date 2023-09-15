@@ -17,6 +17,7 @@ public class ThankYou : MonoBehaviour
     private Image finX;
     public bool bgm = true;
 
+    private bool isMeto = true;
     private Coroutine theFIN;
 
     // Start is called before the first frame update
@@ -32,15 +33,29 @@ public class ThankYou : MonoBehaviour
         theFIN = StartCoroutine(CurtainFalls(8f));
 
 
+        if (isMeto)
+        {
+            if (_button != null)
+            {
+                if (_button.activeSelf)
+                {
+                    _button.SetActive(false);
+                }
+            }
+        }
+
+
     }
 
     public void Skip()
     {
-        StopCoroutine(theFIN);
-        if (bgm)
-        {
-            StartCoroutine(CurtainFalls(0.1f));
-        }
+    
+            StopCoroutine(theFIN);
+            if (bgm)
+            {
+                StartCoroutine(CurtainFalls(0.1f));
+            }
+        
     }
 
 
@@ -49,7 +64,10 @@ public class ThankYou : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (bgm)
         {
-            if (_button.activeSelf) _button.SetActive(false);
+            if (!isMeto)
+            {
+                if (_button.activeSelf) _button.SetActive(false);
+            }
 
             if (theSkip.activeSelf)theSkip.SetActive(false);
             Rest.SetActive(true);

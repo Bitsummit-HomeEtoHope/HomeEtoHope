@@ -13,6 +13,7 @@ public class Point_Teacher : MonoBehaviour
     public UnityEvent BuildEvent_2;
     private int buildCount = 0;
     private float buildSpeed;
+    public bool endingCheck = false;
 
     private GameObject endingSingle;
     //public float credits = 0f;
@@ -61,6 +62,7 @@ public class Point_Teacher : MonoBehaviour
 
     private void Update()
     {
+        if (endingCheck) totalScore();
 
         Debug.Log("==+" + buildCount);
 
@@ -113,7 +115,8 @@ public class Point_Teacher : MonoBehaviour
 
         //-----level----------------------------------------
         changeTime = levelDataCurrent._changeTime;
-        passScore = changePoint = levelDataCurrent._buildcount;
+        passScore = levelDataCurrent._buildcount;
+        changePoint = passScore - 3;
         //  passScore = levelDataCurrent._clearPoints;
         number_buildend = levelDataCurrent._theBuildNumber;
         number_humanend = levelDataCurrent._theHumanNumber;
@@ -157,22 +160,22 @@ public class Point_Teacher : MonoBehaviour
         if (endingSingle == null)
         {
             if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad"); Debug.Log("--BE--"); }
-            else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
-            else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
-                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
-                        else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
-                                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
-                                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
+            if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i"); Debug.Log("--nomal--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii"); Debug.Log("--bad--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii"); Debug.Log("--die--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv"); Debug.Log("--building--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v"); Debug.Log("--factory--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi"); Debug.Log("--farm--"); }
         }
-        else if(endingSingle != null)
+        else if (endingSingle != null)
         {
             if (credits_end_i < passScore) { SceneManager.LoadScene("Ending_bad_single"); Debug.Log("--BE--"); }
-            else if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i_single"); Debug.Log("--nomal--"); }
-            else if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii_single"); Debug.Log("--bad--"); }
-                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii_single"); Debug.Log("--die--"); }
-                        else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv_single"); Debug.Log("--building--"); }
-                                    else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v_single"); Debug.Log("--factory--"); }
-                                                else if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi_single"); Debug.Log("--farm--"); }
+            if (credits_end_i >= passScore) { SceneManager.LoadScene("Ending_i_single"); Debug.Log("--nomal--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii >= number_humanend) { SceneManager.LoadScene("Ending_iii_single"); Debug.Log("--bad--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii >= number_humanend) { SceneManager.LoadScene("Ending_ii_single"); Debug.Log("--die--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_iv) { SceneManager.LoadScene("Ending_iv_single"); Debug.Log("--building--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_v) { SceneManager.LoadScene("Ending_v_single"); Debug.Log("--factory--"); }
+            if (credits_end_i >= passScore) if (credits_end_ii < number_humanend) if (credits_end_iii < number_humanend) if (for_credits_end_vi) { SceneManager.LoadScene("Ending_vi_single"); Debug.Log("--farm--"); }
         }
 
 
@@ -182,8 +185,8 @@ public class Point_Teacher : MonoBehaviour
     private void buildWord()
     {
 
-      if(lineCoroutine!=null)  StopCoroutine(lineCoroutine);
-      if(markCoroutine!=null)  StopCoroutine(markCoroutine);
+        if (lineCoroutine != null) StopCoroutine(lineCoroutine);
+        if (markCoroutine != null) StopCoroutine(markCoroutine);
 
 
         if (endLine != null)

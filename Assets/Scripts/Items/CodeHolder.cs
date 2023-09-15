@@ -34,7 +34,7 @@ public class CodeHolder : MonoBehaviour
     private void Start()
     {
 
-        singleVer = GameObject.Find("Happy_Single");
+        singleVer = GameObject.Find("Play_single");
 
         code = gameObject.name.Replace("(Clone)", "");
         tag = gameObject.tag;

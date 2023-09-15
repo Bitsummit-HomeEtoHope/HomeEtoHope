@@ -7,29 +7,41 @@ public class SingleOpen : MonoBehaviour
 {
     public Image changeImage;
 
+    private GameObject shoutDown;
     // Start is called before the first frame update
     void Start()
     {
-
-        StartCoroutine(WelcomeCoroutine());
+        shoutDown = GameObject.Find("Title Image Canvas");
+        StartCoroutine(Waiting());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) && shoutDown.activeSelf)
+        {
+            StopCoroutine(Waiting());
+            StartCoroutine(WelcomeCoroutine());
+        }
+    }
 
+    private IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(3.0f);
+        StartCoroutine(WelcomeCoroutine());
     }
 
     private IEnumerator WelcomeCoroutine()
     {
-        yield return new WaitForSeconds(3.0f);
 
         yield return StartCoroutine(AdjustImageA(0.5f, 100f));
-        GameObject shoutDown = GameObject.Find("Title Image Canvas");
       //  GameObject openStage = GameObject.Find("Tap to Start Canvas");
         shoutDown.SetActive(false);
       //  openStage.SetActive(true);
         yield return StartCoroutine(AdjustImageA(0.5f, 0f));
+
+        GameObject Image = GameObject.Find("changeImage");
+        if(Image!=null)if(Image.activeSelf)Image.SetActive(false);
     }
 
     private IEnumerator AdjustImageA(float duration, float targetA)

@@ -82,6 +82,10 @@ public class NewsManager : MonoBehaviour
     private float timer = 0f; // 计时器
     private bool canClick = false; // 计时器
 
+    [Header("TxT")]
+    public GameObject TxT_title;
+    public GameObject TxT_meto;
+    public GameObject TxT_hangzai;
 
     private void Start()
     {
@@ -89,6 +93,8 @@ public class NewsManager : MonoBehaviour
         Bar = GameObject.Find("news_bar");
         Back = GameObject.Find("news_back");
         TheNews = GameObject.Find("Canvas_News");
+
+
        // Shady = GameObject.Find("--Shady--");
         //Items = GameObject.Find("ItemsManager");
         //PortBelt = GameObject.Find("PortBeltManager");
@@ -168,11 +174,65 @@ public class NewsManager : MonoBehaviour
             if (!readyone) readyone = true;
         }
 
+        //---------------------------------
+
+        ShowTitle();
+
+        //---------------------------------
+
+
         StartCoroutine(StartAfterDelay());        
     }
 
+    private void ShowTitle()
+    {
+        ZoomTitle(TxT_title.transform, Vector3.one, 0.3f);
 
-    public void takeThemOn()
+        if (!TxT_meto.activeSelf) 
+        {
+            TxT_meto.SetActive(true);
+        }
+        else
+        {
+            TxT_meto.SetActive(false);
+        }
+
+        if (!TxT_hangzai.activeSelf)
+        {
+            TxT_hangzai.SetActive(true);
+        }
+        else
+        {
+            TxT_hangzai.SetActive(false);
+        }
+
+    }
+
+    private void ZoomTitle(Transform targetTransform, Vector3 targetScale, float duration)
+    {
+        StartCoroutine(ScaleCoroutine(targetTransform, targetScale, duration));
+    }
+
+    private IEnumerator ScaleCoroutine(Transform targetTransform, Vector3 targetScale, float duration)
+    {
+        Vector3 initialScale = Vector3.zero;
+        targetTransform.localScale = initialScale;
+
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            targetTransform.localScale = Vector3.Lerp(initialScale, targetScale, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        targetTransform.localScale = targetScale;
+    }
+
+
+public void takeThemOn()
     {
         foreach (GameObject obj in ShutDownList)
         {
@@ -205,6 +265,7 @@ public class NewsManager : MonoBehaviour
 
     private void NewsOne() 
     {
+        ShowTitle();
         NewsTitle.sprite = TitleOne;
         OpenUp.sprite = Open_up_a;
         OpenDown.sprite = Open_down_a;
@@ -212,6 +273,7 @@ public class NewsManager : MonoBehaviour
     }
     private void NewsTwo() 
     {
+        ShowTitle();
         NewsTitle.sprite = TitleTwo;
         OpenUp.sprite = Open_up_b;
         OpenDown.sprite = Open_down_b;

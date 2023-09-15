@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5675310857768907310}
   - component: {fileID: 8910107801036075839}
   - component: {fileID: 4679433511814398983}
-  - component: {fileID: 4493446560372066793}
   - component: {fileID: 2731245569098325080}
+  - component: {fileID: 4493446560372066793}
   - component: {fileID: 3865054254033914817}
   m_Layer: 0
   m_Name: hammerbroken
@@ -118,6 +118,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6239881831769578202, guid: 3c2681fbbae2040bca3cc72e5ea49890, type: 3}
+--- !u!114 &2731245569098325080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634732032950717641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc42963550c7294b9cfede0e3ac3137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 1
+  ySpeed: 1
+  rotateScale: 1
 --- !u!114 &4493446560372066793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,21 +153,6 @@ MonoBehaviour:
   two: 0
   childRenderers: []
   singleVer: {fileID: 0}
---- !u!114 &2731245569098325080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2634732032950717641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc42963550c7294b9cfede0e3ac3137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xSpeed: 1
-  ySpeed: 1
-  rotateScale: 1
 --- !u!82 &3865054254033914817
 AudioSource:
   m_ObjectHideFlags: 0
