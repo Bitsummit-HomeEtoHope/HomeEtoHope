@@ -47,6 +47,17 @@ public class LevelDataCurrent : MonoBehaviour
     public int _theBuildNumber = 3;
     [Header("number for human Ending")]
     public int _theHumanNumber = 8;
+    [Header("Power-Related Data")]
+    public float _food_Power;
+    public float _tool_Power;
+    public float _human_Power;
+    public float _food_Power_Down;
+    public float _tool_Power_Down;
+    public float _human_Power_Down;
+    public float _JoySpeed;
+    public float _toolBad_Time;
+    public float _foodBad_Time;
+    public float _humanBad_Time;
 
     public LevelData.Future_Data _future_Data;
 
@@ -82,6 +93,16 @@ public class LevelDataCurrent : MonoBehaviour
         _human_weight = _levelData._human_weight;
         _spawnInterval = _levelData._spawnInterval;
         _dietime = _levelData._dietime;
+        _food_Power=_levelData.food_Power;
+        _tool_Power=_levelData.tool_Power;
+        _human_Power=_levelData.human_Power;
+        _food_Power_Down=_levelData.food_Power_Down;
+        _tool_Power_Down=_levelData.tool_Power_Down;
+        _human_Power_Down=_levelData.human_Power_Down;
+        _JoySpeed=_levelData.JoySpeed;
+        _foodBad_Time=_levelData.foodBad_Time;
+        _toolBad_Time=_levelData.toolBad_Time;
+        _humanBad_Time=_levelData.humanBad_Time;
       //  _endDaytime = _levelData._endDaytime;
       //  _buildfill = _levelData._buildfill;
     }

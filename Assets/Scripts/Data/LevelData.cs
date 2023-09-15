@@ -27,6 +27,17 @@ public class LevelData : ScriptableObject
     [Range(0.5f,8)]
     public float _spawnInterval;
     public float _dietime;
+
+    public float tool_Power;
+    public float food_Power;
+    public float human_Power;
+    public float tool_Power_Down;
+    public float food_Power_Down;
+    public float human_Power_Down;
+    public float JoySpeed;
+    public float toolBad_Time;
+    public float foodBad_Time;
+    public float humanBad_Time;
     //public float _endDaytime;
     //public int _buildfill;
 
