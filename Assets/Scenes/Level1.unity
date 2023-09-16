@@ -16070,9 +16070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option_Canvas: {fileID: 1457580299}
-  settingButton: {fileID: 306791680}
-  titleScreen: {fileID: 1805800224}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -16951,6 +16948,10 @@ MonoBehaviour:
   btnEn: {fileID: 0}
   btnZhCN: {fileID: 0}
   btnZhTW: {fileID: 0}
+  reSelect: {fileID: 0}
+  exitGame: {fileID: 0}
+  Language: {fileID: 0}
+  Screen: {fileID: 0}
 --- !u!1 &693611705
 GameObject:
   m_ObjectHideFlags: 0
@@ -20066,6 +20067,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &869464364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 869464365}
+  - component: {fileID: 869464366}
+  m_Layer: 0
+  m_Name: PowerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &869464365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869464364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2045684447}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869464366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869464364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d3afedcb4f286438ec1feab88e4868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &869789405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3702968600648435130, guid: 67f767ec4c28d464a9bf5b5e25bd8b49, type: 3}
@@ -34957,6 +35002,16 @@ MonoBehaviour:
   _changeTime: 4.6
   _theBuildNumber: 3
   _theHumanNumber: 8
+  _food_Power: 0
+  _tool_Power: 0
+  _human_Power: 0
+  _food_Power_Down: 0
+  _tool_Power_Down: 0
+  _human_Power_Down: 0
+  _JoySpeed: 0
+  _toolBad_Time: 0
+  _foodBad_Time: 0
+  _humanBad_Time: 0
   _future_Data:
     tree_Time: 0
     human_Speed: 0
@@ -38541,6 +38596,7 @@ Transform:
   - {fileID: 12545983}
   - {fileID: 884485683}
   - {fileID: 689725096}
+  - {fileID: 869464365}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

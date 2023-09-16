@@ -112,6 +112,8 @@ public class GetItem : MonoBehaviour
         }
         else if (readytag == "Human")
         {
+            readycode = readycode.Replace("_", "");
+            prefab = Resources.Load<GameObject>("2D_set/human/" + readycode);
             string childPrefabName = readycode;
             DaysManager.Days currentDay = daysManager.GetCurrentDay();
             HandleHumanSelected(DaysManager.SelectedHumanName);
@@ -217,6 +219,8 @@ public class GetItem : MonoBehaviour
                     TakeMeOut(prefab, toolPoint, toolScale, toolOffset, toolInitialRotation, toolMoveSpeed, toolDestinationPoint, "Tool_39");
                     Debug.Log("-----Tool coming-----");
                     break;
+                
+                
             }
         }
         else
@@ -239,6 +243,7 @@ public class GetItem : MonoBehaviour
             {
                 parentObject = GameObject.Find("-----Food_Bag-----");
             }
+           
 
             if (parentObject != null)
             {
@@ -254,7 +259,7 @@ public class GetItem : MonoBehaviour
                     case "Tool_39":
                         toolList.Add(instance);
                         break;
-                    case "Human":
+                    case "Player":
                         humanList.Add(instance);
                         break;
                 }
