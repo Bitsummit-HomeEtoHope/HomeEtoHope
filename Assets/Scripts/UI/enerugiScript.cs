@@ -15,9 +15,9 @@ public class EnerugiScript : MonoBehaviour
 
     public bool powerZero = false;
 
-    private bool _powerZeroTool = false;
-    private bool _powerZeroHuman = false;
-    private bool _powerZeroFood = false;
+    public bool _powerZeroTool = false;
+    public bool _powerZeroHuman = false;
+    public bool _powerZeroFood = false;
 
     private Animator _animator;
     private GameObject _power;
