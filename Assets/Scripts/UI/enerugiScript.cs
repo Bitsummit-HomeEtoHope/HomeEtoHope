@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnerugiScript : MonoBehaviour
 {
+    [SerializeField]
+    private LevelDataCurrent levelDataCurrent;
     public List<GameObject> enerugiList = new List<GameObject>();
 
     public float powerChangeTimeTool = 5;
@@ -28,6 +30,10 @@ public class EnerugiScript : MonoBehaviour
 
     void Start()
     {
+        levelDataCurrent=GameObject.FindObjectOfType<LevelDataCurrent>();
+        powerChangeTimeFood=levelDataCurrent._food_Power;
+        powerChangeTimeHuman=levelDataCurrent._human_Power;
+        powerChangeTimeTool=levelDataCurrent._tool_Power;
         //transform powertransform = transform.find("power");
         switch (this.name)
         {
