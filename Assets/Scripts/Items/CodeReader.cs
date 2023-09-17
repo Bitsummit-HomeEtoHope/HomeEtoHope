@@ -1,4 +1,5 @@
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CodeReader : MonoBehaviour
@@ -6,7 +7,10 @@ public class CodeReader : MonoBehaviour
     private GameObject capsuleDoor;
     private Animator openDoor;
 
+    private GameObject theEnerugi;
+    private GameObject destroyItem;
     private EnerugiScript enerugiScript;
+    private string _enerugiType;
 
     [SerializeField] private AudioSource sePlayer;
     [SerializeField] private AudioClip maruSE;
@@ -20,9 +24,25 @@ public class CodeReader : MonoBehaviour
         getItem = FindObjectOfType<GetItem>();
     }
 
+    private void GetTheEnerugiCunt()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (enerugiScript.powerIsZero) Destroy(other);
+       /*  if (other.CompareTag("Tool") || other.CompareTag("Human") || other.CompareTag("Food"))
+        {
+            _enerugiType = other.CompareTag("Tool") ? "tool" : (other.CompareTag("Human") ? "human" : "food");
+            destroyItem = other.gameObject;
+            theEnerugi = GameObject.Find("enerugi_" + _enerugiType);
+            enerugiScript = theEnerugi.GetComponent<EnerugiScript>();
+            if (enerugiScript.powerZero)
+            {
+                Destroy(destroyItem);
+                return;
+            }
+        } */
 
         // Get the CodeHolder component from the collided object
         CodeHolder codeHolder = other.GetComponent<CodeHolder>();
