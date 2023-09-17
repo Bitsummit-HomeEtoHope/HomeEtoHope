@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 590569568039226599}
   - component: {fileID: 2063944905590436387}
   - component: {fileID: -6654695010381747185}
+  - component: {fileID: 6983622974181343869}
   m_Layer: 0
   m_Name: iceax
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &6983622974181343869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755703094106236137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: ac3e145fc42a8409ba60645cd2ca3ad0, type: 3}

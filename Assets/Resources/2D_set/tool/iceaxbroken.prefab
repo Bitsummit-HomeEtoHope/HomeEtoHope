@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 262305415372627233}
   - component: {fileID: 241093397160854413}
   - component: {fileID: -7590679590647748190}
+  - component: {fileID: 257230954745858602}
   m_Layer: 0
   m_Name: iceaxbroken
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &257230954745858602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499297658526772220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 0}

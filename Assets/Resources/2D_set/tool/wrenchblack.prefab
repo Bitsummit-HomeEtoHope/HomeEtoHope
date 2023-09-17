@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8849935622662183889}
   - component: {fileID: -6469092207296735383}
   - component: {fileID: -2472653544441800523}
+  - component: {fileID: -7638448196353472214}
   m_Layer: 0
   m_Name: wrenchblack
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &-7638448196353472214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322677305255228857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 0}

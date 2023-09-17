@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8802483558830667893}
   - component: {fileID: 8112026341508462608}
   - component: {fileID: 2924749811171754462}
+  - component: {fileID: -4360727444488595852}
   m_Layer: 0
   m_Name: hoe
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &-4360727444488595852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916812640828180761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: ae1f227a53d294422967a20b2b9779a3, type: 3}

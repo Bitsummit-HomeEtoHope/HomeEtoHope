@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4971917896852300850}
   - component: {fileID: -8219530329689868061}
   - component: {fileID: -5048037974739100690}
+  - component: {fileID: 1068807809499207762}
   m_Layer: 0
   m_Name: wrench
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &1068807809499207762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140646601408132109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: 18e665600c3254b83b1093488e78d9c2, type: 3}

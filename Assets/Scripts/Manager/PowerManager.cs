@@ -56,6 +56,9 @@ public class PowerManager : MonoBehaviour
                 foodTime=0;
                 //从getItem.foodList中选择一个物体
                 SelectBadFood();
+                badFood.GetComponent<SpriteRenderer>().sprite=badFood.GetComponent<GetItem2dData>()._badGameObject;
+                badFood.GetComponent<GetItem2dData>()._itemUserNum--;
+                
                 
             }
             

@@ -38,6 +38,7 @@ public class LevelData : ScriptableObject
     public float toolBad_Time;
     public float foodBad_Time;
     public float humanBad_Time;
+    
     //public float _endDaytime;
     //public int _buildfill;
 

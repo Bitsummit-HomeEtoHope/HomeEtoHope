@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6907278799006267153}
   - component: {fileID: -5631234764447011155}
   - component: {fileID: 1380144568391936492}
+  - component: {fileID: -2596474032138826299}
   m_Layer: 0
   m_Name: chainsaw
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &-2596474032138826299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919029841629379614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: 0a22bafe3653d694a8f8b186c5f701cf, type: 3}
