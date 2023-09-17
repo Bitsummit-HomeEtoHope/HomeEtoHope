@@ -6,6 +6,8 @@ public class CodeReader : MonoBehaviour
     private GameObject capsuleDoor;
     private Animator openDoor;
 
+    private EnerugiScript enerugiScript;
+
     [SerializeField] private AudioSource sePlayer;
     [SerializeField] private AudioClip maruSE;
     [SerializeField] private AudioClip humanSE;
@@ -20,6 +22,8 @@ public class CodeReader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (enerugiScript.powerIsZero) Destroy(other);
+
         // Get the CodeHolder component from the collided object
         CodeHolder codeHolder = other.GetComponent<CodeHolder>();
         if (codeHolder != null)
