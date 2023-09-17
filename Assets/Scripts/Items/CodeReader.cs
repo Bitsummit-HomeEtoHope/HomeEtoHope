@@ -102,7 +102,6 @@ public class CodeReader : MonoBehaviour
                 // Play sound effects based on the code and codeMatches
                 if (code.Contains("broken") || code.Contains("hi") || code.Contains("qaq"))
                 {
-                    Debug.Log("22222222222222222Code is right!!222222222222222222");
                     if (batsuSE != null) sePlayer.GetComponent<AudioSource>().PlayOneShot(batsuSE);
                 }
                 else if (codeMatches)

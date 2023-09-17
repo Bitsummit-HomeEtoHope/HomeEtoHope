@@ -19,6 +19,7 @@ public class ItemsReading : MonoBehaviour
 
     public void ReceiveClickedObject(GameObject clickedObject)
     {
+        
         Debug.Log("Received clicked object: " + clickedObject.name);
 
         // 在这里根据物体的名称进行特定的操作

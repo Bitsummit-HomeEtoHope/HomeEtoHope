@@ -7,11 +7,11 @@ public class EnerugiScript : MonoBehaviour
 {
     public List<GameObject> enerugiList = new List<GameObject>();
 
-    public float powerChangeTimeTool = 5;
-    public float powerChangeTimeHuman = 7;
-    public float powerChangeTimeFood = 5;
+    public float powerChangeTimeTool = 5;   //Tool传送器电量扣电时间
+    public float powerChangeTimeHuman = 7;  //Human传送器电量扣电时间
+    public float powerChangeTimeFood = 5;   //Food传送器电量扣电时间
 
-    public bool powerZero = false;
+    public bool powerZero = false;  //这个bool变量的最终值统一“是否电量归零”
 
     private bool _powerZeroTool = false;
     private bool _powerZeroHuman = false;
@@ -19,9 +19,9 @@ public class EnerugiScript : MonoBehaviour
 
     private Animator _animator;
     private GameObject _power;
-    private int _powerCunt = 5;
+    private int _powerCunt = 5;     //总电量数（关联animator数据，暂时写死了
     private bool _isTimerRunning;
-    private float _powerChangeTime;
+    private float _powerChangeTime;     
 
     // Start is called before the first frame update
 

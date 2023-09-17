@@ -52,7 +52,6 @@ public class HumanBuild : MonoBehaviour
                 characterRenderer.sortingOrder = defaultSortingOrder; // 恢复角色的排序顺序
 
                 BuildingReady(currentBuildSetObject); // 更改当前接触的预制件
-                Debug.Log("建筑完成");
 
                 // 移动到下一个建筑位置
                 currentBuildIndex++;
@@ -108,7 +107,6 @@ public class HumanBuild : MonoBehaviour
             {
                 int buildSortingOrder = buildRenderer.sortingOrder; // 获取Build_set物体的排序顺序
                 characterRenderer.sortingOrder = buildSortingOrder + 1; // 设置角色的排序顺序为Build_set物体的排序顺序加1，使其在Build_set之后渲染
-                Debug.Log("角色排序顺序更新为: " + characterRenderer.sortingOrder);
             }
 
             currentBuildSetObject = other.gameObject; // 更新当前接触的预制件

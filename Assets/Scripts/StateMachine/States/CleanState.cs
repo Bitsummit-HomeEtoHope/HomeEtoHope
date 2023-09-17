@@ -23,7 +23,6 @@ public class CleanState : IState
     public void Onenter()
     {
         parameter.CleanWanter.SetActive(true);
-        Debug.Log("------I am coming!------");
         manager.gameObject.GetComponent<StateManager>().enabled = false;
         GetCleanTarget(); // 调用 GetCleanTarget() 方法以更新 CleanTargetList
     }

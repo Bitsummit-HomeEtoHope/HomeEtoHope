@@ -25,8 +25,6 @@ public class ITouchYou : MonoBehaviour
             float distance = Vector3.Distance(transform.position, target.position);
             if (distance < 2f)
             {
-                Debug.Log("--------I get you--------");
-
                 manager.TransitState(StateType.Patrolling);
             }
         }
@@ -34,14 +32,12 @@ public class ITouchYou : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("-------who are you-------");
-
         GameObject otherCharacter = other.gameObject;
         otherStateManager = otherCharacter.GetComponent<StateManager>();
 
         if (otherStateManager != null)
         {
-            Debug.Log("StateManager: " + otherStateManager);
+         Debug .Log("StateManager: " + otherStateManager);
             youAreDie = true;
         }
     }

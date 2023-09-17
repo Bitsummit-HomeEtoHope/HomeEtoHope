@@ -19,8 +19,6 @@ namespace StateMachine.States
 
         public void Onenter()
         {
-            Debug.Log("ddddddddddddddddddddddddddddddd");
-
             GameObject gardenObject = GameObject.Find("-----Garden-----");
             if (gardenObject != null)
             {

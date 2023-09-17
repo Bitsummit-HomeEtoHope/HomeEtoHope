@@ -90,7 +90,7 @@ public class ITellYou : MonoBehaviour
             eyes.sprite = randomSprite;
         }
         else
-        {
+        {    
             Debug.LogError("Eyeslist is empty! Please assign sprites to the list.");
         }
     }

@@ -42,7 +42,6 @@ public class Point_Student : MonoBehaviour
             {
                 changeIt = true;
                 changeTime = leveldatacurrent._future_Data.build_Time;
-                Debug.Log("=+="+leveldatacurrent._future_Data.build_Time);
                 teacher.AddPoints(0, points_end_i, 0, 0, 0, 0, 0);
                 teacher.SpeedUp();
                // teacher.BuildEvent.Invoke();

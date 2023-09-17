@@ -89,7 +89,12 @@ public class KillPeople : MonoBehaviour
         GameObject flowersObject = GameObject.Find("-----Garden-----");
 
 
-        // Debug.Log("hi");
+        //
+		//
+		//
+		//
+		//
+		// .Log("hi");
         peopleSet.Remove(target);
 		Destroy(target);
 

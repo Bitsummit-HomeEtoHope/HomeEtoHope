@@ -333,7 +333,6 @@ public class ItemsManager : SingletonManager<ItemsManager>
             spendTime = 5;
 
             // ´òÓ¡ĞÅÏ¢
-            Debug.Log("---yyyyyyyyyyyyyyyyyyyyyyyyyy--- " + itemType);
         }
     }
 

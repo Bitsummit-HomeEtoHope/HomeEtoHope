@@ -146,25 +146,21 @@ public class GetItem : MonoBehaviour
                         human1 = "thief1";
                         human2 = "thief2";
                         human3 = "thief3";
-                        Debug.Log("this guy!!!");
                     }
                     else if (selectedHumanName == theirList[1])
                     {
                         human1 = human2 = human3 = "itembreaker";
-                        Debug.Log("wow-------");
                     }
                     else if (selectedHumanName == theirList[2])
                     {
                         human1 = "murderer1";
                         human2 = "murderer2";
                         human3 = "murderer3";
-                        Debug.Log("let me go............................");
                     }
                     break;
                 }
             }
 
-            Debug.Log(human1 + " " + human2 + " " + human3);
 
             if (childPrefabName != null)
             {

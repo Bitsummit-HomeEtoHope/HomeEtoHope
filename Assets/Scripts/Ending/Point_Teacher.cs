@@ -64,8 +64,6 @@ public class Point_Teacher : MonoBehaviour
     {
         if (endingCheck) totalScore();
 
-        Debug.Log("==+" + buildCount);
-
         if (buildCount < 0)
         {
             StopCoroutine(lineCoroutine);
@@ -101,7 +99,6 @@ public class Point_Teacher : MonoBehaviour
     private void HandleBuildEvent()
     {
         // Handle the BuildEvent here
-        Debug.Log(" +++++welcom here+++++");
 
         buildWord();
         // You can add your custom logic here based on the BuildEvent.
@@ -126,10 +123,6 @@ public class Point_Teacher : MonoBehaviour
         GameObject EndMark = GameObject.Find("end_mark");
         if (EndLine != null) endLine = EndLine.GetComponent<Image>();
         if (EndMark != null) endMark = EndMark.GetComponent<Image>();
-
-        if (endLine != null) Debug.Log("+++++hi+++++");
-        if (endMark != null) Debug.Log("+++++ok+++++");
-
 
     }
 

@@ -8,7 +8,7 @@ public class LookMe : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
         if (canvas == null)
-        {
+        {  
             Debug.LogError("AlwaysOnTop script requires a Canvas component!");
             return;
         }

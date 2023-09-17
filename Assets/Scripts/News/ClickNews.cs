@@ -13,7 +13,6 @@ public class ClickNews : MonoBehaviour
 //            newsManager.enabled = false;
             newsManager.NewsClick();
 
-            Debug.Log("OK");
         }
         else
         {
