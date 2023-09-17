@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7115525088054337870}
   - component: {fileID: -2631367518684499265}
   - component: {fileID: 3616432521985087390}
+  - component: {fileID: 7616785614269886657}
   m_Layer: 0
-  m_Name: shovel
+  m_Name: Shovel
   m_TagString: Tool_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &7616785614269886657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352593909785481455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: 3cae46241840b459eae670efd9225539, type: 3}

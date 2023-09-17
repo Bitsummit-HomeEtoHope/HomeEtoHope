@@ -12,4 +12,5 @@ public class Item2dData : ScriptableObject
     public bool isBad;
     public int itemUserNum;
     public GameObject itemTreeSprite;
+    public Sprite badGameObject;
 }

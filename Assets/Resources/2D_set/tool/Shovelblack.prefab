@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2367978478219147347}
   - component: {fileID: 9061631466138469614}
   - component: {fileID: -111524265952683564}
+  - component: {fileID: -3553373326459204139}
   m_Layer: 0
-  m_Name: shovelblack
+  m_Name: Shovelblack
   m_TagString: Tool_39
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &-3553373326459204139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3999402967838272621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 0}

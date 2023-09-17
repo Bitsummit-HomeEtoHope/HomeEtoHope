@@ -34,3 +34,13 @@ MonoBehaviour:
   _human_weight: 30
   _spawnInterval: 3
   _dietime: 45
+  tool_Power: 7
+  food_Power: 7
+  human_Power: 7
+  tool_Power_Down: 0
+  food_Power_Down: 0
+  human_Power_Down: 0
+  JoySpeed: 0
+  toolBad_Time: 2
+  foodBad_Time: 2
+  humanBad_Time: 2

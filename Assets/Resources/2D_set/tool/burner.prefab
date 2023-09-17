@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1238775154285910102}
   - component: {fileID: -5851426592707560503}
   - component: {fileID: 6765858245072352726}
+  - component: {fileID: 4397450618741572306}
   m_Layer: 0
   m_Name: burner
   m_TagString: Tool_39
@@ -117,3 +118,17 @@ MonoBehaviour:
   _isBad: 0
   _itemUserNum: 0
   _itemTreeSprite: {fileID: 0}
+  _badGameObject: {fileID: 0}
+--- !u!114 &4397450618741572306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906759931861299440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e378bf045ac5d43836e70ea71fbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _badTool: {fileID: 21300000, guid: 76483c6833e6b4d0398524eff4d3bc58, type: 3}

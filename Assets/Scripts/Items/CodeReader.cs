@@ -31,7 +31,7 @@ public class CodeReader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tool") || other.CompareTag("Human") || other.CompareTag("Food"))
+       /*  if (other.CompareTag("Tool") || other.CompareTag("Human") || other.CompareTag("Food"))
         {
             _enerugiType = other.CompareTag("Tool") ? "tool" : (other.CompareTag("Human") ? "human" : "food");
             destroyItem = other.gameObject;
@@ -42,7 +42,7 @@ public class CodeReader : MonoBehaviour
                 Destroy(destroyItem);
                 return;
             }
-        }
+        } */
 
         // Get the CodeHolder component from the collided object
         CodeHolder codeHolder = other.GetComponent<CodeHolder>();

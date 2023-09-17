@@ -18,3 +18,4 @@ MonoBehaviour:
   isBad: 0
   itemUserNum: 0
   itemTreeSprite: {fileID: 1616335951469185605, guid: 95e617e1d8576c1438bf15c4ad2d1ce3, type: 3}
+  badGameObject: {fileID: 21300000, guid: 95734c307e703484a9371f7a163e11f8, type: 3}

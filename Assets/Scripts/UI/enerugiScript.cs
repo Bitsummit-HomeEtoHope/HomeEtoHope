@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnerugiScript : MonoBehaviour
 {
+    [SerializeField]
+    private LevelDataCurrent levelDataCurrent;
     public List<GameObject> enerugiList = new List<GameObject>();
 
     public float powerChangeTimeTool = 5;   //Tool传送器电量扣电时间
@@ -13,9 +15,9 @@ public class EnerugiScript : MonoBehaviour
 
     public bool powerZero = false;  //这个bool变量的最终值统一“是否电量归零”
 
-    private bool _powerZeroTool = false;
-    private bool _powerZeroHuman = false;
-    private bool _powerZeroFood = false;
+    public bool _powerZeroTool = false;
+    public bool _powerZeroHuman = false;
+    public bool _powerZeroFood = false;
 
     private Animator _animator;
     private GameObject _power;
@@ -28,6 +30,10 @@ public class EnerugiScript : MonoBehaviour
 
     void Start()
     {
+        levelDataCurrent=GameObject.FindObjectOfType<LevelDataCurrent>();
+        powerChangeTimeFood=levelDataCurrent._food_Power;
+        powerChangeTimeHuman=levelDataCurrent._human_Power;
+        powerChangeTimeTool=levelDataCurrent._tool_Power;
         //transform powertransform = transform.find("power");
         switch (this.name)
         {
