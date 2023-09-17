@@ -11,15 +11,20 @@ public class EnerugiScript : MonoBehaviour
     public float powerChangeTimeHuman = 7;
     public float powerChangeTimeFood = 5;
 
-    public bool powerIsZero = false;
+    public bool powerZero = false;
+
+    private bool _powerZeroTool = false;
+    private bool _powerZeroHuman = false;
+    private bool _powerZeroFood = false;
 
     private Animator _animator;
     private GameObject _power;
     private int _powerCunt = 5;
     private bool _isTimerRunning;
     private float _powerChangeTime;
-    
+
     // Start is called before the first frame update
+
 
     void Start()
     {
@@ -44,14 +49,7 @@ public class EnerugiScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_powerCunt == 0)
-        {
-
-        }
-        else
-        {
-
-        }
+        PowerZero();
     }
 
     private void SetPower()
@@ -91,9 +89,29 @@ public class EnerugiScript : MonoBehaviour
         }
     }
 
-    public void PowerZero()
+    public void PowerZero() 
     {
+        switch (this.name)
+        {
+            case "enerugi_tool":
+                if (_powerCunt != 0) _powerZeroTool = false;
+                else _powerZeroTool = true;
 
+                powerZero = _powerZeroTool;
+                break;
+            case "enerugi_human":
+                if (_powerCunt != 0) _powerZeroHuman = false;
+                else _powerZeroHuman = true;
+
+                powerZero = _powerZeroHuman;
+                break;
+            case "enerugi_food":
+                if (_powerCunt != 0) _powerZeroFood = false;
+                else _powerZeroFood = true;
+
+                powerZero = _powerZeroFood;
+                break;
+        }
     }
 
     private void StartTimer()
@@ -118,7 +136,7 @@ public class EnerugiScript : MonoBehaviour
         while (currentTime < _powerChangeTime)
         {
             currentTime += Time.deltaTime;
-            yield return null; // µÈ´ýÒ»Ö¡
+            yield return null; 
         }
 
         if (0 < _powerCunt) PowerDown();

@@ -9471,6 +9471,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0337c93bf8e14e349be3a14badf8b709, type: 3}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6485320984241713635, guid: 029d210e1058c55409cc84f59b029053, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -26998,6 +27010,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 665bcfa62802c2c49b71ef59f7745dc3, type: 3}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7892023955397312935, guid: 029d210e1058c55409cc84f59b029053, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.3799999
@@ -34659,6 +34683,18 @@ PrefabInstance:
     - target: {fileID: 5825133965377361350, guid: 029d210e1058c55409cc84f59b029053, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190011983985063555, guid: 029d210e1058c55409cc84f59b029053, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6485320984241713635, guid: 029d210e1058c55409cc84f59b029053, type: 3}
       propertyPath: m_IsActive
