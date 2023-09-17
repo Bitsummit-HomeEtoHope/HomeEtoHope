@@ -3,17 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnerugiScript : MonoBehaviour
+public class enerugiScript : MonoBehaviour
 {
     [SerializeField]
     private LevelDataCurrent levelDataCurrent;
     public List<GameObject> enerugiList = new List<GameObject>();
 
-    public float powerChangeTimeTool = 5;   //Tool传送器电量扣电时间
-    public float powerChangeTimeHuman = 7;  //Human传送器电量扣电时间
-    public float powerChangeTimeFood = 5;   //Food传送器电量扣电时间
+    private float _powerChangeTimeTool;//= 5  
+    private float _powerChangeTimeHuman;//= 7 
+    private float _powerChangeTimeFood;//= 5 
 
-    public bool powerZero = false;  //这个bool变量的最终值统一“是否电量归零”
+    public bool powerZero = false;
 
     public bool _powerZeroTool = false;
     public bool _powerZeroHuman = false;
@@ -21,35 +21,53 @@ public class EnerugiScript : MonoBehaviour
 
     private Animator _animator;
     private GameObject _power;
-    private int _powerCunt = 5;     //总电量数（关联animator数据，暂时写死了
+    private int _powerCunt = 5;    
     private bool _isTimerRunning;
-    private float _powerChangeTime;     
+    private float _powerChangeTime;
 
     // Start is called before the first frame update
 
-
-    void Start()
+    private void OnEnable()
     {
-        levelDataCurrent=GameObject.FindObjectOfType<LevelDataCurrent>();
-        powerChangeTimeFood=levelDataCurrent._food_Power;
-        powerChangeTimeHuman=levelDataCurrent._human_Power;
-        powerChangeTimeTool=levelDataCurrent._tool_Power;
+        powerZero = false;
+
+        _powerZeroTool = false;
+        _powerZeroHuman = false;
+        _powerZeroFood = false;
+        _isTimerRunning = false;
+
+        _powerCunt = 5;
+        levelDataCurrent = GameObject.FindObjectOfType<LevelDataCurrent>();
+        _powerChangeTimeFood = levelDataCurrent._food_Power;
+        _powerChangeTimeHuman = levelDataCurrent._human_Power;
+        _powerChangeTimeTool = levelDataCurrent._tool_Power;
         //transform powertransform = transform.find("power");
         switch (this.name)
         {
             case "enerugi_tool":
-                _powerChangeTime = powerChangeTimeTool;
+                _powerChangeTime = _powerChangeTimeTool;
                 break;
             case "enerugi_human":
-                _powerChangeTime = powerChangeTimeHuman;
+                _powerChangeTime = _powerChangeTimeHuman;
                 break;
             case "enerugi_food":
-                _powerChangeTime = powerChangeTimeFood;
+                _powerChangeTime = _powerChangeTimeFood;
                 break;
         }
-
         SetPower();
-        StartTimer();
+
+        Debug.Log("xxxx" + _powerCunt);
+        ResetTimer();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    void Start()
+    {
+      
     }
 
     // Update is called once per frame

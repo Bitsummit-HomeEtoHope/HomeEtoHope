@@ -26,9 +26,9 @@ public class PowerManager : MonoBehaviour
     void Start()
     {
         
-        foodBool=GameObject.Find("enerugi_food").GetComponent<EnerugiScript>()._powerZeroFood;
-        humanBool=GameObject.Find("enerugi_human").GetComponent<EnerugiScript>()._powerZeroHuman;
-        toolBool=GameObject.Find("enerugi_tool").GetComponent<EnerugiScript>()._powerZeroTool;
+        foodBool=GameObject.Find("enerugi_food").GetComponent<enerugiScript>()._powerZeroFood;
+        humanBool=GameObject.Find("enerugi_human").GetComponent<enerugiScript>()._powerZeroHuman;
+        toolBool=GameObject.Find("enerugi_tool").GetComponent<enerugiScript>()._powerZeroTool;
         levelData=GameObject.FindObjectOfType<LevelDataCurrent>();
         getItem=GameObject.FindObjectOfType<GetItem>();
         
@@ -40,9 +40,9 @@ public class PowerManager : MonoBehaviour
     void Update()
     {
         getItem=GameObject.FindObjectOfType<GetItem>();
-        foodBool=GameObject.Find("enerugi_food").GetComponent<EnerugiScript>()._powerZeroFood;
-        humanBool=GameObject.Find("enerugi_human").GetComponent<EnerugiScript>()._powerZeroHuman;
-        toolBool=GameObject.Find("enerugi_tool").GetComponent<EnerugiScript>()._powerZeroTool;
+        foodBool=GameObject.Find("enerugi_food").GetComponent<enerugiScript>()._powerZeroFood;
+        humanBool=GameObject.Find("enerugi_human").GetComponent<enerugiScript>()._powerZeroHuman;
+        toolBool=GameObject.Find("enerugi_tool").GetComponent<enerugiScript>()._powerZeroTool;
         levelObject = GameObject.Find("-----Human_Bag-----");
         if(isData==false)
         {

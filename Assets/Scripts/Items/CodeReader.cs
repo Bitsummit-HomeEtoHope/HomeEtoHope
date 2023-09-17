@@ -9,7 +9,7 @@ public class CodeReader : MonoBehaviour
 
     private GameObject theEnerugi;
     private GameObject destroyItem;
-    private EnerugiScript enerugiScript;
+    private enerugiScript enerugiScript;
     private string _enerugiType;
 
     [SerializeField] private AudioSource sePlayer;
@@ -31,18 +31,18 @@ public class CodeReader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       /*  if (other.CompareTag("Tool") || other.CompareTag("Human") || other.CompareTag("Food"))
+        if (other.CompareTag("Tool") || other.CompareTag("Human") || other.CompareTag("Food"))
         {
             _enerugiType = other.CompareTag("Tool") ? "tool" : (other.CompareTag("Human") ? "human" : "food");
             destroyItem = other.gameObject;
             theEnerugi = GameObject.Find("enerugi_" + _enerugiType);
-            enerugiScript = theEnerugi.GetComponent<EnerugiScript>();
+            enerugiScript = theEnerugi.GetComponent<enerugiScript>();
             if (enerugiScript.powerZero)
             {
                 Destroy(destroyItem);
                 return;
             }
-        } */
+        } 
 
         // Get the CodeHolder component from the collided object
         CodeHolder codeHolder = other.GetComponent<CodeHolder>();

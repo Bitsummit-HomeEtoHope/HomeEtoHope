@@ -85,15 +85,15 @@ public class ChargeSelectScript : MonoBehaviour
     {
         if (_isSelected)
         {
-            _kanbanIcon.color = Color.white;
+            _kanbanIcon.color = new Color(0.3f, 0.2f, 0.1f);
             _buttonImage.color = new Color(0, 0.5f, 0);
-            _iconImage.color = new Color(0.3f,0.2f,0.1f);
+            _iconImage.color = Color.white;
         }
     }
 
     private void EnerugiCharge()
     {
-        EnerugiScript enerugiScript = theEnerugi.GetComponent<EnerugiScript>();
+        enerugiScript enerugiScript = theEnerugi.GetComponent<enerugiScript>();
         enerugiScript.PowerUp();
     }
 }
