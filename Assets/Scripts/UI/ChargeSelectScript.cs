@@ -12,7 +12,12 @@ public class ChargeSelectScript : MonoBehaviour
     private Transform _iconTransform;
 
     private bool _isSelected = false;
-    
+    private CircleSlider circleSlider;
+
+    public bool isFood = false;
+    public bool isHuman = false;
+    public bool isTool = false;
+
     [SerializeField] private GameObject thekanban;
     [SerializeField] private GameObject theEnerugi;
     private SpriteRenderer _kanbanIcon;
@@ -47,6 +52,14 @@ public class ChargeSelectScript : MonoBehaviour
             case "Tool":
                 IconReset();
                 _isSelected = true;
+
+                isTool = true;
+                isHuman = false;
+                isFood = false;
+
+                circleSlider = GameObject.Find("CircleSlider").GetComponent<CircleSlider>();
+
+                circleSlider.energy = 0;
                 theEnerugi = GameObject.Find("enerugi_tool");
                 thekanban = GameObject.Find("kanban_tool");
                 _buttonTransform = GetComponent<Transform>().Find("ToolSelectButton");
@@ -54,6 +67,11 @@ public class ChargeSelectScript : MonoBehaviour
             case "Human":
                 IconReset();
                 _isSelected = true;
+
+                isTool = false;
+                isHuman = true;
+                isFood = false;
+
                 theEnerugi = GameObject.Find("enerugi_human");
                 thekanban = GameObject.Find("kanban_human");
                 _buttonTransform = GetComponent<Transform>().Find("HumanSelectButton");
@@ -61,6 +79,11 @@ public class ChargeSelectScript : MonoBehaviour
             case "Food":
                 IconReset();
                 _isSelected = true;
+
+                isTool = false;
+                isHuman = false;
+                isFood = true;
+
                 theEnerugi = GameObject.Find("enerugi_food");
                 thekanban = GameObject.Find("kanban_food");
                 _buttonTransform = GetComponent<Transform>().Find("FoodSelectButton");
@@ -91,7 +114,7 @@ public class ChargeSelectScript : MonoBehaviour
         }
     }
 
-    private void EnerugiCharge()
+    public void EnerugiCharge()
     {
         enerugiScript enerugiScript = theEnerugi.GetComponent<enerugiScript>();
         enerugiScript.PowerUp();

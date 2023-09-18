@@ -18,14 +18,9 @@ public class ButtonChangeScript : MonoBehaviour
         _isChanged = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ButtonChangeClick()
     {
+
         changeAnime.SetTrigger("ButtonChange");
         if (!_isChanged)
         {
