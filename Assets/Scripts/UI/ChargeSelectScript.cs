@@ -77,8 +77,8 @@ public class ChargeSelectScript : MonoBehaviour
     private void IconChange()
     {
         _kanbanIcon.color = Color.white;
-        _buttonImage.color = Color.green;
-        _iconImage.color = new Color(0.5f, 0, 0); // 0, 0.5, 0
+        _buttonImage.color = Color.white;
+        _iconImage.color = new Color(0.4f,0.4f,0.4f);
     }
 
     private void IconReset()
@@ -86,7 +86,7 @@ public class ChargeSelectScript : MonoBehaviour
         if (_isSelected)
         {
             _kanbanIcon.color = new Color(0.3f, 0.2f, 0.1f);
-            _buttonImage.color = new Color(0, 0.5f, 0);
+            _buttonImage.color = new Color(0.4f,0.4f,0.4f);
             _iconImage.color = Color.white;
         }
     }
