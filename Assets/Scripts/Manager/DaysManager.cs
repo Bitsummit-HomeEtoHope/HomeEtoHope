@@ -80,8 +80,13 @@ public class DaysManager : MonoBehaviour
     public List<GameObject> Txt_news_List_b;
     public List<GameObject> Txt_news_List_c;
 
+
+    public List<GameObject> Txt_close_List;
+
+    private GameObject postTxt;
     private void Start()
     {
+        //Txt_close_List = Txt_post_List;
         teacher = FindObjectOfType<Point_Teacher>();
     }
 
@@ -104,22 +109,29 @@ public class DaysManager : MonoBehaviour
             obj.SetActive(false);
 
         }
+        Destroy(postTxt);
 
     }
 
+    private void CloseObjectsInList(List<GameObject> objectList)
+    {
+        foreach (var obj in objectList)
+        {
+            obj.SetActive(false);
+        }
+    }
     public void daysChange()
     {
         switch (currentDay)
         {
             case Days.Day0:
-
                 if (humanlist.Count > 0)
                 {
                     int randomIndex = UnityEngine.Random.Range(0, humanlist.Count);
                     Sprite whoSprite = wholist[randomIndex];
                     Sprite nameSprite = namelist[randomIndex];
                     Sprite listSprite = humanlist[randomIndex];
-                    GameObject postTxt = Txt_post_List[randomIndex];
+                    postTxt = Txt_post_List[randomIndex];
                     GameObject newsTxt = Txt_news_List[randomIndex];
 
                 //----------------------------------------------------------------
@@ -141,6 +153,7 @@ public class DaysManager : MonoBehaviour
                     {
                         if(!postTxt.activeSelf && !newsTxt.activeSelf)
                         {
+                            CloseObjectsInList(Txt_close_List);
                             postTxt.SetActive(true);
                             newsTxt.SetActive(true);
                         }
@@ -196,6 +209,8 @@ public class DaysManager : MonoBehaviour
                     {
                         if (!postTxt.activeSelf && !newsTxt.activeSelf)
                         {
+                            CloseObjectsInList(Txt_close_List);
+
                             postTxt.SetActive(true);
                             newsTxt.SetActive(true);
                         }
@@ -251,6 +266,8 @@ public class DaysManager : MonoBehaviour
                     {
                         if (!postTxt.activeSelf && !newsTxt.activeSelf)
                         {
+                            CloseObjectsInList(Txt_close_List);
+
                             postTxt.SetActive(true);
                             newsTxt.SetActive(true);
                         }

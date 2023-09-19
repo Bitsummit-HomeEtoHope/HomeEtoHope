@@ -9,7 +9,7 @@ public class LevelData : ScriptableObject
     public string levelName;
     [Tooltip("The time limit for the level")]
     public int levelTime;
-    [Range(3,10)]
+    [Range(3,15)]
     [Tooltip("The interval between the appearance of props in the level")]
     public float Interval;
     public AudioClip levelBGM;
