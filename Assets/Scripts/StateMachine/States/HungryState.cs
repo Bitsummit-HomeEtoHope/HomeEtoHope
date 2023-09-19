@@ -19,6 +19,10 @@ namespace StateMachine.States
 		}
 		public void Onenter()
 		{
+            if(parameter.isDie==true)
+            {
+                manager.TransitState(StateType.Dying);
+            }
             parameter.Food_Tran.gameObject.SetActive(false);
             haveEat = false;
             manager.StartCoroutine(HungryDie(parameter.levelDataCurrent._dietime));
@@ -41,6 +45,7 @@ namespace StateMachine.States
 
         public void OnUpdate()
 		{
+            
             if(GameManager.Instance.treeFoodList.Count!=0)
             {
                 parameter.currentTarget=GameManager.Instance.treeFoodList[0].gameObject.transform.position;

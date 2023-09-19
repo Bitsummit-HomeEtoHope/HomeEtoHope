@@ -99,7 +99,7 @@ public class PowerManager : MonoBehaviour
             }
             
         }
-        if(toolBool)
+        if(humanBool)
         {
             
             humanTime+=Time.deltaTime;
@@ -110,8 +110,7 @@ public class PowerManager : MonoBehaviour
                 //从getItem.foodList中选择一个物体
                 SelectBadHuman();
                 badHuman.GetComponent<FSM>().TransitState(StateType.Dying);
-
-                
+                badHuman.GetComponent<FSM>().parameter.isDie=true;
                 
             }
             
