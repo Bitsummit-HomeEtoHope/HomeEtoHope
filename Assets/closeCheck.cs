@@ -12,8 +12,7 @@ public class closeCheck : MonoBehaviour
     private void OnEnable()
     {if (!on1 && gameObject.activeSelf) on2 = true;
      if (on2)on3 = true;
-     if(on3)on4 = true;
-        Debug.Log("xxx");
+     if (on3)on4 = true;
     }
     private void OnDisable()
     {

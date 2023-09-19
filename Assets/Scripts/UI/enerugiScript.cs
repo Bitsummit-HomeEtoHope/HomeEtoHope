@@ -55,8 +55,6 @@ public class enerugiScript : MonoBehaviour
                 break;
         }
         SetPower();
-
-        Debug.Log("xxxx" + _powerCunt);
         ResetTimer();
     }
 

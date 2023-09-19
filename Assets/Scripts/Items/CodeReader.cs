@@ -50,8 +50,7 @@ public class CodeReader : MonoBehaviour
         {
             // Get the code from the CodeHolder
             string code = codeHolder.GetCode();
-            Debug.Log("Received code: " + code);
-
+            
             // Get the tag of the collided object
             string tag = other.gameObject.tag;
 

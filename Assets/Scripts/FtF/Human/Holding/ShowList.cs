@@ -21,7 +21,7 @@ public class ShowList : MonoBehaviour
 
         if (humanCount < 1 && listing)
         {
-            Debug.Log("-----was off-----");
+            
             listing = false;
             OffList();
         }
