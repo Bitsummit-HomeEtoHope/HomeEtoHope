@@ -52,6 +52,7 @@ namespace StateMachine.General
         public bool isTool;
         public bool isWork;
         public bool isClean;
-        public bool isDie;
+        public bool isDie=false;
+        
     }
 }
