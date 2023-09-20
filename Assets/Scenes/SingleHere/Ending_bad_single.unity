@@ -486,6 +486,14 @@ MonoBehaviour:
   megane_3: {fileID: 0}
   selectedHumanName: 
   NewsContruler: {fileID: 0}
+  TxT_post_a: {fileID: 0}
+  TxT_post_b: {fileID: 0}
+  TxT_post_c: {fileID: 0}
+  Txt_post_List: []
+  Txt_news_List: []
+  Txt_news_List_b: []
+  Txt_news_List_c: []
+  Txt_close_List: []
 --- !u!82 &250342056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1580,7 +1588,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025385198}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 434fd3f2b0ef4154eab8870ea056143d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 5ec9ef7e6b58c4ea1b45588299dd637a, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1439728087}
