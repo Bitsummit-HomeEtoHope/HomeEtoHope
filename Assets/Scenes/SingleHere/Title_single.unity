@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
-  m_sharedMaterial: {fileID: -3436682886127383258, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
+  m_sharedMaterial: {fileID: 8094126565309798370, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -911,7 +911,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
-  m_sharedMaterial: {fileID: -3436682886127383258, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
+  m_sharedMaterial: {fileID: 8094126565309798370, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2490,11 +2490,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TxT_List: []
   fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
-  fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
+  fontCNTW: {fileID: 11400000, guid: cdc765411556ea445a5a85d57360f81a, type: 2}
   btnJa: {fileID: 0}
   btnEn: {fileID: 0}
   btnZhCN: {fileID: 0}
   btnZhTW: {fileID: 0}
+  reSelect: {fileID: 0}
+  exitGame: {fileID: 0}
+  Language: {fileID: 0}
+  Screen: {fileID: 0}
 --- !u!4 &1261930378
 Transform:
   m_ObjectHideFlags: 0
@@ -3737,7 +3741,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
-  m_sharedMaterial: {fileID: -3436682886127383258, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
+  m_sharedMaterial: {fileID: 8094126565309798370, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

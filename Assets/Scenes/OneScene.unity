@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -34140,7 +34140,7 @@ MonoBehaviour:
   - {fileID: 1317472357}
   - {fileID: 358973984}
   fontENJP: {fileID: 11400000, guid: 5af5009ff56baec499f9259ca9449d90, type: 2}
-  fontCNTW: {fileID: 11400000, guid: 8088d7f9cf318304e8db70661eadb93a, type: 2}
+  fontCNTW: {fileID: 11400000, guid: cdc765411556ea445a5a85d57360f81a, type: 2}
   btnJa: {fileID: 0}
   btnEn: {fileID: 0}
   btnZhCN: {fileID: 0}
