@@ -15,7 +15,7 @@ MonoBehaviour:
   levelID: 2
   levelName: Level2
   levelTime: 80
-  Interval: 9
+  Interval: 10
   levelBGM: {fileID: 0}
   future_Data:
     tree_Time: 40
@@ -32,15 +32,15 @@ MonoBehaviour:
   _tool_goodweight: 55
   _tool_badweight: 15
   _human_weight: 30
-  _spawnInterval: 3
+  _spawnInterval: 5.5
   _dietime: 45
-  tool_Power: 7
-  food_Power: 7
-  human_Power: 7
+  tool_Power: 10
+  food_Power: 15
+  human_Power: 20
   tool_Power_Down: 0
   food_Power_Down: 0
   human_Power_Down: 0
   JoySpeed: 0
-  toolBad_Time: 2
-  foodBad_Time: 2
-  humanBad_Time: 2
+  toolBad_Time: 5
+  foodBad_Time: 5
+  humanBad_Time: 5
