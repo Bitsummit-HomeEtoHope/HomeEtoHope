@@ -14,12 +14,17 @@ public class TextController : MonoBehaviour
         "楽な仕事さ、俺が全部教えてやる",
         "今からベルトコンベアで物を流してやる、それで練習しな",
     };
+    public GameObject[] objectToShow; // 表示するオブジェクト
 
     public GameObject[] objectsToHide; // フェードアウト時に非表示にするオブジェクトを指定
 
     void Start()
     {
-
+        // オブジェクトを最初は非表示にする
+        foreach (GameObject obj in objectToShow)
+        {
+            obj.SetActive(false);
+        } 
 
         // 最初のテキストを表示します
         tutorialTextUI.text = tutorialTexts[currentTextIndex];
@@ -46,8 +51,13 @@ public class TextController : MonoBehaviour
                 // フェードアウトを開始
                 StartCoroutine(fadeController.FadeOut());
 
-                textManager.TextStart();
+                foreach (GameObject obj in objectToShow)
+                {
+                    obj.SetActive(true); // オブジェクトを表示にする
+                }
                 
+                textManager.TextStart();
+
                 // テキストが最後まで表示された後に実行される処理
                 foreach (GameObject obj in objectsToHide)
                 {

@@ -5,9 +5,10 @@ public class TextManager : MonoBehaviour
 {
     
     public Text tutorialTextUI;
+    public GameObject TutorialPanel;
     public float displayDuration = 3.0f; // テキストが表示される秒数
     private int currentTextIndex = 0;
-    private bool shouldContinue = true;
+    private bool shouldContinue = false;
 
     public string[] tutorialTexts = new string[]
     {
@@ -19,11 +20,20 @@ public class TextManager : MonoBehaviour
 
     public void TextStart()
     {
+        TutorialItemManager tutorialItemManager = TutorialItemManager.Instance;
+
         // 最初のテキストを表示します
         tutorialTextUI.text = tutorialTexts[currentTextIndex];
 
+        // TutorialPanel ゲームオブジェクトをアクティブにする
+        TutorialPanel.SetActive(true);
+
+        // shouldContinue を true に設定する
+        shouldContinue = true;
+
         // テキスト送りの開始
         StartCoroutine(StartAutoDisplay());
+
     }
 
     System.Collections.IEnumerator StartAutoDisplay()
@@ -34,6 +44,11 @@ public class TextManager : MonoBehaviour
             yield return new WaitForSeconds(displayDuration);
 
             currentTextIndex++;
+            if(currentTextIndex == 1)
+            {
+                tutorialItemManager.InitializeSpecificItem("3D/food/good/apple");
+            }
+
             if (currentTextIndex < tutorialTexts.Length)
             {
                 tutorialTextUI.text = tutorialTexts[currentTextIndex];
