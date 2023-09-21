@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class opsionOpen : MonoBehaviour
+public class opsionopen : MonoBehaviour
 {
     //ê›íËópÇÃcanvas
     public GameObject Option_Canvas;
