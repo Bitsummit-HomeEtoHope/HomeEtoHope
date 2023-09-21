@@ -17157,9 +17157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d499474795ffd439ace6e6295809af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Option_Canvas: {fileID: 1457580299}
-  settingButton: {fileID: 306791680}
-  titleScreen: {fileID: 1805800224}
 --- !u!4 &632710747
 Transform:
   m_ObjectHideFlags: 0
@@ -35983,7 +35980,7 @@ MonoBehaviour:
   _dietime: 0
   _latetime: 13
   _endDaytime: 10
-  _buildcount: 24
+  _buildcount: 15
   _changeTime: 5
   _theBuildNumber: 3
   _theHumanNumber: 8
