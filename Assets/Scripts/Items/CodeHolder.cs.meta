@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Items/CodeHolder.cs.meta
-guid: 05ab746f5a5f1154b89f8171267ae209
-========
-guid: d3e4e021c25a6334986d8886166b7e15
->>>>>>>> origin/mixyao/model:Assets/Scripts/FtF/FutureItem.cs.meta
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:e5c04546db359586bf7b3c14e3a98ed58b677f3f46c3d7c2d43c8019442ed1f1
+size 412

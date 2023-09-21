@@ -1,19 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class SingletonManager<T> : MonoBehaviour where T : MonoBehaviour
-{
-    private static T _instance;
-
-    public static T Instance => _instance;
-
-    protected void Awake()
-    {
-        if (_instance != null)
-            Destroy(gameObject);
-        else
-            _instance = this as T;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:eae36fda2e706fdc54879bfac3b1d433de0fc7fa51cbc4b0a06cfd4a57da01e4
+size 399

@@ -1,2 +1,3 @@
-3D/tool/good
-wrench
+version https://git-lfs.github.com/spec/v1
+oid sha256:f8e8acbe39ba94018e15e6c45143a2a69b61307474eaf5034e6a8affdbfa79fd
+size 19

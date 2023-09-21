@@ -1,2 +1,3 @@
-3D/human
-people
+version https://git-lfs.github.com/spec/v1
+oid sha256:1e578bdfbde60f1ca89598266d492e351bd368bcf175f530fa4da458c122e509
+size 15

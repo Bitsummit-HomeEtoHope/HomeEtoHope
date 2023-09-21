@@ -1,25 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using StateMachine.General;
-using UnityEngine;
-
-public class Eat_Food : MonoBehaviour
-{
-    private SpriteRenderer spriteRenderer;
-    public GameObject player;
-
-    private void Start() {
-        
-        spriteRenderer=GetComponent<SpriteRenderer>();
-    }
-    private void Update() 
-    {
-        //change Scale
-        spriteRenderer.sprite=player.GetComponent<GetItem_Human>().foodList_human[0].GetComponent<SpriteRenderer>().sprite;
-        
-        transform.localScale=new Vector3(2,2,1);
-    }
-        
-
-    
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:870cd3df06ae358b8b4ccb8fa71b74cf9fd28a60716ceebf57010f8fd9cf01aa
+size 580

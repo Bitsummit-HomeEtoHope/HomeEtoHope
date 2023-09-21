@@ -1,22 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using StateMachine.General;
-using Unity.VisualScripting;
-using UnityEngine;
-
-public class AnimatorController : MonoBehaviour
-{
-	private Animator animator;
-	public FSM manager;
-
-	private void Start()
-	{
-		animator = GetComponent<Animator>();
-	}
-
-	private void Update()
-	{
-		animator.SetBool("isHungry",manager.parameter.isHungry);
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1bf7ec977abe84af423ab7e67a5ce75cc7aa418d3b322250c1485d99d54045ef
+size 409

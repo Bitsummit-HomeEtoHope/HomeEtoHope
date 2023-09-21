@@ -1,22 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class SEManager : MonoBehaviour
-{
-    public Slider slider;
-    AudioSource audiosource;
-    // Start is called before the first frame update
-    void Start()
-    {
-        audiosource = GetComponent<AudioSource>();
-        slider.onValueChanged.AddListener(value => this.audiosource.volume = value);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:312a937ef23360430756b09510d8d3989bf1cbb61855dd98821b2ce9015f20ac
+size 497

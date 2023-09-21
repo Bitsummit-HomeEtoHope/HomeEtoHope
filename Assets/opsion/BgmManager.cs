@@ -1,23 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class BgmManager : MonoBehaviour
-{
-    public Slider slider;
-    AudioSource audiosource;
-    // Start is called before the first frame update
-    void Start()
-    {
-        audiosource = GetComponent<AudioSource>();
-        slider.onValueChanged.AddListener(value=>this.audiosource.volume = value);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3206f872849c216ae3569b3ab15e6c22aaa339f4a3c3d10c0bddbc76cb3a8a94
+size 505

@@ -1,36 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38888df774cba8346bcf5f38c29899df, type: 3}
-  m_Name: _Level2
-  m_EditorClassIdentifier: 
-  levelID: 2
-  levelName: Level2
-  levelTime: 92
-  Interval: 4.5
-  levelBGM: {fileID: 0}
-  future_Data:
-    tree_Time: 25
-    human_Speed: 50
-    human_BadFood_Time: 5
-    human_BadTool_Time: 5
-    build_Time: 8
-    thief_Time: 0
-    thief_Food_Num: 0
-    itemBrokenHuman_time: 7
-    murderer_time: 0
-  _food_goodWeight: 10
-  _food_badWeight: 20
-  _tool_goodweight: 60
-  _tool_badweight: 40
-  _human_weight: 49
-  _spawnInterval: 2.5
-  _dietime: 30
+version https://git-lfs.github.com/spec/v1
+oid sha256:c94a7fe615bb084f6a74b00932f7b8aa79ada45bec456c075a8af601b4ee3e3b
+size 844

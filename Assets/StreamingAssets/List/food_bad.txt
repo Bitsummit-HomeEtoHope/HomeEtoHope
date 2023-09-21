@@ -1,3 +1,3 @@
-3D/food/bad
-badapple1
-badapple2
+version https://git-lfs.github.com/spec/v1
+oid sha256:3dd011566e5264d2492c9daaa3438fd3e103adfc4bee8c7d6cad59fbf0581524
+size 31

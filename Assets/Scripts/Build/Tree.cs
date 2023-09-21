@@ -1,17 +1,3 @@
-using UnityEngine;
-
-public class Tree : MonoBehaviour
-{
-    public bool isTree = false;
-    private void Update()
-    {
-        if (transform.childCount > 0)
-        {
-            gameObject.name = "Tree_still";
-
-            gameObject.tag = "Tree_still";
-            isTree = true;
-
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a6b4627df6fa196baf3ae0d03ab80d9e9838fdb8a3e1318eab600d265634293d
+size 302
