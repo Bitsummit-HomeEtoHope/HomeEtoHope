@@ -109,15 +109,18 @@ public class DaysManager : MonoBehaviour
             obj.SetActive(false);
 
         }
-        Destroy(postTxt);
+       // Destroy(postTxt);
 
     }
 
     private void CloseObjectsInList(List<GameObject> objectList)
     {
-        foreach (var obj in objectList)
+        if (objectList != null || objectList.Count != 0)
         {
-            obj.SetActive(false);
+            foreach (var obj in objectList)
+            {
+                if(!obj.activeSelf)obj.SetActive(false);
+            }
         }
     }
     public void daysChange()
