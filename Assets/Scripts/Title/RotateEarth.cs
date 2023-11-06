@@ -1,24 +1,3 @@
-using UnityEngine;
-
-public class RotateEarth : MonoBehaviour
-{
-    [SerializeField]
-    [Tooltip("x軸の回転角度")]
-    private float rotateX = 0;
-    
-    [SerializeField]
-    [Tooltip("y軸の回転角度")]
-    private float rotateY = 0;
-
-    [SerializeField]
-    [Tooltip("z軸の回転角度")]
-    private float rotateZ = 10;
-
-    // Update is called once per frame
-    void Update()
-    {
-        // X,Y,Z軸に対してそれぞれ、指定した角度ずつ回転させている。
-        // deltaTimeをかけることで、フレームごとではなく、1秒ごとに回転するようにしている。
-        gameObject.transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * Time.deltaTime);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:772b7274963a28be3d32a81ea66e669308b40bba117fae7cc31641c002a66419
+size 724

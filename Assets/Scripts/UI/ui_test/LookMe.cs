@@ -1,27 +1,3 @@
-using UnityEngine;
-
-public class LookMe : MonoBehaviour
-{
-    private Canvas canvas;
-
-    private void Awake()
-    {
-        canvas = GetComponent<Canvas>();
-        if (canvas == null)
-        {  
-            Debug.LogError("AlwaysOnTop script requires a Canvas component!");
-            return;
-        }
-
-        canvas.sortingOrder = int.MaxValue; // 设置Canvas的sortingOrder为最大值
-    }
-
-    private void LateUpdate()
-    {
-        // 检查Canvas的sortingOrder是否仍然为最大值
-        if (canvas.sortingOrder != int.MaxValue)
-        {
-            canvas.sortingOrder = int.MaxValue;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ad33360b47c0d4b8f47e9fb08062dacefdbd871b7a75807ad41ef1fe8df03a5c
+size 608

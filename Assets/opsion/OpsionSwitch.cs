@@ -1,22 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class OpsionSwitch : MonoBehaviour
-{
-    public GameObject system;
-
-    public GameObject sound;
-    
-    public void GOSystem()
-    {
-        system.SetActive(true);
-        sound.SetActive(false);
-    }
-    
-    public void GoSound()
-    {
-        system.SetActive(false);
-        sound.SetActive(true);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:116f93ce0ff8ecb0ba68435bb025956a58753dc40814d6df667dff0349549602
+size 401

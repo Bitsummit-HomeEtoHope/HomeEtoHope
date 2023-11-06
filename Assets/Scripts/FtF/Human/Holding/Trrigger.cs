@@ -1,22 +1,3 @@
-using UnityEngine;
-
-public class Trrigger : MonoBehaviour
-{
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player进入了触发器！");
-            // 在这里执行您想要的操作
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player离开了触发器！");
-            // 在这里执行您想要的操作
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f4f4d25ec81205fc87eb12e470ced84edcc9af83dc4eedef9bffc490dfa9cbe6
+size 472

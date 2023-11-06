@@ -1,21 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BuildSet : MonoBehaviour
-{
-    [Header("Set List")]
-    public List<GameObject> setList = new List<GameObject>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:416ecc95642773d3a170ce0ccb9be7d8ac2e30c31b61383b3bd6f45b0457332e
+size 380

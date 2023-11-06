@@ -1,31 +1,3 @@
-using UnityEngine;
-
-public class ControlScript : MonoBehaviour
-{
-    public HumanBuild targetScript; 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            targetScript.currentBuildType = GoToBuild.Standby;
-            Debug.Log("Standby");
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            targetScript.currentBuildType = GoToBuild.Building;
-            Debug.Log("Building");
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            targetScript.currentBuildType = GoToBuild.Company;
-            Debug.Log("Company");
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            targetScript.currentBuildType = GoToBuild.Farm;
-            Debug.Log("Farm");
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3c06e4dec122bd02ffb4c915982d3380592ec3524072c24b3c68903326561431
+size 817

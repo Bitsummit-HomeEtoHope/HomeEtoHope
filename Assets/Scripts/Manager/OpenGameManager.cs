@@ -1,29 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.XR;
-
-public class OpenGameManager : MonoBehaviour
-{
-    public Button Single;
-    public Button BeFired;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Single != null) Single.onClick.AddListener(() => selectScreen("Title_single"));
-        if (BeFired != null) BeFired.onClick.AddListener(() => selectScreen("Title"));
-    }
-
-    private void selectScreen(string select)
-    {
-        SceneManager.LoadScene(select);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b4d48139cc1933430e4b6d32cc24b5a53e9cc59ff7736ea41f27718f0c88b487
+size 699

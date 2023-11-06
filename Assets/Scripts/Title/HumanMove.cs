@@ -1,20 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class HumanMove : MonoBehaviour
-{
-    void Update () {
-
-        var amplitude = 2; // 振幅
-        var t = Time.time; // 現在時間
-
-        // 指定された振幅のPingPong
-        var value = Mathf.PingPong(t + amplitude, 2 * amplitude) - amplitude;
-
-        value = value / 100;
-        // y座標を往復させて上下運動させる
-        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + value, transform.localPosition.z);
-
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e5f57a2eb999ca3ef63c5b2f9d79b598e74220c7e74584a97f1c6b8a0522d493
+size 579

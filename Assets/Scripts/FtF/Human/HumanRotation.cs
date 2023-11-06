@@ -1,30 +1,3 @@
-using UnityEngine;
-
-public class HumanRotation : MonoBehaviour
-{
-    [SerializeField] public int rotation;
-    private Transform characterTransform;
-    private Vector3 previousPosition;
-
-    private void Start()
-    {
-        characterTransform = transform; 
-        previousPosition = characterTransform.position; 
-    }
-
-    private void Update()
-    {
-        Vector3 currentPosition = characterTransform.position; 
-
-        if (currentPosition.x < previousPosition.x)
-        {
-            characterTransform.rotation = Quaternion.Euler(rotation, 0f, 0f); 
-        }
-        else if (currentPosition.x > previousPosition.x)
-        {
-            characterTransform.rotation = Quaternion.Euler(-rotation, 180f, 0f);
-        }
-
-        previousPosition = currentPosition;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bc22371545817a53f02cac312ce4ad7f57ba607eafd64a83d059a0119c02ec13
+size 783

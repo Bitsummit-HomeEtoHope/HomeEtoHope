@@ -1,25 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: HereLangurage
-  m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 075c79863a55be849adf8c6b845626aa, type: 2}
-  m_Tables:
-  - {fileID: 11400000, guid: 36815b6f0ba03e740995657867ad396b, type: 2}
-  - {fileID: 11400000, guid: 58906c52032aca846921492fdfec5d0c, type: 2}
-  - {fileID: 11400000, guid: 7518e9184b07d2444b75f6107afe7b8e, type: 2}
-  - {fileID: 11400000, guid: b1a28635fda086848b340a62289bca80, type: 2}
-  m_Extensions: []
-  m_Group: String Table
-  references:
-    version: 2
-    RefIds: []
+version https://git-lfs.github.com/spec/v1
+oid sha256:4701836902ef596c2cedc1dc474cab2470525f8cdb6bc16826c169c97d3202ac
+size 878
